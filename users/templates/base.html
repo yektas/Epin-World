@@ -74,9 +74,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
             <div class="header-bottom-right">
                 <div class="account"><a href="{% url 'users:profile' %}"><span> </span>Hesabım</a></div>
                 <ul class="login">
-                    <li><a href="register"><span> </span>Üye Ol</a></li>
+                    <li><a href="{% url 'users:register' %}"><span> </span>Üye Ol</a></li>
                     |
-                    <li><a href="login">Giriş</a></li>
+                    <li><a href="{% url 'users:login' %}">Giriş</a></li>
                 </ul>
                 <div class="cart"><a href="checkout"><span> </span>Sepet</a></div>
                 <div class="clearfix"></div>
@@ -100,7 +100,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                         </a>
                             <ul class="cute">
                                 <li class="subitem1"><a href="list">Steam Cüzdan Kodu </a></li>
-                                <li class="subitem2"><a href="product.html">League of legends </a></li>
+                                <li class="subitem2"><a href="{% url 'games:detail' %}">League of legends </a></li>
                                 <li class="subitem3"><a href="product.html">WolfTeam </a></li>
                                 <li class="subitem4"><a href="product.html">Metin2 </a></li>
                                 <li class="subitem5"><a href="product.html">World of WarCraft </a></li>

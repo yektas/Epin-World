@@ -9,8 +9,8 @@ cursor = connections['default'].cursor()
 
 ####GAMES METHODS
 
-def index(request):
-    return render(request, "games.html")
+def detail(request):
+    return render(request, "list.html")
 
 def fetch_all_game():
     game_show_data = {}

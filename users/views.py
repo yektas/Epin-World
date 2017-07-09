@@ -1,5 +1,15 @@
-from django.shortcuts import render, render_to_response
-from django.http import HttpResponseRedirect
+from django.shortcuts import render
 
-def profile(request):
-    return render(request,"profile.html")
+def profile_view(request):
+    template_name = 'profile.html'
+    context = {
+        "user_name": "Sercan"
+    }
+    return render(request, template_name, context)
+
+def login(request):
+    return render(request, "login.html")
+
+def register(request):
+
+    return render(request, "register.html")
