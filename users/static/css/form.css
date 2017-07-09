@@ -1,0 +1,35 @@
+.ust-giris input[type="email"], .ust-giris input[type="text"], .ust-giris input[type="password"]{
+    border: 1px solid #EEE;
+	outline-color:#FF5B36;
+	width: 85%;
+	font-size: 1em;
+	padding: 0.5em;
+	margin: 0.5em 0;
+}
+.alt-giris input[type="email"], .alt-giris input[type="text"], .alt-giris input[type="password"]{
+    border: 1px solid #EEE;
+	outline-color:#FF5B36;
+	width: 85%;
+	font-size: 1em;
+	padding: 0.5em;
+	margin: 0.5em 0;
+}
+.giris {
+	padding: 2em 0 2em;
+	width: 50%;
+	float: left;
+}
+.ust-giris h3, .alt-giris h3 {
+	color:#F97E76;
+	font-size: 1.1em;
+	padding-bottom: 5px;
+	margin: 0;
+	font-weight:600;
+}
+.ust-giris span, .alt-giris span {
+	color:#555;
+	font-size: 0.9em;
+	padding-bottom: 0.2em;
+	display: block;
+	text-transform: uppercase;
+}

@@ -1,0 +1,25 @@
+.col-md-8{
+    margin-top: 30px;
+}
+
+.col-md-5{
+    margin-top: 15px;
+}
+.panel-heading {
+    background-color: #f97e76 !important;
+}
+.panel.panel-info{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border: none;
+}
+.btn-primary {
+  color: #fff;
+  background-color: #f97e76;
+  border-color: #f97e76;
+}
+.nav-pills > li.active > a,
+.nav-pills > li.active > a:hover,
+.nav-pills > li.active > a:focus {
+  color: #fff;
+  background-color: #f97e76;
+}

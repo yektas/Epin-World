@@ -1,0 +1,115 @@
+<head>
+    {% extends 'base.html'%}
+    {% load staticfiles %}
+    <meta charset="UTF-8">
+    <link href="{% static 'css/bootstrap.css'%}" rel="stylesheet" type="text/css"/>
+
+    <title>Title</title>
+</head>
+{% block content %}
+<div class="col-md-8">
+    <h1>League of Legends</h1>
+<img src="{% static 'images/bag.jpg' %}">
+A paragraph with an image. A paragraph with an image.
+A paragraph with an image. A paragraph with an image.
+A paragraph with an image. A paragraph with an image.
+</p>
+
+</div>
+<div class="row">
+    <div class="col-md-4" style="width: 100%;">
+        <div class="btn-toolbar" style="margin-top: 10px;">
+            <button class="btn btn-primary" style="background-color:buttonface; color:black; border:none;">Ürünler
+            </button>
+        </div>
+        <div class="well" style="width: 100%;">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>#</th>
+                    <th>E-pin</th>
+                    <th>stok</th>
+                    <th style="width: 25%;">Birim fiyatı</th>
+                    <th style="width: 25%;">Adet</th>
+                    <th style="width:15%;">Satın Al</th>
+                    <th style="width: 36px;"></th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Mark</td>
+                    <td><i class="glyphicon glyphicon-ok" style="font-size:20px;"></i></td>
+                    <td>the_mark7</td>
+                    <td><input style="width:30%;" placeholder="Adet"></td>
+                    <td>
+                        <a href="#"><i class="glyphicon glyphicon-shopping-cart" style="font-size:20px;"></i></a>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Ashley</td>
+                    <td><i class="glyphicon glyphicon-ok" style="font-size:20px;"></i></td>
+                    <td>ash11927</td>
+                    <td><input style="width:30%;" placeholder="Adet"></td>
+                    <td>
+                        <a href="#"><i class="glyphicon glyphicon-shopping-cart " style="font-size:20px;"></i></a>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Audrey</td>
+                    <td><i class="glyphicon glyphicon-ok" style="font-size:20px;"></i></td>
+                    <td>audann84</td>
+                    <td><input style="width:30%;" placeholder="Adet"></td>
+                    <td>
+                        <a href="#"><i class="glyphicon glyphicon-shopping-cart" style="font-size:20px;"></i></a>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>John</td>
+                    <td><i class="glyphicon glyphicon-ok" style="font-size:20px;"></i></td>
+                    <td>jr5527</td>
+                    <td><input style="width:30%;" placeholder="Adet"></td>
+                    <td>
+                        <a href="#"><i class="glyphicon glyphicon-shopping-cart" style="font-size:20px;"></i></a>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>Aaron</td>
+                    <td><i class="glyphicon glyphicon-ok" style="font-size:20px;"></i></td>
+                    <td>aaron_butler</td>
+                    <td><input style="width:30%;" placeholder="Adet"></td>
+                    <td>
+                        <a href="#"><i class="glyphicon glyphicon-shopping-cart" style="font-size:20px;"></i></a>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>Chris</td>
+                    <td><i class="glyphicon glyphicon-ok" style="font-size:20px;"></i></td>
+                    <td>cab79</td>
+                    <td><input style="width:30%;" placeholder="Adet"></td>
+                    <td>
+                        <a href="#"><i class="glyphicon glyphicon-shopping-cart" style="font-size:20px;"></i></a>
+
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+
+
+
+
