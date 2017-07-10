@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+</head>
+<script>
+$(function() {
+  var computeSum = function() {
+        price = 0;
+    $('#TableBody tr').each(function() {
+      price += (+$(this).find('td').eq(1).text());
+    });
+    $('#TableFooter td.total.price').text(price.toFixed(2));
+  };
+  $('#Table').on('click', 'input[type="button"][data-action="delete-row"]', function(e) {
+    e.preventDefault();
+    $(this).closest('tr').remove();
+    computeSum();
+  });
+  $('#iphone6').click(function() {
+    var lines = "<tr>";
+	lines += '<td>İphone6</td>';
+    lines += '<td>2150.00</td>';
+    lines += '<td><input type="button" onclick="showDeletedMessage()" value="Delete" data-action="delete-row" /></td>';
+    lines += "</tr>";
+    $('#TableBody').append(lines);
+    computeSum();
+  });
+  $('#samsung').click(function() {
+    var lines = "<tr>";
+	lines += '<td>Samsung S6</td>';
+    lines += '<td>1950.00</td>';
+    lines += '<td><input type="button" onclick="showDeletedMessage()" value="Delete" data-action="delete-row" /></td>';
+    lines += "</tr>";
+    $('#TableBody').append(lines);
+    computeSum();
+  });
+  computeSum();
+});
+</script>
+
+<script>
+function showAddedMessage() {
+    alert("The product is successfully added your chart...");
+}
+function showDeletedMessage() {
+    alert("The product is successfully deleted from your chart...");
+}
+</script>
+
+<body>
+<div data-role="page" id="pageone">
+  <div data-role="header" id="ps">
+  	<h1>Welcome To My Homepage</h1>
+    <a href="#page2" id="shp" class="ui-btn ui-shadow ui-corner-all ui-icon-shop ui-btn-icon-right ui-btn-icon-notext">Search</a>
+  </div>
+  <div data-role="main" class="ui-content" id="m1">
+  	<input type="button" id="samsung" value="Samsung" onclick="showAddedMessage()">
+	<input type="button" id="iphone6" value="Iphone6" onclick="showAddedMessage()">
+
+  </div>
+</div>
+<div data-role="page" id="page2">
+  	<div data-role="header" id="ps">
+  		<h1>Welcome To Shop Page</h1>
+        <a href="#pageone" id="shp" class="ui-btn ui-shadow ui-corner-all ui-icon-arrow-l ui-btn-icon-notext">Search</a>
+	</div>
+
+  	<div data-role="main" class="ui-content">
+    	<table id="Table" data-mode="columntoggle:none" class="ui-responsive ui-shadow">
+  		<thead>
+    		<th>Product Name</th>
+    		<th>Product Fee</th>
+  		</thead>
+  		<tbody id="TableBody">
+  		</tbody>
+  		<tfoot id="TableFooter">
+    		<tr>
+    			<td>Total:</td>
+      			<td class="total price"></td>
+    		</tr>
+  		</tfoot>
+	</table>
+    </div>
+</div>
+</body>
+</html>
