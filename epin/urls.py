@@ -22,4 +22,5 @@ urlpatterns = [
     url(r'^$', TemplateView.as_view(template_name='index.html')),
     url(r'^games/', include('games.urls')),
     url(r'^users/', include('users.urls')),
+    url(r'^sales/', include('sales.urls')),
 ]
