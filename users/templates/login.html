@@ -7,26 +7,20 @@
     <link href="{% static 'css/form.css'%}" rel="stylesheet" type="text/css"/>
 <div class="container">
 		<div class="giris">
-		  	  <form>
+		  	  <form action="{% url 'users:auth_login' %}" method="POST" >{% csrf_token %}
 				 <div class="ust-giris">
 					<h3>GİRİŞ BİLGİLERİ</h3>
 					<div class="mation">
-						<span>E-mail<label>*</label></span>
-						<input type="email">
-
+						<span>Username<label>*</label></span>
+						<input type="text" name="username">
 						<span>Şifre<label>*</label></span>
-						<input type="password">
+						<input type="password" name="password">
 					</div>
-					 <div class="clearfix"> </div>
+					   <a class="forgot" href="#">Şifremi Unuttum  </a>
+					   <input type="submit" value="GİRİŞ">
 					 </div>
 				</form>
-				<div class="clearfix"> </div>
-				<div class="register-but">
-				   <form>
-                       <a class="forgot" href="#">Şifremi Unuttum  </a>
-					   <input type="submit" value="GİRİŞ">
-					   <div class="clearfix"> </div>
-				   </form>
+
 				</div>
 		   </div>
 </div>

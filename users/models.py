@@ -1,13 +1,15 @@
-from django.db import models
-from django.contrib.auth.models import User
+from django.db import connection
 
-from games.models import Game
+cursor = connection.cursor()
 
-class Profile(models.Model):
-    user = models.OneToOneField(User)
-    game = models.ForeignKey(Game)
-    birth_date = models.DateField(null=True, blank=True)
-    status = models.BooleanField(default = True)
-    balance = models.FloatField(default = 0)
-    def __str__(self):
-        return self.user.username
+class EventClass():
+
+    def __init__(self, request_object):
+        self.request_object = request_object
+    def login_event(self):
+        try:
+            cursor.execute("SELECT * FROM users WHERE username= %s", [self.request_object['username']] )
+            row = cursor.fetchall()
+        finally:
+            cursor.close()
+        return row
