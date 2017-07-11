@@ -1,5 +1,4 @@
 from django.db import connection
-
 cursor = connection.cursor()
 
 class EventClass():
@@ -9,7 +8,16 @@ class EventClass():
     def login_event(self):
         try:
             cursor.execute("SELECT * FROM users WHERE username= %s", [self.request_object['username']] )
-            row = cursor.fetchall()
+            user = dictfetchall(cursor)
         finally:
             cursor.close()
-        return row
+        return user
+
+
+def dictfetchall(cursor):
+    "Returns all rows from a cursor as a dict"
+    desc = cursor.description
+    return [
+            dict(zip([col[0] for col in desc], row))
+            for row in cursor.fetchall()
+    ]
