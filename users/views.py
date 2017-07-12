@@ -68,3 +68,7 @@ def company(request):
 
 def ordertable(request):
     return render(request,"ordertable.html")
+
+def adminview(request):
+    return render(request,"admin.html")
+
