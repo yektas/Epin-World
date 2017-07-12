@@ -18,7 +18,7 @@ def auth_login(request):
     instance = EventClass(user_info)
     user = instance.login_event()
 
-    if user is not False:
+    if user is not None:
         request.session['username'] = username
         request.session['password'] = password
         request.session['is_logged'] = True
