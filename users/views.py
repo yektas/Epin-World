@@ -50,4 +50,11 @@ def oyunsil(request):
 def userslist(request):
     return render(request,"userslist.html")
 
+def companylist(request):
+    return render(request,"companylist.html")
 
+def company(request):
+    return render(request,"company.html")
+
+def ordertable(request):
+    return render(request,"ordertable.html")
