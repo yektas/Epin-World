@@ -1,0 +1,24 @@
+<head>
+    {% extends 'admin.html' %}
+    {% load staticfiles %}
+    {% block title%}<title>Giriş</title>{% endblock %}
+</head>
+{% block content %}
+    <link href="{% static 'css/form.css'%}" rel="stylesheet" type="text/css"/>
+<div class="container">
+		<div class="giris">
+		  	  <form action="{% url 'users:auth_login' %}" method="POST" >{% csrf_token %}
+				 <div class="ust-giris">
+					<h3>ŞIRKET EKLE</h3>
+					<div class="mation">
+                       	<span>Sirket Adı<label></label></span>
+						<input type="text" name="username">
+
+				    </div>
+                     </div>
+
+                  <button type="button" class="btn btn-danger" style="margin-left:520px">EKLE</button>
+              </form>
+		   </div>
+</div>
+{% endblock %}
