@@ -16,7 +16,7 @@ class EventClass():
         user = dictfetchall(cursor)
         cursor.close()
         return user
-    
+
     def register_event(self):
         """ User registration """
         cursor = connection.cursor()

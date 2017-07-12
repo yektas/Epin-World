@@ -1,8 +1,8 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
-from django.template.context_processors import csrf
 from .models import EventClass
 
+####AUTHENTICATION METHODS
 
 def login(request):
     if 'is_logged' not in request.session:
