@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
+    <data-source source="LOCAL" name="game_trnetdb@185.144.14.41" uuid="74233b74-daa6-4881-8c58-55041197cb3b">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://185.144.14.41:5432/game_trnetdb</jdbc-url>
+    </data-source>
+  </component>
+</project>
