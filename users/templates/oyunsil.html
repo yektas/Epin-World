@@ -90,13 +90,14 @@
        </div>
 </div>
 
+
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
 <script>
 var game_table_html = " "
                     $.ajax({
                         type: 'GET',
-                        url: 'http://localhost:8000/games/game_json/',
+                        url: 'http://localhost:8000/games/games_json/',
                         data: { get_param: 'value' },
                         dataType: 'json',
                         success: function (data) {
@@ -113,6 +114,5 @@ var game_table_html = " "
         });
 
 </script>
-
 
 {% endblock %}
