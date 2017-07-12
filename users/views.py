@@ -3,6 +3,9 @@ from django.http import HttpResponse
 from django.template.context_processors import csrf
 from .models import EventClass
 
+
+def userslist(request):
+    pass
 ####AUTHENTICATION METHODS
 
 def login(request):
@@ -53,7 +56,16 @@ def profile(request):
                     'password': request.session['password'],
                     }
     return render(request, "profile.html", user_content)
-
+    
+def game_json(request):
+    cursor.execute("SELECT * FROM game")
+    
+    test_data = cursor.fetchall()
+    list_test_data = list(test_data)
+    test_json = []
+    for i in test_data:
+        test_json.append({'game_name':'{}'.format(i[1]),'game_money_price':'{}'.format(i[2])})
+    return HttpResponse(json.dumps(test_json), content_type='application/json')
 
 
 def oyunekle(request):
