@@ -3,34 +3,38 @@ from django.http import HttpResponse
 from django.template.context_processors import csrf
 from .models import EventClass
 
-####AUTHENTICATION METHODS
 
 def login(request):
-     c = {}
-     c.update(csrf(request))
-     return render(request, "login.html", c)
+    if 'is_logged' not in request.session:
+        return render(request, "login.html")
+    else:
+        return HttpResponse("<h1>You are already logged in</h1>")
+
 
 def auth_login(request):
     if request.method == "POST":
-        username = request.POST.get('username')
-        password = request.POST.get('password')
+        username = request.POST.get('username', '')
+        password = request.POST.get('password', '')
         user_info = request.POST
 
         instance = EventClass(user_info)
         user = instance.login_event()
 
-        if user is not None:
+        if len(user) > 0:
             request.session['username'] = username
             request.session['password'] = password
             request.session['is_logged'] = True
-            return redirect("users:index")
+
+            return render(request, "index.html")
 
         else:
             return redirect("users:login")
 
+
 def index(request):
     c = {}
     return render(request, "index.html")
+
 
 def register(request):
     if request.method == "POST":
@@ -48,6 +52,7 @@ def register(request):
             return HttpResponse("<h1>Registration Failed</h1>")
     return render(request, "register.html")
 
+
 def profile(request):
     user_content = {'username': request.session['username'],
                     'password': request.session['password'],
@@ -55,27 +60,33 @@ def profile(request):
     return render(request, "profile.html", user_content)
 
 
-
 def oyunekle(request):
-    return render(request,"ekle.html")
+    return render(request, "ekle.html")
+
 
 def oyunsil(request):
-    return render(request,"oyunsil.html")
+    return render(request, "oyunsil.html")
+
 
 def userslist(request):
-    return render(request,"userslist.html")
+    return render(request, "userslist.html")
+
 
 def companylist(request):
-    return render(request,"companylist.html")
+    return render(request, "companylist.html")
+
 
 def company(request):
-    return render(request,"company.html")
+    return render(request, "company.html")
+
 
 def ordertable(request):
-    return render(request,"ordertable.html")
+    return render(request, "ordertable.html")
+
 
 def adminview(request):
-    return render(request,"admin.html")
+    return render(request, "admin.html")
+
 
 def logout(request):
     try:
@@ -84,7 +95,6 @@ def logout(request):
         pass
     return HttpResponse("You are logged out")
 
+
 def login_success(request):
     return HttpResponse("Registration successful!")
-
-
