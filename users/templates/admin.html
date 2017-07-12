@@ -73,7 +73,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
             </div>
             <div class="header-bottom-right">
                 {% if not user.is_admin %}
-                <div class="account"><a href="{% url 'users:adminview' %}"><span> </span>Admin</a></div>
+                <div class="account"><a href="{% url 'users:profile' %}"><span> </span>Admin</a></div>
                 {% else %}
                 <div class="account"><a href="{% url 'users:profile' %}"><span> </span>Hesabım</a></div>
                 {% endif %}
@@ -93,48 +93,67 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 </div>
 <!---->
 
+
+
+
+
+
+
+
+
+
+
 <div class="container">
     <div class="row">
         <div class="col-sm">
             <div class="sub-cate">
                 <div class=" top-nav rsidebar span_1_of_left">
-                    <h3 class="cate">Kategoriler</h3>
+                    <h3 class="cate">Admin Paneli</h3>
                     <ul class="menu">
-                        <li class="item1"><a href="#">PC<img class="arrow-img"
+                        <li class="item1"><a href="#">Oyun<img class="arrow-img" style="margin-left:113px;"
                                                              src="{% static 'images/arrow1.png' %}"
                                                              alt=""/>
                         </a>
                             <ul class="cute">
-                                <li class="subitem1"><a href="list">Steam Cüzdan Kodu </a></li>
-                                <li class="subitem2"><a href="{% url 'games:detail' %}">League of legends </a></li>
-                                <li class="subitem3"><a href="product.html">WolfTeam </a></li>
-                                <li class="subitem4"><a href="product.html">Metin2 </a></li>
-                                <li class="subitem5"><a href="product.html">World of WarCraft </a></li>
-                                <li class="subitem6"><a href="product.html">PointBlank</a></li>
-                                <li class="subitem7"><a href="product.html">DOTA 2 </a></li>
+                                <li class="subitem1"><a href="{% url 'users:oyunekle'%}">Oyun Ekle</a></li>
+                                <li class="subitem2"><a href="{% url 'users:oyunsil' %}">Oyun Listele - Sil</a></li>
+
                             </ul>
                         </li>
-                        <li class="item2"><a href="#">Mobil <img class="arrow-img "
-                                                                 src="{% static 'images/arrow1.png' %}"
-                                                                 alt=""/></a>
+                        <li class="item1"><a href="#">Kullanıcı<img class="arrow-img" style="margin-left:87px;"
+                                                             src="{% static 'images/arrow1.png' %}"
+                                                             alt=""/>
+                        </a>
                             <ul class="cute">
-                                <li class="subitem1"><a href="product.html">Candy Crash </a></li>
-                                <li class="subitem2"><a href="product.html">Clash of Clans</a></li>
-                                <li class="subitem3"><a href="product.html">Clash Royale</a></li>
+                                <li class="subitem1"><a href="list"> Kullanıcı Listeleme</a></li>
+                                <li class="subitem2"><a href="{% url 'games:detail' %}">Kullanıcı Silme</a></li>
                             </ul>
                         </li>
 
-                        <li>
-                            <ul class="kid-menu">
-                                <li><a href="product.html">Playstation</a></li>
-                                <li><a href="product.html">Xbox</a></li>
-                                <li><a href="product.html">Apple Store</a></li>
-                                <li><a href="product.html">Google Play</a></li>
+                        <li class="item1"><a href="#">Siparişler<img class="arrow-img" style="margin-left:80px;"
+                                                             src="{% static 'images/arrow1.png' %}"
+                                                             alt=""/>
+                        </a>
+                            <ul class="cute">
+                                <li class="subitem1"><a href="list">Sipariş Listeleme</a></li>
+                                <li class="subitem2"><a href="{% url 'games:detail' %}">Sipariş silme</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="item1"><a href="#" >Şirketler<img  class="arrow-img" style="margin-left:90px;"
+                                                             src="{% static 'images/arrow1.png' %}"
+                                                             alt="" />
+                        </a>
+                            <ul class="cute">
+                                <li class="subitem1"><a href="list">Şirket ekle</a></li>
+                                <li class="subitem2"><a href="{% url 'games:detail' %}"> Şirket Silme</a></li>
+                                <li class="subitem3"><a href="product.html"> Şirket Listeleme</a></li>
                             </ul>
                         </li>
 
                     </ul>
                 </div>
+
                 <!--initiate accordion-->
                 <script type="text/javascript">
 			$(function() {
@@ -162,6 +181,27 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     </div>
 </div>
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <!---->
 
 <div class="clearfix" ></div>
