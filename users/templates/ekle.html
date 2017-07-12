@@ -1,10 +1,15 @@
+{% extends 'admin.html' %}
 <head>
-    {% extends 'admin.html' %}
+
     {% load staticfiles %}
     {% block title%}<title>Giriş</title>{% endblock %}
 </head>
 {% block content %}
+{% load staticfiles %}
     <link href="{% static 'css/form.css'%}" rel="stylesheet" type="text/css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="{% static 'js/form.js' %}"></script>
+
 <div class="container">
 		<div class="giris">
 		  	  <form action="{% url 'users:auth_login' %}" method="POST" >{% csrf_token %}
@@ -15,9 +20,10 @@
                         <input type="text">
 
 						<span>Oyun Adı<label>*</label></span>
-						<input type="text" name="username">
-						<span>Fiyatı<label>*</label></span>
-						<input type="text" name="username">
+						<input type="text" class="form-control" id="emailInput" placeholder="OyunAdı">
+						<span>Pin Fiyatı<label>*</label></span>
+						<input type="text" class="form-control" id="nameInput" placeholder="OyunParası">
+                        
                         <span>Kategorisi<label>*</label></span>
 						<select>
                             <option value=""></option>
@@ -36,6 +42,8 @@
                              <option value=""></option>
                              <option value=""></option>
                         </select>
+                        <button type="submit" class="btn btn-default">Submit</button>
+
 				</form>
 
 				</div>
