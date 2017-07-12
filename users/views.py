@@ -54,12 +54,28 @@ def profile(request):
                     }
     return render(request, "profile.html", user_content)
 
-def adminview(request):
-    return render(request, "admin.html")
+
+
 def oyunekle(request):
-    return render(request, "ekle.html")
+    return render(request,"ekle.html")
+
 def oyunsil(request):
-    return render(request, "oyunsil.html")
+    return render(request,"oyunsil.html")
+
+def userslist(request):
+    return render(request,"userslist.html")
+
+def companylist(request):
+    return render(request,"companylist.html")
+
+def company(request):
+    return render(request,"company.html")
+
+def ordertable(request):
+    return render(request,"ordertable.html")
+
+def adminview(request):
+    return render(request,"admin.html")
 
 def logout(request):
     try:
