@@ -12,18 +12,21 @@
     <link href="{% static 'css/form.css'%}" rel="stylesheet" type="text/css"/>
 <div class="container">
 		<div class="giris">
-		  	  <form>
+		  	  <form action=" " method="post">
 				 <div class="ust-giris">
 					<h3>KİŞİSEL BİLGİLER</h3>
 					<div class="mation">
 						<span>Ad<label>*</label></span>
-						<input type="text">
+						<input type="text" name="name">
 
 						<span>Soyad<label>*</label></span>
-						<input type="text">
+						<input type="text" name="surname">
+
+						<span>Username<label>*</label></span>
+						<input type="text" name="username">
 
 						 <span>E-mail<label>*</label></span>
-						 <input type="email">
+						 <input type="email" name="email">
 					</div>
 					 <div class="clearfix"> </div>
 					 </div>
@@ -31,19 +34,15 @@
 						    <h3>GİRİŞ BİLGİLERİ</h3>
 							<div class="mation">
 								<span>Şifre<label>*</label></span>
-								<input type="password">
-								<span>Şifreyi doğrula<label>*</label></span>
-								<input type="password">
+								<input type="password" name="password">
 							</div>
 					 </div>
-				</form>
 				<div class="clearfix"> </div>
 				<div class="register-but">
-				   <form>
 					   <input type="submit" value="submit">
 					   <div class="clearfix"> </div>
-				   </form>
-				</div>
+				</div>				   </form>
+
 		   </div>
 </div>
 {% endblock %}
