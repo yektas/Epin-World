@@ -12,5 +12,6 @@ urlpatterns = [
     url(r'^adminview/$', views.adminview, name='adminview'),
     url(r'^oyunekle/$', views.oyunekle, name='oyunekle'),
     url(r'^oyunsil/$', views.oyunsil, name='oyunsil'),
+    url(r'^logout/$', views.logout, name='logout'),
     #url(r'^loggedin/$', views.loggedin, name='loggedin'),
 ]
