@@ -38,4 +38,16 @@ def profile(request):
                     }
     return render(request, "profile.html", user_content)
 
+def adminview(request):
+    return render(request,"admin.html")
+
+def oyunekle(request):
+    return render(request,"ekle.html")
+
+def oyunsil(request):
+    return render(request,"oyunsil.html")
+
+def userslist(request):
+    return render(request,"userslist.html")
+
 
