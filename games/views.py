@@ -1,7 +1,7 @@
-from django.shortcuts import render, render_to_response
+from django.shortcuts import render, render_to_response,HttpResponse
 from django.db import connections
 import logging
-
+import json
 ##### META DEFINITIONS
 logger = logging.getLogger(__name__)
 cursor = connections['default'].cursor()
@@ -22,6 +22,18 @@ def fetch_all_game():
         show_game_name.append(i[1])
         show_game_price.append(i[2])
     return show_game_name,show_game_price
+
+def games_json(request):
+    cursor.execute("SELECT * FROM game")
+    
+    test_data = cursor.fetchall()
+    list_test_data = list(test_data)
+    test_json = []
+    for i in test_data:
+        test_json.append({'game_name':'{}'.format(i[1]),'game_money_price':'{}'.format(i[2])})
+    return HttpResponse(json.dumps(test_json), content_type='application/json')
+
+
 
 
 def games(request):
