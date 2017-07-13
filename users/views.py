@@ -4,6 +4,7 @@ from .models import EventClass
 
 ####AUTHENTICATION METHODS
 
+
 def login(request):
     if 'is_logged' not in request.session:
         return render(request, "login.html")
@@ -54,9 +55,7 @@ def register(request):
 
 
 def profile(request):
-    user_content = {'username': request.session['username'],
-                    'password': request.session['password'],
-                    }
+    user_content = {'username': request.session['username']}
     return render(request, "profile.html", user_content)
 
 
@@ -66,10 +65,6 @@ def oyunekle(request):
 
 def oyunsil(request):
     return render(request, "oyunsil.html")
-
-
-def userslist(request):
-    return render(request, "userslist.html")
 
 
 def companylist(request):
@@ -98,3 +93,10 @@ def logout(request):
 
 def login_success(request):
     return HttpResponse("Registration successful!")
+
+####ADMIN PANEL
+
+def userlist(request):
+    instance = EventClass(request)
+    users = instance.get_users()
+    return render(request, "userlist.html", {"users": users})

@@ -12,7 +12,8 @@
     <link href="{% static 'css/form.css'%}" rel="stylesheet" type="text/css"/>
 <div class="container">
 		<div class="giris">
-		  	  <form action=" " method="post">
+		  	  <form action="" method="post">
+				  {% csrf_token %}
 				 <div class="ust-giris">
 					<h3>KİŞİSEL BİLGİLER</h3>
 					<div class="mation">

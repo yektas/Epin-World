@@ -52,12 +52,15 @@ class EventClass():
         else:
             return True
 
-
-    def add_game(self):
+    #admin
+    def get_users(self):
         cursor = connection.cursor()
+        cursor.execute("SELECT username,email,full_name,status_id FROM users")
+        users = dictfetchall(cursor)
+        return users
 
 def dictfetchall(cursor):
-    "Returns all rows from a cursor as a dict"
+    " Returns all rows from a cursor as a dict "
     desc = cursor.description
     return [
             dict(zip([col[0] for col in desc], row))
