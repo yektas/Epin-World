@@ -98,3 +98,19 @@ def logout(request):
 
 def login_success(request):
     return HttpResponse("Registration successful!")
+
+
+def create_Company(request):
+    if request.method == "POST":
+        try:
+            name = request.POST.get('name', "")
+            comp_info = request.POST
+            instance = EventClass(comp_info)
+        except:
+            raise "Err"
+
+        instance.CreateModel(name)
+
+        return HttpResponse("<h1>Creating Successful!</h1>")
+
+    return render(request , "company.html")
