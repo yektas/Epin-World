@@ -38,13 +38,7 @@ def index(request):
 
 def register(request):
     if request.method == "POST":
-        name = request.POST.get('name')
-        surname = request.POST.get('surname')
-        username = request.POST.get('username')
-        email = request.POST.get('email')
-        password = request.POST.get('password')
         user_info = request.POST
-
         instance = EventClass(user_info)
 
         if instance.register_event() is False:
@@ -100,16 +94,16 @@ def login_success(request):
     return HttpResponse("Registration successful!")
 
 
-def create_Company(request):
+def create_company(request):
     if request.method == "POST":
         try:
-            name = request.POST.get('name', "")
+            name = request.POST.get('cname', "")
             comp_info = request.POST
             instance = EventClass(comp_info)
         except:
             raise "Err"
 
-        instance.CreateModel(name)
+        instance.create_model()
 
         return HttpResponse("<h1>Creating Successful!</h1>")
 

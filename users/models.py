@@ -32,7 +32,7 @@ class EventClass():
             cursor.execute("INSERT INTO users (username, email, password, full_name, status_id, admin_id)"
                            "VALUES ('{}', '{}', '{}', '{}', '{}', '{}')".format(t1, t2, str(t3),full_name, 1, 2))
             temp = cursor.fetchall()
-            cursor.commit()
+            cursor.execute("COMMIT;")
             cursor.close()
         else:
             return False
@@ -56,30 +56,28 @@ class EventClass():
     def add_game(self):
         cursor = connection.cursor()
 
-    def dictfetchall(self, cursor):
-        "Returns all rows from a cursor as a dict"
-        desc = cursor.description
-        return [
-                dict(zip([col[0] for col in desc], row))
-                for row in cursor.fetchall()
-        ]
 
-    def CreateModel(self, name):
+    def create_model(self):
         cursor = connection.cursor()
-        cName = name
+        cname = self.request_object['cname']
         if self.control_cName() is False:
-            cursor.execute("INSERT INTO company (name) VALUES ( '{}' )".format(str(cName)))
+            cursor.execute("INSERT INTO company (name) VALUES ( '{}' )".format(str(cname)))
             cursor.execute("COMMIT;")
             cursor.close()
+
     def control_cName(self):
 
         cursor = connection.cursor()
-        cName = self.request_object['name']
-
-
-        cursor.execute("SELECT name FROM company WHERE name='{}' ".format(cName))
-        cName = self.dictfetchall(cursor)
-        if len(cName) <= 0:
+        cname = self.request_object['cname']
+        cursor.execute("SELECT name FROM company WHERE name='{}' ".format(cname))
+        company = self.dictfetchall(cursor)
+        if len(company) <= 0:
             return False
         else:
             return True
+
+    def dictfetchall(self, cursor):
+        "Returns all rows from a cursor as a dict"
+        desc = cursor.description
+        return [dict(zip([col[0] for col in desc], row))
+                for row in cursor.fetchall()]
