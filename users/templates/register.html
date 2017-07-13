@@ -12,7 +12,7 @@
     <link href="{% static 'css/form.css'%}" rel="stylesheet" type="text/css"/>
 <div class="container">
 		<div class="giris">
-		  	  <form action=" " method="post">
+		  	  <form name="regForm"  onsubmit="return validateForm()" >{% csrf_token %}
 				 <div class="ust-giris">
 					<h3>KİŞİSEL BİLGİLER</h3>
 					<div class="mation">
@@ -41,8 +41,12 @@
 				<div class="register-but">
 					   <input type="submit" value="submit">
 					   <div class="clearfix"> </div>
-				</div>				   </form>
-
+				</div>
+			  </form>
 		   </div>
 </div>
+
 {% endblock %}
+
+
+

@@ -35,7 +35,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 </head>
 
 <div class="header">
-    <div class="top-header" style="background-color:#cc181e">
+    <div class="top-header">
         <div class="container">
             <div class="top-header-left">
                 <ul class="support">
@@ -98,9 +98,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
         <div class="col-sm">
             <div class="sub-cate">
                 <div class=" top-nav rsidebar span_1_of_left">
-                    <h3 class="cate" style="background-color:#cc181e">Kategoriler</h3>
+                    <h3 class="cate">Kategoriler</h3>
                     <ul class="menu">
-                        <li class="item1"><a href="#">PC<img class="arrow-img" style="margin-left: 130px"
+                        <li class="item1"><a href="#">PC<img class="arrow-img"
                                                              src="{% static 'images/arrow1.png' %}"
                                                              alt=""/>
                         </a>
@@ -108,7 +108,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                 <li class="subitem1"><a href="list">Steam Cüzdan Kodu </a></li>
                             </ul>
                         </li>
-                        <li class="item2"><a href="#">Mobil <img class="arrow-img " style="margin-left: 106px"
+                        <li class="item2"><a href="#">Mobil <img class="arrow-img "
                                                                  src="{% static 'images/arrow1.png' %}"
                                                                  alt=""/></a>
                             <ul class="cute">
@@ -161,7 +161,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <div class="clearfix" ></div>
 <hr />
 
-<footer class="footer" style="background-color: #761c19">
+<footer class="footer">
     <div class="container">
         <div class="row">
             <div class="col-sm-4">
@@ -212,10 +212,41 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 </footer>
 <!-- end footer -->
 
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script> 
-    <script type="text/javascript" src="{% static 'js/games_json_caller.js' %}"></script>
 
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
+    <script>
+        var game_table_html = " "
+                    $.ajax({
+                        type: 'GET',
+                        url: 'http://localhost:8000/games/games_json/',
+                        data: { get_param: 'value' },
+                        dataType: 'json',
+                        success: function (data) {
+                                var json = data;
+
+                        $.each(json,function (i,item){
+                            game_table_html +=  "<li class='subitem1'><a href= " + json[i].game_name.toLowerCase() + ".html>" + json[i].game_name +"</a></li>"
+
+                        });
+                        $('#oyunlar').append(game_table_html)
+                }
+        });
+        function validateForm(){
+		    var name = document.forms["regForm"]["name"].value;
+		    var surname = document.forms["regForm"]["surname"].value;
+		    var username = document.forms["regForm"]["username"].value;
+		    var email = document.forms["regForm"]["email"].value;
+		    var password = document.forms["regForm"]["password"].value;
+
+		    var re = "^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@$!%*#?&])[A-Za-z\d$@$!%*#?&]{8,}$";
+
+		    if (username == "" && surname == "" && username == "" && email == "" && (password == "" || re.test(password))){
+		        alert("All of the fields must be filled and password should be Minimum eight characters, at least one letter, one number and one special character !!");
+		        return false;
+			}
+		}
+    </script>
 
 </body>
 </html>
