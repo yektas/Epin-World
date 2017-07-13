@@ -17,5 +17,7 @@ urlpatterns = [
     url(r'^company/$', views.companylist, name='company'),
     url(r'^companyy/$', views.company, name='companyy'),
     url(r'^ordertable/$', views.ordertable, name='ordertable'),
+    url(r'^create_Company/$', views.create_Company, name='create_Company'),
+
     #url(r'^loggedin/$', views.loggedin, name='loggedin'),
 ]
