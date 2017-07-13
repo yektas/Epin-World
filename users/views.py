@@ -37,10 +37,10 @@ def index(request):
 
 
 def register(request):
+
     if request.method == "POST":
         user_info = request.POST
         instance = EventClass(user_info)
-
         if instance.register_event() is False:
             # Registration Successful HTML oluşturulacak.
             return HttpResponse("<h1>Registration Failed</h1>")
@@ -48,10 +48,12 @@ def register(request):
 
 
 def profile(request):
-    user_content = {'username': request.session['username'],
-                    'password': request.session['password'],
-                    }
-    return render(request, "profile.html", user_content)
+
+    instance = EventClass(request)
+    user_info = instance.find_user(request.session['username'])
+    if user_info is not False:
+        user = user_info
+    return render(request, "profile.html", {'user': user})
 
 
 def oyunekle(request):
@@ -82,7 +84,7 @@ def logout(request):
         request.session.flush()
     except KeyError:
         pass
-    return HttpResponse("You are logged out")
+    return render(request, "logout.html")
 
 
 def login_success(request):
@@ -103,3 +105,9 @@ def user_list(request):
     instance = EventClass(request)
     users = instance.list_users()
     return render(request, "userslist.html", {'users': users})
+
+def delete_user(request):
+    request.POST.get()
+    instance = EventClass(request)
+    instance.delete_user()
+    return redirect("users:user_list")

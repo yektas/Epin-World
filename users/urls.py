@@ -14,6 +14,7 @@ urlpatterns = [
     url(r'^oyunekle/$', views.oyunekle, name='oyunekle'),
     url(r'^oyunsil/$', views.oyunsil, name='oyunsil'),
     url(r'^userslist/$', views.user_list, name='user_list'),
+    url(r'^deleteuser/$', views.delete_user, name='delete_user'),
     url(r'^company/$', views.companylist, name='company'),
     url(r'^companyy/$', views.company, name='companyy'),
     url(r'^ordertable/$', views.ordertable, name='ordertable'),

@@ -4,23 +4,21 @@ class EventClass():
 
     def __init__(self, request_object):
         self.request_object = request_object
+        self.cursor = connection.cursor()
 
     def login_event(self):
         """ Checks if the username and password matches in the database
             Returns username as a dictionary
             """
-        cursor = connection.cursor()
         t1 = self.request_object['username']
         t2 = self.request_object['password']
-        cursor.execute("SELECT username FROM users WHERE username='{}' AND password='{}'".format(t1, str(t2)))
-        user = self.dictfetchall(cursor)
-        cursor.close()
+        self.cursor.execute("SELECT username FROM users WHERE username='{}' AND password='{}'".format(t1, str(t2)))
+        user = self.dictfetchall()
+        self.cursor.close()
         return user
 
     def register_event(self):
         """ User registration """
-        cursor = connection.cursor()
-
         t1 = self.request_object['username']
         t2 = self.request_object['email']
         t3 = self.request_object['password']
@@ -29,24 +27,22 @@ class EventClass():
         full_name = t4 + " " + t5
 
         if self.check_user() is False:
-            cursor.execute("INSERT INTO users (username, email, password, full_name, status_id, admin_id)"
+            self.cursor.execute("INSERT INTO users (username, email, password, full_name, status_id, admin_id)"
                            "VALUES ('{}', '{}', '{}', '{}', '{}', '{}')".format(t1, t2, str(t3),full_name, 1, 2))
-            temp = cursor.fetchall()
-            cursor.execute("COMMIT;")
-            cursor.close()
+            self.cursor.fetchall()
+            self.cursor.execute("COMMIT;")
+            self.cursor.close()
         else:
             return False
-
 
     def check_user(self):
         """ Check whether the corresponding user exists or not
             If user exists returns True, if not returns False """
-        cursor = connection.cursor()
         t1 = self.request_object['username']
         t2 = self.request_object['email']
 
-        cursor.execute("SELECT username FROM users WHERE username='{}' or email='{}'".format(t1, str(t2)))
-        user = self.dictfetchall(cursor)
+        self.cursor.execute("SELECT username FROM users WHERE username='{}' or email='{}'".format(t1, str(t2)))
+        user = self.dictfetchall()
         if len(user) <= 0:
             return False
         else:
@@ -54,19 +50,18 @@ class EventClass():
 
     def create_company(self):
 
-        cursor = connection.cursor()
         cname = self.request_object['cname']
         if self.check_company() is False:
-            cursor.execute("INSERT INTO company (name) VALUES ( '{}' )".format(str(cname)))
-            cursor.execute("COMMIT;")
-            cursor.close()
+            self.cursor.execute("INSERT INTO company (name) VALUES ( '{}' )".format(str(cname)))
+            self.cursor.execute("COMMIT;")
+            self.cursor.close()
 
     def check_company(self):
 
-        cursor = connection.cursor()
         cname = self.request_object['cname']
-        cursor.execute("SELECT name FROM company WHERE name='{}' ".format(cname))
-        company = self.dictfetchall(cursor)
+        self.cursor.execute("SELECT name FROM company WHERE name='{}' ".format(cname))
+        company = self.dictfetchall()
+        self.cursor.close()
         if len(company) <= 0:
             return False
         else:
@@ -74,15 +69,28 @@ class EventClass():
 
     def list_users(self):
 
-        cursor = connection.cursor()
-        cursor.execute("SELECT username, email, full_name, status_id FROM users")
-        users = self.dictfetchall(cursor)
+        self.cursor.execute("SELECT username, email, full_name, status_id FROM users")
+        users = self.dictfetchall()
+        self.cursor.close()
         return users
 
+    def delete_user(self, username):
+        if self.check_user() is False:
+            self.cursor.execute("DELETE FROM users WHERE username= '{}' ".format(username))
+            self.cursor.close()
 
+    def find_user(self, username):
 
-    def dictfetchall(self, cursor):
+        self.cursor.execute("SELECT email, full_name FROM users WHERE username='{}'".format(username))
+        user = self.dictfetchall()
+        self.cursor.close()
+        if len(user) <= 0:
+            return False
+        else:
+            return user
+
+    def dictfetchall(self):
         "Returns all rows from a cursor as a dict"
-        desc = cursor.description
+        desc = self.cursor.description
         return [dict(zip([col[0] for col in desc], row))
-                for row in cursor.fetchall()]
+                for row in self.cursor.fetchall()]

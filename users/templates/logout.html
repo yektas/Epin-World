@@ -1,0 +1,9 @@
+<head>
+    {% extends 'base.html' %}
+    {% load staticfiles %}
+    {% block title%}<title>Çıkış</title>{% endblock %}
+</head>
+{% block content %}
+    {% csrf_token %}
+    <h3>Çıkış Yaptınız Aferin size.</h3>
+{% endblock %}

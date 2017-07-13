@@ -19,10 +19,12 @@
             <div class="col-md-5  admin-content" id="profile">
                 <div class="panel panel-info" style="margin: 1em;">
                     <div class="panel-heading">
-                        <h3 class="panel-title">Ad</h3>
+                        <h3 class="panel-title">Kullanıcı Adı</h3>
                     </div>
                     <div class="panel-body">
-                        {{ user_content }}
+                        {% for item in user %}
+                        {{ item.full_name }}
+
                     </div>
                 </div>
                 <div class="panel panel-info" style="margin: 1em;">
@@ -30,7 +32,8 @@
                         <h3 class="panel-title">Email</h3>
                     </div>
                     <div class="panel-body">
-                        ashishpatel0720@gmail.com
+                        {{ item.email }}
+                        {% endfor %}
                     </div>
                 </div>
             </div>
@@ -107,7 +110,7 @@
                         <h3 class="panel-title">Çıkış Yap</h3>
                     </div>
                     <div class="panel-body">
-                        Çıkış yapmak istediğize emin misiniz?  
+                        Çıkış yapmak istediğinize emin misiniz?  
                         <a  href="#" class="label label-danger"
                             onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
@@ -115,7 +118,8 @@
                         </a>    
                         <a href="/account" class="label label-success"> <span >  Hayır   </span></a>
                     </div>
-                    <form id="logout-form" action="#" method="POST" style="display: none;">
+                    <form id="logout-form" action="{% url 'users:logout' %}" method="POST">
+                        {% csrf_token %}
                     </form>
                 </div>
 <script type="text/javascript">
