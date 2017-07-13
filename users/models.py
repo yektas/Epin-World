@@ -28,7 +28,7 @@ class EventClass():
         t5 = self.request_object['surname']
         full_name = t4 + " " + t5
 
-        if self.is_user_exists() is False:
+        if self.check_user() is False:
             cursor.execute("INSERT INTO users (username, email, password, full_name, status_id, admin_id)"
                            "VALUES ('{}', '{}', '{}', '{}', '{}', '{}')".format(t1, t2, str(t3),full_name, 1, 2))
             temp = cursor.fetchall()
@@ -38,7 +38,7 @@ class EventClass():
             return False
 
 
-    def is_user_exists(self):
+    def check_user(self):
         """ Check whether the corresponding user exists or not
             If user exists returns True, if not returns False """
         cursor = connection.cursor()
@@ -52,20 +52,16 @@ class EventClass():
         else:
             return True
 
+    def create_company(self):
 
-    def add_game(self):
-        cursor = connection.cursor()
-
-
-    def create_model(self):
         cursor = connection.cursor()
         cname = self.request_object['cname']
-        if self.control_cName() is False:
+        if self.check_company() is False:
             cursor.execute("INSERT INTO company (name) VALUES ( '{}' )".format(str(cname)))
             cursor.execute("COMMIT;")
             cursor.close()
 
-    def control_cName(self):
+    def check_company(self):
 
         cursor = connection.cursor()
         cname = self.request_object['cname']
@@ -75,6 +71,15 @@ class EventClass():
             return False
         else:
             return True
+
+    def list_users(self):
+
+        cursor = connection.cursor()
+        cursor.execute("SELECT username, email, full_name, status_id FROM users")
+        users = self.dictfetchall(cursor)
+        return users
+
+
 
     def dictfetchall(self, cursor):
         "Returns all rows from a cursor as a dict"

@@ -61,11 +61,6 @@ def oyunekle(request):
 def oyunsil(request):
     return render(request, "oyunsil.html")
 
-
-def userslist(request):
-    return render(request, "userslist.html")
-
-
 def companylist(request):
     return render(request, "companylist.html")
 
@@ -96,15 +91,15 @@ def login_success(request):
 
 def create_company(request):
     if request.method == "POST":
-        try:
-            name = request.POST.get('cname', "")
-            comp_info = request.POST
-            instance = EventClass(comp_info)
-        except:
-            raise "Err"
-
-        instance.create_model()
-
+        name = request.POST.get('cname', "")
+        comp_info = request.POST
+        instance = EventClass(comp_info)
+        instance.create_company()
         return HttpResponse("<h1>Creating Successful!</h1>")
 
-    return render(request , "company.html")
+    return render(request, "company.html")
+
+def user_list(request):
+    instance = EventClass(request)
+    users = instance.list_users()
+    return render(request, "userslist.html", {'users': users})
