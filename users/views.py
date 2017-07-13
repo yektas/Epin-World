@@ -48,13 +48,11 @@ def register(request):
 
 
 def profile(request):
-
     instance = EventClass(request)
     user_info = instance.find_user(request.session['username'])
     if user_info is not False:
         user = user_info
     return render(request, "profile.html", {'user': user})
-
 
 def oyunekle(request):
     return render(request, "ekle.html")
