@@ -31,6 +31,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
     <!-- this is default skin you can replace that with: dark.css, yellow.css, red.css ect -->
     <link id="pagestyle" rel="stylesheet" type="text/css" href="{% static 'css/default.css' %}"/>
+
 </head>
 
 <div class="header">
@@ -103,14 +104,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                                              src="{% static 'images/arrow1.png' %}"
                                                              alt=""/>
                         </a>
-                            <ul class="cute">
+                            <ul class="cute" id="oyunlar">
                                 <li class="subitem1"><a href="list">Steam Cüzdan Kodu </a></li>
-                                <li class="subitem2"><a href="{% url 'games:detail' %}">League of legends </a></li>
-                                <li class="subitem3"><a href="product.html">WolfTeam </a></li>
-                                <li class="subitem4"><a href="product.html">Metin2 </a></li>
-                                <li class="subitem5"><a href="product.html">World of WarCraft </a></li>
-                                <li class="subitem6"><a href="product.html">PointBlank</a></li>
-                                <li class="subitem7"><a href="product.html">DOTA 2 </a></li>
                             </ul>
                         </li>
                         <li class="item2"><a href="#">Mobil <img class="arrow-img "
@@ -216,6 +211,30 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     </div><!-- end container -->
 </footer>
 <!-- end footer -->
+
+
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
+    <script>
+        var game_table_html = " "
+                    $.ajax({
+                        type: 'GET',
+                        url: 'http://localhost:8000/games/games_json/',
+                        data: { get_param: 'value' },
+                        dataType: 'json',
+                        success: function (data) {
+                                var json = data;
+
+                        $.each(json,function (i,item){
+                            game_table_html +=  "<li class='subitem1'><a href= " + json[i].game_name.toLowerCase() + ".html>" + json[i].game_name +"</a></li>"
+
+                        });
+                        $('#oyunlar').append(game_table_html)
+
+                }
+        });
+
+    </script>
 
 </body>
 </html>
