@@ -3,28 +3,8 @@
     {% extends 'admin.html' %}
     {% load staticfiles %}
     {% block title%}<title>Giriş</title>{% endblock %}
-    <script>
-        $(document).ready(function(){
+      <script type="text/javascript" src="{% static 'js/tool_tip.js' %}"></script>
 
-          $("#mytable #checkall").click(function () {
-                $("#mytable input[type=checkbox]").each(function () {
-                    $(this).prop("checked", true);
-               });
-
-            } else {
-                $("#mytable input[type=checkbox]").each(function () {
-                    $(this).prop("checked", false);
-              });
-            }
-        });
-
-        $("[data-toggle=tooltip]").tooltip();
-      });
-        
-
-
-        
-    </script>
 
 
 
@@ -93,26 +73,6 @@
 
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
-<script>
-var game_table_html = " "
-                    $.ajax({
-                        type: 'GET',
-                        url: 'http://localhost:8000/games/games_json/',
-                        data: { get_param: 'value' },
-                        dataType: 'json',
-                        success: function (data) {
-                                var json = data;
-
-                              
-                        $.each(json,function(i,item){
-                            game_table_html +=  "<tr><td>" + json[i].game_name +"</td><td>"+ json[i].game_money_price + "</td></tr>"
-                        
-                        });
-                        $('#games').append(game_table_html)                        
-                        
-                }
-        });
-
-</script>
+      <script type="text/javascript" src="{% static 'js/table_filler.js' %}"></script>
 
 {% endblock %}

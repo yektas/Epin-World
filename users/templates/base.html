@@ -212,29 +212,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 </footer>
 <!-- end footer -->
 
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script> 
+    <script type="text/javascript" src="{% static 'js/games_json_caller.js' %}"></script>
 
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
-    <script>
-        var game_table_html = " "
-                    $.ajax({
-                        type: 'GET',
-                        url: 'http://localhost:8000/games/games_json/',
-                        data: { get_param: 'value' },
-                        dataType: 'json',
-                        success: function (data) {
-                                var json = data;
-
-                        $.each(json,function (i,item){
-                            game_table_html +=  "<li class='subitem1'><a href= " + json[i].game_name.toLowerCase() + ".html>" + json[i].game_name +"</a></li>"
-
-                        });
-                        $('#oyunlar').append(game_table_html)
-
-                }
-        });
-
-    </script>
 
 </body>
 </html>
