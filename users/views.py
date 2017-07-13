@@ -100,3 +100,19 @@ def userlist(request):
     instance = EventClass(request)
     users = instance.get_users()
     return render(request, "userlist.html", {"users": users})
+
+
+def create_Company(request):
+    if request.method == "POST":
+        try:
+            name = request.POST.get('name', "")
+            comp_info = request.POST
+            instance = EventClass(comp_info)
+        except:
+            raise "Err"
+
+        instance.CreateModel(name)
+
+        return HttpResponse("<h1>Creating Successful!</h1>")
+
+    return render(request , "company.html")
