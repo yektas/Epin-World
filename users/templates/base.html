@@ -72,18 +72,20 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                 <div class="clearfix"></div>
             </div>
             <div class="header-bottom-right">
-                {% if not user.is_admin %}
+                {% if request.session.is_logged %}
+                    {% if request.session.is_admin %}
                 <div class="account"><a href="{% url 'users:adminview' %}"><span> </span>Admin</a></div>
-                {% else %}
+                    {% else %}
                 <div class="account"><a href="{% url 'users:profile' %}"><span> </span>Hesabım</a></div>
-                {% endif %}
 
+                    {% endif %}
+                {% else %}
                 <ul class="login">
-
                     <li><a href="{% url 'users:register' %}"><span> </span>Üye Ol</a></li>
                     |
                     <li><a href="{% url 'users:login' %}">Giriş</a></li>
                 </ul>
+                {% endif %}
                 <div class="cart"><a href="checkout"><span> </span>Sepet</a></div>
                 <div class="clearfix"></div>
             </div>
