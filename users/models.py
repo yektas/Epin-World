@@ -109,4 +109,3 @@ class EventClass():
     def game_insert(self,game_name,game_money_price,genre,platform):
         self.cursor.execute("insert into game(name,price,genre_id,company_id,content,platform_id) values('{}',{},1,13,'EhisteGame',1)".format(game_name,game_money_price))
         self.cursor.execute("COMMIT")
-        self.cursor.close()
