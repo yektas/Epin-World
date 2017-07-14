@@ -7,6 +7,10 @@ import shutil
 
 
 def login(request):
+    """ Login view: if the user is logged redirects to the index,
+    if the user is not logged shows login page """
+    ''' Sercan : 11.07.2017 '''
+
     if 'is_logged' not in request.session:
         return render(request, "login.html")
     else:
@@ -18,6 +22,12 @@ def login(request):
 
 
 def auth_login(request):
+    """ Login Authentication: gets the user's username and password
+      from the html form with POST method and checks the database,
+      if user exists, username, password and is_logged variables are
+      passed to the session. Then redirects to the index page.
+      if user does not exits reloads the login page """
+    ''' Sercan : 11.07.2017 '''
     if request.method == "POST":
         username = request.POST.get('username', '')
         password = request.POST.get('password', '')
@@ -44,6 +54,11 @@ def index(request):
 
 
 def register(request):
+    """ Registration of the user: gets the user's credentials
+      from the html form with POST method and checks the database,
+      if user already exists, displays warning message
+      if user does not exits and registration is successfull, display ok message """
+    ''' Sercan : 12.07.2017 '''
 
     if request.method == "POST":
         user_info = request.POST
@@ -51,10 +66,15 @@ def register(request):
         if instance.register_event() is False:
             # Registration Failed HTML oluşturulacak.
             return HttpResponse("<h1>Registration Failed</h1>")
+        else:
+            return HttpResponse("<h1>Registration Successfull</h1>")
     return render(request, "register.html")
 
 
 def profile(request):
+    """ User profile page: gets the username from the session and
+     passes the user information to profile.html to show in html """
+    ''' Sercan : 13.07.2017 '''
     instance = EventClass(request)
     user_info = instance.find_user(request.session['username'])
     if user_info is not False:
@@ -120,15 +140,14 @@ def adminview(request):
 
 
 def logout(request):
+    """ Logs outs the user by deleting session information
+        and renders logout.html """
+    ''' Sercan : 13.07.2017 '''
     try:
         request.session.flush()
     except KeyError:
         pass
     return render(request, "logout.html")
-
-
-def login_success(request):
-    return HttpResponse("Registration successful!")
 
 
 def create_company(request):
@@ -143,13 +162,16 @@ def create_company(request):
 
 
 def user_list(request):
-
+    """ Lists all users in admin panel """
+    ''' Sercan : 13.07.2017 '''
     instance = EventClass(request)
     users = instance.list_users()
     return render(request, "userslist.html", {'users': users})
 
 
 def delete_user(request):
+    """ Deletes user """
+    ''' Sercan : 13.07.2017 '''
     request.POST.get()
     instance = EventClass(request)
     instance.delete_user()
