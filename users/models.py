@@ -94,3 +94,14 @@ class EventClass():
         desc = self.cursor.description
         return [dict(zip([col[0] for col in desc], row))
                 for row in self.cursor.fetchall()]
+
+
+
+    def get_metadata_of_game(self,game_name):
+        self.cursor.execute("SELECT * FROM game WHERE game_name = {}").format(game_name)
+        meta_data = self.cursor.fetchall()
+        meta_data_json = []
+        for i in meta_data:
+            meta_data_json.append({'game_name':'{}'.format(i[1]),'game_money_price': '{}'.format(i[2]),'game_content': format(i[9])})
+
+        return meta_data_json

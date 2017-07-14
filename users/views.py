@@ -55,21 +55,14 @@ def profile(request):
         user = user_info
     return render(request, "profile.html", {'user': user})
 
-def create_html(game_name):
-    file_html = open("{}.html".format(game_name.lower()),'w+')
-    shutil.copy2("{}.html".format(game_name.lower()).fo, 'templates/products')
 
 
-    pass
+def detail_of_game(request,game_name):
+    instance = EventClass(request)
+    metada_data = instance.get_metadata_of_game()
 
-def oyunekle(request):
-    game_name = request.POST.get('game_name')
+    return render(request,"detail.html",{'game_money_price':metada_data['game_money_price'],'game_name':metada_data['game_name'],'content':metada_data['content']})
 
-    create_html(game_name)
-    pass
-
-
-    return render(request, "ekle.html")
 
 
 def oyunsil(request):
