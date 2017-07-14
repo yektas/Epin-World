@@ -10,6 +10,7 @@ class EventClass():
 
     def __del__(self):
         self.cursor.close()
+        self.cursor.execute("COMMIT;")
 
     def login_event(self):
         """ Checks if the username and password matches in the database
@@ -35,8 +36,6 @@ class EventClass():
         if self.check_user() is False:
             self.cursor.execute("INSERT INTO users (username, email, password, full_name, status_id, admin_id)"
                            "VALUES ('{}', '{}', '{}', '{}', '{}', '{}')".format(t1, t2, str(t3),full_name, 1, 2))
-            self.cursor.fetchall()
-            self.cursor.execute("COMMIT;")
         else:
             return False
 
@@ -59,7 +58,6 @@ class EventClass():
         cname = self.request_object['cname']
         if self.check_company() is False:
             self.cursor.execute("INSERT INTO company (name) VALUES ( '{}' )".format(str(cname)))
-            self.cursor.execute("COMMIT;")
 
     def check_company(self):
 
@@ -83,7 +81,6 @@ class EventClass():
         ''' Sercan : 13.07.2017 '''
         if self.check_user() is False:
             self.cursor.execute("DELETE FROM users WHERE username= '{}' ".format(username))
-            self.cursor.close()
 
     def find_user(self, username):
         """ Gets the user for given username and returns user
@@ -121,4 +118,3 @@ class EventClass():
 
     def game_insert(self,game_name,game_money_price,genre,platform):
         self.cursor.execute("insert into game(name,price,genre_id,company_id,content,platform_id) values('{}',{},1,13,'EhisteGame',1)".format(game_name,game_money_price))
-        self.cursor.execute("COMMIT")

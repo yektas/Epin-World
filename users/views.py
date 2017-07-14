@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect,render_to_response
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .models import EventClass
 import shutil
@@ -43,7 +43,7 @@ def auth_login(request):
             request.session['password'] = password
             request.session['is_logged'] = True
 
-            return render(request, "index.html")
+            return redirect("users:index")
 
         else:
             return redirect("users:login")
