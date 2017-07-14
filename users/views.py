@@ -72,6 +72,8 @@ def register(request):
     return render(request, "register.html")
 
 
+<<<<<<< HEAD
+=======
 def profile(request):
     """ User profile page: gets the username from the session and
      passes the user information to profile.html to show in html """
@@ -81,7 +83,7 @@ def profile(request):
     if user_info is not False:
         user = user_info
     return render(request, "profile.html", {'user': user})
-
+>>>>>>> 2688ee347e8d8606d51e7f6d3dc4ed8b01084172
 
 
 
@@ -93,10 +95,22 @@ def generate_detail_html(request,game_name):
     r = requests.get('http://localhost:8000/games/games_json/')
     games_data = json.loads(r.text)
 
+<<<<<<< HEAD
+=======
+# WoodProgrammer
+# #Bu method detail.html'i url'den gelen parametreye göre
+#generate etmektedir.
+#14/07/17 Cuma.
+def generate_detail_html(request,game_name):
+    r = requests.get('http://localhost:8000/games/games_json/')
+    games_data = json.loads(r.text)
+
+>>>>>>> 2688ee347e8d8606d51e7f6d3dc4ed8b01084172
     detail_html_data = {}
 
     k = 0
     for i in  games_data:
+<<<<<<< HEAD
 
         if str(games_data[k]['game_name']) == '{}'.format(game_name):
             print(k)
@@ -111,10 +125,29 @@ def generate_detail_html(request,game_name):
         k += 1
 
     return  render(request, 'detail.html',{'game_data':detail_html_data})
+=======
+
+        if str(games_data[k]['game_name']) == '{}'.format(game_name):
+            print(k)
+            detail_html_data = games_data[k]
+
+            break
+
+        else:
+
+            print(games_data[0]['game_name'])
+
+        k += 1
+>>>>>>> 2688ee347e8d8606d51e7f6d3dc4ed8b01084172
+
+    return  render(request, 'detail.html',{'game_data':detail_html_data})
 
 
 
+<<<<<<< HEAD
+=======
 
+>>>>>>> 2688ee347e8d8606d51e7f6d3dc4ed8b01084172
 def profile(request):
     instance = EventClass(request)
     user_info = instance.find_user(request.session['username'])
