@@ -11,7 +11,7 @@ urlpatterns = [
     url(r'^auth_login/$', views.auth_login, name='auth_login'),
     url(r'^logout/$', views.logout, name='logout'),
     url(r'^adminn/$', views.adminview, name='adminview'),
-    url(r'^oyunekle/$', views.oyunekle, name='oyunekle'),
+    url(r'^oyunekle/$', views.oyunekle_first, name='oyunekle'),
     url(r'^oyunsil/$', views.oyunsil, name='oyunsil'),
     url(r'^userslist/$', views.user_list, name='user_list'),
     url(r'^deleteuser/$', views.delete_user, name='delete_user'),
@@ -19,6 +19,8 @@ urlpatterns = [
     url(r'^companyy/$', views.company, name='companyy'),
     url(r'^ordertable/$', views.ordertable, name='ordertable'),
     url(r'^create_company/$', views.create_company, name='create_company'),
+    url(r'^oyunekle_finish/$', views.oyunekle_finish,name="oyunekle_finish"),
+    url(r'^game_detail/(?P<game_name>\w+)/$', views.generate_detail_html),
 
     #url(r'^loggedin/$', views.loggedin, name='loggedin'),
 ]
