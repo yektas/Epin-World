@@ -19,7 +19,8 @@ class EventClass():
         return user
 
     def register_event(self):
-        """ User registration """
+        """ User registration: if user already exists in the database
+         It return False, otherwise does the registration """
         t1 = self.request_object['username']
         t2 = self.request_object['email']
         t3 = self.request_object['password']
@@ -49,7 +50,7 @@ class EventClass():
             return True
 
     def create_company(self):
-
+        """ Creates company if it doesn't exist in the database"""
         cname = self.request_object['cname']
         if self.check_company() is False:
             self.cursor.execute("INSERT INTO company (name) VALUES ( '{}' )".format(str(cname)))

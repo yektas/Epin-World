@@ -27,7 +27,6 @@ def auth_login(request):
         instance.update_lastlogin(username)
         user = instance.login_event()
 
-
         if len(user) > 0:
             request.session['username'] = username
             request.session['password'] = password
@@ -50,7 +49,7 @@ def register(request):
         user_info = request.POST
         instance = EventClass(user_info)
         if instance.register_event() is False:
-            # Registration Successful HTML oluşturulacak.
+            # Registration Failed HTML oluşturulacak.
             return HttpResponse("<h1>Registration Failed</h1>")
     return render(request, "register.html")
 
