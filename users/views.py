@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect,render_to_response
 from django.http import HttpResponse
 from .models import EventClass
 import shutil
@@ -62,19 +62,42 @@ def profile(request):
     return render(request, "profile.html", {'user': user})
 
 
-def create_html(game_name):
-    file_html = open("{}.html".format(game_name.lower()),'w+')
-    shutil.copy2("{}.html".format(game_name.lower()).fo, 'templates/products')
-    pass
+
+
+def detail_of_game(request,product_name):
+    instance = EventClass(request)
+    metada_data = instance.get_metadata_of_game(product_name)
+    return render_to_response("detail.html",{'game_money_price':metada_data['game_money_price'],'game_name':metada_data['game_name'],'content':metada_data['content']})
+
+
+
+
+
+
+
+#nce = EventClass(request)
+  #
+   # return render_to_response("detail.html",{'game_money_price':metada_data['game_money_price'],'game_name':metada_data['game_name'],'content':metada_data['content']})
+
+def oyunekle_finish(request):
+    game_name = request.POST.get('game_name','')
+    game_money_price = request.POST.get('game_money_price','')
+    game_genre = request.POST.get('game_name','')
+    game_platform = request.POST.get('platform','')
+
+    instance = EventClass(request)
+    instance.game_insert(game_name, game_money_price, game_genre, game_platform)
+
+    return render(request,"index.html")
 
 
 def oyunekle(request):
     game_name = request.POST.get('game_name')
+    game_money_count  = request.POST.get('game_money_count')
 
-    create_html(game_name)
-    pass
-    return render(request, "ekle.html")
 
+def oyunekle_first(request):
+    return render(request,"oyunekle.html")
 
 def oyunsil(request):
     return render(request, "oyunsil.html")
