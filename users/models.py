@@ -1,20 +1,21 @@
 from django.db import connection
-
+import datetime
 class EventClass():
 
     def __init__(self, request_object):
         self.request_object = request_object
         self.cursor = connection.cursor()
 
+    def __del__(self):
+        self.cursor.close()
+
     def login_event(self):
         """ Checks if the username and password matches in the database
-            Returns username as a dictionary
-            """
+            Returns username as a dictionary """
         t1 = self.request_object['username']
         t2 = self.request_object['password']
         self.cursor.execute("SELECT username FROM users WHERE username='{}' AND password='{}'".format(t1, str(t2)))
         user = self.dictfetchall()
-        self.cursor.close()
         return user
 
     def register_event(self):
@@ -31,7 +32,6 @@ class EventClass():
                            "VALUES ('{}', '{}', '{}', '{}', '{}', '{}')".format(t1, t2, str(t3),full_name, 1, 2))
             self.cursor.fetchall()
             self.cursor.execute("COMMIT;")
-            self.cursor.close()
         else:
             return False
 
@@ -54,14 +54,12 @@ class EventClass():
         if self.check_company() is False:
             self.cursor.execute("INSERT INTO company (name) VALUES ( '{}' )".format(str(cname)))
             self.cursor.execute("COMMIT;")
-            self.cursor.close()
 
     def check_company(self):
 
         cname = self.request_object['cname']
         self.cursor.execute("SELECT name FROM company WHERE name='{}' ".format(cname))
         company = self.dictfetchall()
-        self.cursor.close()
         if len(company) <= 0:
             return False
         else:
@@ -71,7 +69,6 @@ class EventClass():
 
         self.cursor.execute("SELECT username, email, full_name, status_id FROM users")
         users = self.dictfetchall()
-        self.cursor.close()
         return users
 
     def delete_user(self, username):
@@ -83,14 +80,18 @@ class EventClass():
 
         self.cursor.execute("SELECT email, full_name FROM users WHERE username='{}'".format(username))
         user = self.dictfetchall()
-        self.cursor.close()
         if len(user) <= 0:
             return False
         else:
             return user
 
+    def update_lastlogin(self, username):
+        now = datetime.datetime.now()
+        self.cursor.execute("UPDATE users SET lastlogin='{}' WHERE username='{}' ".format(now, username))
+
+
     def dictfetchall(self):
-        "Returns all rows from a cursor as a dict"
+        """ Returns all rows from a cursor as a dict """
         desc = self.cursor.description
         return [dict(zip([col[0] for col in desc], row))
                 for row in self.cursor.fetchall()]

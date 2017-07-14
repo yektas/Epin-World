@@ -5,11 +5,16 @@ import shutil
 
 ####AUTHENTICATION METHODS
 
+
 def login(request):
     if 'is_logged' not in request.session:
         return render(request, "login.html")
     else:
-        return HttpResponse("<h1>You are already logged in</h1>")
+        username = request.session['username']
+        if request.session['is_logged'] == False:
+            instance = EventClass(request)
+            instance.update_lastlogin(username)
+        return redirect("users:index")
 
 
 def auth_login(request):
@@ -19,7 +24,9 @@ def auth_login(request):
         user_info = request.POST
 
         instance = EventClass(user_info)
+        instance.update_lastlogin(username)
         user = instance.login_event()
+
 
         if len(user) > 0:
             request.session['username'] = username
@@ -55,25 +62,24 @@ def profile(request):
         user = user_info
     return render(request, "profile.html", {'user': user})
 
+
 def create_html(game_name):
     file_html = open("{}.html".format(game_name.lower()),'w+')
     shutil.copy2("{}.html".format(game_name.lower()).fo, 'templates/products')
-
-
     pass
+
 
 def oyunekle(request):
     game_name = request.POST.get('game_name')
 
     create_html(game_name)
     pass
-
-
     return render(request, "ekle.html")
 
 
 def oyunsil(request):
     return render(request, "oyunsil.html")
+
 
 def companylist(request):
     return render(request, "companylist.html")
@@ -113,10 +119,13 @@ def create_company(request):
 
     return render(request, "company.html")
 
+
 def user_list(request):
+
     instance = EventClass(request)
     users = instance.list_users()
     return render(request, "userslist.html", {'users': users})
+
 
 def delete_user(request):
     request.POST.get()
