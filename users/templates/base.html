@@ -241,10 +241,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		    var email = document.forms["regForm"]["email"].value;
 		    var password = document.forms["regForm"]["password"].value;
 
-		    var re = "^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@$!%*#?&])[A-Za-z\d$@$!%*#?&]{8,}$";
+		    var re = "^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$";
 
-		    if (username == "" && surname == "" && username == "" && email == "" && (password == "" || re.test(password))){
-		        alert("All of the fields must be filled and password should be Minimum eight characters, at least one letter, one number and one special character !!");
+		    if (username == "" && surname == "" && username == "" && email == "" && password == "" && re.test(password)){
+		        alert("All of the fields must be filled and password should be Minimum eight characters, at least one letter and one number !!");
 		        return false;
 			}
 		}
