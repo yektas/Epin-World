@@ -136,6 +136,7 @@ def ordertable(request):
 
 
 def adminview(request):
+
     return render(request, "admin.html")
 
 
