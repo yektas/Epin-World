@@ -84,6 +84,13 @@ def profile(request):
 
 
 
+# WoodProgrammer
+# #Bu method detail.html'i url'den gelen parametreye göre
+#generate etmektedir.
+#14/07/17 Cuma.
+def generate_detail_html(request,game_name):
+    r = requests.get('http://localhost:8000/games/games_json/')
+    games_data = json.loads(r.text)
 
 # WoodProgrammer
 # #Bu method detail.html'i url'den gelen parametreye göre
@@ -98,6 +105,7 @@ def generate_detail_html(request,game_name):
     k = 0
     for i in  games_data:
 
+
         if str(games_data[k]['game_name']) == '{}'.format(game_name):
             print(k)
             detail_html_data = games_data[k]
@@ -111,7 +119,6 @@ def generate_detail_html(request,game_name):
         k += 1
 
     return  render(request, 'detail.html',{'game_data':detail_html_data})
-
 
 
 
