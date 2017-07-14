@@ -2,7 +2,8 @@ from django.shortcuts import render, redirect,render_to_response
 from django.http import HttpResponse
 from .models import EventClass
 import shutil
-
+import requests
+import json
 ####AUTHENTICATION METHODS
 
 
@@ -84,16 +85,42 @@ def profile(request):
 
 
 
-def detail_of_game(request,product_name):
+# WoodProgrammer
+# #Bu method detail.html'i url'den gelen parametreye göre
+#generate etmektedir.
+#14/07/17 Cuma.
+def generate_detail_html(request,game_name):
+    r = requests.get('http://localhost:8000/games/games_json/')
+    games_data = json.loads(r.text)
+
+    detail_html_data = {}
+
+    k = 0
+    for i in  games_data:
+
+        if str(games_data[k]['game_name']) == '{}'.format(game_name):
+            print(k)
+            detail_html_data = games_data[k]
+
+            break
+
+        else:
+
+            print(games_data[0]['game_name'])
+
+        k += 1
+
+    return  render(request, 'detail.html',{'game_data':detail_html_data})
+
+
+
+
+def profile(request):
     instance = EventClass(request)
-    metada_data = instance.get_metadata_of_game(product_name)
-    return render_to_response("detail.html",{'game_money_price':metada_data['game_money_price'],'game_name':metada_data['game_name'],'content':metada_data['content']})
-
-
-
-
-
-
+    user_info = instance.find_user(request.session['username'])
+    if user_info is not False:
+        user = user_info
+    return render(request, "profile.html", {'user': user})
 
 #nce = EventClass(request)
   #
@@ -108,12 +135,7 @@ def oyunekle_finish(request):
     instance = EventClass(request)
     instance.game_insert(game_name, game_money_price, game_genre, game_platform)
 
-    return render(request,"index.html")
-
-
-def oyunekle(request):
-    game_name = request.POST.get('game_name')
-    game_money_count  = request.POST.get('game_money_count')
+    return generate_detail_html(request,game_name)
 
 
 def oyunekle_first(request):
