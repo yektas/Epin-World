@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .models import EventClass
+import shutil
 
 ####AUTHENTICATION METHODS
 
@@ -54,7 +55,20 @@ def profile(request):
         user = user_info
     return render(request, "profile.html", {'user': user})
 
+def create_html(game_name):
+    file_html = open("{}.html".format(game_name.lower()),'w+')
+    shutil.copy2("{}.html".format(game_name.lower()).fo, 'templates/products')
+
+
+    pass
+
 def oyunekle(request):
+    game_name = request.POST.get('game_name')
+
+    create_html(game_name)
+    pass
+
+
     return render(request, "ekle.html")
 
 
