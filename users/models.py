@@ -18,7 +18,7 @@ class EventClass():
         ''' Sercan : 12.07.2017'''
         t1 = self.request_object['username']
         t2 = self.request_object['password']
-        self.cursor.execute("SELECT username FROM users WHERE username='{}' AND password='{}'".format(t1, str(t2)))
+        self.cursor.execute("SELECT username, admin_id FROM users WHERE username='{}' AND password='{}'".format(t1, str(t2)))
         user = self.dictfetchall()
         return user
 

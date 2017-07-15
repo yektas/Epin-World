@@ -1,10 +1,9 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .models import EventClass
-import shutil
+from users.decorators import is_admin, login_required
 import requests
 import json
-####AUTHENTICATION METHODS
 
 
 def login(request):
@@ -37,7 +36,7 @@ def auth_login(request):
         instance = EventClass(user_info)
         instance.update_lastlogin(username)
         user = instance.login_event()
-
+        request.session['admin_id'] = user[0]['admin_id']
         if len(user) > 0:
             request.session['username'] = username
             request.session['password'] = password
@@ -50,7 +49,6 @@ def auth_login(request):
 
 
 def index(request):
-    c = {}
     return render(request, "index.html")
 
 
@@ -65,13 +63,13 @@ def register(request):
         user_info = request.POST
         instance = EventClass(user_info)
         if instance.register_event() is False:
-            # Registration Failed HTML oluşturulacak.
             return HttpResponse("<h1>Registration Failed</h1>")
         else:
             return HttpResponse("<h1>Registration Successfull</h1>")
     return render(request, "register.html")
 
 
+@login_required
 def profile(request):
     """ User profile page: gets the username from the session and
      passes the user information to profile.html to show in html """
@@ -112,20 +110,7 @@ def generate_detail_html(request,game_name):
 
     return  render(request, 'detail.html',{'game_data':detail_html_data})
 
-
-
-
-def profile(request):
-    instance = EventClass(request)
-    user_info = instance.find_user(request.session['username'])
-    if user_info is not False:
-        user = user_info
-    return render(request, "profile.html", {'user': user})
-
-#nce = EventClass(request)
-  #
-   # return render_to_response("detail.html",{'game_money_price':metada_data['game_money_price'],'game_name':metada_data['game_name'],'content':metada_data['content']})
-
+@is_admin
 def oyunekle_finish(request):
     game_name = request.POST.get('game_name','')
     game_money_price = request.POST.get('game_money_price','')
@@ -137,26 +122,28 @@ def oyunekle_finish(request):
 
     return generate_detail_html(request,game_name)
 
-
+@is_admin
 def oyunekle_first(request):
     return render(request,"oyunekle.html")
 
+@is_admin
 def oyunsil(request):
     return render(request, "oyunsil.html")
 
-
+@is_admin
 def companylist(request):
     return render(request, "companylist.html")
 
-
+@is_admin
 def company(request):
     return render(request, "company.html")
 
-
+@login_required
 def ordertable(request):
     return render(request, "ordertable.html")
 
 
+@is_admin
 def adminview(request):
 
     return render(request, "admin.html")
@@ -172,7 +159,7 @@ def logout(request):
         pass
     return render(request, "logout.html")
 
-
+@is_admin
 def create_company(request):
     if request.method == "POST":
         name = request.POST.get('cname', "")
@@ -183,7 +170,7 @@ def create_company(request):
 
     return render(request, "company.html")
 
-
+@is_admin
 def user_list(request):
     """ Lists all users in admin panel """
     ''' Sercan : 13.07.2017 '''
@@ -191,7 +178,7 @@ def user_list(request):
     users = instance.list_users()
     return render(request, "userslist.html", {'users': users})
 
-
+@is_admin
 def delete_user(request):
     """ Deletes user """
     ''' Sercan : 13.07.2017 '''
