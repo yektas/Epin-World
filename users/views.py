@@ -36,8 +36,9 @@ def auth_login(request):
         instance = EventClass(user_info)
         instance.update_lastlogin(username)
         user = instance.login_event()
-        request.session['admin_id'] = user[0]['admin_id']
+
         if len(user) > 0:
+            request.session['admin_id'] = user[0]['admin_id']
             request.session['username'] = username
             request.session['password'] = password
             request.session['is_logged'] = True
