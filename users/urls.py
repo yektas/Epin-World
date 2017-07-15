@@ -20,5 +20,7 @@ urlpatterns = [
     url(r'^ordertable/$', views.ordertable, name='ordertable'),
     url(r'^create_company/$', views.create_company, name='create_company'),
     url(r'^oyunekle_finish/$', views.oyunekle_finish,name="oyunekle_finish"),
-    url(r'^game_detail/(?P<game_name>\w+)/$', views.generate_detail_html),
+    url(r'^game_detail/(?P<game_name>\w+)$', views.generate_detail_html),
+    url(r'^language_detector/$', views.language_detector,name="language_detector"),
+
 ]

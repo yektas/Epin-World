@@ -5,7 +5,15 @@ from users.decorators import is_admin, login_required
 import requests
 import json
 
-
+def language_detector(request):
+    language = request.GET.get('language',' ')
+    
+    request.session['language'] = language
+    print("asdassdasdasd " +  request.session['language'] )
+    try:
+        return render(request, "{}/index.html".format(request.session['language']))
+    except:
+        return render(request, "tr/index.html".format(request.session['language']))
 def login(request):
     """ Login view: if the user is logged redirects to the index,
     if the user is not logged shows login page """
@@ -38,6 +46,7 @@ def auth_login(request):
         user = instance.login_event()
         request.session['admin_id'] = user[0]['admin_id']
         if len(user) > 0:
+            request.session['admin_id'] = user[0]['admin_id']
             request.session['username'] = username
             request.session['password'] = password
             request.session['is_logged'] = True
@@ -49,7 +58,7 @@ def auth_login(request):
 
 
 def index(request):
-    return render(request, "index.html")
+    return render(request, "{}/index.html".format(request.session['language']))
 
 
 def register(request):
@@ -66,7 +75,7 @@ def register(request):
             return HttpResponse("<h1>Registration Failed</h1>")
         else:
             return HttpResponse("<h1>Registration Successfull</h1>")
-    return render(request, "register.html")
+    return render(request, "{}/register.html".format(request.session['language']))
 
 
 @login_required
@@ -78,7 +87,7 @@ def profile(request):
     user_info = instance.find_user(request.session['username'])
     if user_info is not False:
         user = user_info
-    return render(request, "profile.html", {'user': user})
+    return render(request, "{}/profile.html".format(request.session['language']), {'user': user})
 
 
 
@@ -124,29 +133,28 @@ def oyunekle_finish(request):
 
 @is_admin
 def oyunekle_first(request):
-    return render(request,"oyunekle.html")
+    return render(request,"{}/oyunekle.html".format(request.session['language']))
 
 @is_admin
 def oyunsil(request):
-    return render(request, "oyunsil.html")
+    return render(request, "{}/oyunsil.html".format(request.session['language']))
 
 @is_admin
 def companylist(request):
-    return render(request, "companylist.html")
+    return render(request, "{}/companylist.html".format(request.session['language']))
 
 @is_admin
 def company(request):
-    return render(request, "company.html")
+    return render(request, "{}/company.html".format(request.session['language']))
 
 @login_required
 def ordertable(request):
-    return render(request, "ordertable.html")
+    return render(request, "{}/ordertable.html".format(request.session['language']))
 
 
 @is_admin
 def adminview(request):
-
-    return render(request, "admin.html")
+    return render(request, "{}/admin.html".format(request.session['language']))
 
 
 def logout(request):
@@ -157,7 +165,7 @@ def logout(request):
         request.session.flush()
     except KeyError:
         pass
-    return render(request, "logout.html")
+    return render(request, "{}/logout.html".format(request.session['language']))
 
 @is_admin
 def create_company(request):
@@ -168,7 +176,7 @@ def create_company(request):
         instance.create_company()
         return HttpResponse("<h1>Creating Successful!</h1>")
 
-    return render(request, "company.html")
+    return render(request, "{}/company.html".format(request.session['language']))
 
 @is_admin
 def user_list(request):
@@ -176,7 +184,7 @@ def user_list(request):
     ''' Sercan : 13.07.2017 '''
     instance = EventClass(request)
     users = instance.list_users()
-    return render(request, "userslist.html", {'users': users})
+    return render(request, "{}/userslist.html".format(request.session['language']), {'users': users})
 
 @is_admin
 def delete_user(request):
