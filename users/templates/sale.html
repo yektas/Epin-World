@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="{% url 'sales:addcart' %}" method="post">
+    {% csrf_token %}
+    <select>
+        {% for game in games %}
+        <option value="{{game.name}}" name="{{game.name}}" >{{game.name}}</option>
+        {% endfor %}
+    </select>
+    <input type="text" name="hm">
+    <button type="submit">Gönder</button>
+</form>
+</body>
+</html>
