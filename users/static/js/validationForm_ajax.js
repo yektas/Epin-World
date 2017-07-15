@@ -1,6 +1,7 @@
 /**
  * Created by taha on 14.07.2017.
  */
+//Adds a new game-which is added by the admin-to the navigation bar in the homepage
 var game_table_html = " "
                     $.ajax({
                         type: 'GET',
