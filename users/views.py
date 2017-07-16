@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect,render_to_response
 from django.http import HttpResponse
 from .models import EventClass
 from users.decorators import is_admin, login_required
@@ -10,17 +10,27 @@ def language_detector(request):
     
     request.session['language'] = language
     print("asdassdasdasd " +  request.session['language'] )
+
+    
     try:
-        return render(request, "{}/index.html".format(request.session['language']))
+        response = render_to_response("{}/index.html".format(request.session['language']))
+        response.set_cookie('language','{}'.format(request.session['language']))
+        return response
+
     except:
-        return render(request, "tr/index.html".format(request.session['language']))
+        response = render_to_response("tr/index.html".format(request.session['language']))
+        response.set_cookie('language','{}'.format(request.session['language']))
+        return response
 def login(request):
     """ Login view: if the user is logged redirects to the index,
     if the user is not logged shows login page """
     ''' Sercan : 11.07.2017 '''
 
     if 'is_logged' not in request.session:
-        return render(request, "login.html")
+        try:
+            return render(request, "{}/login.html".format(request.session['language']))
+        except:
+            return render(request, "tr/login.html")
     else:
         username = request.session['username']
         if request.session['is_logged'] == False:
@@ -58,7 +68,7 @@ def auth_login(request):
 
 
 def index(request):
-    return render(request, "{}/index.html".format(request.session['language']))
+    return render(request, "{}/index.html".format(request.COOKIES['language']))
 
 
 def register(request):
@@ -75,7 +85,7 @@ def register(request):
             return HttpResponse("<h1>Registration Failed</h1>")
         else:
             return HttpResponse("<h1>Registration Successfull</h1>")
-    return render(request, "{}/register.html".format(request.session['language']))
+    return render(request, "{}/register.html".format(request.COOKIES['language']))
 
 
 @login_required
@@ -87,7 +97,7 @@ def profile(request):
     user_info = instance.find_user(request.session['username'])
     if user_info is not False:
         user = user_info
-    return render(request, "{}/profile.html".format(request.session['language']), {'user': user})
+    return render(request, "{}/profile.html".format(request.COOKIES['language']), {'user': user})
 
 
 
@@ -133,28 +143,32 @@ def oyunekle_finish(request):
 
 @is_admin
 def oyunekle_first(request):
-    return render(request,"{}/oyunekle.html".format(request.session['language']))
+
+          
+    print(request.COOKIES)
+    return render(request,"{}/oyunekle.html".format(request.COOKIES['language']))
+
 
 @is_admin
 def oyunsil(request):
-    return render(request, "{}/oyunsil.html".format(request.session['language']))
+    return render(request, "{}/oyunsil.html".format(request.COOKIES['language']))
 
 @is_admin
 def companylist(request):
-    return render(request, "{}/companylist.html".format(request.session['language']))
+    return render(request, "{}/companylist.html".format(request.COOKIES['language']))
 
 @is_admin
 def company(request):
-    return render(request, "{}/company.html".format(request.session['language']))
+    return render(request, "{}/company.html".format(request.COOKIES['language']))
 
 @login_required
 def ordertable(request):
-    return render(request, "{}/ordertable.html".format(request.session['language']))
+    return render(request, "{}/ordertable.html".format(request.COOKIES['language']),{'lang_data':request.COOKIES['language']})
 
 
 @is_admin
 def adminview(request):
-    return render(request, "{}/admin.html".format(request.session['language']))
+    return render(request, "{}/admin.html".format(request.COOKIES['language']))
 
 
 def logout(request):
@@ -165,7 +179,7 @@ def logout(request):
         request.session.flush()
     except KeyError:
         pass
-    return render(request, "{}/logout.html".format(request.session['language']))
+    return render(request, "{}/logout.html".format(request.COOKIES['language']))
 
 @is_admin
 def create_company(request):
@@ -176,7 +190,7 @@ def create_company(request):
         instance.create_company()
         return HttpResponse("<h1>Creating Successful!</h1>")
 
-    return render(request, "{}/company.html".format(request.session['language']))
+    return render(request, "{}/company.html".format(request.COOKIES['language']))
 
 @is_admin
 def user_list(request):
@@ -184,7 +198,7 @@ def user_list(request):
     ''' Sercan : 13.07.2017 '''
     instance = EventClass(request)
     users = instance.list_users()
-    return render(request, "{}/userslist.html".format(request.session['language']), {'users': users})
+    return render(request, "{}/userslist.html".format(request.COOKIES['language']), {'users': users})
 
 @is_admin
 def delete_user(request):
