@@ -4,6 +4,10 @@ from .models import EventClass
 from users.decorators import is_admin, login_required, language_assigned
 import requests
 import json
+import logging
+import datetime
+
+logging.basicConfig(filename='debug.log' , level = logging.DEBUG)
 
 def language_detector(request):
     language = request.GET.get('language',' ')
@@ -181,8 +185,10 @@ def logout(request):
     ''' Sercan : 13.07.2017 '''
     try:
         request.session.flush()
+        logging.info('logout had done.'.format(datetime.datetime.now()))
     except KeyError:
         pass
+    logging.ERROR('logout had not done')
     return render(request, "{}/logout.html".format(request.COOKIES['language']))
 
 @language_assigned
@@ -194,7 +200,7 @@ def create_company(request):
         instance = EventClass(comp_info)
         instance.create_company()
         return HttpResponse("<h1>Creating Successful!</h1>")
-
+        logging.info('company created' .format(datetime.datetime.now()))
     return render(request, "{}/company.html".format(request.COOKIES['language']))
 
 @language_assigned
@@ -214,4 +220,8 @@ def delete_user(request):
     request.POST.get()
     instance = EventClass(request)
     instance.delete_user()
+    logging.info('User deleted.'.format(datetime.datetime.now()))
     return redirect("users:user_list")
+
+
+
