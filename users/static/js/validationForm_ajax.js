@@ -3,6 +3,7 @@
  */
 //Adds a new game-which is added by the admin-to the navigation bar in the homepage
 var game_table_html = " "
+var k = 0;
                     $.ajax({
                         type: 'GET',
                         url: 'http://localhost:8000/games/games_json/',
@@ -14,7 +15,14 @@ var game_table_html = " "
                         $.each(json,function (i,item){
                             game_table_html +=  "<li class='subitem1'><a href= " + json[i].game_name.toLowerCase() + ".html>" + json[i].game_name +"</a></li>"
 
+                            k += 1
+                            if(k==2){
+                                
+                            }
+
                         });
+
+                        console.log("asdasd");
                         $('#oyunlar').append(game_table_html)
                 }
         });
