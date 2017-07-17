@@ -28,7 +28,7 @@ def login(request):
 
     if 'is_logged' not in request.session:
         try:
-            return render(request, "{}/login.html".format(request.session['language']))
+            return render(request, "{}/login.html".format(request.COOKIES['language']))
         except:
             return render(request, "tr/login.html")
     else:
