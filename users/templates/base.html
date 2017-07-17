@@ -63,10 +63,23 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                 <div class="logo">
                     <a href="/"><img src="{% static 'images/logoo.jpeg'%}" style="width: 300px; height:100px;" alt=" "/></a>
                 </div>
-                    <div class="search">
-                        <input id="oyunArama" placeholder="Oyun ara..."><span id="oyunArat"></span>
-                        <input type="submit" value="ARA">
+               
+
+                <form action="/users/game_form_search/" class="loginForm" method="GET">
+                                      <div class="search">
+                        <div class="input-group">
+                            <input id="oyunArama" placeholder="Oyun ara..." name="searched_game_name"><span id="oyunArat"></span>
+                            <button type="submit" value="ARA">ARA</button>
+                        </div>
+
                     </div>
+            
+                </form>
+
+
+                  
+
+
                 <div class="clearfix"></div>
             </div>
             <div class="header-bottom-right">
@@ -222,11 +235,6 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
                 }
         });
-
-
-
-
-
 
         
 
