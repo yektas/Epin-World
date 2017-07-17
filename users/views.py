@@ -109,6 +109,7 @@ def profile(request):
 #14/07/17 Cuma.
 @language_assigned
 def generate_detail_html(request,game_name):
+
     r = requests.get('http://localhost:8000/games/games_json/')
     games_data = json.loads(r.text)
 
@@ -129,7 +130,35 @@ def generate_detail_html(request,game_name):
 
         k += 1
 
-    return  render(request, 'detail.html',{'game_data':detail_html_data})
+    return  render(request, 'tr/detail.html',{'game_data':detail_html_data})
+
+def games_detail_form(request):
+
+    r = requests.get('http://localhost:8000/games/games_json/')
+    
+    games_data = json.loads(r.text)
+
+    game_name = request.GET.get('searched_game_name','')
+
+    detail_html_data = {}
+
+    k = 0
+    for i in  games_data:
+
+        if str(games_data[k]['game_name']) == '{}'.format(game_name):
+            print(k)
+            detail_html_data = games_data[k]
+
+            break
+
+        else:
+
+            print(games_data[0]['game_name'])
+
+        k += 1
+
+    return  render(request, 'tr/detail.html',{'game_data':detail_html_data})
+
 
 @language_assigned
 @is_admin
