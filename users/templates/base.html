@@ -78,8 +78,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                 <div class="account"><a href="{% url 'users:adminview' %}"><span> </span>Admin</a></div>
                     {% else %}
                 <div class="account"><a href="{% url 'users:profile' %}"><span> </span>Hesabım</a></div>
-
                     {% endif %}
+                 <span class="glyphicon glyphicon-log-out" style="color:#f97e76; font-size: 1.1em;"><a href="{% url 'users:logout' %}"><span> </span>Çıkış</a></span>
                 {% else %}
                 <ul class="login">
                     <li><a href="{% url 'users:register' %}"><span> </span>Üye Ol</a></li>
@@ -88,6 +88,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                 </ul>
                 {% endif %}
                 <div class="cart"><a href="checkout"><span> </span>Sepet</a></div>
+
                 <div class="clearfix"></div>
             </div>
             <div class="clearfix"></div>
