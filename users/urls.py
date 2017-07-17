@@ -22,5 +22,6 @@ urlpatterns = [
     url(r'^oyunekle_finish/$', views.oyunekle_finish,name="oyunekle_finish"),
     url(r'^game_detail/(?P<game_name>\w+)$', views.generate_detail_html),
     url(r'^language_detector/$', views.language_detector,name="language_detector"),
+    url(r'^game_form_search/$',views.games_detail_form,name="form_search"),
 
 ]
