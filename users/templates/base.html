@@ -45,10 +45,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
             </div>
             <div class="top-header-right">
                 <div class="down-top">
-                    <select class="in-drop">
-                        <option value="Turkish" class="in-of">Turkish</option>
-                        <option value="English" class="in-of">English</option>
-                    </select>
+                    <form action="/users/language_detector/">
+                        <input type="text" name="language"></input>
+                        <button type="submit">DETECT</button>
+
+                    </form>
                 </div>
                 <!---->
                 <div class="clearfix"></div>
