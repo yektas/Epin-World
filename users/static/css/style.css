@@ -770,7 +770,7 @@ p.m_text {
 	line-height: 20px;
 	font-weight: 300;
 }
-.contact-form input[type="text"], {
+.contact-form input[type="text"]{
 	display: block;
 	width:70%;
 	padding: 10px;
@@ -917,7 +917,7 @@ a.forgot {
 	display: block;
 	text-transform: uppercase;
 }
-.register-top-grid input[type="text"], .register-bottom-grid input[type="text"],  {
+.register-top-grid input[type="text"], .register-bottom-grid input[type="text"]{
 	border: 1px solid #EEE;
 	outline-color:#FF5B36;
 	width: 85%;
@@ -1539,8 +1539,8 @@ img.banner-bag {
     height: 121px;
     overflow: hidden;
 }
-single.htmlmedia="all"
-p {
+
+p.single.htmlmedia{
     margin: 0 0 10px;
 }
 p.m_text {
