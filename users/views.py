@@ -1,26 +1,23 @@
 from django.shortcuts import render, redirect,render_to_response
 from django.http import HttpResponse
 from .models import EventClass
-from users.decorators import is_admin, login_required
+from users.decorators import is_admin, login_required, language_assigned
 import requests
 import json
 
 def language_detector(request):
     language = request.GET.get('language',' ')
-    
-    request.session['language'] = language
-    print("asdassdasdasd " +  request.session['language'] )
 
-    
     try:
-        response = render_to_response("{}/index.html".format(request.session['language']))
-        response.set_cookie('language','{}'.format(request.session['language']))
+        response = render_to_response("{}/index.html".format(request.GET.get('language',' ')))
+        response.set_cookie('language','{}'.format(request.GET.get('language',' ')))
         return response
 
     except:
         response = render_to_response("tr/index.html".format(request.session['language']))
         response.set_cookie('language','{}'.format(request.session['language']))
         return response
+@language_assigned
 def login(request):
     """ Login view: if the user is logged redirects to the index,
     if the user is not logged shows login page """
@@ -38,7 +35,7 @@ def login(request):
             instance.update_lastlogin(username)
         return redirect("users:index")
 
-
+@language_assigned
 def auth_login(request):
     """ Login Authentication: gets the user's username and password
       from the html form with POST method and checks the database,
@@ -66,11 +63,11 @@ def auth_login(request):
         else:
             return redirect("users:login")
 
-
+@language_assigned
 def index(request):
     return render(request, "{}/index.html".format(request.COOKIES['language']))
 
-
+@language_assigned
 def register(request):
     """ Registration of the user: gets the user's credentials
       from the html form with POST method and checks the database,
@@ -87,7 +84,7 @@ def register(request):
             return HttpResponse("<h1>Registration Successfull</h1>")
     return render(request, "{}/register.html".format(request.COOKIES['language']))
 
-
+@language_assigned
 @login_required
 def profile(request):
     """ User profile page: gets the username from the session and
@@ -106,6 +103,7 @@ def profile(request):
 # #Bu method detail.html'i url'den gelen parametreye göre
 #generate etmektedir.
 #14/07/17 Cuma.
+@language_assigned
 def generate_detail_html(request,game_name):
     r = requests.get('http://localhost:8000/games/games_json/')
     games_data = json.loads(r.text)
@@ -129,6 +127,7 @@ def generate_detail_html(request,game_name):
 
     return  render(request, 'detail.html',{'game_data':detail_html_data})
 
+@language_assigned
 @is_admin
 def oyunekle_finish(request):
     game_name = request.POST.get('game_name','')
@@ -141,6 +140,7 @@ def oyunekle_finish(request):
 
     return generate_detail_html(request,game_name)
 
+@language_assigned
 @is_admin
 def oyunekle_first(request):
 
@@ -149,28 +149,32 @@ def oyunekle_first(request):
     return render(request,"{}/oyunekle.html".format(request.COOKIES['language']))
 
 
+@language_assigned
 @is_admin
 def oyunsil(request):
     return render(request, "{}/oyunsil.html".format(request.COOKIES['language']))
 
+@language_assigned
 @is_admin
 def companylist(request):
     return render(request, "{}/companylist.html".format(request.COOKIES['language']))
 
+@language_assigned
 @is_admin
 def company(request):
     return render(request, "{}/company.html".format(request.COOKIES['language']))
 
+@language_assigned
 @login_required
 def ordertable(request):
     return render(request, "{}/ordertable.html".format(request.COOKIES['language']),{'lang_data':request.COOKIES['language']})
 
-
+@language_assigned
 @is_admin
 def adminview(request):
     return render(request, "{}/admin.html".format(request.COOKIES['language']))
 
-
+@language_assigned
 def logout(request):
     """ Logs outs the user by deleting session information
         and renders logout.html """
@@ -181,6 +185,7 @@ def logout(request):
         pass
     return render(request, "{}/logout.html".format(request.COOKIES['language']))
 
+@language_assigned
 @is_admin
 def create_company(request):
     if request.method == "POST":
@@ -192,6 +197,7 @@ def create_company(request):
 
     return render(request, "{}/company.html".format(request.COOKIES['language']))
 
+@language_assigned
 @is_admin
 def user_list(request):
     """ Lists all users in admin panel """
@@ -200,6 +206,7 @@ def user_list(request):
     users = instance.list_users()
     return render(request, "{}/userslist.html".format(request.COOKIES['language']), {'users': users})
 
+@language_assigned
 @is_admin
 def delete_user(request):
     """ Deletes user """
