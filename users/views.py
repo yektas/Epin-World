@@ -185,10 +185,9 @@ def logout(request):
     ''' Sercan : 13.07.2017 '''
     try:
         request.session.flush()
-        logging.info('logout had done.'.format(datetime.datetime.now()))
+        logging.info("logout had done. '{}'".format(datetime.datetime.now()))
     except KeyError:
-        pass
-    logging.ERROR('logout had not done')
+        logging.ERROR('logout had not done')
     return render(request, "{}/logout.html".format(request.COOKIES['language']))
 
 @language_assigned
