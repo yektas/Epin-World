@@ -1,6 +1,5 @@
 var game_table_html = " "
 var game_table_html_dropdown_list = " "
-alert("adasdasd");
            $.ajax({
 
                 type: 'GET',
