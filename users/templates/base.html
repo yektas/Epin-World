@@ -51,7 +51,6 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
                     </form>
                 </div>
-                <!---->
                 <div class="clearfix"></div>
             </div>
             <div class="clearfix"></div>
@@ -71,12 +70,13 @@ License URL: http://creativecommons.org/licenses/by/3.0/
             </div>
             <div class="header-bottom-right">
                 {% if request.session.is_logged %}
-                    {% if request.session.is_admin %}
-                <div class="account"><a href="{% url 'users:adminview' %}"><span> </span>Admin</a></div>
+                    {% if request.session.admin_id == 1 %}
+                    <div class="account"><a href="{% url 'users:adminview' %}"><span> </span>Admin</a></div>
                     {% else %}
-                <div class="account"><a href="{% url 'users:profile' %}"><span> </span>Hesabım</a></div>
-                    {% endif %}
-                <div class="glyphicon glyphicon-log-out" style="color:#FF5B36; font-size: 1.1em;"><a href="{% url 'users:logout' %}"><span> </span>Çıkış</a></div>
+                    <div class="account"><a href="{% url 'users:profile' %}"><span> </span>Hesabım</a></div>
+                    <div class="cart"><a href="checkout"><span> </span>Sepet</a></div>
+                {% endif %}
+                    <div class="glyphicon glyphicon-log-out" style="color:#FF5B36; font-size: 1.1em;"><a href="{% url 'users:logout' %}"><span> </span>Çıkış</a></div>
                 {% else %}
                 <ul class="login">
                     <li><a href="{% url 'users:register' %}"><span> </span>Üye Ol</a></li>
@@ -84,7 +84,6 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                     <li><a href="{% url 'users:login' %}">Giriş</a></li>
                 </ul>
                 {% endif %}
-                <div class="cart"><a href="checkout"><span> </span>Sepet</a></div>
                 <div class="clearfix"></div>
 
             </div>
