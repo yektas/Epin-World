@@ -1,7 +1,7 @@
 from django.db import connection
 import datetime
-
-
+import requests
+import json
 class EventClass():
 
     def __init__(self, request_object):
@@ -118,3 +118,23 @@ class EventClass():
 
     def game_insert(self,game_name,game_money_price,genre,platform):
         self.cursor.execute("insert into game(name,price,genre_id,company_id,content,platform_id) values('{}',{},1,13,'EhisteGame',1)".format(game_name,game_money_price))
+
+
+    def get_popular_game(self):
+
+        r = requests.get('http://localhost:8000/games/games_json/')
+        games_data = json.loads(r.text)
+
+        meta_data_json = []
+        k = 0
+        for i in  games_data:
+            meta_data_json.append({'game_name':i['game_name'],'game_money_count':i['game_money_price']})
+            
+            k += 1
+            if k==4:
+                break;
+
+        return  meta_data_json
+
+
+
