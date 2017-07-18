@@ -17,9 +17,9 @@ $.ajax({
                     $.each(json,function(i,item){
                         if(i<=3){
 
-                            game_product_footer +=  "<div class='col-sm-3'> <article class='col-item'> <div class='photo'> <div class='options-cart'>" +" <a href='/games/game_detail/"+json[i].game_name+"'></div>"
+                            game_product_footer +=  "<div class='col-sm-3'> <article class='col-item'> <div class='photo'> <div class='options-cart'>" +" <a href='/sales/checkout/'></div>"
                             game_product_footer += "<img src='{% static 'images/Diablo3.jpg' %}' class='img-responsive' alt='Product Image' />"
-                            game_product_footer += "</div><div class='container'><br> <strong><p>"+json[i].game_name+"</p></strong>"
+                            game_product_footer += "</div><div class='container'><br> <strong><p onclick='CreateTableFromJSON()'>"+json[i].game_name+"</p></strong>"
                             game_product_footer += "<strong><p>"+json[i].game_money_price+"</p></strong>"
                             game_product_footer += "</div></article></div>"
 
@@ -114,6 +114,7 @@ $.ajax({
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
 	<script type="text/javascript" src="{% static 'js/index_game_filler.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/game_buy_table.js' %}"></script>
 
 </div><!-- /.container -->
 
