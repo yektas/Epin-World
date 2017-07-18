@@ -75,6 +75,7 @@ TEMPLATES = [
 WSGI_APPLICATION = 'epin.wsgi.application'
 
 SESSION_SAVE_EVERY_REQUEST = True
+SESSION_COOKIE_AGE = 10 * 60
 
 # Database
 # https://docs.djangoproject.com/en/1.10/ref/settings/#databases
@@ -84,16 +85,16 @@ DATABASES = {
             'ENGINE': 'django.db.backends.postgresql_psycopg2',
             'NAME': 'game_trnetdb',
             'USER': 'sercan',
-            'PASSWORD': 'abcde',
-            'HOST': '185.144.14.41',
+            'PASSWORD': '',
+            'HOST': '',
             'PORT': '',
         },
         'alias': {
             'ENGINE': 'django.db.backends.postgresql_psycopg2',
             'NAME': 'game_trnetdb',
             'USER': 'sercan',
-            'PASSWORD': 'abcde',
-            'HOST': '185.144.14.41',
+            'PASSWORD': ' ',
+            'HOST': '',
             'PORT': '',
         }
 
