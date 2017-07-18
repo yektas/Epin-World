@@ -69,7 +69,11 @@ def auth_login(request):
 
 @language_assigned
 def index(request):
-    return render(request, "{}/index.html".format(request.COOKIES['language']))
+
+    instance = EventClass(request)
+    index_game_data = instance.get_popular_game()
+    print(index_game_data)
+    return render(request, "{}/index.html".format(request.COOKIES['language']),{'index_game_data':index_game_data})
 
 @language_assigned
 def register(request):
@@ -221,6 +225,11 @@ def delete_user(request):
     instance.delete_user()
     logging.info('User deleted.'.format(datetime.datetime.now()))
     return redirect("users:user_list")
+
+
+
+
+
 
 
 

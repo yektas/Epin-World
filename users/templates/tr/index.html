@@ -64,30 +64,33 @@
     <br>
 
     <div id="products_footer">
-        <div class="col-sm-3">
-                <article class="col-item">
-                    <div class="photo">
-                
+         
+    {% for index_data in index_game_data %}
+            <div class="col-sm-3">
+                    <article class="col-item">
+                        <div class="photo">
+                    
 
-                        <div class="options-cart">
-                            <a href="/games/games_json/">
-                                <button class="btn btn-default" title="Add to cart">
-                                    <span class="fa fa-shopping-cart"></span>
-                                </button>
-                            </a>
+                            <div class="options-cart">
+                                <a href="/games/games_json/">
+                                    <button class="btn btn-default" title="Add to cart">
+                                        <span class="fa fa-shopping-cart"></span>
+                                    </button>
+                                </a>
+                            </div>
+                            <a href=""> <img src="{% static 'images/fifa.jpg'%}" class="img-responsive" alt="Product Image" /> </a>
                         </div>
-                        <a href=""> <img src="{% static 'images/fifa.jpg'%}" class="img-responsive" alt="Product Image" /> </a>
-                    </div>
-                    <div class="container">
-                        <br>
-                        <strong><p>FIFA 17</p></strong>
-                        <strong><p>Game Money Price : 100 K</p></strong>
+                        <div class="container">
+                            <br>
+                            <strong><p>{{index_data.game_name}}</p></strong>
+                            <strong><p>{{index_data.game_money_price}}</p></strong>
 
-                    </div>
-                </article>
-   
-            </div>
-        </div>
+                        </div>
+                    </article>
+       
+                </div>
+    {%endfor%}
+    </div>
 
 
 
