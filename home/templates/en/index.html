@@ -1,9 +1,49 @@
-{% extends 'base.html' %}
-{% load staticfiles %}
-{% block content %}
+
+  {% extends 'base.html' %}
+    {% load staticfiles %}
+    {% block content %}
+
+<script type="text/javascript">
+        var game_product_footer = ""
+
+$.ajax({
+
+                type: 'GET',
+                url: 'http://localhost:8000/games/games_json/',
+                data: { get_param: 'value' },
+                    dataType: 'json',
+                    success: function (data) {
+                            var json = data;
+                    $.each(json,function(i,item){
+                        if(i<=3){
+
+                            game_product_footer +=  "<div class='col-sm-3'> <article class='col-item'> <div class='photo'> <div class='options-cart'>" +" <a href='/games/game_detail/"+json[i].game_name+"'></div>"
+                            game_product_footer += "<img src='{% static 'images/Diablo3.jpg' %}' class='img-responsive' alt='Product Image' />"
+                            game_product_footer += "</div><div class='container'><br> <strong><p>"+json[i].game_name+"</p></strong>"
+                            game_product_footer += "<strong><p>"+json[i].game_money_price+"</p></strong>"
+                            game_product_footer += "</div></article></div>"
+
+                        }
+
+                     });
+                     $('#products_footer').append(game_product_footer)
+                }
+        });
+</script>
+
+
+
 <head>
+
+
+
+
     {% block title%}<title>EpinWorld-Anasayfa</title>{% endblock %}
+
+    <link href="{% static 'css/index_page_product.css'%}" rel="stylesheet" type="text/css"/>
+
 </head>
+
 <div class="container">
     <hr />
     <div class="col-sm-offset-4">
@@ -56,37 +96,25 @@
     <!-- /.carousel -->
     </div>
     <!-- -->
+    <br>
+    <br>
+    <br>
+    <br>
 
-    <div class="clearfix"></div>
-    <hr />
-    <div id="game_index_table"class="shoes-grid-left">
+    <div id="products_footer">
 
 
-            </div>
-        </div>
     </div>
-                 <div class="products">
-                     <h5 class="latest-product">LASTEST PRODUCTS</h5>
-                      <a class="view-all" href="product.html">VIEW ALL<span> </span></a>
-                 </div>
-                    </div>
-                     <div class="clearfix"> </div>
-                 </div>
-                 <div class="products">
-                     <h5 class="latest-product">LASTEST PRODUCTS</h5>
-                      <a class="view-all" href="product.html">VIEW ALL<span> </span></a>
-                 </div>
-                 <div class="product-left">
 
-                    </div>
-                     <div class="clearfix"> </div>
-                 </div>
-                 <div class="clearfix"> </div>
-               </div>
-               <div class="sub-cate">
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
+
+
+
+
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
-    <script type="text/javascript" src="{% static 'js/index_game_filler.js' %}"></script>
+	<script type="text/javascript" src="{% static 'js/index_game_filler.js' %}"></script>
 
 </div><!-- /.container -->
+
 {% endblock %}
