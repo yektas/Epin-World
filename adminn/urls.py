@@ -1,17 +1,18 @@
 from django.conf.urls import url
-from adminn import views
+
+from adminn.views import adminIndex, gameOps, userOps, companyOps
 
 app_name = 'adminn'
 
 urlpatterns = [
 
-url(r'^$', views.admin_index, name='index'),
-url(r'^createcompany/$' , views.create_company, name='createcomp'),
-url(r'^listcompany/$', views.list_company, name='listcompany'),
-url(r'^creategame/$', views.create_game, name="creategame"),
-url(r'^listgame/$', views.list_game, name="listgame"),
-
-
-
-
-        ]
+    url(r'^$', adminIndex.admin_index, name='index'),
+    url(r'^createcompany/$', companyOps.create_company, name='create_company'),
+    url(r'^listcompany/$', companyOps.list_company, name='list_company'),
+    url(r'^listgame/$', gameOps.list_game, name="list_game"),
+    url(r'^addgame/$', gameOps.add_game, name='add_game'),
+    url(r'^deletegame/$', gameOps.delete_game, name='delete_game'),
+    url(r'^userlist/$', userOps.user_list, name='user_list'),
+    url(r'^deleteuser/$', userOps.delete_user, name='delete_user'),
+    url(r'^ordertable/$', userOps.ordertable, name='ordertable'),
+]

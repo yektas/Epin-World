@@ -1,23 +1,23 @@
 <head>
     {% extends './admin.html' %}
     {% load staticfiles %}
-    {% block title%}<title>Giriş</title>{% endblock %}
+    {% block title%}<title>Add Company</title>{% endblock %}
 </head>
 {% block content %}
     <link href="{% static 'css/form.css'%}" rel="stylesheet" type="text/css"/>
 <div class="container">
 		<div class="giris">
-		  	  <form action="{% url 'users:create_company' %}" method="POST" >{% csrf_token %}
+            <form action="{% url 'adminn:create_company' %}" method="POST">{% csrf_token %}
 				 <div class="ust-giris">
-					<h3>Append Company</h3>
+                     <h3>ADD COMPANY</h3>
 					<div class="mation">
-                       	<span>Company Name<label></label></span>
+                        <span>Company Name<label></label></span>
 						<input type="text" name="cname">
 
 				    </div>
                      </div>
 
-                  <input type="submit" value="EKLE" class="btn btn-danger" style="margin-left:520px">
+                <input type="submit" value="ADD" class="btn btn-danger" style="margin-left:520px">
               </form>
 		   </div>
 </div>

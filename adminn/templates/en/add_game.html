@@ -1,0 +1,48 @@
+<head>
+    {% extends './admin.html' %}
+    {% load staticfiles %}
+    {% block title%}<title>ADD GAME</title>{% endblock %}
+</head>
+{% block content %}
+<link href="{% static 'css/form.css'%}" rel="stylesheet" type="text/css"/>
+<div class="container">
+    <div class="giris">
+        <form action="{% url 'adminn:create_game' %}" method="POST">{% csrf_token %}
+            <div class="ust-giris">
+                <h3>ADD GAME</h3>
+                <div class="mation">
+                    <span>Logo<label></label></span>
+                    <input type="file" name="game_name" accept="image/*" size="" style="margin: 30px 30px 40px 0px">
+
+                    <span>Game name<label></label></span>
+                    <input type="text" name="game_name">
+                    <span>Price<label></label></span>
+                    <input type="text" name="price">
+
+
+                    <span>Category<label></label></span>
+                    <select name="category" style="margin: 5px 5px 10px 0px">
+                        {% for i in category%}
+                        <option value="{{i.name}}" name="{{i.name}}">{{i.name}}</option>
+                        {% endfor %}
+                    </select>
+                    <span>Company<label></label></span>
+                    <select name="company" style="margin: 5px 5px 10px 0px">
+                        {% for c in company %}
+                        <option name="{{c.name}}" value="{{c.name}}">{{c.name}}</option>
+                        {% endfor %}
+                    </select>
+                    <span>Platform<label></label></span>
+                    <select name="platform" style="margin: 5px 5px 10px 0px">
+                        {%for i in platform%}
+                        <option value="{{i.name}}" name="{{i.name}}">{{i.name}}</option>
+                        {% endfor %}
+                    </select>
+                    <button type="submit" class="btn btn-danger" style="margin-left:520px">EKLE</button>
+                </div>
+            </div>
+        </form>
+
+    </div>
+</div>
+{% endblock %}

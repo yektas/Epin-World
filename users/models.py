@@ -1,8 +1,9 @@
-from django.db import connection
 import datetime
 
+from django.db import connection
 
-class EventClass():
+
+class UserEventClass():
 
     def __init__(self, request_object):
         self.request_object = request_object

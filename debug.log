@@ -1,0 +1,1357 @@
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /undefinedalt='
+WARNING:django.request:Not Found: /undefinedalt='
+WARNING:django.request:Not Found: /undefinedalt='
+WARNING:django.request:Not Found: /users/language_detector/
+WARNING:django.request:Not Found: /undefinedalt='
+WARNING:django.request:Not Found: /home/language_detector/
+WARNING:django.request:Not Found: /undefinedalt='
+WARNING:django.request:Not Found: /home/language_detector/
+WARNING:django.request:Not Found: /home/language_detector/
+WARNING:django.request:Not Found: /home/language_detector/
+WARNING:django.request:Not Found: /undefinedalt='
+WARNING:django.request:Not Found: /home/language_detector/
+WARNING:django.request:Not Found: /undefinedalt='
+WARNING:django.request:Not Found: /home/language_detector/
+WARNING:django.request:Not Found: /undefinedalt='
+ERROR:django.request:Internal Server Error: /users/auth_login/
+Traceback (most recent call last):
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\db\backends\base\base.py", line 213, in ensure_connection
+    self.connect()
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\db\backends\base\base.py", line 189, in connect
+    self.connection = self.get_new_connection(conn_params)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\db\backends\postgresql\base.py", line 176, in get_new_connection
+    connection = Database.connect(**conn_params)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\psycopg2\__init__.py", line 130, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: could not connect to server: Connection timed out (0x0000274C/10060)
+	Is the server running on host "185.144.14.41" and accepting
+	TCP/IP connections on port 5432?
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Sercan\PycharmProjects\MVC-test\users\decorators.py", line 25, in wrap
+    return func(request, *args, **kwargs)
+  File "C:\Users\Sercan\PycharmProjects\MVC-test\users\views\userAuth.py", line 19, in auth_login
+    instance = EventClass(user_info)
+  File "C:\Users\Sercan\PycharmProjects\MVC-test\users\models.py", line 9, in __init__
+    self.cursor = connection.cursor()
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\db\backends\base\base.py", line 254, in cursor
+    return self._cursor()
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\db\backends\base\base.py", line 229, in _cursor
+    self.ensure_connection()
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\db\backends\base\base.py", line 213, in ensure_connection
+    self.connect()
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\db\utils.py", line 94, in __exit__
+    six.reraise(dj_exc_type, dj_exc_value, traceback)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\utils\six.py", line 685, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\db\backends\base\base.py", line 213, in ensure_connection
+    self.connect()
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\db\backends\base\base.py", line 189, in connect
+    self.connection = self.get_new_connection(conn_params)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\db\backends\postgresql\base.py", line 176, in get_new_connection
+    connection = Database.connect(**conn_params)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\psycopg2\__init__.py", line 130, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+django.db.utils.OperationalError: could not connect to server: Connection timed out (0x0000274C/10060)
+	Is the server running on host "185.144.14.41" and accepting
+	TCP/IP connections on port 5432?
+
+ERROR:django.request:Internal Server Error: /users/register/
+Traceback (most recent call last):
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\db\backends\base\base.py", line 213, in ensure_connection
+    self.connect()
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\db\backends\base\base.py", line 189, in connect
+    self.connection = self.get_new_connection(conn_params)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\db\backends\postgresql\base.py", line 176, in get_new_connection
+    connection = Database.connect(**conn_params)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\psycopg2\__init__.py", line 130, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: could not connect to server: Connection timed out (0x0000274C/10060)
+	Is the server running on host "185.144.14.41" and accepting
+	TCP/IP connections on port 5432?
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Sercan\PycharmProjects\MVC-test\users\decorators.py", line 25, in wrap
+    return func(request, *args, **kwargs)
+  File "C:\Users\Sercan\PycharmProjects\MVC-test\users\views\userEntry.py", line 52, in register
+    instance = EventClass(user_info)
+  File "C:\Users\Sercan\PycharmProjects\MVC-test\users\models.py", line 9, in __init__
+    self.cursor = connection.cursor()
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\db\backends\base\base.py", line 254, in cursor
+    return self._cursor()
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\db\backends\base\base.py", line 229, in _cursor
+    self.ensure_connection()
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\db\backends\base\base.py", line 213, in ensure_connection
+    self.connect()
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\db\utils.py", line 94, in __exit__
+    six.reraise(dj_exc_type, dj_exc_value, traceback)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\utils\six.py", line 685, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\db\backends\base\base.py", line 213, in ensure_connection
+    self.connect()
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\db\backends\base\base.py", line 189, in connect
+    self.connection = self.get_new_connection(conn_params)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\db\backends\postgresql\base.py", line 176, in get_new_connection
+    connection = Database.connect(**conn_params)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\psycopg2\__init__.py", line 130, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+django.db.utils.OperationalError: could not connect to server: Connection timed out (0x0000274C/10060)
+	Is the server running on host "185.144.14.41" and accepting
+	TCP/IP connections on port 5432?
+
+WARNING:django.request:Not Found: /undefinedalt='
+WARNING:django.request:Not Found: /home/language_detector/
+WARNING:django.request:Not Found: /undefinedalt='
+WARNING:django.request:Not Found: /undefinedalt='
+WARNING:django.request:Not Found: /home/language_detector/
+WARNING:django.request:Not Found: /home/language_detector/
+WARNING:django.request:Not Found: /home/language_detector/
+WARNING:django.request:Not Found: /undefinedalt='
+WARNING:django.request:Not Found: /undefinedalt='
+WARNING:django.request:Not Found: /language_detector/undefinedalt='
+WARNING:django.security.csrf:Forbidden (CSRF token missing or incorrect.): /language_detector/
+WARNING:django.request:Not Found: /language_detector/undefinedalt='
+ERROR:django.request:Internal Server Error: /language_detector/
+Traceback (most recent call last):
+  File "C:\Users\Sercan\PycharmProjects\MVC-test\home\views.py", line 9, in language_detector
+    response = render_to_response("{}/index.html".format(request.POST.get('language',' ')))
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\shortcuts.py", line 21, in render_to_response
+    content = loader.render_to_string(template_name, context, using=using)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\loader.py", line 67, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\loader.py", line 25, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist:  /index.html
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Sercan\PycharmProjects\MVC-test\home\views.py", line 13, in language_detector
+    response = render_to_response("tr/index.html".format(request.session['language']))
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\contrib\sessions\backends\base.py", line 57, in __getitem__
+    return self._session[key]
+KeyError: 'language'
+WARNING:django.request:Not Found: /undefinedalt='
+WARNING:django.request:Not Found: /undefinedalt='
+WARNING:django.request:Not Found: /language_detector/undefinedalt='
+WARNING:django.request:Not Found: /language_detector/undefinedalt='
+ERROR:django.request:Internal Server Error: /language_detector/
+Traceback (most recent call last):
+  File "C:\Users\Sercan\PycharmProjects\MVC-test\home\views.py", line 9, in language_detector
+    response = render_to_response("{}/index.html".format(request.POST.get('language',' ')))
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\shortcuts.py", line 21, in render_to_response
+    content = loader.render_to_string(template_name, context, using=using)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\loader.py", line 67, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\loader.py", line 25, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist:  /index.html
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Sercan\PycharmProjects\MVC-test\home\views.py", line 13, in language_detector
+    response = render_to_response("tr/index.html".format(request.session['language']))
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\contrib\sessions\backends\base.py", line 57, in __getitem__
+    return self._session[key]
+KeyError: 'language'
+WARNING:django.request:Not Found: /language_detector/undefinedalt='
+ERROR:django.request:Internal Server Error: /language_detector/
+Traceback (most recent call last):
+  File "C:\Users\Sercan\PycharmProjects\MVC-test\home\views.py", line 9, in language_detector
+    response = render_to_response("{}/index.html".format(request.GET.get('language',' ')))
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\shortcuts.py", line 21, in render_to_response
+    content = loader.render_to_string(template_name, context, using=using)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\loader.py", line 67, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\loader.py", line 25, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist:  /index.html
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Sercan\PycharmProjects\MVC-test\home\views.py", line 13, in language_detector
+    response = render_to_response("tr/index.html".format(request.session['language']))
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\contrib\sessions\backends\base.py", line 57, in __getitem__
+    return self._session[key]
+KeyError: 'language'
+ERROR:django.request:Internal Server Error: /language_detector/
+Traceback (most recent call last):
+  File "C:\Users\Sercan\PycharmProjects\MVC-test\home\views.py", line 9, in language_detector
+    response = render_to_response("{}/index.html".format(request.GET.get('language',' ')))
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\shortcuts.py", line 21, in render_to_response
+    content = loader.render_to_string(template_name, context, using=using)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\loader.py", line 67, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\loader.py", line 25, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist:  /index.html
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Sercan\PycharmProjects\MVC-test\home\views.py", line 13, in language_detector
+    response = render_to_response("tr/index.html".format(request.session['language']))
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\contrib\sessions\backends\base.py", line 57, in __getitem__
+    return self._session[key]
+KeyError: 'language'
+WARNING:django.request:Not Found: /undefinedalt='
+WARNING:django.request:Not Found: /language_detector/undefinedalt='
+WARNING:django.request:Not Found: /language_detector/undefinedalt='
+WARNING:django.request:Not Found: /language_detector
+ERROR:django.request:Internal Server Error: /language_detector/
+Traceback (most recent call last):
+  File "C:\Users\Sercan\PycharmProjects\MVC-test\home\views.py", line 9, in language_detector
+    response = render_to_response("{}/index.html".format(request.GET.get('language',' ')))
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\shortcuts.py", line 21, in render_to_response
+    content = loader.render_to_string(template_name, context, using=using)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\loader.py", line 67, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\loader.py", line 25, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist:  /index.html
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Sercan\PycharmProjects\MVC-test\home\views.py", line 13, in language_detector
+    response = render_to_response("tr/index.html".format(request.session['language']))
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\contrib\sessions\backends\base.py", line 57, in __getitem__
+    return self._session[key]
+KeyError: 'language'
+WARNING:django.request:Not Found: /language_detector/undefinedalt='
+WARNING:django.request:Not Found: /language_detector
+WARNING:django.request:Not Found: /undefinedalt='
+WARNING:django.request:Not Found: /undefinedalt='
+WARNING:django.request:Not Found: /undefinedalt='
+WARNING:django.request:Not Found: /undefinedalt='
+WARNING:django.request:Not Found: /undefinedalt='
+WARNING:django.request:Not Found: /undefinedalt='
+WARNING:django.request:Not Found: /undefinedalt='
+WARNING:django.request:Not Found: /undefinedalt='
+WARNING:django.request:Not Found: /undefinedalt='
+WARNING:django.request:Not Found: /undefinedalt='
+WARNING:django.request:Not Found: /language_detector/undefinedalt='
+WARNING:django.request:Not Found: /undefinedalt='
+WARNING:django.request:Not Found: /language_detector/undefinedalt='
+WARNING:django.request:Not Found: /undefinedalt='
+WARNING:django.request:Not Found: /language_detector/undefinedalt='
+WARNING:django.request:Not Found: /undefinedalt='
+ERROR:django.request:Internal Server Error: /language_detector/
+Traceback (most recent call last):
+  File "C:\Users\Sercan\PycharmProjects\MVC-test\home\views.py", line 7, in language_detector
+    response = render_to_response("{}/index.html".format(request.POST.get('language',' ')))
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\shortcuts.py", line 21, in render_to_response
+    content = loader.render_to_string(template_name, context, using=using)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\loader.py", line 67, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\loader.py", line 21, in get_template
+    return engine.get_template(template_name)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\backends\django.py", line 39, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\engine.py", line 162, in get_template
+    template, origin = self.find_template(template_name)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\engine.py", line 136, in find_template
+    name, template_dirs=dirs, skip=skip,
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\loaders\base.py", line 38, in get_template
+    contents = self.get_contents(origin)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\loaders\filesystem.py", line 28, in get_contents
+    with io.open(origin.name, encoding=self.engine.file_charset) as fp:
+OSError: [Errno 22] Invalid argument: 'C:\\Users\\Sercan\\AppData\\Local\\Programs\\Python\\Python36-32\\lib\\site-packages\\django\\contrib\\admin\\templates\\<script>alert("hello")<\\script>\\index.html'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Sercan\PycharmProjects\MVC-test\home\views.py", line 11, in language_detector
+    response = render_to_response("tr/index.html".format(request.session['language']))
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\contrib\sessions\backends\base.py", line 57, in __getitem__
+    return self._session[key]
+KeyError: 'language'
+WARNING:django.request:Not Found: /undefinedalt='
+ERROR:django.request:Internal Server Error: /language_detector/
+Traceback (most recent call last):
+  File "C:\Users\Sercan\PycharmProjects\MVC-test\home\views.py", line 7, in language_detector
+    response = render_to_response("{}/index.html".format(request.POST.get('language',' ')))
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\shortcuts.py", line 21, in render_to_response
+    content = loader.render_to_string(template_name, context, using=using)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\loader.py", line 67, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\loader.py", line 25, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: davar/index.html
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Sercan\PycharmProjects\MVC-test\home\views.py", line 11, in language_detector
+    response = render_to_response("tr/index.html".format(request.session['language']))
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\contrib\sessions\backends\base.py", line 57, in __getitem__
+    return self._session[key]
+KeyError: 'language'
+WARNING:django.request:Not Found: /undefinedalt='
+WARNING:django.request:Not Found: /language_detector/undefinedalt='
+WARNING:django.request:Not Found: /undefinedalt='
+WARNING:django.request:Not Found: /undefinedalt='
+WARNING:django.request:Not Found: /base2.html/code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css
+WARNING:django.request:Not Found: /undefinedalt='
+WARNING:django.request:Not Found: /users/game_detail/Diablo3
+WARNING:django.request:Not Found: /undefinedalt='
+WARNING:django.request:Not Found: /base2.html/code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css
+WARNING:django.request:Not Found: /undefinedalt='
+WARNING:django.request:Not Found: /adminn/
+WARNING:django.request:Not Found: /undefinedalt='
+WARNING:django.request:Not Found: /admin_view
+WARNING:django.request:Not Found: /adminn
+WARNING:django.request:Not Found: /adminn
+ERROR:django.request:Internal Server Error: /adminn/
+Traceback (most recent call last):
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Sercan\PycharmProjects\MVC-test\users\decorators.py", line 27, in wrap
+    return func(request, *args, **kwargs)
+  File "C:\Users\Sercan\PycharmProjects\MVC-test\adminn\views\homeView.py", line 11, in admin_index
+    return render(request, "{}/admin.html".format(request.COOKIES['language']))
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\shortcuts.py", line 30, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\loader.py", line 67, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\loader.py", line 25, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: tr/admin.html
+ERROR:django.request:Internal Server Error: /users/auth_login/
+Traceback (most recent call last):
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\db\backends\base\base.py", line 213, in ensure_connection
+    self.connect()
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\db\backends\base\base.py", line 189, in connect
+    self.connection = self.get_new_connection(conn_params)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\db\backends\postgresql\base.py", line 176, in get_new_connection
+    connection = Database.connect(**conn_params)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\psycopg2\__init__.py", line 130, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: could not connect to server: Connection timed out (0x0000274C/10060)
+	Is the server running on host "185.144.14.41" and accepting
+	TCP/IP connections on port 5432?
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Sercan\PycharmProjects\MVC-test\users\decorators.py", line 27, in wrap
+    return func(request, *args, **kwargs)
+  File "C:\Users\Sercan\PycharmProjects\MVC-test\users\views\userAuth.py", line 19, in auth_login
+    instance = UserEventClass(user_info)
+  File "C:\Users\Sercan\PycharmProjects\MVC-test\users\models.py", line 9, in __init__
+    self.cursor = connection.cursor()
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\db\backends\base\base.py", line 254, in cursor
+    return self._cursor()
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\db\backends\base\base.py", line 229, in _cursor
+    self.ensure_connection()
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\db\backends\base\base.py", line 213, in ensure_connection
+    self.connect()
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\db\utils.py", line 94, in __exit__
+    six.reraise(dj_exc_type, dj_exc_value, traceback)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\utils\six.py", line 685, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\db\backends\base\base.py", line 213, in ensure_connection
+    self.connect()
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\db\backends\base\base.py", line 189, in connect
+    self.connection = self.get_new_connection(conn_params)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\db\backends\postgresql\base.py", line 176, in get_new_connection
+    connection = Database.connect(**conn_params)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\psycopg2\__init__.py", line 130, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+django.db.utils.OperationalError: could not connect to server: Connection timed out (0x0000274C/10060)
+	Is the server running on host "185.144.14.41" and accepting
+	TCP/IP connections on port 5432?
+
+ERROR:django.request:Internal Server Error: /adminn/
+Traceback (most recent call last):
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Sercan\PycharmProjects\MVC-test\users\decorators.py", line 27, in wrap
+    return func(request, *args, **kwargs)
+  File "C:\Users\Sercan\PycharmProjects\MVC-test\adminn\views\adminView.py", line 11, in admin_index
+    return render(request, "{}/admin.html".format(request.COOKIES['language']))
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\shortcuts.py", line 30, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\loader.py", line 67, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\loader.py", line 25, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: tr/admin.html
+ERROR:django.request:Internal Server Error: /adminn/
+Traceback (most recent call last):
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Sercan\PycharmProjects\MVC-test\users\decorators.py", line 27, in wrap
+    return func(request, *args, **kwargs)
+  File "C:\Users\Sercan\PycharmProjects\MVC-test\adminn\views\adminView.py", line 11, in admin_index
+    return render(request, "{}/admin.html".format(request.COOKIES['language']))
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\shortcuts.py", line 30, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\loader.py", line 67, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\loader.py", line 25, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: tr/admin.html
+ERROR:django.request:Internal Server Error: /adminn/
+Traceback (most recent call last):
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Sercan\PycharmProjects\MVC-test\users\decorators.py", line 27, in wrap
+    return func(request, *args, **kwargs)
+  File "C:\Users\Sercan\PycharmProjects\MVC-test\adminn\views\adminView.py", line 11, in admin_index
+    return render(request, "{}/admin.html".format(request.COOKIES['language']))
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\shortcuts.py", line 30, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\loader.py", line 68, in render_to_string
+    return template.render(context, request)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\backends\django.py", line 66, in render
+    return self.template.render(context)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\base.py", line 207, in render
+    return self._render(context)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\base.py", line 957, in render_annotated
+    return self.render(context)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\defaulttags.py", line 458, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\urls\base.py", line 91, in reverse
+    return force_text(iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs)))
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\urls\resolvers.py", line 497, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'user_list' not found. 'user_list' is not a valid view function or pattern name.
+WARNING:django.request:Not Found: /undefinedalt='
+ERROR:django.request:Internal Server Error: /adminn/
+Traceback (most recent call last):
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Sercan\PycharmProjects\MVC-test\users\decorators.py", line 27, in wrap
+    return func(request, *args, **kwargs)
+  File "C:\Users\Sercan\PycharmProjects\MVC-test\adminn\views\adminView.py", line 11, in admin_index
+    return render(request, "{}/admin.html".format(request.COOKIES['language']))
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\shortcuts.py", line 30, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\loader.py", line 68, in render_to_string
+    return template.render(context, request)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\backends\django.py", line 66, in render
+    return self.template.render(context)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\base.py", line 207, in render
+    return self._render(context)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\base.py", line 957, in render_annotated
+    return self.render(context)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\defaulttags.py", line 458, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\urls\base.py", line 91, in reverse
+    return force_text(iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs)))
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\urls\resolvers.py", line 497, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'user_list' not found. 'user_list' is not a valid view function or pattern name.
+ERROR:django.request:Internal Server Error: /adminn/
+Traceback (most recent call last):
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Sercan\PycharmProjects\MVC-test\users\decorators.py", line 27, in wrap
+    return func(request, *args, **kwargs)
+  File "C:\Users\Sercan\PycharmProjects\MVC-test\adminn\views\adminIndex.py", line 11, in admin_index
+    return render(request, "{}/admin.html".format(request.COOKIES['language']))
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\shortcuts.py", line 30, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\loader.py", line 68, in render_to_string
+    return template.render(context, request)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\backends\django.py", line 66, in render
+    return self.template.render(context)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\base.py", line 207, in render
+    return self._render(context)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\base.py", line 957, in render_annotated
+    return self.render(context)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\defaulttags.py", line 458, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\urls\base.py", line 91, in reverse
+    return force_text(iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs)))
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\urls\resolvers.py", line 497, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'user_list' not found. 'user_list' is not a valid view function or pattern name.
+ERROR:django.request:Internal Server Error: /adminn/
+Traceback (most recent call last):
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Sercan\PycharmProjects\MVC-test\users\decorators.py", line 27, in wrap
+    return func(request, *args, **kwargs)
+  File "C:\Users\Sercan\PycharmProjects\MVC-test\adminn\views\adminIndex.py", line 11, in admin_index
+    return render(request, "{}/admin.html".format(request.COOKIES['language']))
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\shortcuts.py", line 30, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\loader.py", line 68, in render_to_string
+    return template.render(context, request)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\backends\django.py", line 66, in render
+    return self.template.render(context)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\base.py", line 207, in render
+    return self._render(context)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\base.py", line 957, in render_annotated
+    return self.render(context)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\defaulttags.py", line 458, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\urls\base.py", line 91, in reverse
+    return force_text(iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs)))
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\urls\resolvers.py", line 497, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'user_list' not found. 'user_list' is not a valid view function or pattern name.
+WARNING:django.request:Not Found: /undefinedalt='
+ERROR:django.request:Internal Server Error: /adminn/
+Traceback (most recent call last):
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Sercan\PycharmProjects\MVC-test\users\decorators.py", line 27, in wrap
+    return func(request, *args, **kwargs)
+  File "C:\Users\Sercan\PycharmProjects\MVC-test\adminn\views\adminIndex.py", line 11, in admin_index
+    return render(request, "{}/admin.html".format(request.COOKIES['language']))
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\shortcuts.py", line 30, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\loader.py", line 68, in render_to_string
+    return template.render(context, request)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\backends\django.py", line 66, in render
+    return self.template.render(context)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\base.py", line 207, in render
+    return self._render(context)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\base.py", line 957, in render_annotated
+    return self.render(context)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\defaulttags.py", line 458, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\urls\base.py", line 91, in reverse
+    return force_text(iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs)))
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\urls\resolvers.py", line 497, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'user_list' not found. 'user_list' is not a valid view function or pattern name.
+WARNING:django.request:Not Found: /undefinedalt='
+ERROR:django.request:Internal Server Error: /adminn/
+Traceback (most recent call last):
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\urls\base.py", line 77, in reverse
+    extra, resolver = resolver.namespace_dict[ns]
+KeyError: 'adminn/views'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Sercan\PycharmProjects\MVC-test\users\decorators.py", line 27, in wrap
+    return func(request, *args, **kwargs)
+  File "C:\Users\Sercan\PycharmProjects\MVC-test\adminn\views\adminIndex.py", line 11, in admin_index
+    return render(request, "{}/admin.html".format(request.COOKIES['language']))
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\shortcuts.py", line 30, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\loader.py", line 68, in render_to_string
+    return template.render(context, request)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\backends\django.py", line 66, in render
+    return self.template.render(context)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\base.py", line 207, in render
+    return self._render(context)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\base.py", line 957, in render_annotated
+    return self.render(context)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\defaulttags.py", line 458, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\urls\base.py", line 87, in reverse
+    raise NoReverseMatch("%s is not a registered namespace" % key)
+django.urls.exceptions.NoReverseMatch: 'adminn/views' is not a registered namespace
+ERROR:django.request:Internal Server Error: /adminn/createcompany/
+Traceback (most recent call last):
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\urls\base.py", line 77, in reverse
+    extra, resolver = resolver.namespace_dict[ns]
+KeyError: 'adminn/views'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Sercan\PycharmProjects\MVC-test\users\decorators.py", line 27, in wrap
+    return func(request, *args, **kwargs)
+  File "C:\Users\Sercan\PycharmProjects\MVC-test\adminn\views\companyOps.py", line 18, in create_company
+    return render(request, "{}/company.html".format(request.COOKIES['language']))
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\shortcuts.py", line 30, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\loader.py", line 68, in render_to_string
+    return template.render(context, request)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\backends\django.py", line 66, in render
+    return self.template.render(context)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\base.py", line 207, in render
+    return self._render(context)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\base.py", line 957, in render_annotated
+    return self.render(context)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\loader_tags.py", line 177, in render
+    return compiled_parent._render(context)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\base.py", line 957, in render_annotated
+    return self.render(context)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\defaulttags.py", line 458, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\urls\base.py", line 87, in reverse
+    raise NoReverseMatch("%s is not a registered namespace" % key)
+django.urls.exceptions.NoReverseMatch: 'adminn/views' is not a registered namespace
+ERROR:django.request:Internal Server Error: /adminn/createcompany/
+Traceback (most recent call last):
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Sercan\PycharmProjects\MVC-test\users\decorators.py", line 27, in wrap
+    return func(request, *args, **kwargs)
+  File "C:\Users\Sercan\PycharmProjects\MVC-test\adminn\views\companyOps.py", line 18, in create_company
+    return render(request, "{}/company.html".format(request.COOKIES['language']))
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\shortcuts.py", line 30, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\loader.py", line 68, in render_to_string
+    return template.render(context, request)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\backends\django.py", line 66, in render
+    return self.template.render(context)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\base.py", line 207, in render
+    return self._render(context)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\base.py", line 957, in render_annotated
+    return self.render(context)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\loader_tags.py", line 177, in render
+    return compiled_parent._render(context)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\base.py", line 957, in render_annotated
+    return self.render(context)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\defaulttags.py", line 458, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\urls\base.py", line 91, in reverse
+    return force_text(iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs)))
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\urls\resolvers.py", line 497, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'userlist' not found. 'userlist' is not a valid view function or pattern name.
+ERROR:django.request:Internal Server Error: /adminn/createcompany/
+Traceback (most recent call last):
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Sercan\PycharmProjects\MVC-test\users\decorators.py", line 27, in wrap
+    return func(request, *args, **kwargs)
+  File "C:\Users\Sercan\PycharmProjects\MVC-test\adminn\views\companyOps.py", line 18, in create_company
+    return render(request, "{}/company.html".format(request.COOKIES['language']))
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\shortcuts.py", line 30, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\loader.py", line 68, in render_to_string
+    return template.render(context, request)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\backends\django.py", line 66, in render
+    return self.template.render(context)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\base.py", line 207, in render
+    return self._render(context)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\base.py", line 957, in render_annotated
+    return self.render(context)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\loader_tags.py", line 177, in render
+    return compiled_parent._render(context)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\base.py", line 957, in render_annotated
+    return self.render(context)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\defaulttags.py", line 458, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\urls\base.py", line 91, in reverse
+    return force_text(iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs)))
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\urls\resolvers.py", line 497, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'userlist' not found. 'userlist' is not a valid view function or pattern name.
+ERROR:django.request:Internal Server Error: /adminn/createcompany/
+Traceback (most recent call last):
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Sercan\PycharmProjects\MVC-test\users\decorators.py", line 27, in wrap
+    return func(request, *args, **kwargs)
+  File "C:\Users\Sercan\PycharmProjects\MVC-test\adminn\views\companyOps.py", line 18, in create_company
+    return render(request, "{}/company.html".format(request.COOKIES['language']))
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\shortcuts.py", line 30, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\loader.py", line 68, in render_to_string
+    return template.render(context, request)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\backends\django.py", line 66, in render
+    return self.template.render(context)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\base.py", line 207, in render
+    return self._render(context)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\base.py", line 957, in render_annotated
+    return self.render(context)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\loader_tags.py", line 177, in render
+    return compiled_parent._render(context)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\base.py", line 957, in render_annotated
+    return self.render(context)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\defaulttags.py", line 458, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\urls\base.py", line 91, in reverse
+    return force_text(iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs)))
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\urls\resolvers.py", line 497, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'userlist' not found. 'userlist' is not a valid view function or pattern name.
+ERROR:django.request:Internal Server Error: /adminn/createcompany/
+Traceback (most recent call last):
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Sercan\PycharmProjects\MVC-test\users\decorators.py", line 27, in wrap
+    return func(request, *args, **kwargs)
+  File "C:\Users\Sercan\PycharmProjects\MVC-test\adminn\views\companyOps.py", line 18, in create_company
+    return render(request, "{}/company.html".format(request.COOKIES['language']))
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\shortcuts.py", line 30, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\loader.py", line 68, in render_to_string
+    return template.render(context, request)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\backends\django.py", line 66, in render
+    return self.template.render(context)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\base.py", line 207, in render
+    return self._render(context)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\base.py", line 957, in render_annotated
+    return self.render(context)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\loader_tags.py", line 177, in render
+    return compiled_parent._render(context)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\base.py", line 957, in render_annotated
+    return self.render(context)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\defaulttags.py", line 458, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\urls\base.py", line 91, in reverse
+    return force_text(iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs)))
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\urls\resolvers.py", line 497, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'createcompany' not found. 'createcompany' is not a valid view function or pattern name.
+ERROR:django.request:Internal Server Error: /adminn/createcompany/
+Traceback (most recent call last):
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Sercan\PycharmProjects\MVC-test\users\decorators.py", line 27, in wrap
+    return func(request, *args, **kwargs)
+  File "C:\Users\Sercan\PycharmProjects\MVC-test\adminn\views\companyOps.py", line 18, in create_company
+    return render(request, "{}/company.html".format(request.COOKIES['language']))
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\shortcuts.py", line 30, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\loader.py", line 68, in render_to_string
+    return template.render(context, request)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\backends\django.py", line 66, in render
+    return self.template.render(context)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\base.py", line 207, in render
+    return self._render(context)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\base.py", line 957, in render_annotated
+    return self.render(context)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\loader_tags.py", line 177, in render
+    return compiled_parent._render(context)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\base.py", line 957, in render_annotated
+    return self.render(context)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\defaulttags.py", line 458, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\urls\base.py", line 91, in reverse
+    return force_text(iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs)))
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\urls\resolvers.py", line 497, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'create_game' not found. 'create_game' is not a valid view function or pattern name.
+ERROR:django.request:Internal Server Error: /adminn/createcompany/
+Traceback (most recent call last):
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Sercan\PycharmProjects\MVC-test\users\decorators.py", line 27, in wrap
+    return func(request, *args, **kwargs)
+  File "C:\Users\Sercan\PycharmProjects\MVC-test\adminn\views\companyOps.py", line 18, in create_company
+    return render(request, "{}/company.html".format(request.COOKIES['language']))
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\shortcuts.py", line 30, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\loader.py", line 68, in render_to_string
+    return template.render(context, request)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\backends\django.py", line 66, in render
+    return self.template.render(context)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\base.py", line 207, in render
+    return self._render(context)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\base.py", line 957, in render_annotated
+    return self.render(context)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\loader_tags.py", line 177, in render
+    return compiled_parent._render(context)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\base.py", line 957, in render_annotated
+    return self.render(context)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\defaulttags.py", line 458, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\urls\base.py", line 91, in reverse
+    return force_text(iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs)))
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\urls\resolvers.py", line 497, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'create_game' not found. 'create_game' is not a valid view function or pattern name.
+ERROR:django.request:Internal Server Error: /adminn/createcompany/
+Traceback (most recent call last):
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\urls\base.py", line 77, in reverse
+    extra, resolver = resolver.namespace_dict[ns]
+KeyError: 'gameOps'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Sercan\PycharmProjects\MVC-test\users\decorators.py", line 27, in wrap
+    return func(request, *args, **kwargs)
+  File "C:\Users\Sercan\PycharmProjects\MVC-test\adminn\views\companyOps.py", line 18, in create_company
+    return render(request, "{}/company.html".format(request.COOKIES['language']))
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\shortcuts.py", line 30, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\loader.py", line 68, in render_to_string
+    return template.render(context, request)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\backends\django.py", line 66, in render
+    return self.template.render(context)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\base.py", line 207, in render
+    return self._render(context)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\base.py", line 957, in render_annotated
+    return self.render(context)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\loader_tags.py", line 177, in render
+    return compiled_parent._render(context)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\base.py", line 957, in render_annotated
+    return self.render(context)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\defaulttags.py", line 458, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\urls\base.py", line 87, in reverse
+    raise NoReverseMatch("%s is not a registered namespace" % key)
+django.urls.exceptions.NoReverseMatch: 'gameOps' is not a registered namespace
+WARNING:django.request:Not Found: /adminn/list_users/
+WARNING:django.request:Not Found: /adminn/list_user/
+WARNING:django.request:Not Found: /adminn/list_user/
+ERROR:django.request:Internal Server Error: /adminn/userlist/
+Traceback (most recent call last):
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Sercan\PycharmProjects\MVC-test\users\decorators.py", line 27, in wrap
+    return func(request, *args, **kwargs)
+  File "C:\Users\Sercan\PycharmProjects\MVC-test\adminn\views\userOps.py", line 15, in user_list
+    return render(request, "{}/userlist.html".format(request.COOKIES['language']), {'users': users})
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\shortcuts.py", line 30, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\loader.py", line 68, in render_to_string
+    return template.render(context, request)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\backends\django.py", line 66, in render
+    return self.template.render(context)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\base.py", line 207, in render
+    return self._render(context)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\base.py", line 957, in render_annotated
+    return self.render(context)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\loader_tags.py", line 177, in render
+    return compiled_parent._render(context)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\base.py", line 957, in render_annotated
+    return self.render(context)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\defaulttags.py", line 458, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\urls\base.py", line 91, in reverse
+    return force_text(iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs)))
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\urls\resolvers.py", line 497, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'create_game' not found. 'create_game' is not a valid view function or pattern name.
+ERROR:django.request:Internal Server Error: /adminn/userlist/
+Traceback (most recent call last):
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Sercan\PycharmProjects\MVC-test\users\decorators.py", line 27, in wrap
+    return func(request, *args, **kwargs)
+  File "C:\Users\Sercan\PycharmProjects\MVC-test\adminn\views\userOps.py", line 15, in user_list
+    return render(request, "{}/userlist.html".format(request.COOKIES['language']), {'users': users})
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\shortcuts.py", line 30, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\loader.py", line 68, in render_to_string
+    return template.render(context, request)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\backends\django.py", line 66, in render
+    return self.template.render(context)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\base.py", line 207, in render
+    return self._render(context)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\base.py", line 957, in render_annotated
+    return self.render(context)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\loader_tags.py", line 177, in render
+    return compiled_parent._render(context)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\base.py", line 957, in render_annotated
+    return self.render(context)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\defaulttags.py", line 458, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\urls\base.py", line 91, in reverse
+    return force_text(iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs)))
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\urls\resolvers.py", line 497, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'list_game' not found. 'list_game' is not a valid view function or pattern name.
+ERROR:django.request:Internal Server Error: /users/auth_login/
+Traceback (most recent call last):
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\db\backends\base\base.py", line 213, in ensure_connection
+    self.connect()
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\db\backends\base\base.py", line 189, in connect
+    self.connection = self.get_new_connection(conn_params)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\db\backends\postgresql\base.py", line 176, in get_new_connection
+    connection = Database.connect(**conn_params)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\psycopg2\__init__.py", line 130, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: could not connect to server: Connection timed out (0x0000274C/10060)
+	Is the server running on host "185.144.14.41" and accepting
+	TCP/IP connections on port 5432?
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Sercan\PycharmProjects\MVC-test\users\decorators.py", line 27, in wrap
+    return func(request, *args, **kwargs)
+  File "C:\Users\Sercan\PycharmProjects\MVC-test\users\views\userAuth.py", line 19, in auth_login
+    instance = UserEventClass(user_info)
+  File "C:\Users\Sercan\PycharmProjects\MVC-test\users\models.py", line 9, in __init__
+    self.cursor = connection.cursor()
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\db\backends\base\base.py", line 254, in cursor
+    return self._cursor()
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\db\backends\base\base.py", line 229, in _cursor
+    self.ensure_connection()
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\db\backends\base\base.py", line 213, in ensure_connection
+    self.connect()
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\db\utils.py", line 94, in __exit__
+    six.reraise(dj_exc_type, dj_exc_value, traceback)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\utils\six.py", line 685, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\db\backends\base\base.py", line 213, in ensure_connection
+    self.connect()
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\db\backends\base\base.py", line 189, in connect
+    self.connection = self.get_new_connection(conn_params)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\db\backends\postgresql\base.py", line 176, in get_new_connection
+    connection = Database.connect(**conn_params)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\psycopg2\__init__.py", line 130, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+django.db.utils.OperationalError: could not connect to server: Connection timed out (0x0000274C/10060)
+	Is the server running on host "185.144.14.41" and accepting
+	TCP/IP connections on port 5432?
+
+WARNING:django.request:Not Found: /undefinedalt='
+WARNING:django.request:Not Found: /base2.html/code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css
+WARNING:django.request:Not Found: /undefinedalt='
+WARNING:django.request:Not Found: /base2.html/code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css
+WARNING:django.request:Not Found: /base2.html/code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css
+WARNING:django.request:Not Found: /base2.html/code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css
+WARNING:django.request:Not Found: /base2.html/code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css
+ERROR:django.request:Internal Server Error: /adminn/
+Traceback (most recent call last):
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\base.py", line 507, in parse
+    compile_func = self.tags[command]
+KeyError: 'endblock'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Sercan\PycharmProjects\MVC-test\users\decorators.py", line 27, in wrap
+    return func(request, *args, **kwargs)
+  File "C:\Users\Sercan\PycharmProjects\MVC-test\adminn\views\adminIndex.py", line 11, in admin_index
+    return render(request, "{}/admin.html".format(request.COOKIES['language']))
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\shortcuts.py", line 30, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\loader.py", line 67, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\loader.py", line 21, in get_template
+    return engine.get_template(template_name)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\backends\django.py", line 39, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\engine.py", line 162, in get_template
+    template, origin = self.find_template(template_name)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\engine.py", line 136, in find_template
+    name, template_dirs=dirs, skip=skip,
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\loaders\base.py", line 44, in get_template
+    contents, origin, origin.template_name, self.engine,
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\base.py", line 191, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\base.py", line 230, in compile_nodelist
+    return parser.parse()
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\base.py", line 515, in parse
+    raise self.error(token, e)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\base.py", line 513, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\loader_tags.py", line 312, in do_extends
+    nodelist = parser.parse()
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\base.py", line 509, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\base.py", line 571, in invalid_block_tag
+    "or load this tag?" % (token.lineno, command)
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 84: 'endblock'. Did you forget to register or load this tag?
+WARNING:django.request:Not Found: /base2.html/code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css
+WARNING:django.request:Not Found: /base2.html/code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css
+WARNING:django.request:Not Found: /base2.html/code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css
+WARNING:django.request:Not Found: /base2.html/code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css
+WARNING:django.request:Not Found: /base2.html/code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css
+WARNING:django.request:Not Found: /undefinedalt='
+WARNING:django.request:Not Found: /language_detector/undefinedalt='
+WARNING:django.request:Not Found: /undefinedalt='
+ERROR:django.request:Internal Server Error: /adminn/
+Traceback (most recent call last):
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Sercan\PycharmProjects\MVC-test\users\decorators.py", line 27, in wrap
+    return func(request, *args, **kwargs)
+  File "C:\Users\Sercan\PycharmProjects\MVC-test\adminn\views\adminIndex.py", line 11, in admin_index
+    return render(request, "{}/admin.html".format(request.COOKIES['language']))
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\shortcuts.py", line 30, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\loader.py", line 68, in render_to_string
+    return template.render(context, request)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\backends\django.py", line 66, in render
+    return self.template.render(context)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\base.py", line 207, in render
+    return self._render(context)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\base.py", line 957, in render_annotated
+    return self.render(context)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\loader_tags.py", line 177, in render
+    return compiled_parent._render(context)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\base.py", line 957, in render_annotated
+    return self.render(context)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\loader_tags.py", line 72, in render
+    result = block.nodelist.render(context)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\base.py", line 957, in render_annotated
+    return self.render(context)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\defaulttags.py", line 458, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\urls\base.py", line 91, in reverse
+    return force_text(iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs)))
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\urls\resolvers.py", line 497, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'create_game' not found. 'create_game' is not a valid view function or pattern name.
+ERROR:django.request:Internal Server Error: /adminn/
+Traceback (most recent call last):
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Sercan\PycharmProjects\MVC-test\users\decorators.py", line 27, in wrap
+    return func(request, *args, **kwargs)
+  File "C:\Users\Sercan\PycharmProjects\MVC-test\adminn\views\adminIndex.py", line 11, in admin_index
+    return render(request, "{}/admin.html".format(request.COOKIES['language']))
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\shortcuts.py", line 30, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\loader.py", line 68, in render_to_string
+    return template.render(context, request)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\backends\django.py", line 66, in render
+    return self.template.render(context)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\base.py", line 207, in render
+    return self._render(context)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\base.py", line 957, in render_annotated
+    return self.render(context)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\loader_tags.py", line 177, in render
+    return compiled_parent._render(context)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\base.py", line 957, in render_annotated
+    return self.render(context)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\loader_tags.py", line 72, in render
+    result = block.nodelist.render(context)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\base.py", line 957, in render_annotated
+    return self.render(context)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\template\defaulttags.py", line 458, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\urls\base.py", line 91, in reverse
+    return force_text(iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs)))
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\urls\resolvers.py", line 497, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'create_game' not found. 'create_game' is not a valid view function or pattern name.
+WARNING:django.request:Not Found: /base2.html/code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css
+WARNING:django.request:Not Found: /base2.html/code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css
+ERROR:django.request:Internal Server Error: /adminn/listcompany/
+Traceback (most recent call last):
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Sercan\PycharmProjects\MVC-test\users\decorators.py", line 27, in wrap
+    return func(request, *args, **kwargs)
+  File "C:\Users\Sercan\PycharmProjects\MVC-test\adminn\views\companyOps.py", line 23, in list_company
+    company = models.list_company()
+TypeError: list_company() missing 1 required positional argument: 'self'
+ERROR:django.request:Internal Server Error: /adminn/listcompany/
+Traceback (most recent call last):
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Sercan\PycharmProjects\MVC-test\users\decorators.py", line 27, in wrap
+    return func(request, *args, **kwargs)
+  File "C:\Users\Sercan\PycharmProjects\MVC-test\adminn\views\companyOps.py", line 23, in list_company
+    company = models.list_company()
+TypeError: list_company() missing 1 required positional argument: 'self'
+ERROR:django.request:Internal Server Error: /adminn/listcompany/
+Traceback (most recent call last):
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\Sercan\AppData\Local\Programs\Python\Python36-32\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Sercan\PycharmProjects\MVC-test\users\decorators.py", line 27, in wrap
+    return func(request, *args, **kwargs)
+  File "C:\Users\Sercan\PycharmProjects\MVC-test\adminn\views\companyOps.py", line 23, in list_company
+    company = models.list_company()
+TypeError: list_company() missing 1 required positional argument: 'self'
+WARNING:django.request:Not Found: /base2.html/code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css
+WARNING:django.request:Not Found: /undefinedalt='

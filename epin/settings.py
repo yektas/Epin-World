@@ -38,6 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'games',
     'users',
+    'sales',
+    'adminn',
+    'home',
 ]
 
 MIDDLEWARE = [
@@ -72,6 +75,7 @@ TEMPLATES = [
 WSGI_APPLICATION = 'epin.wsgi.application'
 
 SESSION_SAVE_EVERY_REQUEST = True
+
 # Database
 # https://docs.djangoproject.com/en/1.10/ref/settings/#databases
 
@@ -79,17 +83,17 @@ DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.postgresql_psycopg2',
             'NAME': 'game_trnetdb',
-            'USER': 'postgres',
-            'PASSWORD': 'qazwsx.1234',
-            'HOST': 'localhost',
+            'USER': 'sercan',
+            'PASSWORD': 'abcde',
+            'HOST': '185.144.14.41',
             'PORT': '',
         },
         'alias': {
             'ENGINE': 'django.db.backends.postgresql_psycopg2',
             'NAME': 'game_trnetdb',
             'USER': 'sercan',
-            'PASSWORD': '',
-            'HOST': 'localhost',
+            'PASSWORD': 'abcde',
+            'HOST': '185.144.14.41',
             'PORT': '',
         }
 

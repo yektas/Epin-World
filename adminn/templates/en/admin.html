@@ -1,0 +1,146 @@
+{% extends 'base2.html' %}
+
+<head>
+    {% load staticfiles %}
+    <meta charset="UTF-8">
+    <title>Admin Panel</title>
+</head>
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-sm">
+            <div class="sub-cate">
+                <div class=" top-nav rsidebar span_1_of_left">
+                    <h3 class="cate">Admin Panel</h3>
+                    <ul class="menu">
+                        <li class="item1"><a href="#">Oyun<img class="arrow-img" style="margin-left:113px;"
+                                                               src="{% static 'images/arrow1.png' %}"
+                                                               alt=""/>
+                        </a>
+                            <ul class="cute">
+                                <li class="subitem1"><a href="{% url 'adminn:add_game'%}">Add Game</a></li>
+                                <li class="subitem2"><a href="{% url 'adminn:list_game' %}">List Games - Delete</a></li>
+
+                            </ul>
+                        </li>
+                        <li class="item1"><a href="#">Kullanıcı<img class="arrow-img" style="margin-left:87px;"
+                                                                    src="{% static 'images/arrow1.png' %}"
+                                                                    alt=""/>
+                        </a>
+                            <ul class="cute">
+                                <li class="subitem1"><a href="{% url 'adminn:user_list' %}">List Users - Delete</a></li>
+
+                            </ul>
+                        </li>
+
+                        <li class="item1"><a href="#">Siparişler<img class="arrow-img" style="margin-left:80px;"
+                                                                     src="{% static 'images/arrow1.png' %}"
+                                                                     alt=""/>
+                        </a>
+                            <ul class="cute">
+                                <li class="subitem1"><a href="{% url 'adminn:ordertable' %}">List Orders - Delete</a>
+                                </li>
+
+                            </ul>
+                        </li>
+
+                        <li class="item1"><a href="#" >Şirketler<img class="arrow-img" style="margin-left:90px;"
+                                                                     src="{% static 'images/arrow1.png' %}"
+                                                                     alt="" />
+                        </a>
+                            <ul class="cute">
+                                <li class="subitem1"><a href="{% url 'adminn:create_company' %}">Add Company</a></li>
+                                <li class="subitem3"><a href="{% url 'adminn:list_company' %}">List Company - Delete</a>
+                                </li>
+
+                            </ul>
+                        </li>
+
+                    </ul>
+                </div>
+                <!--initiate accordion-->
+                <script type="text/javascript">
+                    $(function() {
+                        var menu_ul = $('.menu > li > ul'),
+                            menu_a  = $('.menu > li > a');
+                        menu_ul.hide();
+                        menu_a.click(function(e) {
+                            e.preventDefault();
+                            if(!$(this).hasClass('active')) {
+                                menu_a.removeClass('active');
+                                menu_ul.filter(':visible').slideUp('normal');
+                                $(this).addClass('active').next().stop(true,true).slideDown('normal');
+                            } else {
+                                $(this).removeClass('active');
+                                $(this).next().stop(true,true).slideUp('normal');
+                            }
+                        });
+
+                    });
+                </script>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+
+<!---->
+
+<div class="clearfix" ></div>
+<hr />
+
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4">
+                <h5 class="title">Oyunlar</h5>
+                <ul class="list alt-list">
+                    <li><a href="shop-sidebar-left.html"><i
+                            class="glyphicon glyphicon-certificate"></i>PC</a>
+                    </li>
+                    <li><a href="shop-sidebar-left.html"><i class="glyphicon glyphicon-certificate"></i>Mobil</a>
+                    </li>
+                    <li><a href="shop-sidebar-left.html"><i
+                            class="glyphicon glyphicon-certificate"></i>Playstation</a>
+                    </li>
+                    <li><a href="shop-sidebar-left.html"><i
+                            class="glyphicon glyphicon-certificate"></i>Xbox</a>
+                    </li>
+                </ul>
+            </div><!-- end col -->
+            <div class="col-sm-4">
+                <h5 class="title">Hesap</h5>
+                <ul class="list alt-list">
+                    <li><a href="my-account.html"><i class="glyphicon glyphicon-certificate"></i>Hesabım</a>
+                    </li>
+                    <li><a href="cart.html"><i class="glyphicon glyphicon-certificate"></i>Sepetim</a></li>
+                    <li><a href="checkout.html"><i class="glyphicon glyphicon-certificate"></i>Ödeme</a></li>
+                    <li><a href="help.html"><i class="glyphicon glyphicon-certificate"></i>Yardım</a></li>
+                </ul>
+            </div><!-- end col -->
+            <div class="col-sm-4">
+                <h5 class="title">Adresimiz</h5>
+                <p>İTÜ Ayazağa Kampüsü,
+                    UYBHM. Binası No:2
+                    Sarıyer/İstanbul</p>
+                <h6 class="text-light"><i class="glyphicon glyphicon-phone"></i> +90 212 225 57 23</h6>
+                <h6 class="text-light"><i class="glyphicon glyphicon-envelope"></i> info@sc3.io</h6>
+            </div><!-- end col -->
+        </div><!-- end row -->
+
+        <hr class="spacer-20">
+
+        <div class="row">
+            <div class="col-sm text-center">
+                <p class="text-sm">&COPY; 2017. Made with <i class="glyphicon glyphicon-heart"></i> Bootstrap by
+                    TRNet</p>
+            </div><!-- end col -->
+        </div><!-- end row -->
+    </div><!-- end container -->
+</footer>
+<!-- end footer -->
+
+</body>
+</html>

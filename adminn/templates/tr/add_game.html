@@ -1,13 +1,13 @@
 <head>
     {% extends './admin.html' %}
     {% load staticfiles %}
-    {% block title%}<title>Giriş</title>{% endblock %}
+    {% block title%}<title>OYUN EKLE</title>{% endblock %}
 </head>
 {% block content %}
     <link href="{% static 'css/form.css'%}" rel="stylesheet" type="text/css"/>
 <div class="container">
 		<div class="giris">
-		  	  <form action="{% url 'adminn:creategame' %}" method="POST" >{% csrf_token %}
+            <form action="{% url 'adminn:create_game' %}" method="POST">{% csrf_token %}
 				 <div class="ust-giris">
 					<h3>OYUN EKLE</h3>
 					<div class="mation">
@@ -27,7 +27,7 @@
                             <option value="{{i.name}}" name="{{i.name}}">{{i.name}}</option>
                              {% endfor %}
                         </select>
-                        <span>Sirket<label></label></span>
+                        <span>Şirket<label></label></span>
 						<select  name = "company" style="margin: 5px 5px 10px 0px">
                             {% for c in company %}
                             <option name="{{c.name}}" value="{{c.name}}">{{c.name}}</option>

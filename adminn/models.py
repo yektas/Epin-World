@@ -1,9 +1,7 @@
-from django.db import models, connection
+from django.db import connection
 
 
-# Create your models here.
-
-class AdminEvent:
+class AdminEventClass:
     def __init__(self):
         self.cursor = connection.cursor()
 
@@ -50,7 +48,6 @@ class AdminEvent:
             return True
         except:
             return False
-
 
 
     def list_platform(self):

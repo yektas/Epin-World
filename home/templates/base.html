@@ -1,8 +1,4 @@
-<!--A Design by W3layouts
-Author: W3layout
-Author URL: http://w3layouts.com
-License: Creative Commons Attribution 3.0 Unported
-License URL: http://creativecommons.org/licenses/by/3.0/
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -45,7 +41,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
             </div>
             <div class="top-header-right">
                 <div class="down-top">
-                    <form action="/users/language_detector/">
+                    <form action="/language_detector/" method="POST">{%csrf_token%}
                         <input type="text" name="language"></input>
                         <button type="submit">DETECT</button>
 
@@ -62,16 +58,18 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                 <div class="logo">
                     <a href="/"><img src="{% static 'images/logoo.jpeg'%}" style="width: 300px; height:100px;" alt=" "/></a>
                 </div>
-                    <div class="search">
+
+                <div class="search">
                         <input id="oyunArama" placeholder="Oyun ara..."><span id="oyunArat"></span>
                         <input type="submit" value="ARA">
                     </div>
+
                 <div class="clearfix"></div>
             </div>
             <div class="header-bottom-right">
                 {% if request.session.is_logged %}
                     {% if request.session.admin_id == 1 %}
-                    <div class="account"><a href="{% url 'users:adminview' %}"><span> </span>Admin</a></div>
+                <div class="account"><a href="{% url 'adminn:admin_view' %}"><span> </span>Admin</a></div>
                     {% else %}
                     <div class="account"><a href="{% url 'users:profile' %}"><span> </span>Hesabım</a></div>
                     <div class="cart"><a href="checkout"><span> </span>Sepet</a></div>

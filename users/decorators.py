@@ -12,10 +12,11 @@ def is_admin(func):
             return func(request, *args, **kwargs)
     return wrap
 
+
 def language_assigned(func):
-    """ This decorator checks whether the user is an admin or not.
-        If the user is not admin redirects to login page """
-    ''' Sercan : 15.07.2017 '''
+    """ This decorator sets the language in COOKIES object according to user's choice
+        If the language is not selected, assigns Turkish as default. """
+    ''' Sercan : 17.07.2017 '''
     def wrap(request, *args, **kwargs):
         if 'language' not in request.COOKIES:
             request.COOKIES['language'] = 'tr'
