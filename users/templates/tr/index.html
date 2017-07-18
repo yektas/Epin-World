@@ -17,11 +17,11 @@ $.ajax({
                     $.each(json,function(i,item){
                         if(i<=3){
 
-                            game_product_footer +=  "<div class='col-sm-3'> <article class='col-item'> <div class='photo'> <div class='options-cart'>" +" <a href='/users/game_detail/Diablo3'></div>"
-                            game_product_footer += "<img src='{% static 'images/Diablo3.jpg'%}' alt='Product Image' />"
+                            game_product_footer +=  "<div class='col-sm-3'> <article class='col-item'> <div class='photo'> <div class='options-cart'>" +" <a href='/users/game_detail/"+json[i].game_name+"'></div>"
+                            game_product_footer += "<img src='{% static 'images/Diablo3.jpg' %}' class='img-responsive' alt='Product Image' />"
                             game_product_footer += "</div><div class='container'><br> <strong><p>"+json[i].game_name+"</p></strong>"
-                            game_product_footer += " <strong><p>"+json[i].game_money_price+"</p></strong>"
-                            game_product_footer += "  </div></article></div>"
+                            game_product_footer += "<strong><p>"+json[i].game_money_price+"</p></strong>"
+                            game_product_footer += "</div></article></div>"
 
                         }
 
