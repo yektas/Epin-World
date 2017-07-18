@@ -121,6 +121,11 @@ class EventClass():
 
 
     def get_popular_game(self):
+        #WoodProgrammer
+        # Yazılma Amacı:  Burada amac ileride kodlanacak olan popularite algoritmasi ile REST API'den en populer
+        # 4 oyunu veya asagidaki k degeri degistirilerek on yuzde basmayi amaclamaktadir.
+        # On yuzde def index() ... metodu ile map olmaktadir.
+        # Yazılma Tarihi: 18/07/2017 
 
         r = requests.get('http://localhost:8000/games/games_json/')
         games_data = json.loads(r.text)
