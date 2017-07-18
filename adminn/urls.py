@@ -14,5 +14,5 @@ urlpatterns = [
     url(r'^deletegame/$', gameOps.delete_game, name='delete_game'),
     url(r'^userlist/$', userOps.user_list, name='user_list'),
     url(r'^deleteuser/$', userOps.delete_user, name='delete_user'),
-    url(r'^ordertable/$', userOps.ordertable, name='ordertable'),
+    url(r'^ordertable/$', userOps.order_table, name='order_table'),
 ]

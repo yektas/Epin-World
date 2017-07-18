@@ -1,11 +1,25 @@
-from django.db import models
+from django.db import connection
 
-class Game(models.Model):
-    name = models.CharField(max_length=225)
-    game_pin_price = models.FloatField(default=0)
-    created_at = models.DateField()
-    popularity = models.IntegerField(default=1)
-    game_logo = models.CharField(max_length=250)
 
-    def __str__(self):
-        return self.name
+class GameEventClass:
+    def __init__(self):
+        self.cursor = connection.cursor()
+
+    def __del__(self):
+        self.cursor.close()
+
+    def get_metadata_of_game(self, game_name):
+        self.cursor.execute("SELECT * FROM game WHERE name = {}").format(game_name)
+        meta_data = self.cursor.fetchall()
+        meta_data_json = []
+        for i in meta_data:
+            meta_data_json.append(
+                {'game_name': '{}'.format(i[1]), 'game_money_price': '{}'.format(i[2]), 'game_content': format(i[9])})
+
+        return meta_data_json
+
+    def game_insert(self, game_name, game_money_price, genre, platform):
+        self.cursor.execute(
+            "insert into game(name,price,genre_id,company_id,content,platform_id) values('{}',{},1,13,'EhisteGame',1)".format(
+                game_name, game_money_price))
+        self.cursor.execute("COMMIT;")

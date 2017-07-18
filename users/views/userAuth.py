@@ -1,7 +1,7 @@
 from django.shortcuts import redirect
 
-from users.decorators import language_assigned
 from users.models import UserEventClass
+from utility.decorators import language_assigned
 
 
 @language_assigned
@@ -18,7 +18,8 @@ def auth_login(request):
         user_info = request.POST
 
         instance = UserEventClass(user_info)
-        instance.update_lastlogin(username)
+        ### DB düzelince tekrar test edilecek ###
+        # instance.update_lastlogin(username)
         user = instance.login_event()
 
         if len(user) > 0:
@@ -27,7 +28,7 @@ def auth_login(request):
             request.session['password'] = password
             request.session['is_logged'] = True
 
-            return redirect("users:index")
+            return redirect("home:index")
 
         else:
             return redirect("users:login")

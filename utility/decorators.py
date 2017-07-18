@@ -12,7 +12,6 @@ def is_admin(func):
             return func(request, *args, **kwargs)
     return wrap
 
-
 def language_assigned(func):
     """ This decorator sets the language in COOKIES object according to user's choice
         If the language is not selected, assigns Turkish as default. """

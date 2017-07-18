@@ -1,13 +1,13 @@
 from django.shortcuts import render, render_to_response, redirect
 
-from users.decorators import language_assigned
+from utility.decorators import language_assigned
 
 
 def language_detector(request):
-    if request.method == 'POST':
+    if request.method == 'GET':
         try:
-            response = render_to_response("{}/index.html".format(request.POST.get('language', ' ')))
-            response.set_cookie('language', '{}'.format(request.POST.get('language', ' ')))
+            response = render_to_response("{}/index.html".format(request.GET.get('language', ' ')))
+            response.set_cookie('language', '{}'.format(request.GET.get('language', ' ')))
             return response
         except:
             response = render_to_response("tr/index.html")

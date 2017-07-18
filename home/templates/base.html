@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -41,8 +40,8 @@
             </div>
             <div class="top-header-right">
                 <div class="down-top">
-                    <form action="/language_detector/" method="POST">{%csrf_token%}
-                        <input type="text" name="language"></input>
+                    <form action="/language_detector/" method="GET">
+                        <input type="text" name="language">
                         <button type="submit">DETECT</button>
 
                     </form>

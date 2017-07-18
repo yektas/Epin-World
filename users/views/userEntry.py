@@ -4,8 +4,9 @@ from datetime import datetime
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
 
-from users.decorators import language_assigned, login_required
+from adminn.models.userModels import UserOperationClass
 from users.models import UserEventClass
+from utility.decorators import language_assigned, login_required
 
 logging.basicConfig(filename='debug.log', level=logging.DEBUG)
 
@@ -36,7 +37,7 @@ def logout(request):
     ''' Sercan : 13.07.2017 '''
     try:
         request.session.flush()
-        logging.info("logout had done. '{}'".format(datetime.datetime.now()))
+        logging.info("logout had done. '{}'".format(datetime.now()))
     except KeyError:
         logging.ERROR('logout had not done')
     return render(request, "{}/logout.html".format(request.COOKIES['language']))
@@ -66,7 +67,7 @@ def profile(request):
     """ User profile page: gets the username from the session and
      passes the user information to profile.html to show in html """
     ''' Sercan : 13.07.2017 '''
-    instance = UserEventClass(request)
+    instance = UserOperationClass(request)
     user_info = instance.find_user(request.session['username'])
     if user_info is not False:
         user = user_info

@@ -5,7 +5,7 @@ import requests
 from django.db import connections
 from django.shortcuts import render, HttpResponse
 
-from users.decorators import language_assigned
+from utility.decorators import language_assigned
 
 logger = logging.getLogger(__name__)
 cursor = connections['default'].cursor()
@@ -15,7 +15,6 @@ def games_json(request):
     cursor.execute("SELECT * FROM game")
 
     test_data = cursor.fetchall()
-    list_test_data = list(test_data)
     test_json = []
     for i in test_data:
         test_json.append(
@@ -38,15 +37,8 @@ def generate_detail_html(request, game_name):
     for i in games_data:
 
         if str(games_data[k]['game_name']) == '{}'.format(game_name):
-            print(k)
             detail_html_data = games_data[k]
-
             break
-
-        else:
-
-            print(games_data[0]['game_name'])
-
         k += 1
 
     return render(request, 'detail.html', {'game_data': detail_html_data})

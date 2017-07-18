@@ -3,18 +3,17 @@ import logging
 
 from django.shortcuts import redirect, render
 
-from adminn.models import AdminEventClass
-from users.decorators import language_assigned
-
-models = AdminEventClass()
+from adminn.models.companyModels import CompanyEventClass
+from utility.decorators import language_assigned
 
 
 @language_assigned
 # @is_admin
 def create_company(request):
+    instance = CompanyEventClass(request)
     if request.method == "POST":
         name = request.POST.get('cname', ' ')
-        if (models.create_company(name)):
+        if instance.create_company(name):
             logging.info('company created'.format(datetime.datetime.now()))
             return redirect("adminn:admin_index")
 
@@ -24,5 +23,6 @@ def create_company(request):
 @language_assigned
 # @is_admin
 def list_company(request):
-    company = models.list_company()
+    instance = CompanyEventClass(request)
+    company = instance.list_company()
     return render(request, "{}/companylist.html".format(request.COOKIES['language']), {"company": company})

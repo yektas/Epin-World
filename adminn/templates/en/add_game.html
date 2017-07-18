@@ -7,7 +7,7 @@
 <link href="{% static 'css/form.css'%}" rel="stylesheet" type="text/css"/>
 <div class="container">
     <div class="giris">
-        <form action="{% url 'adminn:create_game' %}" method="POST">{% csrf_token %}
+        <form action="{% url 'adminn:add_game' %}" method="POST">{% csrf_token %}
             <div class="ust-giris">
                 <h3>ADD GAME</h3>
                 <div class="mation">

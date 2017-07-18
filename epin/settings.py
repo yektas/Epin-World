@@ -84,16 +84,16 @@ DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.postgresql_psycopg2',
             'NAME': 'game_trnetdb',
-            'USER': 'sercan',
+            'USER': '',
             'PASSWORD': '',
             'HOST': '',
             'PORT': '',
         },
         'alias': {
             'ENGINE': 'django.db.backends.postgresql_psycopg2',
-            'NAME': 'game_trnetdb',
-            'USER': 'sercan',
-            'PASSWORD': ' ',
+            'NAME': '',
+            'USER': '',
+            'PASSWORD': '',
             'HOST': '',
             'PORT': '',
         }

@@ -2,150 +2,33 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a94fde78-74a3-40ba-baee-c22773bc075b" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dataSources/74233b74-daa6-4881-8c58-55041197cb3b/_metadata_/metadata" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dataSources/74233b74-daa6-4881-8c58-55041197cb3b/_metadata_/metadata.keystream" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dataSources/74233b74-daa6-4881-8c58-55041197cb3b/_metadata_/metadata.keystream.len" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dataSources/74233b74-daa6-4881-8c58-55041197cb3b/_metadata_/metadata.len" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dataSources/74233b74-daa6-4881-8c58-55041197cb3b/_metadata_/metadata_i" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dataSources/74233b74-daa6-4881-8c58-55041197cb3b/_metadata_/metadata_i.len" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dataSources/74233b74-daa6-4881-8c58-55041197cb3b/_src_/database/game_trnetdb/schema/public.zip" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dataSources/74233b74-daa6-4881-8c58-55041197cb3b.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dataSources/74233b74-daa6-4881-8c58-55041197cb3b/storage.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/adminn/templates/en/add_game.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/adminn/templates/en/list_game.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/adminn/templates/tr/delete_game.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/adminn/templates/tr/ordertable.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/adminn/templates/tr/userlist.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/adminn/views/adminIndex.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/adminn/views/companyOps.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/adminn/views/gameOps.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/adminn/views/userOps.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/games/views/views.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/home/admin.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/home/apps.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/home/migrations/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/home/models.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/home/tests.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/home/urls.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/home/views.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/users/views/userAuth.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/users/views/userEntry.py" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/adminn/views.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/games/views.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/users/templates/en/oyunekle.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/users/views.py" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/adminn/templates/add_game.html" afterPath="$PROJECT_DIR$/adminn/templates/tr/add_game.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/adminn/templates/admin.html" afterPath="$PROJECT_DIR$/adminn/templates/tr/admin.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/adminn/templates/company.html" afterPath="$PROJECT_DIR$/adminn/templates/en/company.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/adminn/templates/companylist.html" afterPath="$PROJECT_DIR$/adminn/templates/tr/companylist.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/adminn/templates/list_game.html" afterPath="$PROJECT_DIR$/adminn/templates/tr/list_game.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/users/static/css/bootstrap-theme.css" afterPath="$PROJECT_DIR$/home/static/css/bootstrap-theme.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/users/static/css/bootstrap-theme.min.css" afterPath="$PROJECT_DIR$/home/static/css/bootstrap-theme.min.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/users/static/css/bootstrap.css" afterPath="$PROJECT_DIR$/home/static/css/bootstrap.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/users/static/css/bootstrap.min.css" afterPath="$PROJECT_DIR$/home/static/css/bootstrap.min.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/users/static/css/dashboard.css" afterPath="$PROJECT_DIR$/home/static/css/dashboard.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/users/static/css/default.css" afterPath="$PROJECT_DIR$/home/static/css/default.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/users/static/css/form.css" afterPath="$PROJECT_DIR$/home/static/css/form.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/users/static/css/style.css" afterPath="$PROJECT_DIR$/home/static/css/style.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/users/static/fonts/glyphicons-halflings-regular.eot" afterPath="$PROJECT_DIR$/home/static/fonts/glyphicons-halflings-regular.eot" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/users/static/fonts/glyphicons-halflings-regular.svg" afterPath="$PROJECT_DIR$/home/static/fonts/glyphicons-halflings-regular.svg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/users/static/fonts/glyphicons-halflings-regular.ttf" afterPath="$PROJECT_DIR$/home/static/fonts/glyphicons-halflings-regular.ttf" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/users/static/fonts/glyphicons-halflings-regular.woff" afterPath="$PROJECT_DIR$/home/static/fonts/glyphicons-halflings-regular.woff" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/users/static/fonts/glyphicons-halflings-regular.woff2" afterPath="$PROJECT_DIR$/home/static/fonts/glyphicons-halflings-regular.woff2" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/users/static/images/Thumbs.db" afterPath="$PROJECT_DIR$/home/static/images/Thumbs.db" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/users/static/images/a-star.png" afterPath="$PROJECT_DIR$/home/static/images/a-star.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/users/static/images/arrow1.png" afterPath="$PROJECT_DIR$/home/static/images/arrow1.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/users/static/images/arrow2.png" afterPath="$PROJECT_DIR$/home/static/images/arrow2.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/users/static/images/avatar.png" afterPath="$PROJECT_DIR$/home/static/images/avatar.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/users/static/images/b-arrow.png" afterPath="$PROJECT_DIR$/home/static/images/b-arrow.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/users/static/images/ba.jpg" afterPath="$PROJECT_DIR$/home/static/images/ba.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/users/static/images/baa.jpg" afterPath="$PROJECT_DIR$/home/static/images/baa.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/users/static/images/bag.jpg" afterPath="$PROJECT_DIR$/home/static/images/bag.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/users/static/images/bag1.jpg" afterPath="$PROJECT_DIR$/home/static/images/bag1.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/users/static/images/bo.jpg" afterPath="$PROJECT_DIR$/home/static/images/bo.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/users/static/images/bott.jpg" afterPath="$PROJECT_DIR$/home/static/images/bott.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/users/static/images/bottle.jpg" afterPath="$PROJECT_DIR$/home/static/images/bottle.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/users/static/images/ch.jpg" afterPath="$PROJECT_DIR$/home/static/images/ch.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/users/static/images/eos.jpg" afterPath="$PROJECT_DIR$/home/static/images/eos.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/users/static/images/facebook.png" afterPath="$PROJECT_DIR$/home/static/images/facebook.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/users/static/images/fifa.jpg" afterPath="$PROJECT_DIR$/home/static/images/fifa.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/users/static/images/gpluse.png" afterPath="$PROJECT_DIR$/home/static/images/gpluse.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/users/static/images/img-sprite.png" afterPath="$PROJECT_DIR$/home/static/images/img-sprite.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/users/static/images/ininal.jpg" afterPath="$PROJECT_DIR$/home/static/images/ininal.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/users/static/images/label_new.png" afterPath="$PROJECT_DIR$/home/static/images/label_new.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/users/static/images/logo.png" afterPath="$PROJECT_DIR$/home/static/images/logo.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/users/static/images/logoo.jpeg" afterPath="$PROJECT_DIR$/home/static/images/logoo.jpeg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/users/static/images/lol.jpg" afterPath="$PROJECT_DIR$/home/static/images/lol.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/users/static/images/pi.jpg" afterPath="$PROJECT_DIR$/home/static/images/pi.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/users/static/images/pi1.jpg" afterPath="$PROJECT_DIR$/home/static/images/pi1.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/users/static/images/pi2.jpg" afterPath="$PROJECT_DIR$/home/static/images/pi2.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/users/static/images/pi3.jpg" afterPath="$PROJECT_DIR$/home/static/images/pi3.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/users/static/images/pi4.jpg" afterPath="$PROJECT_DIR$/home/static/images/pi4.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/users/static/images/pic.jpg" afterPath="$PROJECT_DIR$/home/static/images/pic.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/users/static/images/pic1.jpg" afterPath="$PROJECT_DIR$/home/static/images/pic1.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/users/static/images/pic10.jpg" afterPath="$PROJECT_DIR$/home/static/images/pic10.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/users/static/images/pic11.jpg" afterPath="$PROJECT_DIR$/home/static/images/pic11.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/users/static/images/pic12.jpg" afterPath="$PROJECT_DIR$/home/static/images/pic12.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/users/static/images/pic13.jpg" afterPath="$PROJECT_DIR$/home/static/images/pic13.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/users/static/images/pic2.jpg" afterPath="$PROJECT_DIR$/home/static/images/pic2.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/users/static/images/pic3.jpg" afterPath="$PROJECT_DIR$/home/static/images/pic3.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/users/static/images/pic4.jpg" afterPath="$PROJECT_DIR$/home/static/images/pic4.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/users/static/images/pic5.jpg" afterPath="$PROJECT_DIR$/home/static/images/pic5.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/users/static/images/pic6.jpg" afterPath="$PROJECT_DIR$/home/static/images/pic6.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/users/static/images/pic7.jpg" afterPath="$PROJECT_DIR$/home/static/images/pic7.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/users/static/images/pic8.jpg" afterPath="$PROJECT_DIR$/home/static/images/pic8.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/users/static/images/review.png" afterPath="$PROJECT_DIR$/home/static/images/review.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/users/static/images/rss.png" afterPath="$PROJECT_DIR$/home/static/images/rss.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/users/static/images/s1.jpg" afterPath="$PROJECT_DIR$/home/static/images/s1.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/users/static/images/s2.jpg" afterPath="$PROJECT_DIR$/home/static/images/s2.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/users/static/images/s3.jpg" afterPath="$PROJECT_DIR$/home/static/images/s3.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/users/static/images/s4.jpg" afterPath="$PROJECT_DIR$/home/static/images/s4.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/users/static/images/sh.jpg" afterPath="$PROJECT_DIR$/home/static/images/sh.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/users/static/images/si1.jpg" afterPath="$PROJECT_DIR$/home/static/images/si1.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/users/static/images/si2.jpg" afterPath="$PROJECT_DIR$/home/static/images/si2.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/users/static/images/si3.jpg" afterPath="$PROJECT_DIR$/home/static/images/si3.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/users/static/images/si4.jpg" afterPath="$PROJECT_DIR$/home/static/images/si4.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/users/static/images/sims.jpg" afterPath="$PROJECT_DIR$/home/static/images/sims.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/users/static/images/star.png" afterPath="$PROJECT_DIR$/home/static/images/star.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/users/static/images/tick1.png" afterPath="$PROJECT_DIR$/home/static/images/tick1.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/users/static/images/tomb.jpg" afterPath="$PROJECT_DIR$/home/static/images/tomb.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/users/static/images/twitter.png" afterPath="$PROJECT_DIR$/home/static/images/twitter.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/users/static/images/wa.jpg" afterPath="$PROJECT_DIR$/home/static/images/wa.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/users/static/images/wat.jpg" afterPath="$PROJECT_DIR$/home/static/images/wat.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/users/static/images/zoom.png" afterPath="$PROJECT_DIR$/home/static/images/zoom.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/users/static/js/bootstrap.js" afterPath="$PROJECT_DIR$/home/static/js/bootstrap.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/users/static/js/bootstrap.min.js" afterPath="$PROJECT_DIR$/home/static/js/bootstrap.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/users/static/js/games_json_caller.js" afterPath="$PROJECT_DIR$/home/static/js/games_json_caller.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/users/static/js/index_game_filler.js" afterPath="$PROJECT_DIR$/home/static/js/index_game_filler.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/users/static/js/jquery-3.2.1.min.js" afterPath="$PROJECT_DIR$/home/static/js/jquery-3.2.1.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/users/static/js/table_filler.js" afterPath="$PROJECT_DIR$/home/static/js/table_filler.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/users/static/js/tool_tip.js" afterPath="$PROJECT_DIR$/home/static/js/tool_tip.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/users/static/js/validationForm_ajax.js" afterPath="$PROJECT_DIR$/home/static/js/validationForm_ajax.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/users/templates/base.html" afterPath="$PROJECT_DIR$/home/templates/base.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/users/templates/en/admin.html" afterPath="$PROJECT_DIR$/adminn/templates/en/admin.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/users/templates/en/company.html" afterPath="$PROJECT_DIR$/adminn/templates/tr/company.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/users/templates/en/companylist.html" afterPath="$PROJECT_DIR$/adminn/templates/en/companylist.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/users/templates/en/index.html" afterPath="$PROJECT_DIR$/home/templates/en/index.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/users/templates/en/ordertable.html" afterPath="$PROJECT_DIR$/adminn/templates/en/ordertable.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/users/templates/en/oyunsil.html" afterPath="$PROJECT_DIR$/adminn/templates/en/delete_game.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/users/templates/en/userlist.html" afterPath="$PROJECT_DIR$/adminn/templates/en/userlist.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/users/templates/tr/detail.html" afterPath="$PROJECT_DIR$/home/__init__.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/users/templates/tr/index.html" afterPath="$PROJECT_DIR$/home/templates/tr/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/adminn/models/companyModels.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/adminn/models/gameModels.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/adminn/models/userModels.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/utility/cursorutil.py" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/adminn/models.py" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/users/decorators.py" afterPath="$PROJECT_DIR$/utility/decorators.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/gamer_trnet.iml" afterPath="$PROJECT_DIR$/.idea/gamer_trnet.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminn/models.py" afterPath="$PROJECT_DIR$/adminn/models.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminn/templates/en/add_game.html" afterPath="$PROJECT_DIR$/adminn/templates/en/add_game.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminn/templates/en/admin.html" afterPath="$PROJECT_DIR$/adminn/templates/en/admin.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminn/templates/tr/add_game.html" afterPath="$PROJECT_DIR$/adminn/templates/tr/add_game.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminn/templates/tr/admin.html" afterPath="$PROJECT_DIR$/adminn/templates/tr/admin.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminn/urls.py" afterPath="$PROJECT_DIR$/adminn/urls.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminn/views/adminIndex.py" afterPath="$PROJECT_DIR$/adminn/views/adminIndex.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminn/views/companyOps.py" afterPath="$PROJECT_DIR$/adminn/views/companyOps.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminn/views/gameOps.py" afterPath="$PROJECT_DIR$/adminn/views/gameOps.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminn/views/userOps.py" afterPath="$PROJECT_DIR$/adminn/views/userOps.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/debug.log" afterPath="$PROJECT_DIR$/debug.log" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/epin/settings.py" afterPath="$PROJECT_DIR$/epin/settings.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/epin/urls.py" afterPath="$PROJECT_DIR$/epin/urls.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/games/urls.py" afterPath="$PROJECT_DIR$/games/urls.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/users/decorators.py" afterPath="$PROJECT_DIR$/users/decorators.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/games/models.py" afterPath="$PROJECT_DIR$/games/models.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/games/views/views.py" afterPath="$PROJECT_DIR$/games/views/views.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/home/templates/base.html" afterPath="$PROJECT_DIR$/home/templates/base.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/home/views.py" afterPath="$PROJECT_DIR$/home/views.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/users/models.py" afterPath="$PROJECT_DIR$/users/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/users/templates/en/login.html" afterPath="$PROJECT_DIR$/users/templates/en/login.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/users/templates/en/logout.html" afterPath="$PROJECT_DIR$/users/templates/en/logout.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/users/templates/en/register.html" afterPath="$PROJECT_DIR$/users/templates/en/register.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/users/urls.py" afterPath="$PROJECT_DIR$/users/urls.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/users/views/userAuth.py" afterPath="$PROJECT_DIR$/users/views/userAuth.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/users/views/userEntry.py" afterPath="$PROJECT_DIR$/users/views/userEntry.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -155,7 +38,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/gamer_trnet$django.coverage" NAME="django Coverage Results" MODIFIED="1500336105313" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/gamer_trnet$django.coverage" NAME="django Coverage Results" MODIFIED="1500386011917" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
@@ -221,86 +104,7 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/adminn/urls.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="9" column="43" lean-forward="true" selection-start-line="9" selection-start-column="43" selection-end-line="9" selection-end-column="43" />
-              <folding>
-                <element signature="e#0#32#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/games/urls.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="6" column="36" lean-forward="true" selection-start-line="6" selection-start-column="36" selection-end-line="6" selection-end-column="36" />
-              <folding>
-                <element signature="e#0#32#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="gameOps.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/adminn/views/gameOps.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="45" lean-forward="false" selection-start-line="0" selection-start-column="45" selection-end-line="0" selection-end-column="45" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="adminIndex.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/adminn/views/adminIndex.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="192">
-              <caret line="8" column="1" lean-forward="false" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
-              <folding>
-                <element signature="e#0#35#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="companyOps.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/adminn/views/companyOps.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="576">
-              <caret line="24" column="0" lean-forward="true" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#15#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="admin.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/adminn/templates/tr/admin.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="312">
-              <caret line="21" column="80" lean-forward="false" selection-start-line="21" selection-start-column="80" selection-end-line="21" selection-end-column="80" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="admin.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/adminn/templates/en/admin.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="24" column="33" lean-forward="true" selection-start-line="24" selection-start-column="33" selection-end-line="24" selection-end-column="33" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -319,6 +123,11 @@
       <find>create_game</find>
       <find>create</find>
       <find>oyun</find>
+      <find>request</find>
+      <find>order</find>
+      <find>DETE</find>
+      <find>ene</find>
+      <find>enE</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -327,32 +136,15 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/users/templates/ekle.html" />
-        <option value="$PROJECT_DIR$/users/templates/admin.html" />
-        <option value="$PROJECT_DIR$/users/conflict_fixer.py" />
-        <option value="$PROJECT_DIR$/users/views.py" />
-        <option value="$PROJECT_DIR$/debug.log" />
-        <option value="$PROJECT_DIR$/users/views/UserAuthViews.py" />
-        <option value="$PROJECT_DIR$/users/views/userAuthViews.py" />
-        <option value="$PROJECT_DIR$/users/decorators.py" />
         <option value="$PROJECT_DIR$/home/templates/tr/index.html" />
-        <option value="$PROJECT_DIR$/home/templates/en/index.html" />
-        <option value="$PROJECT_DIR$/users/models.py" />
-        <option value="$PROJECT_DIR$/users/views/userEntry.py" />
-        <option value="$PROJECT_DIR$/users/views/userAuth.py" />
         <option value="$PROJECT_DIR$/adminn/views/views.py" />
         <option value="$PROJECT_DIR$/games/views.py" />
         <option value="$PROJECT_DIR$/home/urls.py" />
-        <option value="$PROJECT_DIR$/home/views.py" />
-        <option value="$PROJECT_DIR$/home/templates/base.html" />
         <option value="$PROJECT_DIR$/sales/views.py" />
         <option value="$PROJECT_DIR$/epin/urls.py" />
         <option value="$PROJECT_DIR$/adminn/views/homeView.py" />
-        <option value="$PROJECT_DIR$/epin/settings.py" />
         <option value="$PROJECT_DIR$/adminn/views/__init__.py" />
         <option value="$PROJECT_DIR$/users/views/views.py" />
-        <option value="$PROJECT_DIR$/adminn/views/userOps.py" />
-        <option value="$PROJECT_DIR$/adminn/templates/en/add_game.html" />
         <option value="$PROJECT_DIR$/adminn/templates/tr/company.html" />
         <option value="$PROJECT_DIR$/adminn/templates/en/company.html" />
         <option value="$PROJECT_DIR$/adminn/templates/tr/companylist.html" />
@@ -361,23 +153,40 @@
         <option value="$PROJECT_DIR$/adminn/templates/en/list_game.html" />
         <option value="$PROJECT_DIR$/adminn/templates/tr/userlist.html" />
         <option value="$PROJECT_DIR$/adminn/templates/en/userlist.html" />
-        <option value="$PROJECT_DIR$/adminn/templates/tr/add_game.html" />
         <option value="$PROJECT_DIR$/adminn/templates/tr/delete_game.html" />
         <option value="$PROJECT_DIR$/adminn/templates/en/ordertable.html" />
         <option value="$PROJECT_DIR$/adminn/templates/tr/ordertable.html" />
-        <option value="$PROJECT_DIR$/adminn/urls.py" />
         <option value="$PROJECT_DIR$/users/urls.py" />
-        <option value="$PROJECT_DIR$/adminn/views/gameOps.py" />
         <option value="$PROJECT_DIR$/games/urls.py" />
-        <option value="$PROJECT_DIR$/games/views/views.py" />
         <option value="$PROJECT_DIR$/users/templates/en/login.html" />
         <option value="$PROJECT_DIR$/users/templates/en/logout.html" />
         <option value="$PROJECT_DIR$/users/templates/en/register.html" />
-        <option value="$PROJECT_DIR$/adminn/views/adminIndex.py" />
-        <option value="$PROJECT_DIR$/adminn/templates/tr/admin.html" />
-        <option value="$PROJECT_DIR$/adminn/templates/en/admin.html" />
         <option value="$PROJECT_DIR$/adminn/models.py" />
+        <option value="$PROJECT_DIR$/adminn/models/models.py" />
+        <option value="$PROJECT_DIR$/adminn/views/adminIndex.py" />
+        <option value="$PROJECT_DIR$/users/views/userEntry.py" />
+        <option value="$PROJECT_DIR$/utility/decorators.py" />
+        <option value="$PROJECT_DIR$/adminn/templates/tr/admin.html" />
+        <option value="$PROJECT_DIR$/utility/cursorutil.py" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/74233b74-daa6-4881-8c58-55041197cb3b/console.sql" />
+        <option value="$PROJECT_DIR$/users/views/userAuth.py" />
+        <option value="$PROJECT_DIR$/users/models.py" />
+        <option value="$PROJECT_DIR$/adminn/models/companyModels.py" />
+        <option value="$PROJECT_DIR$/adminn/models/gameModels.py" />
+        <option value="$PROJECT_DIR$/adminn/models/userModels.py" />
+        <option value="$PROJECT_DIR$/games/models.py" />
+        <option value="$PROJECT_DIR$/home/views.py" />
+        <option value="$PROJECT_DIR$/home/templates/base.html" />
+        <option value="$PROJECT_DIR$/home/templates/en/index.html" />
         <option value="$PROJECT_DIR$/adminn/views/companyOps.py" />
+        <option value="$PROJECT_DIR$/adminn/views/userOps.py" />
+        <option value="$PROJECT_DIR$/adminn/templates/en/admin.html" />
+        <option value="$PROJECT_DIR$/adminn/urls.py" />
+        <option value="$PROJECT_DIR$/adminn/views/gameOps.py" />
+        <option value="$PROJECT_DIR$/adminn/templates/tr/add_game.html" />
+        <option value="$PROJECT_DIR$/adminn/templates/en/add_game.html" />
+        <option value="$PROJECT_DIR$/games/views/views.py" />
+        <option value="$PROJECT_DIR$/epin/settings.py" />
       </list>
     </option>
   </component>
@@ -388,10 +197,10 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1936" />
-    <option name="height" value="1056" />
+    <option name="x" value="-1" />
+    <option name="y" value="-11" />
+    <option name="width" value="1368" />
+    <option name="height" value="780" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -410,7 +219,6 @@
     </navigator>
     <panes>
       <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -433,48 +241,13 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="adminn" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="gamer_trnet" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MVC-test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="adminn" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="gamer_trnet" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MVC-test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="adminn" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="migrations" />
+              <option name="myItemId" value="epin" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -484,18 +257,18 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/utility" />
+      <recent name="$PROJECT_DIR$/adminn/models" />
+      <recent name="C:\Users\Sercan\PycharmProjects\MVC-test\games\views" />
+      <recent name="C:\Users\Sercan\PycharmProjects\MVC-test\adminn\templates\tr" />
+      <recent name="C:\Users\Sercan\PycharmProjects\MVC-test\adminn\views" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Sercan\PycharmProjects\MVC-test\adminn\templates\tr" />
       <recent name="C:\Users\Sercan\PycharmProjects\MVC-test\adminn\templates\en" />
       <recent name="C:\Users\Sercan\PycharmProjects\MVC-test\adminn\templates" />
       <recent name="C:\Users\Sercan\PycharmProjects\mvctest" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Sercan\PycharmProjects\MVC-test\games\views" />
-      <recent name="C:\Users\Sercan\PycharmProjects\MVC-test\adminn\templates\tr" />
-      <recent name="C:\Users\Sercan\PycharmProjects\MVC-test\adminn\views" />
-      <recent name="C:\Users\Sercan\PycharmProjects\MVC-test\home" />
-      <recent name="C:\Users\Sercan\PycharmProjects\MVC-test\home\templates" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -608,6 +381,12 @@
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.npm" factoryName="npm">
@@ -743,20 +522,20 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-1" y="-11" width="1368" height="780" extended-state="6" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32972136" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39852008" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.38235295" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22727273" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.118229166" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20052083" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32875264" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32972136" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15833333" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39957717" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29256967" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -765,6 +544,7 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Execute Anonymous" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32875264" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Salesforce" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
     </layout>
@@ -777,242 +557,15 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/games/migrations/0001_initial.py</url>
-          <line>2</line>
-        </line-breakpoint>
-      </breakpoints>
-      <option name="time" value="3" />
+      <option name="time" value="9" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="dbDummy://dbtable:/1b0bbf4c/74233b74-daa6-4881-8c58-55041197cb3b/game_trnetdb.public.users_profile">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/1b0bbf4c/74233b74-daa6-4881-8c58-55041197cb3b/game_trnetdb.public.users">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/home/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="11" column="16" lean-forward="true" selection-start-line="11" selection-start-column="16" selection-end-line="11" selection-end-column="16" />
-          <folding>
-            <element signature="e#0#65#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sales/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="4" column="43" lean-forward="true" selection-start-line="4" selection-start-column="43" selection-end-line="4" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/users/decorators.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="20" column="7" lean-forward="false" selection-start-line="20" selection-start-column="7" selection-end-line="20" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/users/views/userEntry.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="61" column="4" lean-forward="false" selection-start-line="61" selection-start-column="4" selection-end-line="61" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/epin/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="39" column="12" lean-forward="true" selection-start-line="39" selection-start-column="12" selection-end-line="39" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/epin/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="398">
-          <caret line="24" column="37" lean-forward="false" selection-start-line="24" selection-start-column="37" selection-end-line="24" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/adminn/views/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="3" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/users/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36-32/Lib/site-packages/django/template/defaulttags.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="421">
-          <caret line="458" column="30" lean-forward="true" selection-start-line="458" selection-start-column="30" selection-end-line="458" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/adminn/templates/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1296">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/home/templates/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="220" column="11" lean-forward="true" selection-start-line="149" selection-start-column="4" selection-end-line="220" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sales/templates/base2.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1872">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sales/templates/checkout.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/adminn/templates/en/company.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/adminn/templates/tr/company.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="13" column="31" lean-forward="false" selection-start-line="13" selection-start-column="31" selection-end-line="13" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/adminn/templates/en/companylist.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="912">
-          <caret line="101" column="125" lean-forward="false" selection-start-line="101" selection-start-column="125" selection-end-line="101" selection-end-column="125" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/adminn/templates/en/list_game.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1632">
-          <caret line="68" column="125" lean-forward="false" selection-start-line="68" selection-start-column="125" selection-end-line="68" selection-end-column="125" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/adminn/templates/tr/list_game.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-24">
-          <caret line="20" column="23" lean-forward="true" selection-start-line="20" selection-start-column="23" selection-end-line="20" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/adminn/templates/tr/companylist.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1200">
-          <caret line="3" column="41" lean-forward="false" selection-start-line="3" selection-start-column="41" selection-end-line="3" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/adminn/templates/tr/add_game.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="696">
-          <caret line="29" column="31" lean-forward="false" selection-start-line="29" selection-start-column="31" selection-end-line="29" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/adminn/templates/en/delete_game.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/adminn/templates/tr/delete_game.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1162">
-          <caret line="60" column="129" lean-forward="false" selection-start-line="60" selection-start-column="129" selection-end-line="60" selection-end-column="129" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/adminn/templates/en/oyunekle.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-288">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/adminn/templates/en/userlist.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-408">
-          <caret line="61" column="44" lean-forward="false" selection-start-line="61" selection-start-column="44" selection-end-line="61" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/adminn/templates/tr/ordertable.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="514">
           <caret line="92" column="14" lean-forward="true" selection-start-line="92" selection-start-column="14" selection-end-line="92" selection-end-column="14" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1020,15 +573,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="850">
           <caret line="43" column="26" lean-forward="true" selection-start-line="43" selection-start-column="26" selection-end-line="43" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/adminn/templates/en/add_game.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-72">
-          <caret line="9" column="50" lean-forward="false" selection-start-line="9" selection-start-column="50" selection-end-line="9" selection-end-column="50" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1036,33 +580,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="475">
           <caret line="98" column="96" lean-forward="false" selection-start-line="98" selection-start-column="96" selection-end-line="98" selection-end-column="96" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/users/views/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/adminn/views/userOps.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="744">
-          <caret line="31" column="4" lean-forward="false" selection-start-line="31" selection-start-column="4" selection-end-line="31" selection-end-column="4" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/users/views/views.py" />
     <entry file="file://$PROJECT_DIR$/users/templates/en/login.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="456">
           <caret line="19" column="56" lean-forward="false" selection-start-line="19" selection-start-column="56" selection-end-line="19" selection-end-column="56" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1070,7 +595,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="168">
           <caret line="7" column="27" lean-forward="false" selection-start-line="7" selection-start-column="27" selection-end-line="7" selection-end-column="27" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1078,31 +602,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-648">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/users/templates/tr/detail.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/users/templates/tr/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/users/templates/tr/detail.html" />
     <entry file="file://$PROJECT_DIR$/users/templates/tr/logout.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1110,7 +617,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-2520">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1118,7 +624,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-504">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1126,110 +631,361 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="624">
           <caret line="35" column="46" lean-forward="false" selection-start-line="35" selection-start-column="46" selection-end-line="35" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/lib/python3.5/dist-packages/django/template/defaulttags.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="65" column="0" lean-forward="false" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/users/templates/tr/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-120">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/home/templates/tr/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="6" column="23" lean-forward="true" selection-start-line="6" selection-start-column="23" selection-end-line="6" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.PyCharm2017.1/system/python_stubs/-1247971764/_datetime.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="123">
+          <caret line="165" column="6" lean-forward="false" selection-start-line="165" selection-start-column="6" selection-end-line="165" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/utility/decorators.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="12" column="15" lean-forward="false" selection-start-line="12" selection-start-column="15" selection-end-line="12" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/users/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="11" column="1" lean-forward="true" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/adminn/models/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="20">
+          <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="15" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/43997c03/74233b74-daa6-4881-8c58-55041197cb3b/game_trnetdb.public.users_profile">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/adminn/templates/tr/companylist.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1780">
+          <caret line="3" column="41" lean-forward="false" selection-start-line="3" selection-start-column="41" selection-end-line="3" selection-end-column="41" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/adminn/templates/tr/admin.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="21" column="80" lean-forward="false" selection-start-line="21" selection-start-column="80" selection-end-line="21" selection-end-column="80" />
+        <state relative-caret-position="33">
+          <caret line="42" column="83" lean-forward="false" selection-start-line="42" selection-start-column="83" selection-end-line="42" selection-end-column="83" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/74233b74-daa6-4881-8c58-55041197cb3b/console.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/43997c03/74233b74-daa6-4881-8c58-55041197cb3b/game_trnetdb.public.users">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/users/migrations/0001_initial.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+          <folding>
+            <element signature="e#73#112#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/users/migrations/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/games/migrations/0001_initial.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <folding>
+            <element signature="e#73#112#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/utility/cursorutil.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="6" column="41" lean-forward="true" selection-start-line="6" selection-start-column="41" selection-end-line="6" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/adminn/models/companyModels.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="147">
+          <caret line="18" column="12" lean-forward="false" selection-start-line="18" selection-start-column="12" selection-end-line="18" selection-end-column="42" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+            <marker date="1500383889816" expanded="true" signature="438:480" ph="INSERT INTO company... " />
+            <marker date="1500383889816" expanded="true" signature="649:689" ph="SELECT name company" />
+            <marker date="1500383889816" expanded="true" signature="903:927" ph="SELECT e FRO... company" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/users/views/userEntry.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-120">
+          <caret line="24" column="21" lean-forward="true" selection-start-line="24" selection-start-column="21" selection-end-line="24" selection-end-column="21" />
+          <folding>
+            <element signature="e#0#14#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/games/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="520">
+          <caret line="26" column="0" lean-forward="true" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+          <folding>
+            <marker date="1500384058989" expanded="true" signature="252:286" ph="SELECT * FRO... game" />
+            <marker date="1500384058989" expanded="true" signature="708:812" ph="insert into game... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/users/views/userAuth.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="460">
+          <caret line="26" column="16" lean-forward="true" selection-start-line="26" selection-start-column="16" selection-end-line="26" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/home/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="7" column="12" lean-forward="true" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/home/templates/en/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="5" column="7" lean-forward="true" selection-start-line="5" selection-start-column="7" selection-end-line="5" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sales/templates/base2.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1560">
+          <caret line="3" column="10" lean-forward="false" selection-start-line="3" selection-start-column="9" selection-end-line="3" selection-end-column="10" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/adminn/templates/en/admin.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="24" column="33" lean-forward="true" selection-start-line="24" selection-start-column="33" selection-end-line="24" selection-end-column="33" />
+        <state relative-caret-position="151">
+          <caret line="21" column="81" lean-forward="true" selection-start-line="21" selection-start-column="81" selection-end-line="21" selection-end-column="81" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/users/urls.py">
+    <entry file="file://$PROJECT_DIR$/adminn/views/companyOps.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="11" column="1" lean-forward="true" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/games/views/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="720">
-          <caret line="30" column="0" lean-forward="true" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-            <marker date="1500335638651" expanded="true" signature="300:318" ph="SELECT * FRO... game" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/adminn/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="24" column="8" lean-forward="false" selection-start-line="24" selection-start-column="8" selection-end-line="24" selection-end-column="8" />
-          <folding>
-            <marker date="1500336239337" expanded="true" signature="534:574" ph="INSERT INTO company... " />
-            <marker date="1500336239337" expanded="true" signature="736:760" ph="select name company" />
-            <marker date="1500336239337" expanded="true" signature="992:1032" ph="select id fr... company" />
-            <marker date="1500336239337" expanded="true" signature="1143:1184" ph="select id fr... platform" />
-            <marker date="1500336239337" expanded="true" signature="1297:1335" ph="select id fr... genre" />
-            <marker date="1500336239337" expanded="true" signature="1443:1570" ph="INSERT INTO game... " />
-            <marker date="1500336239337" expanded="true" signature="1770:1795" ph="Select name platform" />
-            <marker date="1500336239337" expanded="true" signature="1981:2003" ph="Select name genre" />
-            <marker date="1500336239337" expanded="true" signature="2185:2203" ph="Select * fro... game" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/games/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="6" column="36" lean-forward="true" selection-start-line="6" selection-start-column="36" selection-end-line="6" selection-end-column="36" />
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/adminn/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="9" column="43" lean-forward="true" selection-start-line="9" selection-start-column="43" selection-end-line="9" selection-end-column="43" />
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/adminn/views/gameOps.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="45" lean-forward="false" selection-start-line="0" selection-start-column="45" selection-end-line="0" selection-end-column="45" />
+        <state relative-caret-position="360">
+          <caret line="24" column="1" lean-forward="true" selection-start-line="24" selection-start-column="1" selection-end-line="24" selection-end-column="1" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/adminn/views/adminIndex.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="8" column="1" lean-forward="false" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
+        <state relative-caret-position="40">
+          <caret line="3" column="4" lean-forward="false" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/adminn/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="35" lean-forward="false" selection-start-line="12" selection-start-column="35" selection-end-line="12" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/adminn/models/gameModels.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="40">
+          <caret line="2" column="0" lean-forward="true" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
           <folding>
-            <element signature="e#0#35#0" expanded="true" />
+            <element signature="e#0#32#0" expanded="true" />
+            <marker date="1500383889808" expanded="true" signature="347:387" ph="select id fr... company" />
+            <marker date="1500383889808" expanded="true" signature="498:539" ph="select id fr... platform" />
+            <marker date="1500383889808" expanded="true" signature="652:690" ph="select id fr... genre" />
+            <marker date="1500383889808" expanded="true" signature="798:925" ph="INSERT INTO game... " />
+            <marker date="1500383889808" expanded="true" signature="1170:1204" ph="SELECT * FRO... game" />
+            <marker date="1500383889808" expanded="true" signature="1588:1692" ph="insert into game... " />
+            <marker date="1500383889808" expanded="true" signature="1845:1870" ph="Select name platform" />
+            <marker date="1500383889808" expanded="true" signature="2061:2083" ph="Select name genre" />
+            <marker date="1500383889808" expanded="true" signature="2270:2288" ph="Select * fro... game" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/adminn/views/companyOps.py">
+    <entry file="file://$PROJECT_DIR$/adminn/templates/en/add_game.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="576">
-          <caret line="24" column="0" lean-forward="true" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+        <state relative-caret-position="180">
+          <caret line="9" column="45" lean-forward="false" selection-start-line="9" selection-start-column="45" selection-end-line="9" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/adminn/views/userOps.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="169">
+          <caret line="20" column="24" lean-forward="true" selection-start-line="20" selection-start-column="24" selection-end-line="20" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/users/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="19" column="34" lean-forward="true" selection-start-line="19" selection-start-column="34" selection-end-line="19" selection-end-column="34" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
+            <marker date="1500383889824" expanded="true" signature="717:791" ph="SELECT usern... users" />
+            <marker date="1500383889824" expanded="true" signature="1407:1557" ph="INSERT INTO users... " />
+            <marker date="1500383889824" expanded="true" signature="1894:1945" ph="UPDATE users... " />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/epin/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-280">
+          <caret line="1" column="33" lean-forward="true" selection-start-line="1" selection-start-column="33" selection-end-line="1" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/adminn/models/userModels.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="40">
+          <caret line="2" column="0" lean-forward="true" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+            <marker date="1500383889812" expanded="true" signature="596:656" ph="SELECT usern... users" />
+            <marker date="1500383889812" expanded="true" signature="961:1016" ph="SELECT usern... users" />
+            <marker date="1500383889812" expanded="true" signature="1280:1318" ph="DELETE FROM " />
+            <marker date="1500383889812" expanded="true" signature="1601:1655" ph="SELECT email... users" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/games/views/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="129">
+          <caret line="28" column="18" lean-forward="true" selection-start-line="28" selection-start-column="18" selection-end-line="28" selection-end-column="18" />
+          <folding>
+            <marker date="1500386006197" expanded="true" signature="304:322" ph="SELECT * FRO... game" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/home/templates/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-300">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/games/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="47" lean-forward="false" selection-start-line="8" selection-start-column="47" selection-end-line="8" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/adminn/views/gameOps.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-257">
+          <caret line="23" column="23" lean-forward="true" selection-start-line="23" selection-start-column="23" selection-end-line="23" selection-end-column="23" />
+          <folding>
+            <element signature="e#0#45#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/adminn/templates/tr/add_game.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="11" column="38" lean-forward="true" selection-start-line="11" selection-start-column="38" selection-end-line="11" selection-end-column="38" />
+          <folding />
         </state>
       </provider>
     </entry>

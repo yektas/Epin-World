@@ -1,9 +1,6 @@
 from django.shortcuts import render
 
-from adminn.models import AdminEventClass
-from users.decorators import language_assigned
-
-models = AdminEventClass()
+from utility.decorators import language_assigned
 
 
 @language_assigned

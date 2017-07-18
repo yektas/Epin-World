@@ -1,14 +1,16 @@
 from django.shortcuts import redirect, render
 
-from adminn.models import AdminEventClass
-from users.decorators import is_admin, language_assigned
+from adminn.models.companyModels import CompanyEventClass
+from adminn.models.gameModels import GameEventClass
+from utility.decorators import is_admin, language_assigned
 
-models = AdminEventClass()
+game_instance = GameEventClass()
 
 
 @language_assigned
-@is_admin
+# @is_admin
 def add_game(request):
+    company_instance = CompanyEventClass(request)
     if request.method == 'POST':
         name = request.POST.get('game_name')
         price = request.POST.get('price')
@@ -16,14 +18,14 @@ def add_game(request):
         company = request.POST.get('company')
         platform = request.POST.get('platform')
 
-        if models.create_game(company, name, platform, category, price):
+        if game_instance.create_game(company, name, platform, category, price):
             return redirect("adminn:index")
         else:
-            return redirect("adminn:creategame")
+            return redirect("adminn:add_game")
 
-    company = models.list_company()
-    platform = models.list_platform()
-    category = models.list_category()
+    company = company_instance.list_company()
+    platform = game_instance.list_platform()
+    category = game_instance.list_category()
     return render(request, "{}/add_game.html".format(request.COOKIES['language']),
                   {"company": company,
                    "category": category,
@@ -32,9 +34,9 @@ def add_game(request):
 
 
 @language_assigned
-@is_admin
+#@is_admin
 def list_game(request):
-    game = models.list_game()
+    game = game_instance.list_game()
 
     return render(request, "{}/list_game.html".format(request.COOKIES['language']), {"game": game})
 

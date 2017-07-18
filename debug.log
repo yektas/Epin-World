@@ -1355,3 +1355,621 @@ Traceback (most recent call last):
 TypeError: list_company() missing 1 required positional argument: 'self'
 WARNING:django.request:Not Found: /base2.html/code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css
 WARNING:django.request:Not Found: /undefinedalt='
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /undefinedalt='
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /undefinedalt='
+WARNING:django.request:Not Found: /undefinedalt='
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /undefinedalt='
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /base2.html/code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css
+WARNING:django.request:Not Found: /undefinedalt='
+WARNING:django.request:Not Found: /base2.html/code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css
+WARNING:django.request:Not Found: /base2.html/code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css
+ERROR:django.request:Internal Server Error: /adminn/listcompany/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/sercan/MVC-test/utility/decorators.py", line 24, in wrap
+    return func(request, *args, **kwargs)
+  File "/home/sercan/MVC-test/adminn/views/companyOps.py", line 26, in list_company
+    instance = CompanyEventClass()
+TypeError: __init__() missing 1 required positional argument: 'request_object'
+WARNING:django.request:Not Found: /base2.html/code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css
+WARNING:django.request:Not Found: /base2.html/code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css
+WARNING:django.request:Not Found: /base2.html/code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css
+WARNING:django.request:Not Found: /undefinedalt='
+WARNING:django.request:Not Found: /undefinedalt='
+WARNING:django.request:Not Found: /undefinedalt='
+ERROR:django.request:Internal Server Error: /users/auth_login/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/sercan/MVC-test/utility/decorators.py", line 24, in wrap
+    return func(request, *args, **kwargs)
+  File "/home/sercan/MVC-test/users/views/userAuth.py", line 30, in auth_login
+    return redirect("users:index")
+  File "/usr/local/lib/python3.5/dist-packages/django/shortcuts.py", line 56, in redirect
+    return redirect_class(resolve_url(to, *args, **kwargs))
+  File "/usr/local/lib/python3.5/dist-packages/django/shortcuts.py", line 147, in resolve_url
+    return reverse(to, args=args, kwargs=kwargs)
+  File "/usr/local/lib/python3.5/dist-packages/django/urls/base.py", line 91, in reverse
+    return force_text(iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs)))
+  File "/usr/local/lib/python3.5/dist-packages/django/urls/resolvers.py", line 497, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'index' not found. 'index' is not a valid view function or pattern name.
+ERROR:django.request:Internal Server Error: /users/auth_login/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/sercan/MVC-test/utility/decorators.py", line 24, in wrap
+    return func(request, *args, **kwargs)
+  File "/home/sercan/MVC-test/users/views/userAuth.py", line 30, in auth_login
+    return redirect("users:index")
+  File "/usr/local/lib/python3.5/dist-packages/django/shortcuts.py", line 56, in redirect
+    return redirect_class(resolve_url(to, *args, **kwargs))
+  File "/usr/local/lib/python3.5/dist-packages/django/shortcuts.py", line 147, in resolve_url
+    return reverse(to, args=args, kwargs=kwargs)
+  File "/usr/local/lib/python3.5/dist-packages/django/urls/base.py", line 91, in reverse
+    return force_text(iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs)))
+  File "/usr/local/lib/python3.5/dist-packages/django/urls/resolvers.py", line 497, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'index' not found. 'index' is not a valid view function or pattern name.
+WARNING:django.request:Not Found: /undefinedalt='
+WARNING:django.request:Not Found: /undefinedalt='
+WARNING:django.security.csrf:Forbidden (CSRF token missing or incorrect.): /language_detector/
+WARNING:django.request:Not Found: /undefinedalt='
+WARNING:django.request:Not Found: /language_detector/undefinedalt='
+WARNING:django.security.csrf:Forbidden (CSRF token missing or incorrect.): /language_detector/
+WARNING:django.request:Not Found: /undefinedalt='
+WARNING:django.request:Not Found: /language_detector/undefinedalt='
+WARNING:django.request:Not Found: /language_detector/undefinedalt='
+WARNING:django.request:Not Found: /language_detector/undefinedalt='
+WARNING:django.request:Not Found: /undefinedalt='
+WARNING:django.request:Not Found: /undefinedalt='
+WARNING:django.request:Not Found: /base2.html/code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css
+WARNING:django.request:Not Found: /base2.html/code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css
+ERROR:django.request:Internal Server Error: /adminn/addgame/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/sercan/MVC-test/utility/decorators.py", line 26, in wrap
+    return func(request, *args, **kwargs)
+  File "/home/sercan/MVC-test/adminn/views/gameOps.py", line 32, in add_game
+    "platform": platform}
+  File "/usr/local/lib/python3.5/dist-packages/django/shortcuts.py", line 30, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/loader.py", line 68, in render_to_string
+    return template.render(context, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/backends/django.py", line 66, in render
+    return self.template.render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 207, in render
+    return self._render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 957, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/loader_tags.py", line 177, in render
+    return compiled_parent._render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 957, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/loader_tags.py", line 177, in render
+    return compiled_parent._render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 957, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/loader_tags.py", line 72, in render
+    result = block.nodelist.render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 957, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/defaulttags.py", line 458, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/usr/local/lib/python3.5/dist-packages/django/urls/base.py", line 91, in reverse
+    return force_text(iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs)))
+  File "/usr/local/lib/python3.5/dist-packages/django/urls/resolvers.py", line 497, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'create_game' not found. 'create_game' is not a valid view function or pattern name.
+WARNING:django.request:Not Found: /base2.html/code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css
+WARNING:django.request:Not Found: /base2.html/code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css
+ERROR:django.request:Internal Server Error: /adminn/addgame/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/sercan/MVC-test/utility/decorators.py", line 26, in wrap
+    return func(request, *args, **kwargs)
+  File "/home/sercan/MVC-test/adminn/views/gameOps.py", line 32, in add_game
+    "platform": platform}
+  File "/usr/local/lib/python3.5/dist-packages/django/shortcuts.py", line 30, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/loader.py", line 68, in render_to_string
+    return template.render(context, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/backends/django.py", line 66, in render
+    return self.template.render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 207, in render
+    return self._render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 957, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/loader_tags.py", line 177, in render
+    return compiled_parent._render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 957, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/loader_tags.py", line 177, in render
+    return compiled_parent._render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 957, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/loader_tags.py", line 72, in render
+    result = block.nodelist.render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 957, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/defaulttags.py", line 458, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/usr/local/lib/python3.5/dist-packages/django/urls/base.py", line 91, in reverse
+    return force_text(iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs)))
+  File "/usr/local/lib/python3.5/dist-packages/django/urls/resolvers.py", line 497, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'create_game' not found. 'create_game' is not a valid view function or pattern name.
+ERROR:django.request:Internal Server Error: /adminn/addgame/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/sercan/MVC-test/utility/decorators.py", line 26, in wrap
+    return func(request, *args, **kwargs)
+  File "/home/sercan/MVC-test/adminn/views/gameOps.py", line 32, in add_game
+    "platform": platform}
+  File "/usr/local/lib/python3.5/dist-packages/django/shortcuts.py", line 30, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/loader.py", line 68, in render_to_string
+    return template.render(context, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/backends/django.py", line 66, in render
+    return self.template.render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 207, in render
+    return self._render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 957, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/loader_tags.py", line 177, in render
+    return compiled_parent._render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 957, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/loader_tags.py", line 177, in render
+    return compiled_parent._render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 957, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/loader_tags.py", line 72, in render
+    result = block.nodelist.render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 957, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/defaulttags.py", line 458, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/usr/local/lib/python3.5/dist-packages/django/urls/base.py", line 91, in reverse
+    return force_text(iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs)))
+  File "/usr/local/lib/python3.5/dist-packages/django/urls/resolvers.py", line 497, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'create_game' not found. 'create_game' is not a valid view function or pattern name.
+ERROR:django.request:Internal Server Error: /adminn/addgame/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/sercan/MVC-test/utility/decorators.py", line 26, in wrap
+    return func(request, *args, **kwargs)
+  File "/home/sercan/MVC-test/adminn/views/gameOps.py", line 32, in add_game
+    "platform": platform}
+  File "/usr/local/lib/python3.5/dist-packages/django/shortcuts.py", line 30, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/loader.py", line 68, in render_to_string
+    return template.render(context, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/backends/django.py", line 66, in render
+    return self.template.render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 207, in render
+    return self._render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 957, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/loader_tags.py", line 177, in render
+    return compiled_parent._render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 957, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/loader_tags.py", line 177, in render
+    return compiled_parent._render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 957, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/loader_tags.py", line 72, in render
+    result = block.nodelist.render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 957, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/defaulttags.py", line 458, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/usr/local/lib/python3.5/dist-packages/django/urls/base.py", line 91, in reverse
+    return force_text(iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs)))
+  File "/usr/local/lib/python3.5/dist-packages/django/urls/resolvers.py", line 497, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'create_game' not found. 'create_game' is not a valid view function or pattern name.
+ERROR:django.request:Internal Server Error: /adminn/addgame/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/sercan/MVC-test/utility/decorators.py", line 26, in wrap
+    return func(request, *args, **kwargs)
+  File "/home/sercan/MVC-test/adminn/views/gameOps.py", line 32, in add_game
+    "platform": platform}
+  File "/usr/local/lib/python3.5/dist-packages/django/shortcuts.py", line 30, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/loader.py", line 68, in render_to_string
+    return template.render(context, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/backends/django.py", line 66, in render
+    return self.template.render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 207, in render
+    return self._render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 957, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/loader_tags.py", line 177, in render
+    return compiled_parent._render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 957, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/loader_tags.py", line 177, in render
+    return compiled_parent._render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 957, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/loader_tags.py", line 72, in render
+    result = block.nodelist.render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 957, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/defaulttags.py", line 458, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/usr/local/lib/python3.5/dist-packages/django/urls/base.py", line 91, in reverse
+    return force_text(iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs)))
+  File "/usr/local/lib/python3.5/dist-packages/django/urls/resolvers.py", line 497, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'create_game' not found. 'create_game' is not a valid view function or pattern name.
+ERROR:django.request:Internal Server Error: /adminn/addgame/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/db/backends/base/base.py", line 213, in ensure_connection
+    self.connect()
+  File "/usr/local/lib/python3.5/dist-packages/django/db/backends/base/base.py", line 189, in connect
+    self.connection = self.get_new_connection(conn_params)
+  File "/usr/local/lib/python3.5/dist-packages/django/db/backends/postgresql/base.py", line 176, in get_new_connection
+    connection = Database.connect(**conn_params)
+  File "/usr/local/lib/python3.5/dist-packages/psycopg2/__init__.py", line 130, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: could not connect to server: Connection timed out
+	Is the server running on host "185.144.14.41" and accepting
+	TCP/IP connections on port 5432?
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/sercan/MVC-test/utility/decorators.py", line 26, in wrap
+    return func(request, *args, **kwargs)
+  File "/home/sercan/MVC-test/adminn/views/gameOps.py", line 13, in add_game
+    company_instance = CompanyEventClass(request)
+  File "/home/sercan/MVC-test/adminn/models/companyModels.py", line 9, in __init__
+    self.cursor = connection.cursor()
+  File "/usr/local/lib/python3.5/dist-packages/django/db/backends/base/base.py", line 254, in cursor
+    return self._cursor()
+  File "/usr/local/lib/python3.5/dist-packages/django/db/backends/base/base.py", line 229, in _cursor
+    self.ensure_connection()
+  File "/usr/local/lib/python3.5/dist-packages/django/db/backends/base/base.py", line 213, in ensure_connection
+    self.connect()
+  File "/usr/local/lib/python3.5/dist-packages/django/db/utils.py", line 94, in __exit__
+    six.reraise(dj_exc_type, dj_exc_value, traceback)
+  File "/usr/local/lib/python3.5/dist-packages/django/utils/six.py", line 685, in reraise
+    raise value.with_traceback(tb)
+  File "/usr/local/lib/python3.5/dist-packages/django/db/backends/base/base.py", line 213, in ensure_connection
+    self.connect()
+  File "/usr/local/lib/python3.5/dist-packages/django/db/backends/base/base.py", line 189, in connect
+    self.connection = self.get_new_connection(conn_params)
+  File "/usr/local/lib/python3.5/dist-packages/django/db/backends/postgresql/base.py", line 176, in get_new_connection
+    connection = Database.connect(**conn_params)
+  File "/usr/local/lib/python3.5/dist-packages/psycopg2/__init__.py", line 130, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+django.db.utils.OperationalError: could not connect to server: Connection timed out
+	Is the server running on host "185.144.14.41" and accepting
+	TCP/IP connections on port 5432?
+
+ERROR:django.request:Internal Server Error: /adminn/addgame/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/sercan/MVC-test/utility/decorators.py", line 26, in wrap
+    return func(request, *args, **kwargs)
+  File "/home/sercan/MVC-test/adminn/views/gameOps.py", line 32, in add_game
+    "platform": platform}
+  File "/usr/local/lib/python3.5/dist-packages/django/shortcuts.py", line 30, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/loader.py", line 68, in render_to_string
+    return template.render(context, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/backends/django.py", line 66, in render
+    return self.template.render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 207, in render
+    return self._render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 957, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/loader_tags.py", line 177, in render
+    return compiled_parent._render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 957, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/loader_tags.py", line 177, in render
+    return compiled_parent._render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 957, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/loader_tags.py", line 72, in render
+    result = block.nodelist.render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 957, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/defaulttags.py", line 458, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/usr/local/lib/python3.5/dist-packages/django/urls/base.py", line 91, in reverse
+    return force_text(iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs)))
+  File "/usr/local/lib/python3.5/dist-packages/django/urls/resolvers.py", line 497, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'create_game' not found. 'create_game' is not a valid view function or pattern name.
+ERROR:django.request:Internal Server Error: /adminn/addgame/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/sercan/MVC-test/utility/decorators.py", line 26, in wrap
+    return func(request, *args, **kwargs)
+  File "/home/sercan/MVC-test/adminn/views/gameOps.py", line 32, in add_game
+    "platform": platform}
+  File "/usr/local/lib/python3.5/dist-packages/django/shortcuts.py", line 30, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/loader.py", line 68, in render_to_string
+    return template.render(context, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/backends/django.py", line 66, in render
+    return self.template.render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 207, in render
+    return self._render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 957, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/loader_tags.py", line 177, in render
+    return compiled_parent._render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 957, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/loader_tags.py", line 177, in render
+    return compiled_parent._render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 957, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/loader_tags.py", line 72, in render
+    result = block.nodelist.render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 957, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/defaulttags.py", line 458, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/usr/local/lib/python3.5/dist-packages/django/urls/base.py", line 91, in reverse
+    return force_text(iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs)))
+  File "/usr/local/lib/python3.5/dist-packages/django/urls/resolvers.py", line 497, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'create_game' not found. 'create_game' is not a valid view function or pattern name.
+WARNING:django.request:Not Found: /base2.html/code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css
+WARNING:django.request:Not Found: /base2.html/code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css
+WARNING:django.request:Not Found: /undefinedalt='
+WARNING:django.request:Not Found: /base2.html/code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css
+WARNING:django.request:Not Found: /base2.html/code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css
+WARNING:django.request:Not Found: /base2.html/code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css
+WARNING:django.request:Not Found: /base2.html/code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css
+WARNING:django.request:Not Found: /base2.html/code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css
+WARNING:django.request:Not Found: /base2.html/code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css
+WARNING:django.request:Not Found: /base2.html/code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css
+WARNING:django.request:Not Found: /base2.html/code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css
+WARNING:django.request:Not Found: /base2.html/code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css
+WARNING:django.request:Not Found: /undefinedalt='
+WARNING:django.request:Not Found: /language_detector/undefinedalt='
+WARNING:django.request:Not Found: /base2.html/code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css
+WARNING:django.request:Not Found: /base2.html/code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css
+WARNING:django.request:Not Found: /base2.html/code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css
+WARNING:django.request:Not Found: /base2.html/code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css
+WARNING:django.request:Not Found: /base2.html/code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css
+WARNING:django.request:Not Found: /base2.html/code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css
+WARNING:django.request:Not Found: /base2.html/code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css
+WARNING:django.request:Not Found: /base2.html/code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css
+WARNING:django.request:Not Found: /base2.html/code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css
+WARNING:django.request:Not Found: /base2.html/code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css
+WARNING:django.request:Not Found: /games/
+WARNING:django.request:Not Found: /games/games_detail/Diablo3
+WARNING:django.request:Not Found: /games/games_detail/Diablo3/
+WARNING:django.request:Not Found: /users/games_detail/Diablo3/
+WARNING:django.request:Not Found: /game/game_detail/Diablo3/
+ERROR:django.request:Internal Server Error: /adminn/userlist/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/db/backends/base/base.py", line 213, in ensure_connection
+    self.connect()
+  File "/usr/local/lib/python3.5/dist-packages/django/db/backends/base/base.py", line 189, in connect
+    self.connection = self.get_new_connection(conn_params)
+  File "/usr/local/lib/python3.5/dist-packages/django/db/backends/postgresql/base.py", line 176, in get_new_connection
+    connection = Database.connect(**conn_params)
+  File "/usr/local/lib/python3.5/dist-packages/psycopg2/__init__.py", line 130, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: server closed the connection unexpectedly
+	This probably means the server terminated abnormally
+	before or while processing the request.
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/sercan/MVC-test/utility/decorators.py", line 26, in wrap
+    return func(request, *args, **kwargs)
+  File "/home/sercan/MVC-test/adminn/views/userOps.py", line 13, in user_list
+    instance = UserOperationClass(request)
+  File "/home/sercan/MVC-test/adminn/models/userModels.py", line 9, in __init__
+    self.cursor = connection.cursor()
+  File "/usr/local/lib/python3.5/dist-packages/django/db/backends/base/base.py", line 254, in cursor
+    return self._cursor()
+  File "/usr/local/lib/python3.5/dist-packages/django/db/backends/base/base.py", line 229, in _cursor
+    self.ensure_connection()
+  File "/usr/local/lib/python3.5/dist-packages/django/db/backends/base/base.py", line 213, in ensure_connection
+    self.connect()
+  File "/usr/local/lib/python3.5/dist-packages/django/db/utils.py", line 94, in __exit__
+    six.reraise(dj_exc_type, dj_exc_value, traceback)
+  File "/usr/local/lib/python3.5/dist-packages/django/utils/six.py", line 685, in reraise
+    raise value.with_traceback(tb)
+  File "/usr/local/lib/python3.5/dist-packages/django/db/backends/base/base.py", line 213, in ensure_connection
+    self.connect()
+  File "/usr/local/lib/python3.5/dist-packages/django/db/backends/base/base.py", line 189, in connect
+    self.connection = self.get_new_connection(conn_params)
+  File "/usr/local/lib/python3.5/dist-packages/django/db/backends/postgresql/base.py", line 176, in get_new_connection
+    connection = Database.connect(**conn_params)
+  File "/usr/local/lib/python3.5/dist-packages/psycopg2/__init__.py", line 130, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+django.db.utils.OperationalError: server closed the connection unexpectedly
+	This probably means the server terminated abnormally
+	before or while processing the request.
+
+WARNING:django.request:Not Found: /games/game_detail/Diablo3/
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost
+DEBUG:urllib3.connectionpool:http://localhost:8000 "GET /games/games_json/ HTTP/1.1" 200 2381
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost
+DEBUG:urllib3.connectionpool:http://localhost:8000 "GET /games/games_json/ HTTP/1.1" 200 2381
+WARNING:django.request:Not Found: /game/game_detail/Diablo3/
+WARNING:django.request:Not Found: /game/game_detail/Diablo3
+WARNING:django.request:Not Found: /game/game_detail/Diablo3
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost
+DEBUG:urllib3.connectionpool:http://localhost:8000 "GET /games/games_json/ HTTP/1.1" 200 2381
+WARNING:django.request:Not Found: /undefinedalt='
