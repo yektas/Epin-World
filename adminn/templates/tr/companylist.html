@@ -56,7 +56,7 @@ $("#mytable #checkall").click(function () {
                        <th>Sil</th>
                    </thead>
     <tbody>
-    {% for name in company%}
+    {% for name in companys%}
     <tr>
     <td>{{name.name}}</td>
         <td>
@@ -84,6 +84,26 @@ $("#mytable #checkall").click(function () {
     </tbody>
 
 </table>
+
+            {% if companys.has_other_pages %}
+            <ul class="pagination">
+                {% if companys.has_previous %}
+                <li><a href="?page={{ companys.previous_page_number }}">&laquo;</a></li>
+
+                {% endif %}
+                {% for i in companys.paginator.page_range %}
+                {% if companys.number == i %}
+                <li class="active"><span>{{ i }} <span class="sr-only">(current)</span></span></li>
+                {% else %}
+                <li><a href="?page={{ i }}">{{ i }}</a></li>
+                {% endif %}
+                {% endfor %}
+                {% if companys.has_next %}
+                <li><a href="?page={{ companys.next_page_number }}">&raquo;</a></li>
+
+                {% endif %}
+            </ul>
+            {% endif %}
 
     <div class="modal fade" id="delete" tabindex="-1" role="dialog" aria-labelledby="edit" aria-hidden="true">
       <div class="modal-dialog">

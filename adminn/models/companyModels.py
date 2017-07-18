@@ -11,16 +11,17 @@ class CompanyEventClass():
     def __del__(self):
         self.cursor.close()
 
-    def create_company(self):
+    def create_company(self, cname):
 
-        cname = self.request_object['cname']
-        if self.check_company() is False:
+        if self.check_company(cname) is False:
             self.cursor.execute("INSERT INTO company (name) VALUES ( '{}' )".format(str(cname)))
             self.cursor.execute("COMMIT;")
+            return True
+        else:
+            return False
 
-    def check_company(self):
+    def check_company(self, cname):
 
-        cname = self.request_object['cname']
         self.cursor.execute("SELECT name FROM company WHERE name='{}' ".format(cname))
         company = dictfetchall(self.cursor)
         if len(company) <= 0:
