@@ -3,6 +3,8 @@
 {% block content %}
 <head>
     {% block title%}<title>EpinWorld-Anasayfa</title>{% endblock %}
+        <link href="{% static 'css/index_page_product.css'%}" rel="stylesheet" type="text/css"/>
+        <script type="text/javascript" src="{% static 'js/index_page_products.js'%}"></script> 
 </head>
 <div class="container">
     <hr />
@@ -56,34 +58,45 @@
     <!-- /.carousel -->
     </div>
     <!-- -->
+    <br>
+    <br>
+    <br>
+    <br>
 
-    <div class="clearfix"></div>
-    <hr />
-    <div id="game_index_table"class="shoes-grid-left">
+    <div id="products_footer">
+        <div class="col-sm-3">
+                <article class="col-item">
+                    <div class="photo">
+                
+
+                        <div class="options-cart">
+                            <a href="/games/games_json/">
+                                <button class="btn btn-default" title="Add to cart">
+                                    <span class="fa fa-shopping-cart"></span>
+                                </button>
+                            </a>
+                        </div>
+                        <a href=""> <img src="{% static 'images/fifa.jpg'%}" class="img-responsive" alt="Product Image" /> </a>
+                    </div>
+                    <div class="container">
+                        <br>
+                        <strong><p>FIFA 17</p></strong>
+                        <strong><p>Game Money Price : 100 K</p></strong>
+
+                    </div>
+                </article>
+   
+            </div>
+        </div>
 
 
-	   		</div>
-  		</div>
+
+
+    <div id="products_footer">
+      
     </div>
-	   		     <div class="products">
-	   		     	<h5 class="latest-product">EN SON PRODUCTS</h5>
-	   		     	  <a class="view-all" href="product.html">VIEW ALL<span> </span></a>
-	   		     </div>
-	   		     	</div>
-	   		     	 <div class="clearfix"> </div>
-	   		     </div>
-	   		     <div class="products">
-	   		     	<h5 class="latest-product">EN SON PRODUCTS</h5>
-	   		     	  <a class="view-all" href="product.html">VIEW ALL<span> </span></a>
-	   		     </div>
-	   		     <div class="product-left">
 
-	   		     	</div>
-	   		     	 <div class="clearfix"> </div>
-	   		     </div>
-	   		     <div class="clearfix"> </div>
-	   		   </div>
-			   <div class="sub-cate">
+  		     
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
 	<script type="text/javascript" src="{% static 'js/index_game_filler.js' %}"></script>
