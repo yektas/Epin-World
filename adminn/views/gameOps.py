@@ -42,12 +42,12 @@ def list_game(request):
     """All game split into 5 pieces"""
     paginator = Paginator(game, 5)
     try:
-        companys = paginator.page(page)
+        game = paginator.page(page)
         """If page not an integer return page 1"""
     except PageNotAnInteger:
-        companys = paginator.page(1)
+        game = paginator.page(1)
     except:
-        companys = paginator.page(paginator.num_pages)
+        game = paginator.page(paginator.num_pages)
     return render(request, "{}/list_game.html".format(request.COOKIES['language']), {"game": game})
 
 
