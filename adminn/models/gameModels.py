@@ -73,3 +73,24 @@ class GameEventClass():
 
         game = dictfetchall(self.cursor)
         return game
+
+    def delete_game(self, gname):
+        try:
+            if (self.check_game(gname)):
+                self.cursor.execute("start transaction;")
+                self.cursor.execute("delete from game where name='{}' ".format(str(gname)))
+                self.cursor.execute("commit;")
+                return True
+            else:
+                return False
+        except:
+            return False
+
+    def check_game(self, gname):
+
+        self.cursor.execute("SELECT name FROM game WHERE name='{}' ".format(gname))
+        company = dictfetchall(self.cursor)
+        if len(company) <= 0:
+            return False
+        else:
+            return True

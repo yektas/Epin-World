@@ -51,3 +51,7 @@ def delete_company(request):
     instance = CompanyEventClass(request)
     if request.method == "POST":
         name = request.POST.get('name', '')
+        instance.delete_company(name)
+        return redirect("adminn:list_company")
+    else:
+        return redirect("adminn:list_company")

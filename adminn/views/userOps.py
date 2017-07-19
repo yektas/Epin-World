@@ -4,7 +4,7 @@ import logging
 from django.shortcuts import render, redirect
 
 from adminn.models.userModels import UserOperationClass
-from utility.decorators import language_assigned
+from utility.decorators import language_assigned, is_admin
 
 
 @language_assigned
@@ -34,3 +34,15 @@ def delete_user(request):
 def order_table(request):
     return render(request, "{}/ordertable.html".format(request.COOKIES['language']),
                   {'lang_data': request.COOKIES['language']})
+
+
+@is_admin
+@language_assigned
+def ban_user(request):
+    if request.method == "POST":
+        uname = request.POST.get('name', '')
+        instance = UserOperationClass(request)
+        instance.ban_user(uname)
+        return redirect("adminn:user_list")
+    else:
+        return redirect("adminn:user_list")

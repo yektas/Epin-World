@@ -28,14 +28,14 @@ class UserOperationClass():
     def list_users(self):
         """ Returns all users as a list of dictionaries"""
         ''' Sercan : 13.07.2017 '''
-        self.cursor.execute("SELECT username, email, full_name, status_id FROM users")
+        self.cursor.execute("SELECT username, email, full_name, status_id, admin_id FROM users")
         users = dictfetchall(self.cursor)
         return users
 
     def delete_user(self, username):
         """ Deletes the user for given username """
         ''' Sercan : 13.07.2017 '''
-        if self.check_user() is False:
+        if self.check_user() is not False:
             self.cursor.execute("DELETE FROM users WHERE username= '{}' ".format(username))
             self.cursor.execute("COMMIT;")
 
@@ -49,3 +49,14 @@ class UserOperationClass():
             return False
         else:
             return user
+
+    def ban_user(self, uname):
+        """change status"""
+        if self.find_user(uname) is not False:
+            try:
+                self.cursor.execute("update users SET status_id = 2 where username='{}'".format(str(uname)))
+                return True
+            except:
+                return False
+        else:
+            return False

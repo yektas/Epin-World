@@ -1,3 +1,4 @@
+from django.core.paginator import Paginator, PageNotAnInteger
 from django.shortcuts import redirect, render
 
 from adminn.models.companyModels import CompanyEventClass
@@ -8,7 +9,7 @@ game_instance = GameEventClass()
 
 
 @language_assigned
-# @is_admin
+@is_admin
 def add_game(request):
     company_instance = CompanyEventClass(request)
     if request.method == 'POST':
@@ -34,14 +35,27 @@ def add_game(request):
 
 
 @language_assigned
-#@is_admin
+@is_admin
 def list_game(request):
     game = game_instance.list_game()
-
+    page = request.GET.get('page', 1)
+    """All game split into 5 pieces"""
+    paginator = Paginator(game, 5)
+    try:
+        companys = paginator.page(page)
+        """If page not an integer return page 1"""
+    except PageNotAnInteger:
+        companys = paginator.page(1)
+    except:
+        companys = paginator.page(paginator.num_pages)
     return render(request, "{}/list_game.html".format(request.COOKIES['language']), {"game": game})
 
 
 @language_assigned
 @is_admin
 def delete_game(request):
-    return render(request, "{}/delete_game.html".format(request.COOKIES['language']))
+    if request.method == "POST":
+        gname = request.POST.get('name', '')
+        game_instance.delete_game(gname)
+        return redirect("adminn:list_game")
+    return redirect("adminn:list_game")

@@ -15,4 +15,7 @@ urlpatterns = [
     url(r'^userlist/$', userOps.user_list, name='user_list'),
     url(r'^deleteuser/$', userOps.delete_user, name='delete_user'),
     url(r'^ordertable/$', userOps.order_table, name='order_table'),
+    url(r'^deletecompany/$', companyOps.delete_company, name='company_delete'),
+    url(r'^banuser/$', userOps.ban_user, name='ban_user'),
+
 ]
