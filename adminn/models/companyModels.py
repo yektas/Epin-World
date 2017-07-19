@@ -37,3 +37,18 @@ class CompanyEventClass():
             return False
         else:
             return company
+
+    def delete_company(self, cname):
+
+        if (self.check_company(cname)):
+            try:
+                self.cursor.execute("START TRANSACTION;")
+                self.cursor.execute(
+                    "delete from game where company_id = (select id from company where name = '{}')".format(str(cname)))
+                self.cursor.execute("delete from company where name = '{}' ".format(str(cname)))
+                self.cursor.execute("commit;")
+                return True
+            except:
+                return False
+        else:
+            return False
