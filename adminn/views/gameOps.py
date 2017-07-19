@@ -1,12 +1,12 @@
 from django.core.paginator import Paginator, PageNotAnInteger
 from django.shortcuts import redirect, render
-
+import logging
 from adminn.models.companyModels import CompanyEventClass
 from adminn.models.gameModels import GameEventClass
 from utility.decorators import is_admin, language_assigned
-
+import datetime
 game_instance = GameEventClass()
-
+logging.basicConfig(filename= 'debug.log' , level= logging.DEBUG)
 
 @language_assigned
 @is_admin
@@ -20,8 +20,10 @@ def add_game(request):
         platform = request.POST.get('platform')
 
         if game_instance.create_game(company, name, platform, category, price):
+            logging.info('games added / {}'.format(datetime.datetime.now()))
             return redirect("adminn:index")
         else:
+            logging.warning('games could not be added. / {}'.format(datetime.datetime.now()))
             return redirect("adminn:add_game")
 
     company = company_instance.list_company()
@@ -57,5 +59,6 @@ def delete_game(request):
     if request.method == "POST":
         gname = request.POST.get('name', '')
         game_instance.delete_game(gname)
+        logging.info('games deleted / {}'.format(datetime.datetime.now()))
         return redirect("adminn:list_game")
     return redirect("adminn:list_game")
