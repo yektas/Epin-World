@@ -2,9 +2,11 @@ import datetime
 import logging
 
 from django.shortcuts import render, redirect
-
+import datetime
 from adminn.models.userModels import UserOperationClass
 from utility.decorators import language_assigned, is_admin
+
+logging.basicConfig(filename= 'debug.log' , level= logging.DEBUG)
 
 
 @language_assigned
@@ -14,6 +16,7 @@ def user_list(request):
     ''' Sercan : 13.07.2017 '''
     instance = UserOperationClass(request)
     users = instance.list_users()
+    logging.info('users listed / {}'.format(datetime.datetime.now()))
     return render(request, "{}/userlist.html".format(request.COOKIES['language']), {'users': users})
 
 
@@ -43,6 +46,7 @@ def ban_user(request):
         uname = request.POST.get('name', '')
         instance = UserOperationClass(request)
         instance.ban_user(uname)
+        logging.info('user banned. / {}'.format(datetime.datetime.now()))
         return redirect("adminn:user_list")
     else:
         return redirect("adminn:user_list")
