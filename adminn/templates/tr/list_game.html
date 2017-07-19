@@ -40,6 +40,7 @@
                       <th>Şirket</th>
                       <th>Platform</th>
                       <th>Sil</th>
+
                       </thead>
                       <tbody id="games">
 
@@ -52,6 +53,7 @@
                           <td>{{a.genre_id}}</td>
                           <td>{{a.company_name}}</td>
                           <td>{{a.platform.name}}</td>
+
                           <td><input type="radio" name="name" value="{{a.name}}"></td>
                       </tr>
                       {% endfor %}

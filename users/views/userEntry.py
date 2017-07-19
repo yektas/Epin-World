@@ -19,8 +19,10 @@ def login(request):
 
     if 'is_logged' not in request.session:
         try:
+            logging.info('login succesful. / {}'.format(datetime.datetime.now()))
             return render(request, "{}/login.html".format(request.COOKIES['language']))
         except:
+            logging.error('login failed')
             return render(request, "tr/login.html")
     else:
         username = request.session['username']

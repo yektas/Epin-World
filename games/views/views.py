@@ -7,11 +7,12 @@ from django.shortcuts import render, HttpResponse
 
 from utility.decorators import language_assigned
 
-logger = logging.getLogger(__name__)
-cursor = connections['default'].cursor()
 
+cursor = connections['default'].cursor()
+logging.basicConfig(filename= 'debug.log' , level= logging.DEBUG)
 
 def games_json(request):
+    logging.info('oyun çekme işlemi bitirildi ')
     cursor.execute("SELECT * FROM game")
 
     test_data = cursor.fetchall()
