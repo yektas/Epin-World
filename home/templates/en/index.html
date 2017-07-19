@@ -86,6 +86,16 @@ $.ajax({
         divContainer.innerHTML = "";
         divContainer.appendChild(table);
     }
+    /*
+     * Date : 19.07.2017 - Taha Demir
+     * If the user would like to see the game table, he/she click that button and the table is appeared.
+     * The table is disappeared if the user click that button again.
+      * */
+    $(document).ready(function(){
+    $("#btn").click(function(){
+        $("#showData").toggle();
+    });
+});
 </script>
 
 
@@ -168,9 +178,8 @@ $.ajax({
     <br>
     <br>
 
-    <div id="showData">
-        <input type="button" class="button" onclick="CreateTableFromJSON()" value="Kayıtlı Oyunları Görüntüle" />
-    </div>
+        <input type="button" id="btn" class="button" onclick="CreateTableFromJSON()" value="Kayıtlı Oyunları Görüntüle">
+        <div id="showData"></div>
 
     <br>
     <br>
