@@ -19,7 +19,9 @@ def auth_login(request):
 
         instance = UserEventClass(user_info)
         ### DB düzelince tekrar test edilecek ###
-        # instance.update_lastlogin(username)
+        instance.update_lastlogin(username)
+        if (not instance.login_event()):
+            return redirect("users:login")
         user = instance.login_event()
 
         if len(user) > 0:

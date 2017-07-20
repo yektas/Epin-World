@@ -22,6 +22,8 @@ class UserEventClass():
         ''' Sercan : 12.07.2017'''
         t1 = self.request_object['username']
         t2 = self.request_object['password']
+        if ("'" in t1 or "'" in t2):
+            return False
         self.cursor.execute("SELECT username, admin_id FROM users WHERE username='{}' AND password='{}'".format(t1, str(t2)))
         user = dictfetchall(self.cursor)
         return user
