@@ -77,7 +77,7 @@
                 var tabCell = tr.insertCell(-1);
                 tabCell.innerHTML = game[i][col[j]];
             }
-            $(tr).append("<button id='goChart' class='addChart'>Sepete Ekle</button>");
+            $(tr).append('<button id="gochart' + game[i].game_id + '" class="addChart">Sepete Ekle</button>');
         }
 
         // FINALLY ADD THE NEWLY CREATED TABLE WITH JSON DATA TO A CONTAINER.
