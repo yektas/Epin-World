@@ -2,13 +2,10 @@
 
     {% extends './admin.html' %}
     {% load staticfiles %}
-    {% block title%}<title>Game List</title>{% endblock %}
+    {% block title%}<title>Oyun Listesi</title>{% endblock %}
     <script type="text/javascript" src="{% static 'js/tool_tip.js' %}"></script>
 
-
 </head>
-{% block content %}
-
 
 <link href="{% static 'css/form.css'%}" rel="stylesheet" type="text/css"/>
 <div class="container">
@@ -17,70 +14,68 @@
         <script src="http://getbootstrap.com/dist/js/bootstrap.min.js"></script>
 
         <div class="container">
+            {% block content %}
             <div class="row">
 
                 <h5>Games</h5>
                 <div class="col-md-12" style="width:0%">
-
                     <div class="table-responsive">
-
-
                         <table id="mytable" class="table table-bordred table-striped">
+                            <form action="{% url 'adminn:delete_game' %}" method="post">{% csrf_token %}
 
-                            <thead>
+                                <thead>
 
-                            <th>Game Name</th>
-                            <th>Price</th>
+                                <th>Game Name</th>
+                                <th>Price</th>
+                                <th>Created Date</th>
+                                <th>Updated Date</th>
+                                <th>Category</th>
+                                <th>Company</th>
+                                <th>Platform</th>
+                                <th>Delete</th>
 
-                            </thead>
-                            <tbody id="games">
+                                </thead>
+                                <tbody id="games">
 
-                            {% for a in game%}
-                            <tr>
-                                <td>{{a.name}}</td>
-                                <td>{{a.price}}</td>
-                                <td>{{a.created_date}}</td>
-                                <td>{{a.update_date}}</td>
-                                <td>{{a.genre_name}}</td>
-                                <td>{{a.company_name}}</td>
-                                <td>{{a.platform_name}}</td>
-                            </tr>
-                            {% endfor %}
-                            </tbody>
+                                {% for a in game%}
+                                <tr>
+                                    <td>{{a.name}}</td>
+                                    <td>{{a.price}}</td>
+                                    <td>{{a.created_date}}</td>
+                                    <td>{{a.update_date}}</td>
+                                    <td>{{a.genre_name}}</td>
+                                    <td>{{a.company_name}}</td>
+                                    <td>{{a.platform_name}}</td>
 
+                                    <td><input type="radio" name="name" value="{{a.name}}"></td>
+                                </tr>
+                                {% endfor %}
+                                </tbody>
+                                <div>
+                                    <button type="submit" style="margin-left: 720px;">SİL</button>
+                                </div>
+                            </form>
                         </table>
 
-                        <div class="modal fade" id="delete" tabindex="-1" role="dialog" aria-labelledby="edit"
-                             aria-hidden="true">
-                            <div class="modal-dialog">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-                                            <span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
-                                        <h4 class="modal-title custom_align" id="Heading">Delete this entry</h4>
-                                    </div>
-                                    <div class="modal-body">
+                        {% if game.has_other_pages %}
+                        <ul class="pagination">
+                            {% if game.has_previous %}
+                            <li><a href="?page={{ game.previous_page_number }}">&laquo;</a></li>
 
-                                        <div class="alert alert-danger"><span
-                                                class="glyphicon glyphicon-warning-sign"></span> Are you sure to delete
-                                            this game?
-                                        </div>
+                            {% endif %}
+                            {% for i in game.paginator.page_range %}
+                            {% if game.number == i %}
+                            <li class="active"><span>{{ i }} <span class="sr-only">(current)</span></span></li>
+                            {% else %}
+                            <li><a href="?page={{ i }}">{{ i }}</a></li>
+                            {% endif %}
+                            {% endfor %}
+                            {% if game.has_next %}
+                            <li><a href="?page={{ game.next_page_number }}">&raquo;</a></li>
 
-                                    </div>
-                                    <div class="modal-footer ">
-                                        <button type="button" class="btn btn-success"><span
-                                                class="glyphicon glyphicon-ok-sign"></span>Yes
-                                        </button>
-                                        <button type="button" class="btn btn-default" data-dismiss="modal"><span
-                                                class="glyphicon glyphicon-remove"></span>No
-                                        </button>
-                                    </div>
-                                </div>
-                                <!-- /.modal-content -->
-                            </div>
-                            <!-- /.modal-dialog -->
-                        </div>
-
+                            {% endif %}
+                        </ul>
+                        {% endif %}
                     </div>
                 </div>
             </div>

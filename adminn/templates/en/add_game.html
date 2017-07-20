@@ -1,7 +1,7 @@
 <head>
     {% extends './admin.html' %}
     {% load staticfiles %}
-    {% block title%}<title>ADD GAME</title>{% endblock %}
+    {% block title%}<title>OYUN EKLE</title>{% endblock %}
 </head>
 {% block content %}
 <link href="{% static 'css/form.css'%}" rel="stylesheet" type="text/css"/>
@@ -14,11 +14,10 @@
                     <span>Logo<label></label></span>
                     <input type="file" name="game_name" accept="image/*" size="" style="margin: 30px 30px 40px 0px">
 
-                    <span>Game name<label></label></span>
+                    <span>Game Name<label></label></span>
                     <input type="text" name="game_name">
                     <span>Price<label></label></span>
                     <input type="text" name="price">
-
 
                     <span>Category<label></label></span>
                     <select name="category" style="margin: 5px 5px 10px 0px">

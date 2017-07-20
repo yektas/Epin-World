@@ -23,7 +23,7 @@
 
     </script>
 </head>
-{% block content %}
+
 <link href="{% static 'css/form.css'%}" rel="stylesheet" type="text/css"/>
 <div class="container">
     <div class="giris">
@@ -31,10 +31,11 @@
         <script src="http://getbootstrap.com/dist/js/bootstrap.min.js"></script>
 
         <div class="container">
+            {% block content %}
             <div class="row">
 
-                <h5>Users</h5>
-                <div class="col-md-12" style="width:72%">
+                <h5>Kullanıcılar</h5>
+                <div class="col-md-12" style="width:69%">
 
                     <div class="table-responsive">
 

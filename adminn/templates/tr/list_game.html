@@ -9,7 +9,7 @@
 
 
 </head>
-{% block content %}
+
 
 
     <link href="{% static 'css/form.css'%}" rel="stylesheet" type="text/css"/>
@@ -19,6 +19,7 @@
 <script src="http://getbootstrap.com/dist/js/bootstrap.min.js"></script>
 
 <div class="container">
+    {% block content %}
     <div class="row">
 
         <h5>Oyunlar</h5>
@@ -58,7 +59,9 @@
                       </tr>
                       {% endfor %}
                       </tbody>
-                      <button type="submit">Gönder</button>
+                      <div>
+                          <button type="submit" style="margin-left: 720px;">SİL</button>
+                      </div>
                   </form>
 </table>
 

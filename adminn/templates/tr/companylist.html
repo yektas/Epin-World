@@ -23,7 +23,7 @@ $("#mytable #checkall").click(function () {
 
     </script>
 </head>
-{% block content %}
+
     <link href="{% static 'css/form.css'%}" rel="stylesheet" type="text/css"/>
 <div class="container">
 		<div class="giris">
@@ -31,10 +31,11 @@ $("#mytable #checkall").click(function () {
 <script src="http://getbootstrap.com/dist/js/bootstrap.min.js"></script>
 
 <div class="container">
+    {% block content %}
     <div class="row">
 
         <h5>Şirketler</h5>
-        <div class="col-md-12" style="width:72%">
+        <div class="col-md-12" style="width:69%">
 
         <div class="table-responsive">
 
@@ -84,7 +85,9 @@ $("#mytable #checkall").click(function () {
                       {% endfor %}
 
                       </tbody>
-                      <button type="submit" style="margin-left: 700px">Gönder</button>
+                      <div>
+                          <button type="submit" style="margin-left: 720px;">SİL</button>
+                      </div>
                   </form>
 
 </table>

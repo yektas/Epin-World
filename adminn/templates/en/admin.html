@@ -2,7 +2,8 @@
 <html>
 <head>
     {% load staticfiles %}
-    {% block title%}<title>Admin Panel</title>{% endblock %}
+    {% block title%}
+    <title>Admin Panel</title>{% endblock %}
     <!-- JavaScript Files -->
     <script type="text/javascript" src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
     <script type="text/javascript" src="{% static 'js/bootstrap.min.js' %}"></script>
@@ -34,7 +35,7 @@
             <div class="top-header-left">
                 <ul class="support">
                     <li><a href="#"><label> </label></a></li>
-                    <li><a href="#">24x7 Canlı<span class="live"> destek</span></a></li>
+                    <li><a href="#">24x7 Live <span class="live"> Support</span></a></li>
                 </ul>
                 <div class="clearfix"></div>
             </div>
@@ -59,7 +60,7 @@
                 </div>
 
                 <div class="search">
-                        <input id="oyunArama" placeholder="Oyun ara..."><span id="oyunArat"></span>
+                    <input id="oyunArama" placeholder="Search..."><span id="oyunArat"></span>
                         <input type="submit" value="ARA">
                     </div>
 
@@ -70,15 +71,16 @@
                     {% if request.session.admin_id == 1 %}
                 <div class="account"><a href="{% url 'adminn:index' %}"><span> </span>Admin</a></div>
                     {% else %}
-                    <div class="account"><a href="{% url 'users:profile' %}"><span> </span>Hesabım</a></div>
+                <div class="account"><a href="{% url 'users:profile' %}"><span> </span>Account</a></div>
                     <div class="cart"><a href="checkout"><span> </span>Sepet</a></div>
                 {% endif %}
-                    <div class="glyphicon glyphicon-log-out" style="color:#FF5B36; font-size: 1.1em;"><a href="{% url 'users:logout' %}"><span> </span>Çıkış</a></div>
+                <div class="glyphicon glyphicon-log-out" style="color:#FF5B36; font-size: 1.1em;"><a
+                        href="{% url 'users:logout' %}"><span> </span>Logout</a></div>
                 {% else %}
                 <ul class="login">
-                    <li><a href="{% url 'users:register' %}"><span> </span>Üye Ol</a></li>
+                    <li><a href="{% url 'users:register' %}"><span> </span>Sign up</a></li>
                     |
-                    <li><a href="{% url 'users:login' %}">Giriş</a></li>
+                    <li><a href="{% url 'users:login' %}">Sign in</a></li>
                 </ul>
                 {% endif %}
                 <div class="clearfix"></div>
@@ -174,7 +176,7 @@
     <div class="container">
         <div class="row">
             <div class="col-sm-4">
-                <h5 class="title">Oyunlar</h5>
+                <h5 class="title">Games</h5>
                 <ul class="list alt-list">
                     <li><a href="shop-sidebar-left.html"><i
                             class="glyphicon glyphicon-certificate"></i>PC</a>
@@ -190,17 +192,17 @@
                 </ul>
             </div><!-- end col -->
             <div class="col-sm-4">
-                <h5 class="title">Hesap</h5>
+                <h5 class="title">Account</h5>
                 <ul class="list alt-list">
-                    <li><a href="my-account.html"><i class="glyphicon glyphicon-certificate"></i>Hesabım</a>
+                    <li><a href="my-account.html"><i class="glyphicon glyphicon-certificate"></i>My Account</a>
                     </li>
-                    <li><a href="cart.html"><i class="glyphicon glyphicon-certificate"></i>Sepetim</a></li>
-                    <li><a href="checkout.html"><i class="glyphicon glyphicon-certificate"></i>Ödeme</a></li>
-                    <li><a href="help.html"><i class="glyphicon glyphicon-certificate"></i>Yardım</a></li>
+                    <li><a href="cart.html"><i class="glyphicon glyphicon-certificate"></i>My Cart</a></li>
+                    <li><a href="checkout.html"><i class="glyphicon glyphicon-certificate"></i>Payment</a></li>
+                    <li><a href="help.html"><i class="glyphicon glyphicon-certificate"></i>Help</a></li>
                 </ul>
             </div><!-- end col -->
             <div class="col-sm-4">
-                <h5 class="title">Adresimiz</h5>
+                <h5 class="title">Address</h5>
                 <p>İTÜ Ayazağa Kampüsü,
                     UYBHM. Binası No:2
                     Sarıyer/İstanbul</p>
