@@ -1,6 +1,8 @@
 import datetime
 import logging
+import os
 
+from PIL import Image
 from django.core.paginator import Paginator, PageNotAnInteger
 from django.shortcuts import redirect, render
 
@@ -16,6 +18,7 @@ logging.basicConfig(filename='debug.log', level=logging.DEBUG)
 def add_game(request):
     company_instance = CompanyEventClass(request)
     if request.method == 'POST':
+        handle_uploaded_file(request.FILES.get('game_logo'), str(request.FILES.get('game_logo')))
         name = request.POST.get('game_name')
         price = request.POST.get('price')
         category = request.POST.get('category')
@@ -66,3 +69,11 @@ def delete_game(request):
         logging.info('games deleted / {}'.format(datetime.datetime.now()))
         return redirect("adminn:list_game")
     return redirect("adminn:list_game")
+
+
+def handle_uploaded_file(file, filename):
+    if not os.path.exists('upload/'):
+        os.mkdir('upload/')
+
+    img = Image.open(file)
+    img.save("upload/" + filename, "png")

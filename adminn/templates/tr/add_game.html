@@ -7,12 +7,12 @@
     <link href="{% static 'css/form.css'%}" rel="stylesheet" type="text/css"/>
 <div class="container">
 		<div class="giris">
-            <form action="{% url 'adminn:add_game' %}" method="POST">{% csrf_token %}
+            <form action="{% url 'adminn:add_game' %}" method="POST" enctype="multipart/form-data">{% csrf_token %}
 				 <div class="ust-giris">
 					<h3>OYUN EKLE</h3>
 					<div class="mation">
                         <span>Logo<label></label></span>
-                        <input type="file" name="game_name" accept="image/*" size="" style="margin: 30px 30px 40px 0px">
+                        <input type="file" name="game_logo" accept="image/*" size="" style="margin: 30px 30px 40px 0px">
 
 						<span>Oyun Adı<label></label></span>
 						<input type="text" name="game_name">
