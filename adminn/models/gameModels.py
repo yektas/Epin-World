@@ -38,11 +38,6 @@ class GameEventClass():
 
         return meta_data_json
 
-    def game_insert(self, game_name, game_money_price, genre, platform):
-        self.cursor.execute(
-            "insert into game(name,price,genre_id,company_id,content,platform_id) values('{}',{},1,13,'EhisteGame',1)".format(
-                game_name, game_money_price))
-        self.cursor.execute("COMMIT;")
 
     def list_platform(self):
         try:
@@ -66,7 +61,8 @@ class GameEventClass():
 
     def list_game(self):
         try:
-            self.cursor.execute("select * from game ORDER BY update_date DESC ;")
+            self.cursor.execute(
+                "select game.*,company.company_name,platform.platform_name,genre.genre_name from game INNER JOIN company ON game.company_id = company.id INNER JOIN platform ON game.platform_id = platform.id INNER JOIN genre on game.genre_id = genre.id ORDER BY game.update_date DESC ;")
         except:
             return False
 
