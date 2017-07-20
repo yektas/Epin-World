@@ -18,9 +18,10 @@ def auth_login(request):
         user_info = request.POST
 
         instance = UserEventClass(user_info)
-        ### DB düzelince tekrar test edilecek ###
-        # instance.update_lastlogin(username)
+        if (not instance.login_event()):
+            return redirect("users:login")
         user = instance.login_event()
+        instance.update_lastlogin(username)
 
         if len(user) > 0:
             request.session['admin_id'] = user[0]['admin_id']

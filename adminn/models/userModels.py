@@ -28,7 +28,7 @@ class UserOperationClass():
     def list_users(self):
         """ Returns all users as a list of dictionaries"""
         ''' Sercan : 13.07.2017 '''
-        self.cursor.execute("SELECT username, email, full_name, status_id, admin_id FROM users")
+        self.cursor.execute("SELECT username, email, full_name, status_id, admin_id FROM users ORDER BY c_date DESC ")
         users = dictfetchall(self.cursor)
         return users
 
