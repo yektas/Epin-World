@@ -66,7 +66,7 @@ class GameEventClass():
 
     def list_game(self):
         try:
-            self.cursor.execute("select * from game;")
+            self.cursor.execute("select * from game ORDER BY update_date DESC ;")
         except:
             return False
 

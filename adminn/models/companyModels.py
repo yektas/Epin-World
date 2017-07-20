@@ -31,7 +31,7 @@ class CompanyEventClass():
 
     def list_company(self):
 
-        self.cursor.execute("SELECT company_name FROM company")
+        self.cursor.execute("SELECT company_name FROM company ORDER BY created_date DESC ")
         company = dictfetchall(self.cursor)
         if len(company) <= 0:
             return False
