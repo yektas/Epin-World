@@ -13,11 +13,11 @@ class GameEventClass():
     def create_game(self, companyName, name, platformName, genreName, price):
         try:
 
-            self.cursor.execute("select id from company WHERE name = '{}'".format(str(companyName)))
+            self.cursor.execute("select id from company WHERE company_name = '{}'".format(str(companyName)))
             companyId = self.cursor.fetchone()[0]
-            self.cursor.execute("select id from platform WHERE name = '{}'".format(str(platformName)))
+            self.cursor.execute("select id from platform WHERE platform_name = '{}'".format(str(platformName)))
             platformID = self.cursor.fetchone()[0]
-            self.cursor.execute("select id from genre WHERE name = '{}'".format(str(genreName)))
+            self.cursor.execute("select id from genre WHERE genre_name = '{}'".format(str(genreName)))
             genreID = self.cursor.fetchone()[0]
 
             self.cursor.execute("INSERT INTO game (name, company_id, platform_id, price, genre_id )"
@@ -46,7 +46,7 @@ class GameEventClass():
 
     def list_platform(self):
         try:
-            self.cursor.execute("Select name from platform")
+            self.cursor.execute("Select platform_name from platform")
 
         except:
             return False
@@ -56,7 +56,7 @@ class GameEventClass():
 
     def list_category(self):
         try:
-            self.cursor.execute("Select name from genre ")
+            self.cursor.execute("Select genre_name from genre ")
 
         except:
             return False
