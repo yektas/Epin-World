@@ -34,6 +34,12 @@
 
                       <th>Oyun Adı</th>
                       <th>Ücreti</th>
+                      <th>Oluşturulma Tarihi</th>
+                      <th>Değiştirilme Tarihi</th>
+                      <th>Kategori</th>
+                      <th>Şirket</th>
+                      <th>Platform</th>
+                      <th>Sil</th>
 
                       </thead>
                       <tbody id="games">
@@ -45,8 +51,9 @@
                           <td>{{a.created_date}}</td>
                           <td>{{a.update_date}}</td>
                           <td>{{a.genre_id}}</td>
-                          <td>{{a.company_id}}</td>
-                          <td>{{a.platform_id}}</td>
+                          <td>{{a.company_name}}</td>
+                          <td>{{a.platform.name}}</td>
+
                           <td><input type="radio" name="name" value="{{a.name}}"></td>
                       </tr>
                       {% endfor %}
