@@ -14,7 +14,7 @@ class CompanyEventClass():
     def create_company(self, cname):
 
         if self.check_company(cname) is False:
-            self.cursor.execute("INSERT INTO company (name) VALUES ( '{}' )".format(str(cname)))
+            self.cursor.execute("INSERT INTO company (company_name) VALUES ( '{}' )".format(str(cname)))
             self.cursor.execute("COMMIT;")
             return True
         else:
@@ -22,7 +22,7 @@ class CompanyEventClass():
 
     def check_company(self, cname):
 
-        self.cursor.execute("SELECT name FROM company WHERE name='{}' ".format(cname))
+        self.cursor.execute("SELECT company_name FROM company WHERE company_name='{}' ".format(cname))
         company = dictfetchall(self.cursor)
         if len(company) <= 0:
             return False
@@ -31,7 +31,7 @@ class CompanyEventClass():
 
     def list_company(self):
 
-        self.cursor.execute("SELECT name FROM company")
+        self.cursor.execute("SELECT company_name FROM company")
         company = dictfetchall(self.cursor)
         if len(company) <= 0:
             return False
