@@ -10,7 +10,7 @@ class GameEventClass():
     def __del__(self):
         self.cursor.close()
 
-    def create_game(self, companyName, name, platformName, genreName, price):
+    def create_game(self, companyName, name, platformName, genreName, price, logo):
         try:
             """Game ınsert ederken company_id genre_id ve platform_id oldugu icin once idlerini bulduk"""
             self.cursor.execute("select id from company WHERE company_name = '{}'".format(str(companyName)))
@@ -20,8 +20,10 @@ class GameEventClass():
             self.cursor.execute("select id from genre WHERE genre_name = '{}'".format(str(genreName)))
             genreID = self.cursor.fetchone()[0]
 
-            self.cursor.execute("INSERT INTO game (name, company_id, platform_id, price, genre_id )"
-                                " VALUES ('{}',{},{},{},{})".format(str(name), companyId, platformID, price, genreID))
+            self.cursor.execute("INSERT INTO game (name, company_id, platform_id, price, genre_id ,logo )"
+                                " VALUES ('{}',{},{},{},{},'{}')".format(str(name), companyId, platformID, price,
+                                                                         genreID, logo))
+
 
             self.cursor.execute("COMMIT;")
             return True

@@ -1,6 +1,5 @@
 import datetime
 import logging
-import os
 
 from PIL import Image
 from django.core.paginator import Paginator, PageNotAnInteger
@@ -19,13 +18,14 @@ def add_game(request):
     company_instance = CompanyEventClass(request)
     if request.method == 'POST':
         handle_uploaded_file(request.FILES.get('game_logo'), str(request.FILES.get('game_logo')))
+        logo = "images/" + str(request.FILES.get("game_logo"))
         name = request.POST.get('game_name')
         price = request.POST.get('price')
         category = request.POST.get('category')
         company = request.POST.get('company')
         platform = request.POST.get('platform')
 
-        if game_instance.create_game(company, name, platform, category, price):
+        if game_instance.create_game(company, name, platform, category, price, logo):
             logging.info('games added / {}'.format(datetime.datetime.now()))
             return redirect("adminn:index")
         else:
@@ -72,8 +72,6 @@ def delete_game(request):
 
 
 def handle_uploaded_file(file, filename):
-    if not os.path.exists('upload/'):
-        os.mkdir('upload/')
 
     img = Image.open(file)
-    img.save("upload/" + filename, "png")
+    img.save("./home/static/images/" + filename)
