@@ -6,6 +6,7 @@ from django.shortcuts import redirect, render
 
 from adminn.models.companyModels import CompanyEventClass
 from utility.decorators import language_assigned
+
 logging.basicConfig(filename= 'debug.log' , level= logging.DEBUG)
 
 @language_assigned
@@ -51,8 +52,11 @@ def delete_company(request):
 
     instance = CompanyEventClass(request)
     if request.method == "POST":
-        name = request.POST.get('name', '')
-        instance.delete_company(name)
+        name = request.POST.getlist('name', '')
+        for i in range(len(name)):
+            instance.delete_company(name[i])
+
+
         logging.info('company deleted / {}'.format(datetime.datetime.now()))
         return redirect("adminn:list_company")
     else:
