@@ -7,9 +7,8 @@ from django.shortcuts import render, HttpResponse
 
 from utility.decorators import language_assigned
 
-
 cursor = connections['default'].cursor()
-logging.basicConfig(filename= 'debug.log' , level= logging.DEBUG)
+logging.basicConfig(filename='debug.log', level=logging.DEBUG)
 
 def games_json(request):
     logging.info('oyun çekme işlemi bitirildi ')
