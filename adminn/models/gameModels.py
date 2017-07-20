@@ -56,7 +56,7 @@ class GameEventClass():
 
     def list_category(self):
         try:
-            self.cursor.execute("Select name from genre")
+            self.cursor.execute("Select name from genre ")
 
         except:
             return False
@@ -66,7 +66,7 @@ class GameEventClass():
 
     def list_game(self):
         try:
-            self.cursor.execute("Select * from game")
+            self.cursor.execute("select *,company from game INNER JOIN company,platform on game.company_id = company.id,game.platform_id = platform.id;")
 
         except:
             return False
