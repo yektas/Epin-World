@@ -17,7 +17,12 @@
     <!--//theme-style-->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <script type="application/x-javascript">
-         addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); }
+        addEventListener("load", function () {
+            setTimeout(hideURLbar, 0);
+        }, false);
+        function hideURLbar() {
+            window.scrollTo(0, 1);
+        }
     </script>
     <!--fonts-->
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i,900,900i&amp;subset=cyrillic,cyrillic-ext,latin-ext"
@@ -59,21 +64,24 @@
                 </div>
 
                 <div class="search">
-                        <input id="oyunArama" placeholder="Oyun ara..."><span id="oyunArat"></span>
-                        <input type="submit" value="ARA">
-                    </div>
+                    <input id="oyunArama" placeholder="Oyun ara..."><span id="oyunArat"></span>
+                    <input type="submit" value="ARA">
+                </div>
 
                 <div class="clearfix"></div>
             </div>
             <div class="header-bottom-right">
                 {% if request.session.is_logged %}
-                    {% if request.session.admin_id == 1 %}
+                {% if request.session.admin_id == 1 %}
                 <div class="account"><a href="{% url 'adminn:index' %}"><span> </span>Admin</a></div>
-                    {% else %}
-                    <div class="account"><a href="{% url 'users:profile' %}"><span> </span>Hesabım</a></div>
-                    <div class="cart"><a href="{% url 'sales:checkout' %}"><span> </span>Sepet</a></div>
+                {% else %}
+                <div class="account"><a href="{% url 'users:profile' %}"><span> </span>Hesabım</a></div>
+                <div class="cart"><a href="{% url 'sales:checkout' %}"><span> </span>Sepet</a>
+                </div> <!--end container -->
                 {% endif %}
-                    <div class="glyphicon glyphicon-log-out" style="color:#FF5B36; font-size: 1.1em;"><a href="{% url 'users:logout' %}"><span> </span>Çıkış</a></div>
+                <div class="glyphicon glyphicon-log-out" style="color:#FF5B36; font-size: 1.1em;"><a
+                        href="{% url 'users:logout' %}"><span> </span>Çıkış</a></div>
+
                 {% else %}
                 <ul class="login">
                     <li><a href="{% url 'users:register' %}"><span> </span>Üye Ol</a></li>
@@ -125,22 +133,29 @@
                 </div>
                 <!--initiate accordion-->
                 <script type="text/javascript">
-         $(function() {
-             var menu_ul = $('.menu > li > ul'),
-                    menu_a  = $('.menu > li > a');
-             menu_ul.hide();
-             menu_a.click(function(e) {
-                 e.preventDefault();
-                 if(!$(this).hasClass('active')) {
-                     menu_a.removeClass('active');
-                     menu_ul.filter(':visible').slideUp('normal');
-                     $(this).addClass('active').next().stop(true,true).slideDown('normal');
-                 } else {
-                     $(this).removeClass('active');
-                     $(this).next().stop(true,true).slideUp('normal');
-                 }
-             });
-         });
+                    $(function () {
+                        var menu_ul = $('.menu > li > ul'),
+                            menu_a = $('.menu > li > a');
+                        menu_ul.hide();
+                        menu_a.click(function (e) {
+                            e.preventDefault();
+                            if (!$(this).hasClass('active')) {
+                                menu_a.removeClass('active');
+                                menu_ul.filter(':visible').slideUp('normal');
+                                $(this).addClass('active').next().stop(true, true).slideDown('normal');
+                            } else {
+                                $(this).removeClass('active');
+                                $(this).next().stop(true, true).slideUp('normal');
+                            }
+                        });
+                    });
+
+                    (function () {
+                        $("#cart").on("click", function () {
+                            $(".shopping-cart").fadeToggle("fast");
+                        });
+
+                    })();
                 </script>
             </div>
         </div>
@@ -200,43 +215,36 @@
     </div><!-- end container -->
 </footer>
 <!-- end footer -->
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
-    <script>
-        var search_list = [];
-        $.ajax({
-                        type: 'GET',
-                        url: 'http://localhost:8000/games/games_json/',
-                        data: { get_param: 'value' },
-                        dataType: 'json',
-                        success: function (data) {
-                                var json = data;
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
+<script>
+    var search_list = [];
+    $.ajax({
+        type: 'GET',
+        url: 'http://localhost:8000/games/games_json/',
+        data: {get_param: 'value'},
+        dataType: 'json',
+        success: function (data) {
+            var json = data;
 
-                        $.each(json,function (i,item){
-                            search_list.push(json[i].game_name)
-                        });
+            $.each(json, function (i, item) {
+                search_list.push(json[i].game_name)
+            });
 
-                }
-        });
-
-
+        }
+    });
 
 
+    $('#oyunArama').autocomplete({
+        minLength: 1,
+        source: search_list,
+        select: function (event, ui) {
+            $('#oyunArat').text(search_list[ui.item]);
+        }
+    });
 
 
-        
-
-
-        $('#oyunArama').autocomplete({
-            minLength: 1,
-            source: search_list,
-            select: function (event, ui) {
-                $('#oyunArat').text(search_list[ui.item]);
-            }
-        });
-
-
-    </script>
+</script>
 
 
 </body>

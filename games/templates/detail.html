@@ -1,1 +1,35 @@
-{{game_data}}
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+
+{% block content%}
+<script>var game_data = '{{ game_data }}' </script>
+<div class="container" id="gdata">
+    <h2>Oyun adı<p>{{game_data.game_name}}</p></h2>
+    <h2>Oyun id<p>{{game_data.game_id}}</p></h2>
+    <h2>Oyun fiyatı<p>{{game_data.game_money_price}}</p></h2>
+    <button id="game" data-name="{{ game_data }}" onclick="addtocart()">Sepete Ekle</button>
+</div>
+<script>
+    var game_data = $('#game').data().name;
+    var clean = JSON.parse(JSON.stringify(game_data));
+    console.log(clean);
+    //game_data.replace(/\\\//g, "");
+    //console.log(game_data);
+    function addtocart() {
+        $.ajax({
+            type: "POST",
+            url: "{% url 'sales:addtocart' %}",
+            data: {
+                csrfmiddlewaretoken: '{{ csrf_token}}',
+                game_data: clean
+            },
+
+            success: function (response) {
+                $('#gdata').html(response)
+            }
+        });
+    }
+
+</script>
+{% endblock%}
