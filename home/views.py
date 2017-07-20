@@ -1,5 +1,6 @@
 from django.shortcuts import render, render_to_response, redirect
 
+from adminn.models.gameModels import GameEventClass
 from utility.decorators import language_assigned
 
 
@@ -22,4 +23,8 @@ def language_detector(request):
 
 @language_assigned
 def index(request):
-    return render(request, "{}/index.html".format(request.COOKIES['language']))
+    model = GameEventClass()
+    platform = model.list_platform()
+    games = model.list_game()
+    return render(request, "{}/index.html".format(request.COOKIES['language']), {"platforms": platform,
+                                                                                 "games": games})
