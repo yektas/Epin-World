@@ -2,11 +2,12 @@ import datetime
 import logging
 
 from django.shortcuts import render, redirect
-import datetime
+
 from adminn.models.userModels import UserOperationClass
 from utility.decorators import language_assigned, is_admin
 
-logging.basicConfig(filename= 'debug.log' , level= logging.DEBUG)
+logging.basicConfig(filename='debug.log', level=logging.DEBUG)
+
 
 
 @language_assigned

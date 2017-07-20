@@ -8,48 +8,49 @@
 
     $.ajax({
 
-            type: 'GET',
-            url: 'http://localhost:8000/games/games_json/',
-            data: {get_param: 'value'},
-            dataType: 'json',
-            success: function (data) {
-                var json = data;
-                $.each(json, function (i, item) {
-                    if (i <= 3) {
-                        game_product_footer += "<div class='col-sm-3'> <article class='col-item'> <div class='photo'> <div class='options-cart'>" + " <a href='/games/game_detail/" + json[i].game_name + "'></div>"
-                        game_product_footer += "<img src='{% static 'images/Diablo3.jpg' %}' class='img-responsive' alt='Product Image' />"
-                        game_product_footer += "</div><div class='container'><br> <strong><p>" + json[i].game_name + "</p></strong>"
-                        game_product_footer += "<strong><p>" + json[i].game_money_price + "</p></strong>"
-                        game_product_footer += "</div></article></div>"
-                    }
-                });
-                $('#products_footer').append(game_product_footer)
-            }
+        type: 'GET',
+        url: 'http://localhost:8000/games/games_json/',
+        data: {get_param: 'value'},
+        dataType: 'json',
+        success: function (data) {
+            var json = data;
+            $.each(json, function (i, item) {
+                if (i <= 3) {
+                    game_product_footer += "<div class='col-sm-3'> <article class='col-item'> <div class='photo'> <div class='options-cart'>" + " <a href='/games/game_detail/" + json[i].game_name + "'></div>"
+                    game_product_footer += "<img src='{% static 'images/Diablo3.jpg' %}' class='img-responsive' alt='Product Image' />"
+                    game_product_footer += "</div><div class='container'><br> <strong><p>" + json[i].game_name + "</p></strong>"
+                    game_product_footer += "<strong><p>" + json[i].game_money_price + "</p></strong>"
+                    game_product_footer += "</div></article></div>"
+                }
+            });
+            $('#products_footer').append(game_product_footer)
+        }
         });
     var game = [];
     var game_added = [];
     /*
-    * Date : 19.07.2017 - Taha Demir
-    * This ajax method assigns all the JSON object -inside the written url- to the game array.
-    * */
+     * Date : 19.07.2017 - Taha Demir
+     * This ajax method assigns all the JSON object -inside the written url- to the game array.
+     * */
     $.ajax({
 
-            type: 'GET',
-            url: 'http://localhost:8000/games/games_json/',
-            data: {get_param: 'value'},
-            dataType: 'json',
-            success: function (data) {
-                var json = data;
-                for(var i=0; i<json.length; i++){
-                    game.push(json[i]);
-                };
+        type: 'GET',
+        url: 'http://localhost:8000/games/games_json/',
+        data: {get_param: 'value'},
+        dataType: 'json',
+        success: function (data) {
+            var json = data;
+            for (var i = 0; i < json.length; i++) {
+                game.push(json[i]);
             }
-        });
+            ;
+        }
+    });
 
     /*
-    * Date : 19.07.2017 - Taha Demir
-    * This function creates a table and fills each cells of the table with the JSON objects which are inside the game array.
-    * */
+     * Date : 19.07.2017 - Taha Demir
+     * This function creates a table and fills each cells of the table with the JSON objects which are inside the game array.
+     * */
     function CreateTableFromJSON() {
 
         var col = [];
@@ -105,11 +106,15 @@
             border-collapse: collapse;
             width: 100%;
         }
+
         th, td {
             text-align: left;
             padding: 8px;
         }
-        tr:nth-child(even){background-color: #f2f2f2}
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2
+        }
     </style>
 
 
@@ -121,7 +126,7 @@
 </head>
   <body>
 
-</body>
+  </body>
 
 <div class="container">
     <hr />
@@ -179,6 +184,7 @@
     <br>
     <br>
     <br>
+
 
 
         <input type="button" id="btn" class="button" onclick="CreateTableFromJSON()" value="Kayıtlı Oyunları Görüntüle">

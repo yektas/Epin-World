@@ -1,8 +1,10 @@
-from django.shortcuts import render
 import logging
+
+from django.shortcuts import render
+
 from utility.decorators import language_assigned
 
-logging.basicConfig(filename= 'debug.log' , level= logging.DEBUG)
+logging.basicConfig(filename='debug.log', level=logging.DEBUG)
 
 @language_assigned
 # @is_admin
