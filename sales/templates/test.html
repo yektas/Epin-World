@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    {% for item in request.session.cart %}
+        <h3> {{ item.game_name }}</h3>
+        <h3> {{ item.game_money.price }}</h3>
+    {% endfor %}
+
+</body>
+</html>
