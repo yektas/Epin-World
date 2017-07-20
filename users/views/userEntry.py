@@ -29,7 +29,7 @@ def login(request):
         if request.session['is_logged'] is False:
             instance = UserEventClass(request)
             instance.update_lastlogin(username)
-        return redirect("users:index")
+        return redirect("users:profile")
 
 
 @language_assigned

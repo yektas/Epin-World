@@ -44,8 +44,9 @@ class CompanyEventClass():
             try:
                 self.cursor.execute("START TRANSACTION;")
                 self.cursor.execute(
-                    "delete from game where company_id = (select id from company where name = '{}')".format(str(cname)))
-                self.cursor.execute("delete from company where name = '{}' ".format(str(cname)))
+                    "delete from game where company_id = (select id from company where company_name = '{}')".format(
+                        str(cname)))
+                self.cursor.execute("delete from company where company_name = '{}' ".format(str(cname)))
                 self.cursor.execute("commit;")
                 return True
             except:

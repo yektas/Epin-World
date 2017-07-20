@@ -66,8 +66,7 @@ class GameEventClass():
 
     def list_game(self):
         try:
-            self.cursor.execute("select *,company from game INNER JOIN company,platform on game.company_id = company.id,game.platform_id = platform.id;")
-
+            self.cursor.execute("select * from game;")
         except:
             return False
 

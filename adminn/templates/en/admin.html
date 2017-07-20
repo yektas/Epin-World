@@ -68,7 +68,7 @@
             <div class="header-bottom-right">
                 {% if request.session.is_logged %}
                     {% if request.session.admin_id == 1 %}
-                <div class="account"><a href="{% url 'adminn:admin_view' %}"><span> </span>Admin</a></div>
+                <div class="account"><a href="{% url 'adminn:index' %}"><span> </span>Admin</a></div>
                     {% else %}
                     <div class="account"><a href="{% url 'users:profile' %}"><span> </span>Hesabım</a></div>
                     <div class="cart"><a href="checkout"><span> </span>Sepet</a></div>
