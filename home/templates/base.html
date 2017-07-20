@@ -96,31 +96,11 @@
                 <div class=" top-nav rsidebar span_1_of_left">
                     <h3 class="cate">Kategoriler</h3>
                     <ul class="menu">
-                        <li class="item1"><a href="#">PC<img class="arrow-img"
-                                                             src="{% static 'images/arrow1.png' %}"
-                                                             alt=""/>
+                        {% for platform in platforms %}
+                        <li class="item1"><a href="#">{{platform.platform_name}}
                         </a>
-                            <ul class="cute" id="oyunlar">
-                                <li class="subitem1"><a href="list">Steam Cüzdan Kodu </a></li>
-                            </ul>
                         </li>
-                        <li class="item2"><a href="#">Mobil <img class="arrow-img "
-                                                                 src="{% static 'images/arrow1.png' %}"
-                                                                 alt=""/></a>
-                            <ul class="cute">
-                                <li class="subitem1"><a href="product.html">Candy Crash </a></li>
-                                <li class="subitem2"><a href="product.html">Clash of Clans</a></li>
-                                <li class="subitem3"><a href="product.html">Clash Royale</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <ul class="kid-menu">
-                                <li><a href="product.html">Playstation</a></li>
-                                <li><a href="product.html">Xbox</a></li>
-                                <li><a href="product.html">Apple Store</a></li>
-                                <li><a href="product.html">Google Play</a></li>
-                            </ul>
-                        </li>
+                        {% endfor %}
                     </ul>
                 </div>
                 <!--initiate accordion-->

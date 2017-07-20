@@ -1973,3 +1973,1009 @@ WARNING:django.request:Not Found: /game/game_detail/Diablo3
 DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost
 DEBUG:urllib3.connectionpool:http://localhost:8000 "GET /games/games_json/ HTTP/1.1" 200 2381
 WARNING:django.request:Not Found: /undefinedalt='
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+ERROR:root:login failed
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:ADMIN PANEL viewed.!
+INFO:root:users listed / 2017-07-20 08:12:06.894878
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:logout had done. '2017-07-20 08:18:00.509303'
+INFO:root:oyun çekme işlemi bitirildi 
+ERROR:root:login failed
+INFO:root:oyun çekme işlemi bitirildi 
+ERROR:django.request:Internal Server Error: /users/auth_login/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/db/utils.py", line 101, in inner
+    return func(*args, **kwargs)
+psycopg2.ProgrammingError: no results to fetch
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/utkucan/TrnetStaj/MVC-test/utility/decorators.py", line 26, in wrap
+    return func(request, *args, **kwargs)
+  File "/home/utkucan/TrnetStaj/MVC-test/users/views/userAuth.py", line 23, in auth_login
+    user = instance.login_event()
+  File "/home/utkucan/TrnetStaj/MVC-test/users/models.py", line 26, in login_event
+    user = dictfetchall(self.cursor)
+  File "/home/utkucan/TrnetStaj/MVC-test/utility/cursorutil.py", line 6, in dictfetchall
+    for row in cursor.fetchall()]
+  File "/usr/local/lib/python3.5/dist-packages/django/db/utils.py", line 101, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.5/dist-packages/django/db/utils.py", line 94, in __exit__
+    six.reraise(dj_exc_type, dj_exc_value, traceback)
+  File "/usr/local/lib/python3.5/dist-packages/django/utils/six.py", line 685, in reraise
+    raise value.with_traceback(tb)
+  File "/usr/local/lib/python3.5/dist-packages/django/db/utils.py", line 101, in inner
+    return func(*args, **kwargs)
+django.db.utils.ProgrammingError: no results to fetch
+ERROR:django.request:Internal Server Error: /users/auth_login/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/db/utils.py", line 101, in inner
+    return func(*args, **kwargs)
+psycopg2.ProgrammingError: no results to fetch
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/utkucan/TrnetStaj/MVC-test/utility/decorators.py", line 26, in wrap
+    return func(request, *args, **kwargs)
+  File "/home/utkucan/TrnetStaj/MVC-test/users/views/userAuth.py", line 23, in auth_login
+    user = instance.login_event()
+  File "/home/utkucan/TrnetStaj/MVC-test/users/models.py", line 26, in login_event
+    user = dictfetchall(self.cursor)
+  File "/home/utkucan/TrnetStaj/MVC-test/utility/cursorutil.py", line 6, in dictfetchall
+    for row in cursor.fetchall()]
+  File "/usr/local/lib/python3.5/dist-packages/django/db/utils.py", line 101, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.5/dist-packages/django/db/utils.py", line 94, in __exit__
+    six.reraise(dj_exc_type, dj_exc_value, traceback)
+  File "/usr/local/lib/python3.5/dist-packages/django/utils/six.py", line 685, in reraise
+    raise value.with_traceback(tb)
+  File "/usr/local/lib/python3.5/dist-packages/django/db/utils.py", line 101, in inner
+    return func(*args, **kwargs)
+django.db.utils.ProgrammingError: no results to fetch
+ERROR:django.request:Internal Server Error: /users/auth_login/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/db/utils.py", line 101, in inner
+    return func(*args, **kwargs)
+psycopg2.ProgrammingError: no results to fetch
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/utkucan/TrnetStaj/MVC-test/utility/decorators.py", line 26, in wrap
+    return func(request, *args, **kwargs)
+  File "/home/utkucan/TrnetStaj/MVC-test/users/views/userAuth.py", line 23, in auth_login
+    user = instance.login_event()
+  File "/home/utkucan/TrnetStaj/MVC-test/users/models.py", line 26, in login_event
+    user = dictfetchall(self.cursor)
+  File "/home/utkucan/TrnetStaj/MVC-test/utility/cursorutil.py", line 6, in dictfetchall
+    for row in cursor.fetchall()]
+  File "/usr/local/lib/python3.5/dist-packages/django/db/utils.py", line 101, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.5/dist-packages/django/db/utils.py", line 94, in __exit__
+    six.reraise(dj_exc_type, dj_exc_value, traceback)
+  File "/usr/local/lib/python3.5/dist-packages/django/utils/six.py", line 685, in reraise
+    raise value.with_traceback(tb)
+  File "/usr/local/lib/python3.5/dist-packages/django/db/utils.py", line 101, in inner
+    return func(*args, **kwargs)
+django.db.utils.ProgrammingError: no results to fetch
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:ADMIN PANEL viewed.!
+ERROR:django.request:Internal Server Error: /adminn/listgame/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/paginator.py", line 79, in count
+    return self.object_list.count()
+AttributeError: 'bool' object has no attribute 'count'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/utkucan/TrnetStaj/MVC-test/adminn/views/gameOps.py", line 50, in list_game
+    game = paginator.page(page)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/paginator.py", line 57, in page
+    number = self.validate_number(number)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/paginator.py", line 46, in validate_number
+    if number > self.num_pages:
+  File "/usr/local/lib/python3.5/dist-packages/django/utils/functional.py", line 35, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/paginator.py", line 91, in num_pages
+    if self.count == 0 and not self.allow_empty_first_page:
+  File "/usr/local/lib/python3.5/dist-packages/django/utils/functional.py", line 35, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/paginator.py", line 84, in count
+    return len(self.object_list)
+TypeError: object of type 'bool' has no len()
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/paginator.py", line 79, in count
+    return self.object_list.count()
+AttributeError: 'bool' object has no attribute 'count'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/utkucan/TrnetStaj/MVC-test/utility/decorators.py", line 26, in wrap
+    return func(request, *args, **kwargs)
+  File "/home/utkucan/TrnetStaj/MVC-test/utility/decorators.py", line 12, in wrap
+    return func(request, *args, **kwargs)
+  File "/home/utkucan/TrnetStaj/MVC-test/adminn/views/gameOps.py", line 55, in list_game
+    game = paginator.page(paginator.num_pages)
+  File "/usr/local/lib/python3.5/dist-packages/django/utils/functional.py", line 35, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/paginator.py", line 91, in num_pages
+    if self.count == 0 and not self.allow_empty_first_page:
+  File "/usr/local/lib/python3.5/dist-packages/django/utils/functional.py", line 35, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/paginator.py", line 84, in count
+    return len(self.object_list)
+TypeError: object of type 'bool' has no len()
+ERROR:django.request:Internal Server Error: /adminn/listgame/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/paginator.py", line 79, in count
+    return self.object_list.count()
+AttributeError: 'bool' object has no attribute 'count'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/utkucan/TrnetStaj/MVC-test/adminn/views/gameOps.py", line 50, in list_game
+    game = paginator.page(page)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/paginator.py", line 57, in page
+    number = self.validate_number(number)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/paginator.py", line 46, in validate_number
+    if number > self.num_pages:
+  File "/usr/local/lib/python3.5/dist-packages/django/utils/functional.py", line 35, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/paginator.py", line 91, in num_pages
+    if self.count == 0 and not self.allow_empty_first_page:
+  File "/usr/local/lib/python3.5/dist-packages/django/utils/functional.py", line 35, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/paginator.py", line 84, in count
+    return len(self.object_list)
+TypeError: object of type 'bool' has no len()
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/paginator.py", line 79, in count
+    return self.object_list.count()
+AttributeError: 'bool' object has no attribute 'count'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/utkucan/TrnetStaj/MVC-test/utility/decorators.py", line 26, in wrap
+    return func(request, *args, **kwargs)
+  File "/home/utkucan/TrnetStaj/MVC-test/utility/decorators.py", line 12, in wrap
+    return func(request, *args, **kwargs)
+  File "/home/utkucan/TrnetStaj/MVC-test/adminn/views/gameOps.py", line 55, in list_game
+    game = paginator.page(paginator.num_pages)
+  File "/usr/local/lib/python3.5/dist-packages/django/utils/functional.py", line 35, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/paginator.py", line 91, in num_pages
+    if self.count == 0 and not self.allow_empty_first_page:
+  File "/usr/local/lib/python3.5/dist-packages/django/utils/functional.py", line 35, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/paginator.py", line 84, in count
+    return len(self.object_list)
+TypeError: object of type 'bool' has no len()
+ERROR:django.request:Internal Server Error: /adminn/listgame/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/paginator.py", line 79, in count
+    return self.object_list.count()
+AttributeError: 'bool' object has no attribute 'count'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/utkucan/TrnetStaj/MVC-test/adminn/views/gameOps.py", line 50, in list_game
+    game = paginator.page(page)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/paginator.py", line 57, in page
+    number = self.validate_number(number)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/paginator.py", line 46, in validate_number
+    if number > self.num_pages:
+  File "/usr/local/lib/python3.5/dist-packages/django/utils/functional.py", line 35, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/paginator.py", line 91, in num_pages
+    if self.count == 0 and not self.allow_empty_first_page:
+  File "/usr/local/lib/python3.5/dist-packages/django/utils/functional.py", line 35, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/paginator.py", line 84, in count
+    return len(self.object_list)
+TypeError: object of type 'bool' has no len()
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/paginator.py", line 79, in count
+    return self.object_list.count()
+AttributeError: 'bool' object has no attribute 'count'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/utkucan/TrnetStaj/MVC-test/utility/decorators.py", line 26, in wrap
+    return func(request, *args, **kwargs)
+  File "/home/utkucan/TrnetStaj/MVC-test/utility/decorators.py", line 12, in wrap
+    return func(request, *args, **kwargs)
+  File "/home/utkucan/TrnetStaj/MVC-test/adminn/views/gameOps.py", line 55, in list_game
+    game = paginator.page(paginator.num_pages)
+  File "/usr/local/lib/python3.5/dist-packages/django/utils/functional.py", line 35, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/paginator.py", line 91, in num_pages
+    if self.count == 0 and not self.allow_empty_first_page:
+  File "/usr/local/lib/python3.5/dist-packages/django/utils/functional.py", line 35, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/paginator.py", line 84, in count
+    return len(self.object_list)
+TypeError: object of type 'bool' has no len()
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:logout had done. '2017-07-20 08:51:51.733335'
+INFO:root:oyun çekme işlemi bitirildi 
+ERROR:root:login failed
+INFO:root:oyun çekme işlemi bitirildi 
+ERROR:django.request:Internal Server Error: /users/auth_login/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/utkucan/TrnetStaj/MVC-test/utility/decorators.py", line 26, in wrap
+    return func(request, *args, **kwargs)
+  File "/home/utkucan/TrnetStaj/MVC-test/users/views/userAuth.py", line 24, in auth_login
+    return redirect("home:login")
+  File "/usr/local/lib/python3.5/dist-packages/django/shortcuts.py", line 56, in redirect
+    return redirect_class(resolve_url(to, *args, **kwargs))
+  File "/usr/local/lib/python3.5/dist-packages/django/shortcuts.py", line 147, in resolve_url
+    return reverse(to, args=args, kwargs=kwargs)
+  File "/usr/local/lib/python3.5/dist-packages/django/urls/base.py", line 91, in reverse
+    return force_text(iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs)))
+  File "/usr/local/lib/python3.5/dist-packages/django/urls/resolvers.py", line 497, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'login' not found. 'login' is not a valid view function or pattern name.
+ERROR:root:login failed
+INFO:root:oyun çekme işlemi bitirildi 
+ERROR:root:login failed
+INFO:root:oyun çekme işlemi bitirildi 
+ERROR:root:login failed
+INFO:root:oyun çekme işlemi bitirildi 
+ERROR:root:login failed
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+WARNING:django.request:Not Found: /list
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+ERROR:root:login failed
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:ADMIN PANEL viewed.!
+WARNING:root:games could not be added. / 2017-07-20 09:09:36.559824
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+ERROR:django.request:Internal Server Error: /adminn/listgame/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/paginator.py", line 79, in count
+    return self.object_list.count()
+AttributeError: 'bool' object has no attribute 'count'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/utkucan/TrnetStaj/MVC-test/adminn/views/gameOps.py", line 50, in list_game
+    game = paginator.page(page)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/paginator.py", line 57, in page
+    number = self.validate_number(number)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/paginator.py", line 46, in validate_number
+    if number > self.num_pages:
+  File "/usr/local/lib/python3.5/dist-packages/django/utils/functional.py", line 35, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/paginator.py", line 91, in num_pages
+    if self.count == 0 and not self.allow_empty_first_page:
+  File "/usr/local/lib/python3.5/dist-packages/django/utils/functional.py", line 35, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/paginator.py", line 84, in count
+    return len(self.object_list)
+TypeError: object of type 'bool' has no len()
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/paginator.py", line 79, in count
+    return self.object_list.count()
+AttributeError: 'bool' object has no attribute 'count'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/utkucan/TrnetStaj/MVC-test/utility/decorators.py", line 26, in wrap
+    return func(request, *args, **kwargs)
+  File "/home/utkucan/TrnetStaj/MVC-test/utility/decorators.py", line 12, in wrap
+    return func(request, *args, **kwargs)
+  File "/home/utkucan/TrnetStaj/MVC-test/adminn/views/gameOps.py", line 55, in list_game
+    game = paginator.page(paginator.num_pages)
+  File "/usr/local/lib/python3.5/dist-packages/django/utils/functional.py", line 35, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/paginator.py", line 91, in num_pages
+    if self.count == 0 and not self.allow_empty_first_page:
+  File "/usr/local/lib/python3.5/dist-packages/django/utils/functional.py", line 35, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/paginator.py", line 84, in count
+    return len(self.object_list)
+TypeError: object of type 'bool' has no len()
+ERROR:django.request:Internal Server Error: /adminn/listgame/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/paginator.py", line 79, in count
+    return self.object_list.count()
+AttributeError: 'bool' object has no attribute 'count'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/utkucan/TrnetStaj/MVC-test/adminn/views/gameOps.py", line 50, in list_game
+    game = paginator.page(page)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/paginator.py", line 57, in page
+    number = self.validate_number(number)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/paginator.py", line 46, in validate_number
+    if number > self.num_pages:
+  File "/usr/local/lib/python3.5/dist-packages/django/utils/functional.py", line 35, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/paginator.py", line 91, in num_pages
+    if self.count == 0 and not self.allow_empty_first_page:
+  File "/usr/local/lib/python3.5/dist-packages/django/utils/functional.py", line 35, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/paginator.py", line 84, in count
+    return len(self.object_list)
+TypeError: object of type 'bool' has no len()
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/paginator.py", line 79, in count
+    return self.object_list.count()
+AttributeError: 'bool' object has no attribute 'count'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/utkucan/TrnetStaj/MVC-test/utility/decorators.py", line 26, in wrap
+    return func(request, *args, **kwargs)
+  File "/home/utkucan/TrnetStaj/MVC-test/utility/decorators.py", line 12, in wrap
+    return func(request, *args, **kwargs)
+  File "/home/utkucan/TrnetStaj/MVC-test/adminn/views/gameOps.py", line 55, in list_game
+    game = paginator.page(paginator.num_pages)
+  File "/usr/local/lib/python3.5/dist-packages/django/utils/functional.py", line 35, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/paginator.py", line 91, in num_pages
+    if self.count == 0 and not self.allow_empty_first_page:
+  File "/usr/local/lib/python3.5/dist-packages/django/utils/functional.py", line 35, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/paginator.py", line 84, in count
+    return len(self.object_list)
+TypeError: object of type 'bool' has no len()
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:ADMIN PANEL viewed.!
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:games added / 2017-07-20 09:47:25.535750
+WARNING:root:games could not be added. / 2017-07-20 09:47:25.584355
+INFO:root:oyun çekme işlemi bitirildi 
+ERROR:root:login failed
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:ADMIN PANEL viewed.!
+ERROR:django.request:Internal Server Error: /adminn/addgame/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/utkucan/TrnetStaj/MVC-test/utility/decorators.py", line 26, in wrap
+    return func(request, *args, **kwargs)
+  File "/home/utkucan/TrnetStaj/MVC-test/utility/decorators.py", line 12, in wrap
+    return func(request, *args, **kwargs)
+  File "/home/utkucan/TrnetStaj/MVC-test/adminn/views/gameOps.py", line 20, in add_game
+    logo.save("sample.png","")
+AttributeError: 'str' object has no attribute 'save'
+ERROR:django.request:Internal Server Error: /adminn/addgame/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/utkucan/TrnetStaj/MVC-test/utility/decorators.py", line 26, in wrap
+    return func(request, *args, **kwargs)
+  File "/home/utkucan/TrnetStaj/MVC-test/utility/decorators.py", line 12, in wrap
+    return func(request, *args, **kwargs)
+  File "/home/utkucan/TrnetStaj/MVC-test/adminn/views/gameOps.py", line 20, in add_game
+    print(logo.name)
+AttributeError: 'str' object has no attribute 'name'
+ERROR:django.request:Internal Server Error: /adminn/addgame/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/utkucan/TrnetStaj/MVC-test/utility/decorators.py", line 26, in wrap
+    return func(request, *args, **kwargs)
+  File "/home/utkucan/TrnetStaj/MVC-test/utility/decorators.py", line 12, in wrap
+    return func(request, *args, **kwargs)
+  File "/home/utkucan/TrnetStaj/MVC-test/adminn/views/gameOps.py", line 20, in add_game
+    print(logo.name)
+AttributeError: 'str' object has no attribute 'name'
+ERROR:django.request:Internal Server Error: /adminn/addgame/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/utkucan/TrnetStaj/MVC-test/utility/decorators.py", line 26, in wrap
+    return func(request, *args, **kwargs)
+  File "/home/utkucan/TrnetStaj/MVC-test/utility/decorators.py", line 12, in wrap
+    return func(request, *args, **kwargs)
+  File "/home/utkucan/TrnetStaj/MVC-test/adminn/views/gameOps.py", line 19, in add_game
+    logo = request.POST.image['game_logo']
+AttributeError: 'QueryDict' object has no attribute 'image'
+INFO:root:games added / 2017-07-20 12:02:11.157063
+INFO:root:ADMIN PANEL viewed.!
+ERROR:django.request:Internal Server Error: /adminn/addgame/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/utils/datastructures.py", line 83, in __getitem__
+    list_ = super(MultiValueDict, self).__getitem__(key)
+KeyError: 'file'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/utkucan/TrnetStaj/MVC-test/utility/decorators.py", line 26, in wrap
+    return func(request, *args, **kwargs)
+  File "/home/utkucan/TrnetStaj/MVC-test/utility/decorators.py", line 12, in wrap
+    return func(request, *args, **kwargs)
+  File "/home/utkucan/TrnetStaj/MVC-test/adminn/views/gameOps.py", line 21, in add_game
+    handle_uploaded_file(request.FILES['file'], str(request.FILES['file']))
+  File "/usr/local/lib/python3.5/dist-packages/django/utils/datastructures.py", line 85, in __getitem__
+    raise MultiValueDictKeyError(repr(key))
+django.utils.datastructures.MultiValueDictKeyError: "'file'"
+ERROR:django.request:Internal Server Error: /adminn/addgame/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/utkucan/TrnetStaj/MVC-test/utility/decorators.py", line 26, in wrap
+    return func(request, *args, **kwargs)
+  File "/home/utkucan/TrnetStaj/MVC-test/utility/decorators.py", line 12, in wrap
+    return func(request, *args, **kwargs)
+  File "/home/utkucan/TrnetStaj/MVC-test/adminn/views/gameOps.py", line 21, in add_game
+    handle_uploaded_file(request.FILES.get('file'), str(request.FILES.get('file')))
+  File "/home/utkucan/TrnetStaj/MVC-test/adminn/views/gameOps.py", line 79, in handle_uploaded_file
+    for chunk in file.chunks():
+AttributeError: 'NoneType' object has no attribute 'chunks'
+ERROR:django.request:Internal Server Error: /adminn/addgame/
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/PIL/Image.py", line 2261, in open
+    fp.seek(0)
+AttributeError: 'NoneType' object has no attribute 'seek'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/utkucan/TrnetStaj/MVC-test/utility/decorators.py", line 26, in wrap
+    return func(request, *args, **kwargs)
+  File "/home/utkucan/TrnetStaj/MVC-test/utility/decorators.py", line 12, in wrap
+    return func(request, *args, **kwargs)
+  File "/home/utkucan/TrnetStaj/MVC-test/adminn/views/gameOps.py", line 21, in add_game
+    handle_uploaded_file(request.FILES.get('file'), str(request.FILES.get('file')))
+  File "/home/utkucan/TrnetStaj/MVC-test/adminn/views/gameOps.py", line 78, in handle_uploaded_file
+    img = Image.open(file)
+  File "/usr/lib/python3/dist-packages/PIL/Image.py", line 2263, in open
+    fp = io.BytesIO(fp.read())
+AttributeError: 'NoneType' object has no attribute 'read'
+ERROR:django.request:Internal Server Error: /adminn/addgame/
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/PIL/Image.py", line 2261, in open
+    fp.seek(0)
+AttributeError: 'NoneType' object has no attribute 'seek'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/utkucan/TrnetStaj/MVC-test/utility/decorators.py", line 26, in wrap
+    return func(request, *args, **kwargs)
+  File "/home/utkucan/TrnetStaj/MVC-test/utility/decorators.py", line 12, in wrap
+    return func(request, *args, **kwargs)
+  File "/home/utkucan/TrnetStaj/MVC-test/adminn/views/gameOps.py", line 21, in add_game
+    handle_uploaded_file(request.FILES.get('file'), str(request.FILES.get('file')))
+  File "/home/utkucan/TrnetStaj/MVC-test/adminn/views/gameOps.py", line 78, in handle_uploaded_file
+    img = Image.open(file)
+  File "/usr/lib/python3/dist-packages/PIL/Image.py", line 2263, in open
+    fp = io.BytesIO(fp.read())
+AttributeError: 'NoneType' object has no attribute 'read'
+ERROR:django.request:Internal Server Error: /adminn/addgame/
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/PIL/Image.py", line 2261, in open
+    fp.seek(0)
+AttributeError: 'NoneType' object has no attribute 'seek'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/utkucan/TrnetStaj/MVC-test/utility/decorators.py", line 26, in wrap
+    return func(request, *args, **kwargs)
+  File "/home/utkucan/TrnetStaj/MVC-test/utility/decorators.py", line 12, in wrap
+    return func(request, *args, **kwargs)
+  File "/home/utkucan/TrnetStaj/MVC-test/adminn/views/gameOps.py", line 21, in add_game
+    handle_uploaded_file(request.FILES.get('file'), str(request.FILES.get('file')))
+  File "/home/utkucan/TrnetStaj/MVC-test/adminn/views/gameOps.py", line 78, in handle_uploaded_file
+    img = Image.open(file)
+  File "/usr/lib/python3/dist-packages/PIL/Image.py", line 2263, in open
+    fp = io.BytesIO(fp.read())
+AttributeError: 'NoneType' object has no attribute 'read'
+ERROR:django.request:Internal Server Error: /adminn/addgame/
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/PIL/Image.py", line 2261, in open
+    fp.seek(0)
+AttributeError: 'NoneType' object has no attribute 'seek'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/utkucan/TrnetStaj/MVC-test/utility/decorators.py", line 26, in wrap
+    return func(request, *args, **kwargs)
+  File "/home/utkucan/TrnetStaj/MVC-test/utility/decorators.py", line 12, in wrap
+    return func(request, *args, **kwargs)
+  File "/home/utkucan/TrnetStaj/MVC-test/adminn/views/gameOps.py", line 21, in add_game
+    handle_uploaded_file(request.FILES.get('game_logo'), str(request.FILES.get('game_logo')))
+  File "/home/utkucan/TrnetStaj/MVC-test/adminn/views/gameOps.py", line 78, in handle_uploaded_file
+    img = Image.open(file)
+  File "/usr/lib/python3/dist-packages/PIL/Image.py", line 2263, in open
+    fp = io.BytesIO(fp.read())
+AttributeError: 'NoneType' object has no attribute 'read'
+ERROR:root:login failed
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:ADMIN PANEL viewed.!
+ERROR:django.request:Internal Server Error: /adminn/addgame/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/utils/datastructures.py", line 83, in __getitem__
+    list_ = super(MultiValueDict, self).__getitem__(key)
+KeyError: 'game_logo'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/utkucan/TrnetStaj/MVC-test/utility/decorators.py", line 26, in wrap
+    return func(request, *args, **kwargs)
+  File "/home/utkucan/TrnetStaj/MVC-test/utility/decorators.py", line 12, in wrap
+    return func(request, *args, **kwargs)
+  File "/home/utkucan/TrnetStaj/MVC-test/adminn/views/gameOps.py", line 21, in add_game
+    print(request.FILES['game_logo'])
+  File "/usr/local/lib/python3.5/dist-packages/django/utils/datastructures.py", line 85, in __getitem__
+    raise MultiValueDictKeyError(repr(key))
+django.utils.datastructures.MultiValueDictKeyError: "'game_logo'"
+ERROR:django.request:Internal Server Error: /adminn/addgame/
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/PIL/Image.py", line 2261, in open
+    fp.seek(0)
+AttributeError: 'NoneType' object has no attribute 'seek'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/utkucan/TrnetStaj/MVC-test/utility/decorators.py", line 26, in wrap
+    return func(request, *args, **kwargs)
+  File "/home/utkucan/TrnetStaj/MVC-test/utility/decorators.py", line 12, in wrap
+    return func(request, *args, **kwargs)
+  File "/home/utkucan/TrnetStaj/MVC-test/adminn/views/gameOps.py", line 22, in add_game
+    handle_uploaded_file(request.FILES.get('game_logo'), str(request.FILES.get('game_logo')))
+  File "/home/utkucan/TrnetStaj/MVC-test/adminn/views/gameOps.py", line 79, in handle_uploaded_file
+    img = Image.open(file)
+  File "/usr/lib/python3/dist-packages/PIL/Image.py", line 2263, in open
+    fp = io.BytesIO(fp.read())
+AttributeError: 'NoneType' object has no attribute 'read'
+ERROR:django.request:Internal Server Error: /adminn/addgame/
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/PIL/Image.py", line 2261, in open
+    fp.seek(0)
+AttributeError: 'NoneType' object has no attribute 'seek'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/utkucan/TrnetStaj/MVC-test/utility/decorators.py", line 26, in wrap
+    return func(request, *args, **kwargs)
+  File "/home/utkucan/TrnetStaj/MVC-test/utility/decorators.py", line 12, in wrap
+    return func(request, *args, **kwargs)
+  File "/home/utkucan/TrnetStaj/MVC-test/adminn/views/gameOps.py", line 21, in add_game
+    handle_uploaded_file(request.FILES.get('game_logo'), str(request.FILES.get('game_logo')))
+  File "/home/utkucan/TrnetStaj/MVC-test/adminn/views/gameOps.py", line 78, in handle_uploaded_file
+    img = Image.open(file)
+  File "/usr/lib/python3/dist-packages/PIL/Image.py", line 2263, in open
+    fp = io.BytesIO(fp.read())
+AttributeError: 'NoneType' object has no attribute 'read'
+ERROR:django.request:Internal Server Error: /adminn/addgame/
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/PIL/Image.py", line 2261, in open
+    fp.seek(0)
+AttributeError: 'NoneType' object has no attribute 'seek'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/utkucan/TrnetStaj/MVC-test/utility/decorators.py", line 26, in wrap
+    return func(request, *args, **kwargs)
+  File "/home/utkucan/TrnetStaj/MVC-test/utility/decorators.py", line 12, in wrap
+    return func(request, *args, **kwargs)
+  File "/home/utkucan/TrnetStaj/MVC-test/adminn/views/gameOps.py", line 21, in add_game
+    handle_uploaded_file(request.FILES.get('game_logo'), str(request.FILES.get('game_logo')))
+  File "/home/utkucan/TrnetStaj/MVC-test/adminn/views/gameOps.py", line 78, in handle_uploaded_file
+    img = Image.open(file)
+  File "/usr/lib/python3/dist-packages/PIL/Image.py", line 2263, in open
+    fp = io.BytesIO(fp.read())
+AttributeError: 'NoneType' object has no attribute 'read'
+ERROR:root:login failed
+INFO:root:oyun çekme işlemi bitirildi 
+ERROR:root:login failed
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:ADMIN PANEL viewed.!
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+WARNING:django.request:Not Found: /favicon.ico
+ERROR:root:login failed
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:ADMIN PANEL viewed.!
+INFO:root:games added / 2017-07-20 18:46:34.690612
+INFO:root:ADMIN PANEL viewed.!
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+ERROR:django.request:Internal Server Error: /
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/utkucan/TrnetStaj/MVC-test/utility/decorators.py", line 22, in wrap
+    response = render_to_response("{}/index.html".format(request.COOKIES['language']))
+  File "/usr/local/lib/python3.5/dist-packages/django/shortcuts.py", line 21, in render_to_response
+    content = loader.render_to_string(template_name, context, using=using)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/loader.py", line 68, in render_to_string
+    return template.render(context, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/backends/django.py", line 66, in render
+    return self.template.render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 207, in render
+    return self._render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 957, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/loader_tags.py", line 154, in render
+    compiled_parent = self.get_parent(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/loader_tags.py", line 151, in get_parent
+    return self.find_template(parent, context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/loader_tags.py", line 131, in find_template
+    template_name, skip=history,
+  File "/usr/local/lib/python3.5/dist-packages/django/template/engine.py", line 136, in find_template
+    name, template_dirs=dirs, skip=skip,
+  File "/usr/local/lib/python3.5/dist-packages/django/template/loaders/base.py", line 44, in get_template
+    contents, origin, origin.template_name, self.engine,
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 191, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 230, in compile_nodelist
+    return parser.parse()
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 515, in parse
+    raise self.error(token, e)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 513, in parse
+    compiled_result = compile_func(self, token)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/defaulttags.py", line 827, in do_for
+    nodelist_loop = parser.parse(('empty', 'endfor',))
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 520, in parse
+    self.unclosed_block_tag(parse_until)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 581, in unclosed_block_tag
+    raise self.error(token, msg)
+django.template.exceptions.TemplateSyntaxError: Unclosed tag on line 99: 'for'. Looking for one of: empty, endfor.
+ERROR:django.request:Internal Server Error: /
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/utkucan/TrnetStaj/MVC-test/utility/decorators.py", line 22, in wrap
+    response = render_to_response("{}/index.html".format(request.COOKIES['language']))
+  File "/usr/local/lib/python3.5/dist-packages/django/shortcuts.py", line 21, in render_to_response
+    content = loader.render_to_string(template_name, context, using=using)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/loader.py", line 68, in render_to_string
+    return template.render(context, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/backends/django.py", line 66, in render
+    return self.template.render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 207, in render
+    return self._render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 957, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/loader_tags.py", line 154, in render
+    compiled_parent = self.get_parent(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/loader_tags.py", line 151, in get_parent
+    return self.find_template(parent, context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/loader_tags.py", line 131, in find_template
+    template_name, skip=history,
+  File "/usr/local/lib/python3.5/dist-packages/django/template/engine.py", line 136, in find_template
+    name, template_dirs=dirs, skip=skip,
+  File "/usr/local/lib/python3.5/dist-packages/django/template/loaders/base.py", line 44, in get_template
+    contents, origin, origin.template_name, self.engine,
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 191, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 230, in compile_nodelist
+    return parser.parse()
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 515, in parse
+    raise self.error(token, e)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 513, in parse
+    compiled_result = compile_func(self, token)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/defaulttags.py", line 827, in do_for
+    nodelist_loop = parser.parse(('empty', 'endfor',))
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 520, in parse
+    self.unclosed_block_tag(parse_until)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 581, in unclosed_block_tag
+    raise self.error(token, msg)
+django.template.exceptions.TemplateSyntaxError: Unclosed tag on line 99: 'for'. Looking for one of: empty, endfor.
+ERROR:django.request:Internal Server Error: /
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/utkucan/TrnetStaj/MVC-test/utility/decorators.py", line 22, in wrap
+    response = render_to_response("{}/index.html".format(request.COOKIES['language']))
+  File "/usr/local/lib/python3.5/dist-packages/django/shortcuts.py", line 21, in render_to_response
+    content = loader.render_to_string(template_name, context, using=using)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/loader.py", line 68, in render_to_string
+    return template.render(context, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/backends/django.py", line 66, in render
+    return self.template.render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 207, in render
+    return self._render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 957, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/loader_tags.py", line 154, in render
+    compiled_parent = self.get_parent(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/loader_tags.py", line 151, in get_parent
+    return self.find_template(parent, context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/loader_tags.py", line 131, in find_template
+    template_name, skip=history,
+  File "/usr/local/lib/python3.5/dist-packages/django/template/engine.py", line 136, in find_template
+    name, template_dirs=dirs, skip=skip,
+  File "/usr/local/lib/python3.5/dist-packages/django/template/loaders/base.py", line 44, in get_template
+    contents, origin, origin.template_name, self.engine,
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 191, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 230, in compile_nodelist
+    return parser.parse()
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 515, in parse
+    raise self.error(token, e)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 513, in parse
+    compiled_result = compile_func(self, token)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/defaulttags.py", line 827, in do_for
+    nodelist_loop = parser.parse(('empty', 'endfor',))
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 520, in parse
+    self.unclosed_block_tag(parse_until)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 581, in unclosed_block_tag
+    raise self.error(token, msg)
+django.template.exceptions.TemplateSyntaxError: Unclosed tag on line 99: 'for'. Looking for one of: empty, endfor.
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+WARNING:django.request:Not Found: /my-account.html
+INFO:root:ADMIN PANEL viewed.!
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
