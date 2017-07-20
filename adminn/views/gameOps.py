@@ -1,12 +1,15 @@
+import datetime
+import logging
+
 from django.core.paginator import Paginator, PageNotAnInteger
 from django.shortcuts import redirect, render
-import logging
+
 from adminn.models.companyModels import CompanyEventClass
 from adminn.models.gameModels import GameEventClass
 from utility.decorators import is_admin, language_assigned
-import datetime
+
 game_instance = GameEventClass()
-logging.basicConfig(filename= 'debug.log' , level= logging.DEBUG)
+logging.basicConfig(filename='debug.log', level=logging.DEBUG)
 
 @language_assigned
 @is_admin
@@ -44,12 +47,13 @@ def list_game(request):
     """All game split into 5 pieces"""
     paginator = Paginator(game, 5)
     try:
-        companys = paginator.page(page)
+        game = paginator.page(page)
         """If page not an integer return page 1"""
     except PageNotAnInteger:
-        companys = paginator.page(1)
+        game = paginator.page(1)
     except:
-        companys = paginator.page(paginator.num_pages)
+        game = paginator.page(paginator.num_pages)
+
     return render(request, "{}/list_game.html".format(request.COOKIES['language']), {"game": game})
 
 
