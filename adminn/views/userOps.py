@@ -2,7 +2,7 @@ import datetime
 import logging
 
 from django.shortcuts import render, redirect
-import datetime
+
 from adminn.models.userModels import UserOperationClass
 from utility.decorators import language_assigned, is_admin
 
@@ -42,6 +42,7 @@ def order_table(request):
 @is_admin
 @language_assigned
 def ban_user(request):
+    """Postdan aldigimiz useri statusunu değistirip yasakliyoruz"""
     if request.method == "POST":
         uname = request.POST.get('name', '')
         instance = UserOperationClass(request)

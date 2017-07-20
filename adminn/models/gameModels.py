@@ -12,7 +12,7 @@ class GameEventClass():
 
     def create_game(self, companyName, name, platformName, genreName, price):
         try:
-
+            """Game ınsert ederken company_id genre_id ve platform_id oldugu icin once idlerini bulduk"""
             self.cursor.execute("select id from company WHERE company_name = '{}'".format(str(companyName)))
             companyId = self.cursor.fetchone()[0]
             self.cursor.execute("select id from platform WHERE platform_name = '{}'".format(str(platformName)))
@@ -61,6 +61,7 @@ class GameEventClass():
 
     def list_game(self):
         try:
+            """Inner join ile company_name pltform_name genre_name game tablosu ile cekildi"""
             self.cursor.execute(
                 "select game.*,company.company_name,platform.platform_name,genre.genre_name from game INNER JOIN company ON game.company_id = company.id INNER JOIN platform ON game.platform_id = platform.id INNER JOIN genre on game.genre_id = genre.id ORDER BY game.update_date DESC ;")
         except:
@@ -71,6 +72,7 @@ class GameEventClass():
 
     def delete_game(self, gname):
         try:
+            """transaction baslatilip where sorgusu ile oyun silindi"""
             if (self.check_game(gname)):
                 self.cursor.execute("start transaction;")
                 self.cursor.execute("delete from game where name='{}' ".format(str(gname)))
