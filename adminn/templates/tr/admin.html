@@ -28,6 +28,7 @@
     <!-- this is default skin you can replace that with: dark.css, yellow.css, red.css ect -->
     <link id="pagestyle" rel="stylesheet" type="text/css" href="{% static 'css/default.css' %}"/>
 </head>
+<body>
 <div class="header">
     <div class="top-header">
         <div class="container">
@@ -59,21 +60,21 @@
                 </div>
 
                 <div class="search">
-                        <input id="oyunArama" placeholder="Oyun ara..."><span id="oyunArat"></span>
-                        <input type="submit" value="ARA">
-                    </div>
+                    <input id="oyunArama" placeholder="Oyun ara..."><span id="oyunArat"></span>
+                    <input type="submit" value="ARA">
+                </div>
 
                 <div class="clearfix"></div>
             </div>
             <div class="header-bottom-right">
                 {% if request.session.is_logged %}
-                    {% if request.session.admin_id == 1 %}
+                {% if request.session.admin_id == 1 %}
                 <div class="account"><a href="{% url 'adminn:index' %}"><span> </span>Admin</a></div>
-                    {% else %}
-                    <div class="account"><a href="{% url 'users:profile' %}"><span> </span>Hesabım</a></div>
-                    <div class="cart"><a href="checkout"><span> </span>Sepet</a></div>
+                {% else %}
+                <div class="account"><a href="{% url 'users:profile' %}"><span> </span>Hesabım</a></div>
+                <div class="cart"><a href="checkout"><span> </span>Sepet</a></div>
                 {% endif %}
-                    <div class="glyphicon glyphicon-log-out" style="color:#FF5B36; font-size: 1.1em;"><a href="{% url 'users:logout' %}"><span> </span>Çıkış</a></div>
+                <div class="glyphicon glyphicon-log-out" style="color:#FF5B36; font-size: 1.1em;"><a href="{% url 'users:logout' %}"><span> </span>Çıkış</a></div>
                 {% else %}
                 <ul class="login">
                     <li><a href="{% url 'users:register' %}"><span> </span>Üye Ol</a></li>
@@ -95,7 +96,7 @@
             <div class="sub-cate">
                 <div class=" top-nav rsidebar span_1_of_left">
                     <h3 class="cate">Admin Panel</h3>
-                     <ul class="menu">
+                    <ul class="menu">
                         <li class="item1"><a href="#">Oyun<img class="arrow-img" style="margin-left:113px;"
                                                                src="{% static 'images/arrow1.png' %}"
                                                                alt=""/>
@@ -144,22 +145,22 @@
                 </div>
                 <!--initiate accordion-->
                 <script type="text/javascript">
-         $(function() {
-             var menu_ul = $('.menu > li > ul'),
-                    menu_a  = $('.menu > li > a');
-             menu_ul.hide();
-             menu_a.click(function(e) {
-                 e.preventDefault();
-                 if(!$(this).hasClass('active')) {
-                     menu_a.removeClass('active');
-                     menu_ul.filter(':visible').slideUp('normal');
-                     $(this).addClass('active').next().stop(true,true).slideDown('normal');
-                 } else {
-                     $(this).removeClass('active');
-                     $(this).next().stop(true,true).slideUp('normal');
-                 }
-             });
-         });
+                    $(function() {
+                        var menu_ul = $('.menu > li > ul'),
+                            menu_a  = $('.menu > li > a');
+                        menu_ul.hide();
+                        menu_a.click(function(e) {
+                            e.preventDefault();
+                            if(!$(this).hasClass('active')) {
+                                menu_a.removeClass('active');
+                                menu_ul.filter(':visible').slideUp('normal');
+                                $(this).addClass('active').next().stop(true,true).slideDown('normal');
+                            } else {
+                                $(this).removeClass('active');
+                                $(this).next().stop(true,true).slideUp('normal');
+                            }
+                        });
+                    });
                 </script>
             </div>
         </div>
@@ -219,8 +220,8 @@
     </div><!-- end container -->
 </footer>
 <!-- end footer -->
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
 
 </body>
 </html>
