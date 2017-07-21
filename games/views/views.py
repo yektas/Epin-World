@@ -5,6 +5,7 @@ import requests
 from django.db import connections
 from django.shortcuts import render, HttpResponse, redirect
 
+from adminn.models.companyModels import CompanyEventClass
 from games.models import GameEventClass
 from utility.decorators import language_assigned
 
@@ -46,11 +47,15 @@ def generate_detail_html(request, game_name):
 
 
 def SearchView(request):
+    """Post ile gelen kelimeyi veritabaninda like ile arama"""
     if request.method == "POST":
         search_text = request.POST.get('search_game')
         instance = GameEventClass()
+        company_modal = CompanyEventClass(request)
         if (instance.game_search(search_text=search_text) is not False):
             games = instance.game_search(search_text=search_text)
+            company = company_modal.list_company()
+            games = games + company
             return render(request, "search.html", {"games": games})
         else:
             return redirect("home:index")

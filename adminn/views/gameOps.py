@@ -2,7 +2,7 @@ import datetime
 import logging
 
 from PIL import Image
-from django.core.paginator import Paginator, PageNotAnInteger
+from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 from django.shortcuts import redirect, render
 
 from adminn.models.companyModels import CompanyEventClass
@@ -45,16 +45,16 @@ def add_game(request):
 @language_assigned
 @is_admin
 def list_game(request):
-    game = game_instance.list_game()
+    games = game_instance.list_game()
     page = request.GET.get('page', 1)
     """All game split into 5 pieces"""
-    paginator = Paginator(game, 5)
+    paginator = Paginator(games, 5)
     try:
         game = paginator.page(page)
         """If page not an integer return page 1"""
     except PageNotAnInteger:
         game = paginator.page(1)
-    except:
+    except EmptyPage:
         game = paginator.page(paginator.num_pages)
 
     return render(request, "{}/list_game.html".format(request.COOKIES['language']), {"game": game})
