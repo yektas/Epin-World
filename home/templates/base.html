@@ -64,8 +64,10 @@
                 </div>
 
                 <div class="search">
-                    <input id="oyunArama" placeholder="Oyun ara..."><span id="oyunArat"></span>
+                    <form action="{% url 'games:search_game' %}" method="post">{% csrf_token %}
+                        <input id="oyunArama" placeholder="Oyun ara..." name="search_game"><span id="oyunArat"></span>
                     <input type="submit" value="ARA">
+                    </form>
                 </div>
 
                 <div class="clearfix"></div>

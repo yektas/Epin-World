@@ -3,10 +3,10 @@ import logging
 
 import requests
 from django.db import connections
-from django.shortcuts import render, HttpResponse
+from django.shortcuts import render, HttpResponse, redirect
 
+from games.models import GameEventClass
 from utility.decorators import language_assigned
-
 
 cursor = connections['default'].cursor()
 logging.basicConfig(filename= 'debug.log' , level= logging.DEBUG)
@@ -43,3 +43,16 @@ def generate_detail_html(request, game_name):
         k += 1
 
     return render(request, 'detail.html', {'game_data': detail_html_data})
+
+
+def SearchView(request):
+    if request.method == "POST":
+        search_text = request.POST.get('search_game')
+        instance = GameEventClass()
+        if (instance.game_search(search_text=search_text) is not False):
+            games = instance.game_search(search_text=search_text)
+            return render(request, "search.html", {"games": games})
+        else:
+            return redirect("home:index")
+    else:
+        return redirect("home:index")

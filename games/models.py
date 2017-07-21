@@ -1,5 +1,7 @@
 from django.db import connection
 
+from utility.cursorutil import dictfetchall
+
 
 class GameEventClass:
     def __init__(self):
@@ -23,3 +25,11 @@ class GameEventClass:
             "insert into game(name,price,genre_id,company_id,content,platform_id) values('{}',{},1,13,'EhisteGame',1)".format(
                 game_name, game_money_price))
         self.cursor.execute("COMMIT;")
+
+    def game_search(self, search_text):
+        try:
+            self.cursor.execute("select name from game where name ilike '%{}%'".format(str(search_text)))
+        except:
+            return False
+        games = dictfetchall(self.cursor)
+        return games
