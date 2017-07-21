@@ -3335,3 +3335,109 @@ INFO:root:oyun çekme işlemi bitirildi
 INFO:root:oyun çekme işlemi bitirildi 
 INFO:root:oyun çekme işlemi bitirildi 
 INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+ERROR:django.request:Internal Server Error: /games/search/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/utkucan/TrnetStaj/MVC-test/games/views/views.py", line 56, in SearchView
+    company = CompanyEventClass.list_company()
+TypeError: list_company() missing 1 required positional argument: 'self'
+ERROR:django.request:Internal Server Error: /games/search/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/utkucan/TrnetStaj/MVC-test/games/views/views.py", line 54, in SearchView
+    company_modal = CompanyEventClass()
+TypeError: __init__() missing 1 required positional argument: 'request_object'
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+ERROR:root:login failed
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:ADMIN PANEL viewed.!
+INFO:root:games added / 2017-07-21 12:42:43.750061
+INFO:root:ADMIN PANEL viewed.!
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:ADMIN PANEL viewed.!
+INFO:root:games added / 2017-07-21 12:43:33.718977
+INFO:root:ADMIN PANEL viewed.!
+INFO:root:games added / 2017-07-21 12:43:48.519604
+INFO:root:ADMIN PANEL viewed.!
+INFO:root:games added / 2017-07-21 12:44:06.309416
+INFO:root:ADMIN PANEL viewed.!
+INFO:root:games added / 2017-07-21 12:44:27.043503
+INFO:root:ADMIN PANEL viewed.!
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:ADMIN PANEL viewed.!
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:ADMIN PANEL viewed.!
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:users listed / 2017-07-21 13:24:39.340616
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 

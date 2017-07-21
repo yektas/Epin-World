@@ -42,10 +42,10 @@
                       <th>Sil</th>
 
                       </thead>
-                      <tbody id="games">
-
+                      <tbody>
                       {% for a in game%}
                       <tr>
+                          <td>{{a.logo}}</td>
                           <td>{{a.name}}</td>
                           <td>{{a.price}}</td>
                           <td>{{a.created_date}}</td>
@@ -53,7 +53,6 @@
                           <td>{{a.genre_name}}</td>
                           <td>{{a.company_name}}</td>
                           <td>{{a.platform_name}}</td>
-
                           <td><input type="radio" name="name" value="{{a.name}}"></td>
                       </tr>
                       {% endfor %}
