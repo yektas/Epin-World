@@ -59,20 +59,21 @@
                     <span class="icon-next"></span>
                 </a>
             </div>
-            <div class="row col-lg" style="margin-top: 10%; margin-left: -45%;">
+            <div class="row col-lg" style="margin-top: 5px; margin-left: -45%;">
                 <!-- Games -->
                 {% for game in games %}
                 <div class="col-lg-4">
                     <div class=" elit-grid">
-                        <h4>{{game.name}}</h4>
-                        <span class="on-get">HEMEN BAK!</span>
+                        <h4 style="margin: 50px 10px 50px;">{{game.name}}</h4>
+
                     </div>
-                    <img class="img-responsive shoe-left" src="{%static ''|add:game.logo%}" alt=" "
+                    <img src="{%static ''|add:game.logo%}" alt=" "
                          style="width: 200px;height: 130px"/>
+                    <br><br>
+                    <span class="on-get" style="margin: 10px">HEMEN BAK!</span>
                     <div class="clearfix"></div>
                 </div>
                 {% endfor %}
-
 
             </div>
             <script type="text/javascript"
@@ -80,6 +81,9 @@
             <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
             <script type="text/javascript" src="{% static 'js/index_game_filler.js' %}"></script>
 
-        </div><!-- /.container -->
+        </div>
+    </div>
+</div>
+<!-- /.container -->
 
         {% endblock %}
