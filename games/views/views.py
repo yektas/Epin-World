@@ -23,6 +23,19 @@ def games_json(request):
             {'game_id': '{}'.format(i[0]), 'game_name': '{}'.format(i[1]), 'game_money_price': '{}'.format(i[2])})
     return HttpResponse(json.dumps(test_json), content_type='application/json')
 
+#Taha Demir
+#Date: 21.07.2017
+#Takes the name of the platform types
+def platform_json(request):
+    logging.info('oyun çekme işlemi bitirildi ')
+    cursor.execute("SELECT * FROM platform")
+    test_data = cursor.fetchall()
+    test_json = []
+    for i in test_data:
+        test_json.append(
+            {'platform_name': '{}'.format(i[1])})
+    return HttpResponse(json.dumps(test_json), content_type='application/json')
+
 
 # WoodProgrammer
 # #Bu method detail.html'i url'den gelen parametreye göre

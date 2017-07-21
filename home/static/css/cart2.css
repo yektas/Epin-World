@@ -1,0 +1,19 @@
+.carttt :hover + .yag {
+    display: block;
+    position: absolute;
+    z-index: 100;
+}
+
+.yag {
+    background-color: white;
+    display: none;
+}
+
+.carttt a span {
+    margin-right: 100px;
+    background: url(../images/img-sprite.png) -172px -28px;
+    width: 26px;
+    height: 26px;
+    display: block;
+
+}
