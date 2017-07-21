@@ -2979,3 +2979,359 @@ INFO:root:oyun çekme işlemi bitirildi
 INFO:root:oyun çekme işlemi bitirildi 
 INFO:root:oyun çekme işlemi bitirildi 
 INFO:root:oyun çekme işlemi bitirildi 
+ERROR:django.request:Internal Server Error: /
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 882, in _resolve_lookup
+    current = current[bit]
+  File "/usr/local/lib/python3.5/dist-packages/django/template/context.py", line 87, in __getitem__
+    raise KeyError(key)
+KeyError: 'a'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 888, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'RequestContext' has no attribute 'a'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 896, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'a'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/utkucan/TrnetStaj/MVC-test/utility/decorators.py", line 24, in wrap
+    return func(request, *args, **kwargs)
+  File "/home/utkucan/TrnetStaj/MVC-test/home/views.py", line 30, in index
+    "games": games})
+  File "/usr/local/lib/python3.5/dist-packages/django/shortcuts.py", line 30, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/loader.py", line 68, in render_to_string
+    return template.render(context, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/backends/django.py", line 66, in render
+    return self.template.render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 207, in render
+    return self._render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 957, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/loader_tags.py", line 177, in render
+    return compiled_parent._render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 957, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/loader_tags.py", line 72, in render
+    result = block.nodelist.render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 957, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/defaulttags.py", line 216, in render
+    nodelist.append(node.render_annotated(context))
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 957, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/templatetags/static.py", line 105, in render
+    url = self.url(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/templatetags/static.py", line 101, in url
+    path = self.path.resolve(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 730, in resolve
+    arg_vals.append(arg.resolve(context))
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 849, in resolve
+    value = self._resolve_lookup(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 903, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [a] in "[{'False': False, 'None': None, 'True': True}, {}, {}, {'platforms': [{'platform_name': 'PC'}, {'platform_name': 'MOBIL'}, {'platform_name': 'PS4'}, {'platform_name': 'XBOX'}], 'games': [{'company_name': 'Deneme5', 'genre_name': 'pc', 'company_id': 19, 'id': 39, 'platform_id': 1, 'logo': 'images/pexels-photo-256369.jpeg', 'genre_id': 1, 'created_date': datetime.datetime(2017, 7, 20, 18, 46, 34, 581683), 'platform_name': 'PC', 'price': 100.0, 'update_date': datetime.datetime(2017, 7, 20, 18, 46, 34, 581683), 'name': 'Utku Deneme'}, {'company_name': 'Deneme5', 'genre_name': 'pc', 'company_id': 19, 'id': 38, 'platform_id': 1, 'logo': 'images/19720577_1634769276547397_610087267_o.jpg', 'genre_id': 1, 'created_date': datetime.datetime(2017, 7, 20, 13, 15, 20, 155444), 'platform_name': 'PC', 'price': 3223.0, 'update_date': datetime.datetime(2017, 7, 20, 13, 15, 20, 155444), 'name': 'scds'}, {'company_name': 'Deneme5', 'genre_name': 'pc', 'company_id': 19, 'id': 37, 'platform_id': 1, 'logo': 'images/19720577_1634769276547397_610087267_o.jpg', 'genre_id': 1, 'created_date': datetime.datetime(2017, 7, 20, 13, 15, 0, 94130), 'platform_name': 'PC', 'price': 50.0, 'update_date': datetime.datetime(2017, 7, 20, 13, 15, 0, 94130), 'name': 'Wiinnnieee'}, {'company_name': 'Deneme5', 'genre_name': 'pc', 'company_id': 19, 'id': 36, 'platform_id': 1, 'logo': 'images/The-Sims-5.jpg', 'genre_id': 1, 'created_date': datetime.datetime(2017, 7, 20, 13, 4, 57, 554097), 'platform_name': 'PC', 'price': 6.0, 'update_date': datetime.datetime(2017, 7, 20, 13, 4, 57, 554097), 'name': 'ddddddd'}, {'company_name': 'Deneme5', 'genre_name': 'pc', 'company_id': 19, 'id': 34, 'platform_id': 1, 'logo': './home/static/images/Ekran Görüntüsü - 2017-07-13 10-51-13.png', 'genre_id': 1, 'created_date': datetime.datetime(2017, 7, 20, 13, 0, 54, 493568), 'platform_name': 'PC', 'price': 5555560.0, 'update_date': datetime.datetime(2017, 7, 20, 13, 0, 54, 493568), 'name': 'DENEME'}, {'company_name': 'Deneme5', 'genre_name': 'pc', 'company_id': 19, 'id': 33, 'platform_id': 1, 'logo': '../../../upload/lara_croft_reborn+no+logo_2179x1290.jpg', 'genre_id': 1, 'created_date': datetime.datetime(2017, 7, 20, 12, 59, 15, 899367), 'platform_name': 'PC', 'price': 1.0, 'update_date': datetime.datetime(2017, 7, 20, 12, 59, 15, 899367), 'name': 'ddd'}, {'company_name': 'Deneme5', 'genre_name': 'pc', 'company_id': 19, 'id': 32, 'platform_id': 1, 'logo': '~/upload/lara_croft_reborn+no+logo_2179x1290.jpg', 'genre_id': 1, 'created_date': datetime.datetime(2017, 7, 20, 12, 48, 7, 139666), 'platform_name': 'PC', 'price': 34.0, 'update_date': datetime.datetime(2017, 7, 20, 12, 48, 7, 139666), 'name': 'cvbn'}, {'company_name': 'Deneme5', 'genre_name': 'pc', 'company_id': 19, 'id': 31, 'platform_id': 1, 'logo': '/upload/lol.jpg', 'genre_id': 1, 'created_date': datetime.datetime(2017, 7, 20, 12, 47, 12, 584444), 'platform_name': 'PC', 'price': 6565.0, 'update_date': datetime.datetime(2017, 7, 20, 12, 47, 12, 584444), 'name': 'sdfcgvbhn'}, {'company_name': 'Deneme5', 'genre_name': 'pc', 'company_id': 19, 'id': 30, 'platform_id': 1, 'logo': '/home/yagmursato/MVC-test/upload/19720577_1634769276547397_610087267_o.jpg', 'genre_id': 1, 'created_date': datetime.datetime(2017, 7, 20, 12, 42, 57, 907900), 'platform_name': 'PC', 'price': 3.0, 'update_date': datetime.datetime(2017, 7, 20, 12, 42, 57, 907900), 'name': 'foooootoooo'}, {'company_name': 'Deneme5', 'genre_name': 'pc', 'company_id': 19, 'id': 29, 'platform_id': 1, 'logo': None, 'genre_id': 1, 'created_date': datetime.datetime(2017, 7, 20, 12, 34, 56, 948313), 'platform_name': 'PC', 'price': 233.0, 'update_date': datetime.datetime(2017, 7, 20, 12, 34, 56, 948313), 'name': 'saczs'}, {'company_name': 'Deneme5', 'genre_name': 'pc', 'company_id': 19, 'id': 28, 'platform_id': 1, 'logo': None, 'genre_id': 1, 'created_date': datetime.datetime(2017, 7, 20, 12, 17, 32, 563451), 'platform_name': 'PC', 'price': 2.0, 'update_date': datetime.datetime(2017, 7, 20, 12, 17, 32, 563451), 'name': 'asdcac'}, {'company_name': 'Deneme5', 'genre_name': 'pc', 'company_id': 19, 'id': 27, 'platform_id': 1, 'logo': None, 'genre_id': 1, 'created_date': datetime.datetime(2017, 7, 20, 12, 2, 11, 104425), 'platform_name': 'PC', 'price': 100.0, 'update_date': datetime.datetime(2017, 7, 20, 12, 2, 11, 104425), 'name': 'dasdad'}, {'company_name': 'Deneme3', 'genre_name': 'playstation', 'company_id': 17, 'id': 26, 'platform_id': 6, 'logo': None, 'genre_id': 2, 'created_date': datetime.datetime(2017, 7, 20, 11, 46, 32, 212547), 'platform_name': 'PS4', 'price': 5.0, 'update_date': datetime.datetime(2017, 7, 20, 11, 46, 32, 212547), 'name': 'Winnie the pooh'}, {'company_name': 'Deneme5', 'genre_name': 'pc', 'company_id': 19, 'id': 24, 'platform_id': 1, 'logo': None, 'genre_id': 1, 'created_date': datetime.datetime(2017, 7, 20, 9, 47, 25, 152395), 'platform_name': 'PC', 'price': 1000.0, 'update_date': datetime.datetime(2017, 7, 20, 9, 47, 25, 152395), 'name': 'Utku'}, {'company_name': 'Deneme5', 'genre_name': 'pc', 'company_id': 19, 'id': 23, 'platform_id': 1, 'logo': None, 'genre_id': 1, 'created_date': datetime.datetime(2017, 7, 20, 9, 14, 11, 134525), 'platform_name': 'PC', 'price': 3333.0, 'update_date': datetime.datetime(2017, 7, 20, 9, 14, 11, 134525), 'name': 'yagmur'}, {'company_name': 'Deneme3', 'genre_name': 'playstation', 'company_id': 17, 'id': 22, 'platform_id': 6, 'logo': None, 'genre_id': 2, 'created_date': datetime.datetime(2017, 7, 20, 9, 10, 51, 441308), 'platform_name': 'PS4', 'price': 34.0, 'update_date': datetime.datetime(2017, 7, 20, 9, 10, 51, 441308), 'name': 'blabaaaa'}, {'company_name': 'Deneme5', 'genre_name': 'pc', 'company_id': 19, 'id': 21, 'platform_id': 1, 'logo': None, 'genre_id': 1, 'created_date': datetime.datetime(2017, 7, 20, 8, 54, 53, 891523), 'platform_name': 'PC', 'price': 12.0, 'update_date': datetime.datetime(2017, 7, 20, 8, 54, 53, 891523), 'name': 'asssasin'}, {'company_name': 'Deneme5', 'genre_name': 'pc', 'company_id': 19, 'id': 20, 'platform_id': 1, 'logo': None, 'genre_id': 1, 'created_date': datetime.datetime(2017, 7, 20, 8, 54, 39, 561434), 'platform_name': 'PC', 'price': 24.0, 'update_date': datetime.datetime(2017, 7, 20, 8, 54, 39, 561434), 'name': 'cs go'}]}]"
+WARNING:django.request:Not Found: /favicon.ico
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+WARNING:django.request:Not Found: /upload/lara_croft_reborn+no+logo_2179x1290.jpg
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+WARNING:django.request:Not Found: /upload/lara_croft_reborn+no+logo_2179x1290.jpg
+INFO:root:oyun çekme işlemi bitirildi 
+WARNING:django.request:Not Found: /upload/lara_croft_reborn+no+logo_2179x1290.jpg
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+WARNING:django.request:Not Found: /upload/lara_croft_reborn+no+logo_2179x1290.jpg
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+WARNING:django.request:Not Found: /upload/lara_croft_reborn+no+logo_2179x1290.jpg
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+WARNING:django.request:Not Found: /upload/lara_croft_reborn+no+logo_2179x1290.jpg
+INFO:root:oyun çekme işlemi bitirildi 
+WARNING:django.request:Not Found: /upload/lara_croft_reborn+no+logo_2179x1290.jpg
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+WARNING:django.request:Not Found: /upload/lara_croft_reborn+no+logo_2179x1290.jpg
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+WARNING:django.request:Not Found: /upload/lara_croft_reborn+no+logo_2179x1290.jpg
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+WARNING:django.request:Not Found: /upload/lara_croft_reborn+no+logo_2179x1290.jpg
+INFO:root:oyun çekme işlemi bitirildi 
+WARNING:django.request:Not Found: /upload/lara_croft_reborn+no+logo_2179x1290.jpg
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+WARNING:django.request:Not Found: /upload/lara_croft_reborn+no+logo_2179x1290.jpg
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+WARNING:django.request:Not Found: /upload/lara_croft_reborn+no+logo_2179x1290.jpg
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+WARNING:django.request:Not Found: /upload/lara_croft_reborn+no+logo_2179x1290.jpg
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+WARNING:django.request:Not Found: /upload/lara_croft_reborn+no+logo_2179x1290.jpg
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+WARNING:django.request:Not Found: /upload/lara_croft_reborn+no+logo_2179x1290.jpg
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+WARNING:django.request:Not Found: /upload/lara_croft_reborn+no+logo_2179x1290.jpg
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+WARNING:django.request:Not Found: /upload/lara_croft_reborn+no+logo_2179x1290.jpg
+INFO:root:oyun çekme işlemi bitirildi 
+WARNING:django.request:Not Found: /upload/lara_croft_reborn+no+logo_2179x1290.jpg
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+WARNING:django.request:Not Found: /upload/lara_croft_reborn+no+logo_2179x1290.jpg
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+WARNING:django.request:Not Found: /upload/lara_croft_reborn+no+logo_2179x1290.jpg
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+WARNING:django.request:Not Found: /upload/lara_croft_reborn+no+logo_2179x1290.jpg
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+WARNING:django.request:Not Found: /upload/lara_croft_reborn+no+logo_2179x1290.jpg
+INFO:root:oyun çekme işlemi bitirildi 
+WARNING:django.request:Not Found: /upload/lara_croft_reborn+no+logo_2179x1290.jpg
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:ADMIN PANEL viewed.!
+WARNING:django.request:Not Found: /favicon.ico
+INFO:root:ADMIN PANEL viewed.!
+INFO:root:ADMIN PANEL viewed.!
+WARNING:django.request:Not Found: /adasdada/
+WARNING:django.request:Not Found: /adasdada/
+WARNING:django.request:Not Found: /adasdada/
+WARNING:django.request:Not Found: /login/
+WARNING:django.request:Not Found: /login/
+WARNING:django.request:Not Found: /login/
+WARNING:django.request:Not Found: /login
+WARNING:django.request:Not Found: /login/
+WARNING:django.request:Not Found: /login/
+ERROR:root:login failed
+ERROR:root:login failed
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+ERROR:root:login failed
+INFO:root:oyun çekme işlemi bitirildi 
+ERROR:root:login failed
+INFO:root:oyun çekme işlemi bitirildi 
+ERROR:root:login failed
+ERROR:root:login failed
+ERROR:root:login failed
+ERROR:root:login failed
+ERROR:root:login failed
+ERROR:root:login failed
+ERROR:root:login failed
+ERROR:root:login failed
+ERROR:root:login failed
+ERROR:root:login failed
+ERROR:root:login failed
+ERROR:root:login failed
+ERROR:root:login failed
+ERROR:root:login failed
+ERROR:root:login failed
+ERROR:root:login failed
+ERROR:root:login failed
+ERROR:root:login failed
+ERROR:root:login failed
+ERROR:root:login failed
+ERROR:root:login failed
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+ERROR:root:login failed
+INFO:root:oyun çekme işlemi bitirildi 
+ERROR:root:login failed
+INFO:root:oyun çekme işlemi bitirildi 
+ERROR:root:login failed
+INFO:root:oyun çekme işlemi bitirildi 
+ERROR:root:login failed
+INFO:root:oyun çekme işlemi bitirildi 
+WARNING:django.security.csrf:Forbidden (CSRF token missing or incorrect.): /users/login/
+ERROR:django.request:Internal Server Error: /users/auth_login/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/utkucan/TrnetStaj/MVC-test/utility/decorators.py", line 22, in wrap
+    response = render_to_response("{}/index.html".format(request.COOKIES['language']))
+  File "/usr/local/lib/python3.5/dist-packages/django/shortcuts.py", line 21, in render_to_response
+    content = loader.render_to_string(template_name, context, using=using)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/loader.py", line 68, in render_to_string
+    return template.render(context, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/backends/django.py", line 66, in render
+    return self.template.render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 207, in render
+    return self._render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 957, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/loader_tags.py", line 177, in render
+    return compiled_parent._render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 957, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/defaulttags.py", line 458, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/usr/local/lib/python3.5/dist-packages/django/urls/base.py", line 91, in reverse
+    return force_text(iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs)))
+  File "/usr/local/lib/python3.5/dist-packages/django/urls/resolvers.py", line 497, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'search_game' not found. 'search_game' is not a valid view function or pattern name.
+ERROR:django.request:Internal Server Error: /users/auth_login/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 198, in _get_response
+    "returned None instead." % (callback.__module__, view_name)
+ValueError: The view utility.decorators.wrap didn't return an HttpResponse object. It returned None instead.
+ERROR:django.request:Internal Server Error: /users/auth_login/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 198, in _get_response
+    "returned None instead." % (callback.__module__, view_name)
+ValueError: The view utility.decorators.wrap didn't return an HttpResponse object. It returned None instead.
+ERROR:django.request:Internal Server Error: /users/auth_login/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 198, in _get_response
+    "returned None instead." % (callback.__module__, view_name)
+ValueError: The view utility.decorators.wrap didn't return an HttpResponse object. It returned None instead.
+ERROR:django.request:Internal Server Error: /users/auth_login/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 198, in _get_response
+    "returned None instead." % (callback.__module__, view_name)
+ValueError: The view utility.decorators.wrap didn't return an HttpResponse object. It returned None instead.
+ERROR:django.request:Internal Server Error: /users/auth_login/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 198, in _get_response
+    "returned None instead." % (callback.__module__, view_name)
+ValueError: The view utility.decorators.wrap didn't return an HttpResponse object. It returned None instead.
+ERROR:django.request:Internal Server Error: /users/auth_login/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 198, in _get_response
+    "returned None instead." % (callback.__module__, view_name)
+ValueError: The view utility.decorators.wrap didn't return an HttpResponse object. It returned None instead.
+ERROR:django.request:Internal Server Error: /users/auth_login/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 198, in _get_response
+    "returned None instead." % (callback.__module__, view_name)
+ValueError: The view utility.decorators.wrap didn't return an HttpResponse object. It returned None instead.
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+WARNING:django.request:Not Found: /favicon.ico
+ERROR:root:login failed
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+WARNING:django.security.csrf:Forbidden (CSRF token missing or incorrect.): /users/login/
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
+INFO:root:oyun çekme işlemi bitirildi 
