@@ -11,6 +11,8 @@
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <!--script-->
+    <link href="{% static 'css/cart2.css'%}" rel="stylesheet" type="text/css"/>
+
     <link href="{% static 'css/bootstrap.css'%}" rel="stylesheet" type="text/css"/>
     <!--theme-style-->
     <link href="{% static 'css/style.css'%}" rel="stylesheet" type="text/css"/>
@@ -78,7 +80,49 @@
                 <div class="account"><a href="{% url 'adminn:index' %}"><span> </span>Admin</a></div>
                 {% else %}
                 <div class="account"><a href="{% url 'users:profile' %}"><span> </span>Hesabım</a></div>
-                <div class="cart"><a href="{% url 'sales:checkout' %}"><span> </span>Sepet</a>
+                <div class="carttt"><a href="{% url 'sales:checkout' %}"><span></span> Sepet</a>
+                    <div class="yag">
+                        <table>
+                            <th>Oyun Adı</th>
+                            <th>Fiyat</th>
+                            <tr>
+                                <td>ddd</td>
+                                <td>12313</td>
+                            </tr>
+                            <tr>
+                                <td>ddd</td>
+                                <td>12313</td>
+                            </tr>
+                            <tr>
+                                <td>ddd</td>
+                                <td>12313</td>
+                            </tr>
+                            <tr>
+                                <td>ddd</td>
+                                <td>12313</td>
+                            </tr>
+                            <tr>
+                                <td>ddd</td>
+                                <td>12313</td>
+                            </tr>
+                            <tr>
+                                <td>ddd</td>
+                                <td>12313</td>
+                            </tr>
+                            <tr>
+                                <td>ddd</td>
+                                <td>12313</td>
+                            </tr>
+                            <tr>
+                                <td>ddd</td>
+                                <td>12313</td>
+                            </tr>
+                            <tr>
+                                <td>ddd</td>
+                                <td>12313</td>
+                            </tr>
+                        </table>
+                    </div>
                 </div> <!--end container -->
                 {% endif %}
                 <div class="glyphicon glyphicon-log-out" style="color:#FF5B36; font-size: 1.1em;"><a
@@ -91,6 +135,8 @@
                     <li><a href="{% url 'users:login' %}">Giriş</a></li>
                 </ul>
                 {% endif %}
+
+
                 <div class="clearfix"></div>
 
             </div>
