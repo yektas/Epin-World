@@ -93,3 +93,18 @@ class GameEventClass():
             return False
         else:
             return True
+
+    def pc_games(self, id):
+        if (id == 1):
+            self.cursor.execute("select name from game where genre_id = {}".format(id))
+            return dictfetchall(self.cursor)
+
+    def mobil_games(self, id):
+        if (id == 2):
+            self.cursor.execute("select name from game where genre_id = {}".format(id))
+            return dictfetchall(self.cursor)
+
+    def xbox_games(self, id):
+        if (id == 3):
+            self.cursor.execute("select name from game where genre_id = {}".format(id))
+            return dictfetchall(self.cursor)

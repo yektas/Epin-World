@@ -2,82 +2,11 @@
   {% extends 'base.html' %}
     {% load staticfiles %}
     {% block content %}
-
-<script type="text/javascript">
-    var game_product_footer = ""
-
-    $.ajax({
-
-            type: 'GET',
-            url: 'http://localhost:8000/games/games_json/',
-            data: {get_param: 'value'},
-            dataType: 'json',
-            success: function (data) {
-                var json = data;
-                $.each(json, function (i, item) {
-                    if (i < 6) {
-                        game_product_footer += "<div class='col-lg-6' style='width: 50%;'> <article class='col-item'> <div class='photo'> <div class='options-cart'>" + " <a href='/games/game_detail/" + json[i].game_name + "'></div>"
-                        game_product_footer += "<img src='{% static 'js/lol.jpg' %}' class='img-responsive' alt='Product Image' />"
-                        game_product_footer += "</div><div class='container' style='width: inherit'><br> <strong><p id='" + json[i].game_id + "'>" + json[i].game_name + "</p></strong>"
-                        game_product_footer += "<strong><p>" + json[i].game_money_price + "</p></strong>"
-                        game_product_footer += "</div></article></div>"
-                    }
-                });
-                $('#products_footer').append(game_product_footer)
-            }
-        });
-    var game = [];
-    var game_added = [];
-    /*
-    * Date : 19.07.2017 - Taha Demir
-    * This ajax method assigns all the JSON object -inside the written url- to the game array.
-    * */
-    $.ajax({
-
-            type: 'GET',
-            url: 'http://localhost:8000/games/games_json/',
-            data: {get_param: 'value'},
-            dataType: 'json',
-            success: function (data) {
-                var json = data;
-                for(var i=0; i<json.length; i++){
-                    game.push(json[i]);
-                };
-            }
-        });
-
-    /*
-    * Date : 19.07.2017 - Taha Demir
-    * This function creates a table and fills each cells of the table with the JSON objects which are inside the game array.
-    * */
-
-</script>
-
-
-
-<head>
-    <style>
-        table {
-            border-collapse: collapse;
-            width: 100%;
-        }
-        th, td {
-            text-align: left;
-            padding: 8px;
-        }
-        tr:nth-child(even){background-color: #f2f2f2}
-    </style>
-
-
-
     {% block title%}<title>EpinWorld-Anasayfa</title>{% endblock %}
 
     <link href="{% static 'css/index_page_product.css'%}" rel="stylesheet" type="text/css"/>
 
 </head>
-  <body>
-
-</body>
 
 <div class="container">
     <hr />
@@ -135,11 +64,6 @@
 
 
     </div>
-
-
-
-
-
 
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>

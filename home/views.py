@@ -25,6 +25,11 @@ def language_detector(request):
 def index(request):
     model = GameEventClass()
     platform = model.list_platform()
-    games = model.list_game()
+    pc_games = model.pc_games(1)
+    mobil_games = model.mobil_games(2)
+    xbox_games = model.xbox_games(3)
+
     return render(request, "{}/index.html".format(request.COOKIES['language']), {"platforms": platform,
-                                                                                 "games": games})
+                                                                                 "pc_games": pc_games[:5],
+                                                                                 "mobil_games": mobil_games,
+                                                                                 "xbox_games": xbox_games})

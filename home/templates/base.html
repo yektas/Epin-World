@@ -112,10 +112,8 @@
                                                              alt=""/></a>
 
                             <ul class="cute">
-                                {% for game in games%}
-                                {% ifequal game.genre_id 1 %}
+                                {% for game in pc_games%}
                                 <li class="subitem1"><a href="{% url 'adminn:add_game'%}">{{game.name}}</a></li>
-                                {% endifequal %}
                                 {%endfor%}
                             </ul>
                         </li>
@@ -125,10 +123,8 @@
                                                                 src="{% static 'images/arrow1.png' %}"
                                                                 alt=""/></a>
                             <ul class="cute">
-                                {% for game in games%}
-                                {% ifequal game.genre_id 2 %}
+                                {% for game in mobil_games%}
                                 <li class="subitem1"><a href="{% url 'adminn:add_game'%}">{{game.name}}</a></li>
-                                {% endifequal %}
                                 {%endfor%}
                             </ul>
                         </li>
