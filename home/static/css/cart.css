@@ -138,8 +138,10 @@ nav {
   font-size: 16px;
   margin: 25px 0 15px 0;
 }
-.containerhover {
+
+.cart:hover .yag {
     background: #6394F8;
+  display: block;
   }
 
 .clearfix:after {
@@ -148,4 +150,7 @@ nav {
   clear: both;
 }
 
+.yag {
+  display: none;
+}
 
