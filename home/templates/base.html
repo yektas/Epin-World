@@ -233,8 +233,12 @@
                                     line += '<ul class="cute">{% for game in games%}{% ifequal game.genre_id 3 %}<li class="subitem1">' +
                                             '<a href="{% url 'adminn:add_game'%}">{{game.name}}</a></li>{% endifequal %}{%endfor%}</ul>'
                                 }
+
                                 line += '</li>'
-                                $(function() {
+
+                                $('.menu').append(line )
+                            }
+                             $(function() {
                                     var menu_ul = $('.menu > li > ul'),
                                     menu_a  = $('.menu > li > a');
                                     menu_ul.hide();
@@ -255,10 +259,10 @@
                                         $(".shopping-cart").fadeToggle("fast");
                                     });
                                 })();
-                                $('.menu').append(line )
-                            }
                         }
+
                     });
+
 </script>
 
 
