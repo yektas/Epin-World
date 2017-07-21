@@ -1,6 +1,6 @@
 from django.http import HttpResponse
-from django.shortcuts import render
-
+from django.shortcuts import render, redirect
+import json
 
 def checkout(request):
     product_list = {}
@@ -14,15 +14,22 @@ def checkout(request):
 
 
 def addtocart(request):
-    saved_list = []
-    game_data = request.POST.get('game_data', ' ')
-    game_data.replace('/\\\g', '')
+    quantity = 0
 
-    print(game_data)
-    if 'cart' not in request.session or not request.session['cart']:
+    game_name = request.POST.get('game_name', ' ')
+    game_id = request.POST.get('game_id', ' ')
+    game_price = request.POST.get('game_price', ' ')
+
+    game_data = {'game_name': game_name, 'game_id': game_id, 'game_price': game_price, 'quantity': quantity}
+
+    if 'cart' not in request.session or request.session['cart'] is None:
         request.session['cart'] = game_data
-    else:
-        saved_list = request.session.get('cart', [])
-        saved_list.append(game_data)
-        request.session['cart'] = saved_list
-    return render(request, "test.html")
+        if game_id == request.session['cart']['game_id']:
+            request.session['cart']['quantity'] += 1
+        elif game_id != request.session['cart']['game_id']:
+            temp_list = []
+            temp_list = request.session['cart']
+            del request.session['cart']
+            temp_list.append(game_data)
+            request.session['cart'] = temp_list
+    return HttpResponse(json.dumps(request.session['cart']))
