@@ -104,15 +104,61 @@
                 <div class=" top-nav rsidebar span_1_of_left">
                     <h3 class="cate">Kategoriler</h3>
                     <ul class="menu">
-                        {% for platform in platforms %}
-                        <li class="item1"><a href="#">{{platform.platform_name}}
-                            <img class="arrow-img" align="right" style="margin: 20px 10px 20px "
-                                 src="{% static 'images/arrow1.png' %}"
-                                 alt=""/>
-                        </a>
+                        <li class="item1"><a href="#">PC<img class="arrow-img" align="right"
+                                                             style="margin: 20px 10px 10px"
+                                                             src="{% static 'images/arrow1.png' %}"
+                                                             alt=""/></a>
+
+                            <ul class="cute">
+                                {% for game in games%}
+                                {% ifequal game.genre_id 1 %}
+                                <li class="subitem1"><a href="{% url 'adminn:add_game'%}">{{game.name}}</a></li>
+                                {% endifequal %}
+                                {%endfor%}
+                            </ul>
                         </li>
-                        {% endfor %}
+
+                        <li class="item1"><a href="#">MOBİL<img class="arrow-img" align="right"
+                                                                style="margin: 20px 10px 10px"
+                                                                src="{% static 'images/arrow1.png' %}"
+                                                                alt=""/></a>
+                            <ul class="cute">
+                                {% for game in games%}
+                                {% ifequal game.genre_id 2 %}
+                                <li class="subitem1"><a href="{% url 'adminn:add_game'%}">{{game.name}}</a></li>
+                                {% endifequal %}
+                                {%endfor%}
+                            </ul>
+                        </li>
+
+                        <li class="item1"><a href="#">XBOX<img class="arrow-img" align="right"
+                                                               style="margin: 20px 10px 10px"
+                                                               src="{% static 'images/arrow1.png' %}"
+                                                               alt=""/></a>
+                            <ul class="cute">
+                                {% for game in games%}
+                                {% ifequal game.genre_id 3 %}
+                                <li class="subitem1"><a href="{% url 'adminn:add_game'%}">{{game.name}}</a></li>
+                                {% endifequal %}
+                                {%endfor%}
+                            </ul>
+                        </li>
+
+                        <li class="item1"><a href="#">PLAYSTATİON<img class="arrow-img" align="right"
+                                                                      style="margin: 20px 10px 10px"
+                                                                      src="{% static 'images/arrow1.png' %}"
+                                                                      alt=""/></a>
+                            <ul class="cute">
+                                {% for game in games%}
+                                {% ifequal game.genre_id 3 %}
+                                <li class="subitem1"><a href="{% url 'adminn:add_game'%}">{{game.name}}</a></li>
+                                {% endifequal %}
+                                {%endfor%}
+                            </ul>
+                        </li>
+
                     </ul>
+                    
                 </div>
                 <!--initiate accordion-->
                 <script type="text/javascript">
@@ -148,8 +194,8 @@
 </div>
 </div>
 <!---->
-<div class="clearfix" ></div>
-<hr />
+<div class="clearfix"></div>
+<hr/>
 <footer class="footer">
     <div class="container">
         <div class="row">
