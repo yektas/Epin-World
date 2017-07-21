@@ -6,8 +6,6 @@
       <script type="text/javascript" src="{% static 'js/tool_tip.js' %}"></script>
 
 
-
-
 </head>
 
 
@@ -33,6 +31,7 @@
 
                       <thead>
 
+                      <th>Logo</th>
                       <th>Oyun Adı</th>
                       <th>Ücreti</th>
                       <th>Oluşturulma Tarihi</th>
@@ -47,7 +46,6 @@
 
                       {% for a in game%}
                       <tr>
-
                           <td>{{a.name}}</td>
                           <td>{{a.price}}</td>
                           <td>{{a.created_date}}</td>
