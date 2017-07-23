@@ -154,7 +154,6 @@
                     <ul class="menu">
 
                     </ul>
-
                 </div>
                 <!--initiate accordion-->
 
@@ -245,70 +244,67 @@
 * Kategoriler navbar ı bütün itemlarını ajaxla arkadan alır.
 * */
     var platform_list = [];
-                    $.ajax({
-                        type: 'GET',
-                        url: 'http://localhost:8000/games/platform_json/',
-                        data: {get_param: 'value'},
-                        dataType: 'json',
-                        success: function (data) {
-                            var json = data;
-                            $.each(json, function (i, item) {
-                                platform_list.push(json[i].platform_name)
+        $.ajax({
+            type: 'GET',
+            url: 'http://localhost:8000/games/platform_json/',
+            data: {get_param: 'value'},
+            dataType: 'json',
+            success: function (data) {
+                var json = data;
+                $.each(json, function (i, item) {
+                    platform_list.push(json[i].platform_name)
 
-                            });
+                });
+                var line = '<li class="item1">'
 
-                            for(var i = 0; i < platform_list.length; i++){
-                                var line = '<li class="item1">'
-                                line += '<a href="#">'+platform_list[i]+'<img class="arrow-img" align="right" src="{% static 'images/arrow1.png' %}" align="right"' +
-                                        'style="margin: 20px 10px 10px"'+
-                                        'alt=""/></a>'
-                                if(i == 0){
-                                    line += '<ul class="cute">{% for game in pc_games%}<li class="subitem1">' +
-                                            '<a href="{% url 'adminn:add_game'%}">{{game.name}}</a></li>{%endfor%}</ul>'
-                                }
-                                else if(i == 1){
-                                    line += '<ul class="cute">{% for game in mobil_games%}<li class="subitem1">' +
-                                            '<a href="{% url 'adminn:add_game'%}">{{game.name}}</a></li>{%endfor%}</ul>'
-                                }
-                                else if(i == 2){
-                                    line += '<ul class="cute">{% for game in mobil_games%}<li class="subitem1">' +
-                                            '<a href="{% url 'adminn:add_game'%}">{{game.name}}</a></li>{%endfor%}</ul>'
+                for(var i = 0; i < platform_list.length; i++){
 
-                                }
-                                else if(i == 3){
-                                    line += '<ul class="cute">{% for game in games%}{% ifequal game.genre_id 3 %}<li class="subitem1">' +
-                                            '<a href="{% url 'adminn:add_game'%}">{{game.name}}</a></li>{% endifequal %}{%endfor%}</ul>'
-                                }
+                    line += '<a href="#">'+platform_list[i]+'<img class="arrow-img" align="right" src="{% static 'images/arrow1.png' %}" align="right"' +
+                            'style="margin: 20px 10px 10px" alt=""/></a>'
+                    if(i == 0){
+                        line += '<ul class="cute">{% for game in pc_games%}<li class="subitem1">' +
+                                '<a href="{% url 'adminn:add_game'%}">{{game.name}}</a></li>{%endfor%}</ul>'
+                    }
+                    else if(i == 1){
+                        line += '<ul class="cute">{% for game in mobil_games%}<li class="subitem1">' +
+                                '<a href="{% url 'adminn:add_game'%}">{{game.name}}</a></li>{%endfor%}</ul>'
+                    }
+                    else if(i == 2){
+                        line += '<ul class="cute">{% for game in xbox_games%}<li class="subitem1">' +
+                                '<a href="{% url 'adminn:add_game'%}">{{game.name}}</a></li>{%endfor%}</ul>'
+                    }
+                    else if(i == 3){
+                        line += '<ul class="cute">{% for game in games%}{% ifequal game.genre_id 3 %}<li class="subitem1">' +
+                                '<a href="{% url 'adminn:add_game'%}">{{game.name}}</a></li>{% endifequal %}{%endfor%}</ul>'
+                    }
 
-                                line += '</li>'
+                }
+                line += '</li>'
+                $('.menu').append(line )
 
-                                $('.menu').append(line )
-                            }
-                             $(function() {
-                                    var menu_ul = $('.menu > li > ul'),
-                                    menu_a  = $('.menu > li > a');
-                                    menu_ul.hide();
-                                    menu_a.click(function(e) {
-                                        e.preventDefault();
-                                        if(!$(this).hasClass('active')) {
-                                            menu_a.removeClass('active');
-                                            menu_ul.filter(':visible').slideUp('normal');
-                                            $(this).addClass('active').next().stop(true,true).slideDown('normal');
-                                        } else {
-                                            $(this).removeClass('active');
-                                            $(this).next().stop(true,true).slideUp('normal');
-                                        }
-                                    });
-                                });
-                                (function () {
-                                    $("#cart").on("click", function () {
-                                        $(".shopping-cart").fadeToggle("fast");
-                                    });
-                                })();
+                $(function() {
+                    var menu_ul = $('.menu > li > ul'),
+                        menu_a  = $('.menu > li > a');
+                    menu_ul.hide();
+                    menu_a.click(function(e) {
+                        e.preventDefault();
+                        if(!$(this).hasClass('active')) {
+                            menu_a.removeClass('active');
+                            menu_ul.filter(':visible').slideUp('normal');
+                            $(this).addClass('active').next().stop(true,true).slideDown('normal');
+                        } else {
+                            $(this).removeClass('active');
+                            $(this).next().stop(true,true).slideUp('normal');
                         }
-
                     });
-
+                });
+                (function () {
+                    $("#cart").on("click", function () {
+                        $(".shopping-cart").fadeToggle("fast");
+                    });
+                })();
+            }
+        });
 </script>
 
 
