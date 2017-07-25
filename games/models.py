@@ -33,3 +33,11 @@ class GameEventClass:
             return False
         games = dictfetchall(self.cursor)
         return games
+
+    def get_game_byid(self, game_id):
+        try:
+            self.cursor.execute("SELECT name, logo, price FROM game WHERE id = {}".format(game_id))
+        except:
+            return False
+        game = dictfetchall(self.cursor)
+        return game
