@@ -2,311 +2,173 @@
 <html>
 <head>
     {% load staticfiles %}
-    {% block title%}<title>Base</title>{% endblock %}
-    <!-- JavaScript Files -->
-    <script type="text/javascript" src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
-    <script type="text/javascript" src="{% static 'js/bootstrap.min.js' %}"></script>
-    <script type="text/javascript" src="{% static 'js/validationForm_ajax.js' %}"></script>
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-    <!--script-->
-    <link href="{% static 'css/cart2.css'%}" rel="stylesheet" type="text/css"/>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Untitled</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cookie">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    <link rel="stylesheet" href="{% static 'fonts/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'css/cartlist.css' %}">
+    <link rel="stylesheet" href="{% static 'css/category.css' %}">
+    <link rel="stylesheet" href="{% static 'css/form.css' %}">
+    <link rel="stylesheet" href="{% static 'css/Pretty-Header.css' %}">
+    <link rel="stylesheet" href="{% static 'css/Pretty-Footer.css' %}">
 
-    <link href="{% static 'css/bootstrap.css'%}" rel="stylesheet" type="text/css"/>
-    <!--theme-style-->
-    <link href="{% static 'css/style.css'%}" rel="stylesheet" type="text/css"/>
-    <!--//theme-style-->
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <script type="application/x-javascript">
-        addEventListener("load", function () {
-            setTimeout(hideURLbar, 0);
-        }, false);
-        function hideURLbar() {
-            window.scrollTo(0, 1);
-        }
-    </script>
-    <!--fonts-->
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i,900,900i&amp;subset=cyrillic,cyrillic-ext,latin-ext"
-          rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:100,300,400,700" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Dosis:200,300,400,500,600,700,800&amp;subset=latin-ext"
-          rel="stylesheet">
-    <!-- this is default skin you can replace that with: dark.css, yellow.css, red.css ect -->
-    <link id="pagestyle" rel="stylesheet" type="text/css" href="{% static 'css/default.css' %}"/>
+    <script src="{% static 'js/validationForm_ajax.js' %}"></script>
+
 </head>
-<div class="header">
-    <div class="top-header">
-        <div class="container">
-            <div class="top-header-left">
-                <ul class="support">
-                    <li><a href="#"><label> </label></a></li>
-                    <li><a href="#">24x7 Canlı<span class="live"> destek</span></a></li>
-                </ul>
-                <div class="clearfix"></div>
+
+<body>
+<div class="container-fluid">
+    <div class="row" style="background: rgba(235, 58, 58, 0.79);">
+        <div class="col-md-10">
+            <div class="col-md-2 col-md-offset-9">
+                <label for="sel1" style="color: white; margin-top: 10px;">Dil:</label>
+                <form action="/language_detector/" method="GET">
+                    <select name="language" class="form-control" onchange="this.form.submit()" style="margin-bottom: 10px;" id="sel1">
+                        <option>Seçiniz</option>
+                        <option value="tr">Türkçe</option>
+                        <option value="en">English</option>
+                    </select>
+                </form>
             </div>
-            <div class="top-header-right">
-                <div class="down-top">
-                    <form action="/language_detector/" method="GET">
-                        <input type="text" name="language">
-                        <button type="submit">DETECT</button>
-
-                    </form>
-                </div>
-                <div class="clearfix"></div>
-            </div>
-            <div class="clearfix"></div>
-        </div>
-    </div>
-    <div class="bottom-header">
-        <div class="container">
-            <div class="header-bottom-left">
-                <div class="logo">
-                    <a href="/"><img src="{% static 'images/logoo.jpeg'%}" style="width: 300px; height:100px;" alt=" "/></a>
-                </div>
-
-                <div class="search">
-                    <form action="{% url 'games:search_game' %}" method="post">{% csrf_token %}
-                        <input id="oyunArama" placeholder="Oyun ara..." name="search_game"><span id="oyunArat"></span>
-                    <input type="submit" value="ARA">
-                    </form>
-                </div>
-
-                <div class="clearfix"></div>
-            </div>
-            <div class="header-bottom-right">
-                {% if request.session.is_logged %}
-                {% if request.session.admin_id == 1 %}
-                <div class="account"><a href="{% url 'adminn:index' %}"><span> </span>Admin</a></div>
-                {% else %}
-                <div class="account"><a href="{% url 'users:profile' %}"><span> </span>Hesabım</a></div>
-                <div class="carttt"><a href="{% url 'sales:checkout' %}"><span></span> Sepet</a>
-                    <div class="yag">
-                        <table>
-                            <th>Oyun Adı</th>
-                            <th>Fiyat</th>
-                            <tr>
-                                <td id="gname"></td>
-                                <td id="gprice"></td>
-                            </tr>
-                            <tr>
-                                <td>ddd</td>
-                                <td>12313</td>
-                            </tr>
-                            <tr>
-                                <td>ddd</td>
-                                <td>12313</td>
-                            </tr>
-                            <tr>
-                                <td>ddd</td>
-                                <td>12313</td>
-                            </tr>
-                            <tr>
-                                <td>ddd</td>
-                                <td>12313</td>
-                            </tr>
-                            <tr>
-                                <td>ddd</td>
-                                <td>12313</td>
-                            </tr>
-                            <tr>
-                                <td>ddd</td>
-                                <td>12313</td>
-                            </tr>
-                            <tr>
-                                <td>ddd</td>
-                                <td>12313</td>
-                            </tr>
-                            <tr>
-                                <td>ddd</td>
-                                <td>12313</td>
-                            </tr>
-                        </table>
-                    </div>
-                </div> <!--end container -->
-                {% endif %}
-                <div class="glyphicon glyphicon-log-out" style="color:#FF5B36; font-size: 1.1em;"><a
-                        href="{% url 'users:logout' %}"><span> </span>Çıkış</a></div>
-
-                {% else %}
-                <ul class="login">
-                    <li><a href="{% url 'users:register' %}"><span> </span>Üye Ol</a></li>
-                    |
-                    <li><a href="{% url 'users:login' %}">Giriş</a></li>
-                </ul>
-                {% endif %}
-
-
-                <div class="clearfix"></div>
-
-            </div>
-            <div class="clearfix"></div>
         </div>
     </div>
 </div>
-<!---->
 <div class="container">
-    <div class="row">
-        <div class="col-sm">
-            <div class="sub-cate">
-                <div class=" top-nav rsidebar span_1_of_left">
-                    <h3 class="cate">Kategoriler</h3>
-                    <ul class="menu">
-
-                    </ul>
-                </div>
-                <!--initiate accordion-->
-
+    <nav class="navbar navbar-default custom-header">
+        <div class="container">
+            <div class="navbar-header"><a class="navbar-brand navbar-link" href="{% url 'home:index' %}">Epin<span>World </span> </a>
+                <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+                <ul class="nav navbar-nav links">
+                    <li role="presentation"><a href="#"> Oyunlar </a></li>
+                    <li role="presentation"><a href="#"> Hakkında</a></li>
+                    <li role="presentation"><a href="#"> Yardım</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right userlinks">
+                    {% if request.session.is_logged %}
+                    {% if request.session.admin_id == 1 %}
+                    <a href="{% url 'adminn:index' %}" class="btn btn-primary" role="button">Admin</a>
+                    <a href="{% url 'users:logout' %}" class="btn btn-primary" role="button">Çıkış</a>
+                    {% else %}
+                    <a href="{% url 'users:profile' %}" class="btn btn-primary" role="button">Profil</a>
+                    <a href="{% url 'users:logout' %}" class="btn btn-primary" role="button">Çıkış</a>
+                    {% endif %}
+                    {% else %}
+                    <a href="{% url 'users:register' %}" class="btn btn-primary" role="button">Üye Ol</a>
+                    <a href="{% url 'users:login' %}" class="btn btn-primary" role="button">Giriş</a>
+                    {% endif %}
+                </ul>
             </div>
         </div>
+    </nav>
+</div>
+<header>
+    <div class="container">
+        <hr>
+        <div class="row">
+            <div class="col-md-6">
+                <form action="{% url 'games:search_game' %}" method="post">{% csrf_token %}
+                    <div id="custom-search-input">
+                        <div class="input-group col-md-6">
+                            <input type="text"  id="oyunArama" class="form-control input-lg" style="color: white;" placeholder="Oyun Ara..." />
+                            <span class="input-group-btn">
+                                    <button type="submit" class="btn btn-info btn-lg" type="button">
+                                        <i class="fa fa-search" aria-hidden="true" style="font-size: 23px; color: #eb3a3a;"></i>
+                                    </button>
+                            </span>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-6">
+                <div id="mycart" class="dropdown cart">
+                    <button class="btn dropdown-toggle cart" type="button" data-toggle="dropdown">
+                        <i class="fa fa-shopping-cart carticon" aria-hidden="true"></i>Sepet<span class="badge">{{ request.session.cart|length }}</span>
+                        <span class="caret" style="color: white; margin-left: 5px"></span></button>
+                    <ul class="dropdown-menu dropdown-cart" style="right:0; left: auto;" role="menu">
+                        <div class="cart-header">
+                            <i class="fa fa-shopping-cart cart-icon" style="font-size: 25px; margin-left: 10px; color: rgba(117, 236, 165, 0.9);"></i><span class="badge">{{ request.session.cart|length }}</span>
+                            <div class="shopping-cart-total">
+                                <span>Toplam:</span>
+                                <span class="cart-total">$155.23</span>
+                            </div>
+                        </div>
+                        {% if request.session.cart|length == 0 %}
+                        <p style="text-align: center; color: white; margin-top: 10px;"> Sepet boş.</p>
+                        {% else %}
+                        {% for item in request.session.cart %}
+                        <li>
+                                    <span class="item">
+                                        <span class="item-left">
+                                            <img src="http://lorempixel.com/50/50/" class="img-circle" alt="" />
+                                            <span class="item-info">
+                                                <span class="item-name">{{ item.game_name }}</span><br>
+                                                <span class="item-quantity">{{ item.quantity }}</span>
+                                                <label>x</label>
+                                                <span class="item-price">{{ item.game_price }}</span>
+                                            </span>
+                                        </span>
+                                        <span class="item-right">
+                                            <button class="btn btn-xs btn-danger pull-right"><i class="fa fa-times" aria-hidden="true"></i></button>
+                                        </span>
+                                    </span>
+                        </li>
+                        {% endfor %}
+                        <li class="divider"></li>
+                        <li><a class="text-center" style="color: white;" href="{% static 'sales:checkout' %}">Sepete Git</a></li>
+
+                        {% endif %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <hr>
+    </div>
+</header>
+<div class="container">
+    <div class="col-md-12 col-md-offset-4">
         {% block content %}
         {% endblock %}
     </div>
 </div>
-
-<!---->
-<div class="clearfix"></div>
-<hr/>
-<footer class="footer">
-    <div class="container">
+<div class="container">
+    <footer>
         <div class="row">
-            <div class="col-sm-4">
-                <h5 class="title">Oyunlar</h5>
-                <ul class="list alt-list">
-                    <li><a href="shop-sidebar-left.html"><i
-                            class="glyphicon glyphicon-certificate"></i>PC</a>
-                    </li>
-                    <li><a href="shop-sidebar-left.html"><i class="glyphicon glyphicon-certificate"></i>Mobil</a>
-                    </li>
-                    <li><a href="shop-sidebar-left.html"><i
-                            class="glyphicon glyphicon-certificate"></i>Playstation</a>
-                    </li>
-                    <li><a href="shop-sidebar-left.html"><i
-                            class="glyphicon glyphicon-certificate"></i>Xbox</a>
-                    </li>
-                </ul>
-            </div><!-- end col -->
-            <div class="col-sm-4">
-                <h5 class="title">Hesap</h5>
-                <ul class="list alt-list">
-                    <li><a href="my-account.html"><i class="glyphicon glyphicon-certificate"></i>Hesabım</a>
-                    </li>
-                    <li><a href="cart.html"><i class="glyphicon glyphicon-certificate"></i>Sepetim</a></li>
-                    <li><a href="checkout.html"><i class="glyphicon glyphicon-certificate"></i>Ödeme</a></li>
-                    <li><a href="help.html"><i class="glyphicon glyphicon-certificate"></i>Yardım</a></li>
-                </ul>
-            </div><!-- end col -->
-            <div class="col-sm-4">
-                <h5 class="title">Adresimiz</h5>
-                <p>İTÜ Ayazağa Kampüsü,
+            <div class="col-md-4 col-sm-6 footer-navigation">
+                <h3><a href="#">Epin<span>World </span></a></h3>
+                <p class="links"><a href="#">Home</a><strong> · </strong><a href="#">Blog</a><strong> · </strong><a href="#">Pricing</a><strong> · </strong><a href="#">About</a><strong> · </strong><a href="#">Faq</a><strong> · </strong><a href="#">Contact</a></p>
+                <p
+                        class="company-name">Company Name © 2015 </p>
+            </div>
+            <div class="col-md-4 col-sm-6 footer-contacts">
+                <div><span class="fa fa-map-marker footer-contacts-icon"> </span>
+                    <p><span class="new-line-span">21 Revolution Street</span> Paris, France</p>
+                </div>
+                <div><i class="fa fa-phone footer-contacts-icon"></i>
+                    <p class="footer-center-info email text-left"> +1 555 123456</p>
+                </div>
+                <div><i class="fa fa-envelope footer-contacts-icon"></i>
+                    <p> <a href="#" target="_blank">support@company.com</a></p>
+                </div>
+            </div>
+            <div class="clearfix visible-sm-block"></div>
+            <div class="col-md-4 footer-about">
+                <h4>Adresimiz</h4>
+                <p> İTÜ Ayazağa Kampüsü,
                     UYBHM. Binası No:2
-                    Sarıyer/İstanbul</p>
-                <h6 class="text-light"><i class="glyphicon glyphicon-phone"></i> +90 212 225 57 23</h6>
-                <h6 class="text-light"><i class="glyphicon glyphicon-envelope"></i> info@sc3.io</h6>
-            </div><!-- end col -->
-        </div><!-- end row -->
-        <hr class="spacer-20">
-        <div class="row">
-            <div class="col-sm text-center">
-                <p class="text-sm">&COPY; 2017. Made with <i class="glyphicon glyphicon-heart"></i> Bootstrap by
-                    TRNet</p>
-            </div><!-- end col -->
-        </div><!-- end row -->
-    </div><!-- end container -->
-</footer>
-<!-- end footer -->
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
-<script>
-    var search_list = [];
-    $.ajax({
-        type: 'GET',
-        url: 'http://localhost:8000/games/games_json/',
-        data: {get_param: 'value'},
-        dataType: 'json',
-        success: function (data) {
-            var json = data;
-            $.each(json, function (i, item) {
-                search_list.push(json[i].game_name)
-            });
-        }
-    });
-    $('#oyunArama').autocomplete({
-        minLength: 1,
-        source: search_list,
-        select: function (event, ui) {
-            $('#oyunArat').text(search_list[ui.item]);
-        }
-    });
-/*
-* Taha Demir
-* 21.07.2017
-* Kategoriler navbar ı bütün itemlarını ajaxla arkadan alır.
-* */
-    var platform_list = [];
-        $.ajax({
-            type: 'GET',
-            url: 'http://localhost:8000/games/platform_json/',
-            data: {get_param: 'value'},
-            dataType: 'json',
-            success: function (data) {
-                var json = data;
-                $.each(json, function (i, item) {
-                    platform_list.push(json[i].platform_name)
-
-                });
-                var line = '<li class="item1">'
-
-                for(var i = 0; i < platform_list.length; i++){
-
-                    line += '<a href="#">'+platform_list[i]+'<img class="arrow-img" align="right" src="{% static 'images/arrow1.png' %}" align="right"' +
-                            'style="margin: 20px 10px 10px" alt=""/></a>'
-                    if(i == 0){
-                        line += '<ul class="cute">{% for game in pc_games%}<li class="subitem1">' +
-                                '<a href="{% url 'adminn:add_game'%}">{{game.name}}</a></li>{%endfor%}</ul>'
-                    }
-                    else if(i == 1){
-                        line += '<ul class="cute">{% for game in mobil_games%}<li class="subitem1">' +
-                                '<a href="{% url 'adminn:add_game'%}">{{game.name}}</a></li>{%endfor%}</ul>'
-                    }
-                    else if(i == 2){
-                        line += '<ul class="cute">{% for game in xbox_games%}<li class="subitem1">' +
-                                '<a href="{% url 'adminn:add_game'%}">{{game.name}}</a></li>{%endfor%}</ul>'
-                    }
-                    else if(i == 3){
-                        line += '<ul class="cute">{% for game in games%}{% ifequal game.genre_id 3 %}<li class="subitem1">' +
-                                '<a href="{% url 'adminn:add_game'%}">{{game.name}}</a></li>{% endifequal %}{%endfor%}</ul>'
-                    }
-
-                }
-                line += '</li>'
-                $('.menu').append(line )
-
-                $(function() {
-                    var menu_ul = $('.menu > li > ul'),
-                        menu_a  = $('.menu > li > a');
-                    menu_ul.hide();
-                    menu_a.click(function(e) {
-                        e.preventDefault();
-                        if(!$(this).hasClass('active')) {
-                            menu_a.removeClass('active');
-                            menu_ul.filter(':visible').slideUp('normal');
-                            $(this).addClass('active').next().stop(true,true).slideDown('normal');
-                        } else {
-                            $(this).removeClass('active');
-                            $(this).next().stop(true,true).slideUp('normal');
-                        }
-                    });
-                });
-                (function () {
-                    $("#cart").on("click", function () {
-                        $(".shopping-cart").fadeToggle("fast");
-                    });
-                })();
-            }
-        });
-</script>
-
-
+                    Sarıyer/İstanbul
+                </p>
+                <div class="social-links social-icons"><a href="#"><i class="fa fa-facebook"></i></a><a href="#"><i class="fa fa-twitter"></i></a><a href="#"><i class="fa fa-linkedin"></i></a><a href="#"><i class="fa fa-github"></i></a></div>
+            </div>
+        </div>
+    </footer>
+</div>
+<script src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
 </body>
 </html>

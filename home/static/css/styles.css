@@ -1,0 +1,108 @@
+input.input-sm{
+  margin-top:20px;
+  margin-bottom:20px;
+  font-family:'Roboto', sans-serif;
+}
+
+button.btn.btn-primary{
+  margin-left:10px;
+  font-family:'Roboto', sans-serif;
+}
+
+div.container.middleBar{
+  background-color:#34393d;
+}
+
+body{
+  background-color:#343f48;
+}
+
+div.list-group{
+  width:30%;
+}
+
+hr{
+  margin:inherit;
+  border-color:#eb3a3a;
+}
+
+div.row.middleHeader{
+  padding:1px 15px;
+  margin-top:10px;
+  margin-bottom:10px;
+}
+
+button.btn.btn-default.btn-lg.search{
+  background:#eb3a3a;
+  color:white;
+  height:46px;
+  border:none;
+}
+
+#custom-search-input{
+    padding: 3px;
+    border: 1px #E4E4E4;
+    #border-radius: 6px;
+    background-color: rgba(255, 255, 255, 0);
+}
+
+#custom-search-input input{
+    border: 0;
+    background-color: rgba(255, 255, 255, 0);
+}
+
+#custom-search-input button{
+    margin: 2px 0 0 0;
+    background: none;
+    box-shadow: none;
+    border: 0;
+    color: #666666;
+    padding: 0 8px 0 10px;
+    border-left: solid 1px #ccc;
+}
+
+#custom-search-input button:hover{
+    border: 0;
+    box-shadow: none;
+    border-left: solid 1px #eb3a3a;
+    color: #343f48
+}
+
+#custom-search-input .glyphicon-search{
+    font-size: 23px;
+}
+
+
+/*Cart Dropdown CSS start*/
+.dropdown{
+    margin-top: 5px;
+    float: right;
+    background-color: #343f48;
+}
+
+.dropdown .cart{
+    background-color: rgba(0, 0, 0, 0.34);
+    color: rgba(117, 236, 165, 0.9);
+}
+.dropdown button{
+    font-size: 16px;
+}
+.dropdown .carticon{
+    font-size: 25px; 
+    margin-right: 10px;
+    color: rgba(117, 236, 165, 0.9);
+}
+.badge {
+    margin-top: -20px;
+    background-color: #6394F8;
+    border-radius: 10px;
+    color: white;
+    display: inline-block;
+    font-size: 12px;
+    line-height: 1;
+    padding: 3px 7px;
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap;
+}
+/*Cart Dropdown CSS end*/

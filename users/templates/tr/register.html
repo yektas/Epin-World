@@ -1,51 +1,25 @@
-<head>
-
     {% extends 'base.html' %}
-
     {% load staticfiles %}
+    {% block title%}<title>Kayıt Ol</title>{% endblock %}
 
-    {% block title%}<title>Giriş</title>{% endblock %}
-
-
-</head>
-{% block content %}
-    <link href="{% static 'css/form.css'%}" rel="stylesheet" type="text/css"/>
-<div class="container">
-		<div class="giris">
-		  	  <form name="regForm" action="{% url 'users:register' %}" method="post" onsubmit="return validateForm()" >{% csrf_token %}
-				 <div class="ust-giris">
-					<h3>KİŞİSEL BİLGİLER</h3>
-					<div class="mation">
-						<span>Ad<label>*</label></span>
-						<input type="text" name="name">
-
-						<span>Soyad<label>*</label></span>
-						<input type="text" name="surname">
-
-						<span>Username<label>*</label></span>
-						<input type="text" name="username">
-
-						 <span>E-mail<label>*</label></span>
-						 <input type="email" name="email">
-					</div>
-					 <div class="clearfix"> </div>
-					 </div>
-				     <div class="alt-giris">
-						    <h3>GİRİŞ BİLGİLERİ</h3>
-							<div class="mation">
-								<span>Şifre<label>*</label></span>
-								<input type="password" name="password">
-							</div>
-					 </div>
-				<div class="clearfix"> </div>
-				<div class="register-but">
-					   <input type="submit" value="submit">
-					   <div class="clearfix"> </div>
-				</div>
-			  </form>
-		   </div>
-</div>
-
+	{% block content %}
+    <div class="col-md-6">
+                    <form name="user-form" action="{% url 'users:register' %}" method="post" onsubmit="return validateForm()">{% csrf_token %}
+                        <h3>Kayıt Formu</h3>
+                        <div class="col-md-12">
+                            <div class="form-layout">
+                                <input type="text" name="name" class="form-control" placeholder="Ad*" required>
+                                <input type="text" name="surname" class="form-control" placeholder="Soyad*" required>
+                                <input type="email" name="email" class="form-control" placeholder="Email*" required>
+                                <input type="text" name="username" class="form-control" placeholder="Kullanıcı Adı*" required>
+                                <input type="password" minlength="8" maxlength="16" name="password" class="form-control" placeholder="Şifre*" required>
+                                <div class="col-md-3">
+                                    <button type="submit" class="btn btn-block signup-button">Kayıt Ol</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
 {% endblock %}
 
 

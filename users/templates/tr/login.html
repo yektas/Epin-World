@@ -1,27 +1,25 @@
-<head>
     {% extends 'base.html' %}
     {% load staticfiles %}
     {% block title%}<title>Giriş</title>{% endblock %}
-</head>
-{% block content %}
-    <link href="{% static 'css/form.css'%}" rel="stylesheet" type="text/css"/>
-<div class="container">
-		<div class="giris">
-		  	  <form action="{% url 'users:auth_login' %}" method="POST" >{% csrf_token %}
-				 <div class="ust-giris">
-					<h3>GİRİŞ BİLGİLERİ</h3>
-					<div class="mation">
-						<span>Username<label>*</label></span>
-						<input type="text" name="username">
-						<span>Şifre<label>*</label></span>
-						<input type="password" name="password">
-					</div>
-					   <a class="forgot" href="#">Şifremi Unuttum  </a>
-					   <input type="submit" value="GİRİŞ">
-					 </div>
-				</form>
 
-				</div>
-		   </div>
+
+{% block content %}
+<div class="col-md-6">
+    <form class="user-form" action="{% url 'users:auth_login' %}" method="POST">{% csrf_token %}
+        <h3>Giriş</h3>
+        <div class="col-md-12">
+            <div class="form-layout">
+                <input type="text" name="username" class="form-control" placeholder="Kullanıcı Adı*">
+                <input type="password" name="password" class="form-control" placeholder="Şifre*">
+                <div class="col-md-6">
+                    <button type="submit" class="btn btn-block signup-button">Giriş</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-8 register-text">
+            <h3 class="text-center">HEMEN ÜYE OL</h3>
+            <p>Epinworld e katılarak avantajlı fiyatlara ulaşmak için üye ol.</p>
+            <a href="{% static 'users:register' %}" class="btn gray text-center width100"><span>ÜYE OL</span></a> </div>
+    </form>
 </div>
 {% endblock %}

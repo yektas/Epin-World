@@ -7,5 +7,11 @@
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
       <jdbc-url>jdbc:postgresql://185.144.14.41:5432/game_trnetdb</jdbc-url>
     </data-source>
+    <data-source source="LOCAL" name="game_trnetdb@localhost" uuid="92688009-c045-4b1f-a9bb-04eea0c2c57d">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://localhost:5432/game_trnetdb</jdbc-url>
+    </data-source>
   </component>
 </project>

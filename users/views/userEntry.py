@@ -34,11 +34,14 @@ def login(request):
 
 @language_assigned
 def logout(request):
-    """ Logs outs the user by deleting session information
+    """ Logs outs the user by deleting session information except the cart data
         and renders logout.html """
     ''' Sercan : 13.07.2017 '''
     try:
-        request.session.flush()
+        for key in list(request.session.keys()):
+            if key != 'cart':
+                del request.session[key]
+
         logging.info("logout had done. '{}'".format(datetime.now()))
     except KeyError:
         logging.ERROR('logout had not done')

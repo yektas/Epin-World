@@ -5,16 +5,17 @@
 {% block content%}
 
 <div class="container" id="gdata">
-    <h2>Oyun adı<p id="gname">{{game_data.game_name}}</p></h2>
-    <h2>Oyun id<p id="gid">{{game_data.game_id}}</p></h2>
-    <h2>Oyun fiyatı<p id="gprice">{{game_data.game_money_price}}</p></h2>
+    <h2>Oyun adı<p id="gamename">{{game_data.game_name}}</p></h2>
+    <h2>Oyun id<p id="gameid">{{game_data.game_id}}</p></h2>
+    <h2>Oyun fiyatı<p id="gameprice">{{game_data.game_money_price}}</p></h2>
     <button id="game" onclick="addtocart()">Sepete Ekle</button>
-</div>
-<script>
-    var gname = document.getElementById("gname").innerHTML;
-    var gid = document.getElementById("gid").innerHTML;
-    var gprice = document.getElementById("gprice").innerHTML;
 
+</div>
+
+<script>
+    var gname = document.getElementById("gamename").innerHTML;
+    var gid = document.getElementById("gameid").innerHTML;
+    var gprice = document.getElementById("gameprice").innerHTML;
 
     function addtocart() {
         $.ajax({
@@ -27,12 +28,10 @@
                 game_price: gprice,
             },
 
-            success: function (response) {
-                console.log(response.game_name);
-
+            success: function () {
+                $("#mycart").load(location.href+" #mycart>*","");
             }
         });
     }
-
 </script>
 {% endblock%}
