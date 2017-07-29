@@ -25,9 +25,9 @@ var cost = price.textContent;
 var newPrice = 0;
 var count;
 
-$('#quantity').bind('keyup mousedown', function () {
+$('#quantity').bind(function () {
     var quantity = document.getElementById("quantity");
     count = quantity.value;
-    newPrice = count * cost;
+    newPrice = (count - 1) * cost;
     total.textContent = newPrice;
 });

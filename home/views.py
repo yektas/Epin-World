@@ -34,4 +34,4 @@ def index(request):
                                                                                  "pc_games": pc_games[:5],
                                                                                  "mobil_games": mobil_games,
                                                                                  "xbox_games": xbox_games,
-                                                                                 "games": games})
+                                                                                 })

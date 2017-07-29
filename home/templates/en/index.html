@@ -1,13 +1,9 @@
-
-  {% extends 'base.html' %}
+    {% extends 'base-with-category.html' %}
     {% load staticfiles %}
-    {% block content %}
 
-<script type="text/javascript">
+    <script type="text/javascript">
         var game_product_footer = ""
-
-$.ajax({
-
+        $.ajax({
                 type: 'GET',
                 url: 'http://localhost:8000/games/games_json/',
                 data: { get_param: 'value' },
@@ -16,190 +12,130 @@ $.ajax({
                             var json = data;
                     $.each(json,function(i,item){
                         if(i<=3){
-
                             game_product_footer +=  "<div class='col-sm-3'> <article class='col-item'> <div class='photo'> <div class='options-cart'>" +" <a href='/games/game_detail/"+json[i].game_name+"'></div>"
                             game_product_footer += "<img src='{% static 'images/Diablo3.jpg' %}' class='img-responsive' alt='Product Image' />"
                             game_product_footer += "</div><div class='container'><br> <strong><p>"+json[i].game_name+"</p></strong>"
                             game_product_footer += "<strong><p>"+json[i].game_money_price+"</p></strong>"
                             game_product_footer += "</div></article></div>"
-
                         }
-
                      });
                      $('#products_footer').append(game_product_footer)
                 }
         });
-    var game = [];
-    var game_added = [];
-    /*
-    * Date : 19.07.2017 - Taha Demir
-    * This ajax method assigns all the JSON object -inside the written url- to the game array.
-    * */
-    $.ajax({
-
-            type: 'GET',
-            url: 'http://localhost:8000/games/games_json/',
-            data: {get_param: 'value'},
-            dataType: 'json',
-            success: function (data) {
-                var json = data;
-                for(var i=0; i<json.length; i++){
-                    game.push(json[i]);
-                };
-            }
-        });
-
-    /*
-    * Date : 19.07.2017 - Taha Demir
-    * This function creates a table and fills each cells of the table with the JSON objects which are inside the game array.
-    * */
-    function CreateTableFromJSON() {
-
-        var col = [];
-        // EXTRACT VALUE FOR HTML HEADER.
-        for (var i = 0; i < game.length; i++) {
-            for (var key in game[i]) {
-                if (col.indexOf(key) === -1) {
-                    col.push(key);
-                }
-            }
-        }
-        // CREATE DYNAMIC TABLE.
-        var table = document.createElement("table");
-        // CREATE HTML TABLE HEADER ROW USING THE EXTRACTED HEADERS ABOVE.
-        var tr = table.insertRow(-1);                   // TABLE ROW.
-        for (var i = 0; i < col.length; i++) {
-            var th = document.createElement("th");      // TABLE HEADER.
-            th.innerHTML = col[i];
-            tr.appendChild(th);
-        }
-        // ADD JSON DATA TO THE TABLE AS ROWS.
-        for (var i = 0; i < game.length; i++) {
-            tr = table.insertRow(-1);
-            for (var j = 0; j < col.length; j++) {
-                var tabCell = tr.insertCell(-1);
-                tabCell.innerHTML = game[i][col[j]];
-            }
-        }
-        // FINALLY ADD THE NEWLY CREATED TABLE WITH JSON DATA TO A CONTAINER.
-        var divContainer = document.getElementById("showData");
-        divContainer.innerHTML = "";
-        divContainer.appendChild(table);
-    }
-    /*
-      * Date : 19.07.2017 - Taha Demir
-      * If the user would like to see the game table, he/she click that button and the table is appeared.
-      * The table is disappeared if the user click that button again.
-       * */
-     $(document).ready(function(){
-     $("#btn").click(function(){
-         $("#showData").toggle();
-     });
- });
 </script>
 
-
-
-<head>
-
-    <style>
-            table {
-                border-collapse: collapse;
-                width: 100%;
-            }
-            th, td {
-                text-align: left;
-                padding: 8px;
-            }
-            tr:nth-child(even){background-color: #f2f2f2}
-    </style>
-
-
-    {% block title%}<title>EpinWorld-Anasayfa</title>{% endblock %}
-
-    <link href="{% static 'css/index_page_product.css'%}" rel="stylesheet" type="text/css"/>
-
-</head>
-
-<div class="container">
-    <hr />
-    <div class="col-sm-offset-4">
-    <div id="myCarousel" class="carousel slide">
-        <!-- Indicators -->
-        <ol class="carousel-indicators">
-            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-            <li data-target="#myCarousel" data-slide-to="1"></li>
-            <li data-target="#myCarousel" data-slide-to="2"></li>
-        </ol>
-        <div class="carousel-inner">
-            <div class="item active">
-                <img src="{% static 'images/tomb.jpg' %}"  style="height:450px;width: inherit" class="img-responsive">
-                <div class="container">
-                    <div class="carousel-caption">
-
-                        <pthis is="" an="" example="" layout="" with="" carousel="" that="" uses="" the="" bootstrap=""
-                               3="">
-
-                        <p><a class="btn btn-lg btn-primary" href="http://getbootstrap.com"></a>
-                        </p></pthis></div>
-                </div>
-            </div>
-            <div class="item">
-                <img src="{% static 'images/fifa.jpg' %}" style="height: 450px;width: inherit" class="img-responsive">
-                <div class="container">
-                    <div class="carousel-caption">
-                        <p><a class="btn btn-large btn-primary" href="#">Learn more</a></p>
+{% block title%}<title>EpinWorld-Anasayfa</title>{% endblock %}
+    <!-- Page Content -->
+    {% block content %}
+            <div class="col-md-9" style="margin-top: 20px;">
+                <div class="row carousel-holder">
+                    <div class="col-md-12">
+                        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                            <ol class="carousel-indicators">
+                                <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                                <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                                <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                            </ol>
+                            <div class="carousel-inner">
+                                <div class="item active">
+                                    <img class="slide-image" src="http://placehold.it/800x300" alt="">
+                                </div>
+                                <div class="item">
+                                    <img class="slide-image" src="http://placehold.it/800x300" alt="">
+                                </div>
+                                <div class="item">
+                                    <img class="slide-image" src="http://placehold.it/800x300" alt="">
+                                </div>
+                            </div>
+                            <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+                                <span class="glyphicon glyphicon-chevron-left"></span>
+                            </a>
+                            <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+                                <span class="glyphicon glyphicon-chevron-right"></span>
+                            </a>
+                        </div>
                     </div>
-                </div>
-            </div>
-            <div class="item">
-                <img src="{% static 'images/sims.jpg' %}" style="height: 450px" class="img-responsive">
-                <div class="container">
-                    <div class="carousel-caption">
 
-                        <p><a class="btn btn-large btn-primary" href="#"> </a></p>
+                </div>
+
+                <div class="row">
+
+                    <div class="col-sm-4 col-lg-4 col-md-4">
+                        <div class="thumbnail">
+                            <img src="http://placehold.it/320x150" alt="">
+                            <div class="caption">
+                                <h4 class="pull-right">$24.99</h4>
+                                <h4><a href="#">First Product</a>
+                                </h4>
+                                <p>See more snippets like this online store item at <a target="_blank" href="http://www.bootsnipp.com">Bootsnipp - http://bootsnipp.com</a>.</p>
+                            </div>
+                            <button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-shopping-cart"></span> Add To Cart</button>
+                        </div>
                     </div>
+
+                    <div class="col-sm-4 col-lg-4 col-md-4">
+                        <div class="thumbnail">
+                            <img src="http://placehold.it/320x150" alt="">
+                            <div class="caption">
+                                <h4 class="pull-right">$64.99</h4>
+                                <h4><a href="#">Second Product</a>
+                                </h4>
+                                <p>This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-4 col-lg-4 col-md-4">
+                        <div class="thumbnail">
+                            <img src="http://placehold.it/320x150" alt="">
+                            <div class="caption">
+                                <h4 class="pull-right">$74.99</h4>
+                                <h4><a href="#">Third Product</a>
+                                </h4>
+                                <p>This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-4 col-lg-4 col-md-4">
+                        <div class="thumbnail">
+                            <img src="http://placehold.it/320x150" alt="">
+                            <div class="caption">
+                                <h4 class="pull-right">$84.99</h4>
+                                <h4><a href="#">Fourth Product</a>
+                                </h4>
+                                <p>This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-4 col-lg-4 col-md-4">
+                        <div class="thumbnail">
+                            <img src="http://placehold.it/320x150" alt="">
+                            <div class="caption">
+                                <h4 class="pull-right">$94.99</h4>
+                                <h4><a href="#">Fifth Product</a>
+                                </h4>
+                                <p>This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-4 col-lg-4 col-md-4">
+                        <div class="thumbnail">
+                            <img src="http://placehold.it/320x150" alt="">
+                            <div class="caption">
+                                <h4 class="pull-right">$94.99</h4>
+                                <h4><a href="#">Sixth Product</a>
+                                </h4>
+                                <p>This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
+
             </div>
-        </div>
-        <!-- Controls -->
-        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-            <span class="icon-prev"></span>
-        </a>
-        <a class="right carousel-control" href="#myCarousel" data-slide="next">
-            <span class="icon-next"></span>
-        </a>
-    </div>
-    <!-- /.carousel -->
-    </div>
-    <!-- -->
-    <br>
-    <br>
-    <br>
-    <br>
 
-    <input type="button" id="btn" class="button" onclick="CreateTableFromJSON()" value="Kayıtlı Oyunları Görüntüle">
-    <div id="showData"></div>
-
-    <br>
-    <br>
-    <br>
-    <br>
-
-    <div id="products_footer">
-
-
-    </div>
-
-
-
-
-
-
-	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
-	<script type="text/javascript" src="{% static 'js/index_game_filler.js' %}"></script>
-
-</div><!-- /.container -->
-
+    <!-- /.container -->
 {% endblock %}

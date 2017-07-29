@@ -1,89 +1,100 @@
-{% extends 'base.html' %}
+{% extends 'base-with-category.html' %}
 {% load staticfiles %}
+
+{% block title%}<title>EpinWorld-Anasayfa</title>{% endblock %}
+<!-- Page Content -->
 {% block content %}
-<head>
-    {% block title%}<title>EpinWorld-Anasayfa</title>{% endblock %}
-    <link href="{% static 'css/index_page_product.css'%}" rel="stylesheet" type="text/css"/>
-</head>
 
-<div class="container">
-    <hr/>
-    <div class="col-sm-offset-4">
-        <div id="myCarousel" class="carousel slide">
-            <!-- Indicators -->
-            <ol class="carousel-indicators">
-                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                <li data-target="#myCarousel" data-slide-to="1"></li>
-                <li data-target="#myCarousel" data-slide-to="2"></li>
-            </ol>
-            <div class="carousel-inner">
-                <div class="item active">
-                    <img src="{% static 'images/tomb.jpg' %}" style="height:450px;width: inherit"
-                         class="img-responsive">
-                    <div class="container">
-                        <div class="carousel-caption">
+<link rel="stylesheet" href="{% static 'css/shop-homepage.css' %}">
 
-                            <pthis is="" an="" example="" layout="" with="" carousel="" that="" uses="" the=""
-                                   bootstrap=""
-                                   3="">
-
-                                <p><a class="btn btn-lg btn-primary" href="http://getbootstrap.com"></a>
-                                </p>
-                            </pthis>
-                        </div>
+<div class="col-md-9" style="margin-top: 20px;">
+    <div class="row carousel-holder">
+        <div class="col-md-12">
+            <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner">
+                    <div class="item active">
+                        <img class="slide-image" src="http://placehold.it/800x300" alt="">
+                    </div>
+                    <div class="item">
+                        <img class="slide-image" src="http://placehold.it/800x300" alt="">
+                    </div>
+                    <div class="item">
+                        <img class="slide-image" src="http://placehold.it/800x300" alt="">
                     </div>
                 </div>
-                <div class="item">
-                    <img src="{% static 'images/fifa.jpg' %}" style="height: 450px;width: inherit"
-                         class="img-responsive">
-                    <div class="container">
-                        <div class="carousel-caption">
-                            <p><a class="btn btn-large btn-primary" href="#">Learn more</a></p>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <img src="{% static 'images/sims.jpg' %}" style="height: 450px" class="img-responsive">
-                    <div class="container">
-                        <div class="carousel-caption">
-
-                            <p><a class="btn btn-large btn-primary" href="#"> </a></p>
-                        </div>
-                    </div>
-                </div>
-                <!-- Controls -->
-                <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-                    <span class="icon-prev"></span>
+                <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left"></span>
                 </a>
-                <a class="right carousel-control" href="#myCarousel" data-slide="next">
-                    <span class="icon-next"></span>
+                <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right"></span>
                 </a>
             </div>
-            <div class="row col-lg" style="margin-top: 5px; margin-left: -45%;">
-                <!-- Games -->
-                {% for game in games %}
-                <div class="col-lg-4">
-                    <div class=" elit-grid">
-                        <h4 style="margin: 50px 10px 50px;">{{game.name}}</h4>
-
-                    </div>
-                    <img src="{%static ''|add:game.logo%}" alt=" "
-                         style="width: 200px;height: 130px"/>
-                    <br><br>
-                    <span class="on-get" style="margin: 10px">HEMEN BAK!</span>
-                    <div class="clearfix"></div>
-                </div>
-                {% endfor %}
-
-            </div>
-            <script type="text/javascript"
-                    src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-            <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
-            <script type="text/javascript" src="{% static 'js/index_game_filler.js' %}"></script>
-
         </div>
-    </div>
-</div>
-<!-- /.container -->
 
-        {% endblock %}
+    </div>
+
+    <div id="game-info" class="row">
+
+    </div>
+
+</div>
+<script src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
+<script type="text/javascript">
+    var game_product_footer = "";
+    $.ajax({
+        type: "GET",
+        url: "{% url 'games:games_json'%}",
+        data: { get_param: 'value' },
+        dataType: "json",
+        success: function (data) {
+            var json = data;
+            $.each(json,function(i){
+                var name = json[i].game_name;
+                game_product_footer += "<div class='col-sm-4 col-lg-4 col-md-4'><div class='thumbnail'>";
+                game_product_footer += "<img class='thumbnail' id='game-image' src='static/"+json[i].logo+"'/>";
+                game_product_footer += "<div id='product' class='caption'>";
+                game_product_footer += "<h4 id='gameprice' class='pull-right'>"+json[i].game_money_price + "₺" +"</h4>";
+                game_product_footer += "<h4 id='gamename'> <a href='/games/game_detail/"+json[i].game_name+"'>"+json[i].game_name+"</a></h4>";
+                game_product_footer += "<p>This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p></div>";
+                game_product_footer += '<button type="button" id="'+json[i].game_id+'" class="btn btn-primary addtocart"   value="'+json[i].game_name+ "/" + json[i].game_money_price +'"><span class="glyphicon glyphicon-shopping-cart"></span> Add To Cart</button></div></div>';
+
+            });
+
+            $('#game-info').append(game_product_footer)
+        }
+    });
+
+    $("#game-info").on("click", "button", function () {
+        /*$("img").clone().addClass("zoom").appendTo("body");
+        setTimeout(function () {
+           $(".zoom").remove();
+        },1000);*/
+
+        var id = $(this).attr('id');
+        var name = $(this).val().split("/")[0];
+        var price = $(this).val().split("/")[1];
+        $.ajax({
+            type: "POST",
+            url: "{% url 'sales:addtocart' %}",
+            data: {
+                csrfmiddlewaretoken: '{{ csrf_token }}',
+                game_name: name,
+                game_id: id,
+                game_price: price
+            },
+            success: function () {
+
+                $("#mycart").load(location.href+" #mycart>*","");
+            }
+        });
+    });
+
+</script>
+
+<!-- /.container -->
+{% endblock %}

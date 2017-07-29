@@ -20,7 +20,7 @@ def games_json(request):
     test_json = []
     for i in test_data:
         test_json.append(
-            {'game_id': '{}'.format(i[0]), 'game_name': '{}'.format(i[1]), 'game_money_price': '{}'.format(i[2])})
+            {'game_id': '{}'.format(i[0]), 'game_name': '{}'.format(i[1]), 'game_money_price': '{}'.format(i[2]), 'logo': '{}'.format(i[5])})
     return HttpResponse(json.dumps(test_json), content_type='application/json')
 
 #Taha Demir

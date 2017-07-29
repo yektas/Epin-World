@@ -1,35 +1,61 @@
-.ust-giris input[type="email"], .ust-giris input[type="text"], .ust-giris input[type="password"]{
-    border: 1px solid #EEE;
-	outline-color:#FF5B36;
-	width: 85%;
-	font-size: 1em;
-	padding: 0.5em;
-	margin: 0.5em 0;
+.user-form h3{
+    color: #FFFFFF;
+    font-size: 18x;
+
 }
-.alt-giris input[type="email"], .alt-giris input[type="text"], .alt-giris input[type="password"]{
-    border: 1px solid #EEE;
-	outline-color:#FF5B36;
-	width: 85%;
-	font-size: 1em;
-	padding: 0.5em;
-	margin: 0.5em 0;
+
+.form-layout label{
+    color: #39fcde;
+    font-size: 15px;
+    margin-top: 5px;
 }
-.giris {
-	padding: 2em 0 2em;
-	width: 50%;
-	float: left;
+.form-layout input[type="text"], input[type="password"], input[type="email"]{
+    background: rgba(117, 236, 165, 0);
+    width: 300px;
+    border: 0;
+    font-size: 18px;
+    border-bottom: 3px groove rgba(89, 131, 165, 0.29);
+    border-radius: 0px;
+    margin-top: 5px;
+    margin-bottom: 20px;
 }
-.ust-giris h3, .alt-giris h3 {
-	color:#F97E76;
-	font-size: 1.1em;
-	padding-bottom: 5px;
-	margin: 0;
-	font-weight:600;
+.register-button{
+    font-size: 19px;
+    padding: 8px 15px;
+    margin-top: auto;
 }
-.ust-giris span, .alt-giris span {
-	color:#555;
-	font-size: 0.9em;
-	padding-bottom: 0.2em;
-	display: block;
-	text-transform: uppercase;
+.signup-button{
+    margin-left: -20px;
+    padding: 4px;
+    width: 300px;
+    background-color: #78B310;
+    border-radius: 3px;
+    color: #ffffff;
+    font-size: 19px
+}
+.register-text{
+    margin-top: 20px;
+    background: rgba(67, 85, 119, 0.44);
+    padding: 15px;
+    box-shadow: 5px 5px 1px rgba(20, 2, 2, 0.33);
+}
+.register-text h3{
+    color: #06ffff;
+    font-size: 18px;
+    border-bottom: 1px solid;
+    text-align: center;
+    padding: 12px 5px;
+    margin-top: 0px;
+}
+.register-text p{
+    color: azure;
+    font-size: 16px;
+}
+.register-text a{
+    text-align: center;
+    color: black;
+    font-weight: bold;
+    font-size: 15px;
+    margin-left: 140px;
+    background: rgba(0, 253, 255, 0.71);
 }

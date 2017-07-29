@@ -5,15 +5,15 @@
 
         // allows users to sign up to system if  they filled the necessary field.
         function validateForm(){
-		    var name = document.forms["regForm"]["name"].value;
-		    var surname = document.forms["regForm"]["surname"].value;
-		    var username = document.forms["regForm"]["username"].value;
-		    var email = document.forms["regForm"]["email"].value;
-		    var password = document.forms["regForm"]["password"].value;
-
+		    var name = document.forms["user-form"]["name"].value;
+		    var surname = document.forms["user-form"]["surname"].value;
+		    var username = document.forms["user-form"]["username"].value;
+		    var email = document.forms["user-form"]["email"].value;
+		    var password = document.forms["user-form"]["password"].value;
 		    var re = "^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$";
+		    alert(password);
 
-		    if (username == "" && surname == "" && username == "" && email == "" && password == "" && re.test(password)){
+		    if (re.test(password)){
 		        alert("All of the fields must be filled and password should be Minimum eight characters, at least one letter and one number !!");
 		        return false;
 			}
