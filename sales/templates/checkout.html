@@ -1,75 +1,82 @@
-{% extends 'base2.html' %}
+{% extends 'base.html' %}
+{% load staticfiles %}
 <head>
-    {% load staticfiles %}
-    <meta charset="UTF-8">
-    <title>Checkout</title>
+    <script src="{% static 'js/bootstrap.js' %}"></script>
 
 </head>
+<link rel="stylesheet" href="{% static 'css/form.css' %}">
 
 {% block content %}
-    <div class="container">
-    <div class="row">
-        <div class="col-sm-12 col-md-10 col-md-offset-1">
-            <table class="table table-hover">
+<script> var product = "{{product_list}}"</script>
+<div class="checkout-table">
+    <div class="col-sm-12 col-md-10 col-md-offset-1">
+        <div class="form-layout">
+            <table id="checkout-table" class="table table-striped">
                 <thead>
-                    <tr>
-                        <th>Product</th>
-                        <th>Quantity</th>
-                        <th class="text-center">Price</th>
-                        <th class="text-center">Total</th>
-                        <th> </th>
-                    </tr>
+                <tr>
+                    <th>Ürün</th>
+                    <th>Adet</th>
+                    <th class="text-center">Fiyat</th>
+                    <th class="text-center">Toplam</th>
+                    <th> </th>
+                </tr>
                 </thead>
                 <tbody>
-                {% for item in product_list %}
-                <tr id="product">
-                        <td class="col-sm-8 col-md-6">
+                {% for product in product_list%}
+                <tr>
+                    <td class="col-md-6">
                         <div class="media">
-                            <a class="thumbnail pull-left" href="#"> <img class="media-object" src="http://icons.iconarchive.com/icons/custom-icon-design/flatastic-2/72/product-icon.png" style="width: 72px; height: 72px;"> </a>
+                            <a class="thumbnail pull-left" href="#"> <img class="media-object" src='{% static "" %}{{product.logo}}' style="width: 72px; height: 72px;"> </a>
                             <div class="media-body">
-                                <h6 id="pname" class="media-heading"><a href="#">{{ item.name }}</a></h6>
-                                <h6 id="cname" class="media-heading"> by <a href="#">{{ item.company}}</a></h6>
+                                <h4 class="media-heading">{{product.game_name}}</h4>
+                                <!--<h5 class="media-heading">by Brand name</h5>-->
                             </div>
                         </div></td>
-                        <td class="col-sm-1 col-md-1" style="text-align: center">
-                            <input type="number" min="1" class="form-control" id="quantity" value="1">
-                        </td>
-                    <td id="price" class="col-sm-1 col-md-1 text-center"><strong>{{ item.price }}</strong></td>
-                    <td id="total" class="col-sm-1 col-md-1 text-center"><strong></strong></td>
-                        <td class="col-sm-1 col-md-1">
+                    <td class="col-sm-1 col-md-1" style="text-align: center">
+                        <input type="number" class="form-control product-quantity" name="{{product.quantity}}" value="{{product.quantity}}">
+                    </td>
+                    <td class="col-sm-1 col-md-1 text-center" ><label class="price" name="{{product.game_id}}">{{product.game_price}}₺</label></td>
+                    <td class="col-sm-1 col-md-1 text-center" ><label class="total-price" name="total-price">$14.61</label></td>
+                    <td class="col-sm-1 col-md-1">
                         <button type="button" class="btn btn-danger">
-                            <span class="glyphicon glyphicon-remove"></span> Remove
-                        </button>
-                        </td>
-                    </tr>
+                            <span class="glyphicon glyphicon-remove"></span> Sil
+                        </button></td>
+                </tr>
                 {% endfor %}
-                </tbody>
-                <tfoot style="align-items: right">
-                    <tr>
-                        <td>   </td>
-                        <td>   </td>
-                        <td>   </td>
-                        <td><h5>Subtotal</h5><h3>Total</h3></td>
-                        <td><h5>10.4$</h5><h3>20.10$</h3></td>
-                    </tr>
-                    <tr>
-                        <td>   </td>
-                        <td>   </td>
-                        <td>   </td>
-                        <td>
+                <tr>
+                    <td>   </td>
+                    <td>   </td>
+                    <td>   </td>
+                    <td><h3>Toplam</h3></td>
+                    <td class="text-right"><h3><strong>$31.53</strong></h3></td>
+                </tr>
+                <tr>
+                    <td>   </td>
+                    <td>   </td>
+                    <td>   </td>
+                    <td>
                         <button type="button" class="btn btn-default">
-                            <span class="glyphicon glyphicon-shopping-cart"></span> Continue Shopping
+                            <span class="glyphicon glyphicon-shopping-cart"></span> Alışverişe Devam Et
                         </button></td>
-                        <td>
+                    <td>
                         <button type="button" class="btn btn-success">
-                            Checkout <span class="glyphicon glyphicon-play"></span>
+                            Satın Al <span class="glyphicon glyphicon-play"></span>
                         </button></td>
-                    </tr>
-                </tfoot>
+                </tr>
+                </tbody>
             </table>
         </div>
     </div>
 </div>
-<script src="{% static 'js/dynamic_checkout.js' %}"></script>
+<script src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
+<script>
+    $(document).ready(function () {
+        $(".price").each(function(index){
+            console.log($(".product-quantity").attr('name'));
+            console.log(index + ": " + $(this).text());
+        });
+
+    });
+</script>
 {% endblock %}
 
