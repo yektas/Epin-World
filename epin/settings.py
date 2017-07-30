@@ -83,18 +83,18 @@ SESSION_COOKIE_AGE = 10 * 60
 DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.postgresql_psycopg2',
-            'NAME': 'game_trnetdb',
-            'USER': 'postgres',
-            'PASSWORD': '7592',
-            'HOST': 'localhost',
+            'NAME': '',
+            'USER': '',
+            'PASSWORD': ',
+            'HOST': '',
             'PORT': '',
         },
         'alias': {
             'ENGINE': 'django.db.backends.postgresql_psycopg2',
-            'NAME': 'game_trnetdb',
-            'USER': 'postgres',
-            'PASSWORD': '7592',
-            'HOST': 'localhost',
+            'NAME': '',
+            'USER': '',
+            'PASSWORD': '',
+            'HOST': '',
             'PORT': '',
         }
 
