@@ -1,24 +1,24 @@
-<head>
-    {% extends './admin.html' %}
-    {% load staticfiles %}
-    {% block title%}<title>Giriş</title>{% endblock %}
-</head>
+{% extends './admin.html' %}
+{% load staticfiles %}
+{% block title%}<title>OYUN EKLE</title>{% endblock %}
 {% block content %}
-    <link href="{% static 'css/form.css'%}" rel="stylesheet" type="text/css"/>
-<div class="container">
-		<div class="giris">
-            <form action="{% url 'adminn:create_company' %}" method="POST">{% csrf_token %}
-				 <div class="ust-giris">
-                     <h3>ŞİRKET EKLE</h3>
-					<div class="mation">
-                        <span>Şirket Adı<label></label></span>
-						<input type="text" name="cname">
+<link href="{% static 'css/form.css'%}" rel="stylesheet" type="text/css"/>
 
-				    </div>
-                     </div>
-
-                  <input type="submit" value="EKLE" class="btn btn-danger" style="margin-left:520px">
-              </form>
-		   </div>
+<div class="col-md-6">
+    <form class="user-form" action="{% url 'adminn:create_company' %}" method="POST">{% csrf_token %}
+        <h3>Şirket Ekle</h3>
+        <div class="col-md-12">
+            <div class="form-layout">
+                <label> Şirket Adı: </label>
+                <input type="text" name="cname" class="form-control">
+            </div>
+        </div>
+        <div class="col-md-4">
+            <button type="submit" style="margin-left: -15px" class="btn btn-block signup-button">Ekle</button>
+        </div>
+    </form>
 </div>
 {% endblock %}
+
+
+

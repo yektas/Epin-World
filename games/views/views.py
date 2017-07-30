@@ -2,10 +2,11 @@ import json
 import logging
 
 import requests
+from django.core.urlresolvers import reverse
 from django.db import connections
+from django.http import HttpResponseRedirect
 from django.shortcuts import render, HttpResponse, redirect
 
-from adminn.models.companyModels import CompanyEventClass
 from games.models import GameEventClass
 from utility.decorators import language_assigned
 
@@ -20,7 +21,8 @@ def games_json(request):
     test_json = []
     for i in test_data:
         test_json.append(
-            {'game_id': '{}'.format(i[0]), 'game_name': '{}'.format(i[1]), 'game_money_price': '{}'.format(i[2]), 'logo': '{}'.format(i[5])})
+            {'game_id': '{}'.format(i[0]), 'game_name': '{}'.format(i[1]), 'game_money_price': '{}'.format(i[2]),
+             'logo': '{}'.format(i[5]), 'description': '{}'.format(i[8])})
     return HttpResponse(json.dumps(test_json), content_type='application/json')
 
 #Taha Demir
@@ -64,13 +66,24 @@ def SearchView(request):
     if request.method == "POST":
         search_text = request.POST.get('search_game')
         instance = GameEventClass()
-        company_modal = CompanyEventClass(request)
+
         if (instance.game_search(search_text=search_text) is not False):
+
             games = instance.game_search(search_text=search_text)
-            company = company_modal.list_company()
-            games = games + company
-            return render(request, "search.html", {"games": games})
+            game_name = games[0]['name']
+            url = reverse('games:game_detail', kwargs={'game_name': game_name})
+            return HttpResponseRedirect(url)
         else:
             return redirect("home:index")
     else:
         return redirect("home:index")
+
+
+def all(request):
+    instance = GameEventClass()
+
+    if (instance.get_all_games() is not False):
+        games = instance.get_all_games()
+        return render(request, "all_games.html", {'games': games})
+    else:
+        redirect("home:index")

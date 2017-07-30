@@ -41,3 +41,11 @@ class GameEventClass:
             return False
         game = dictfetchall(self.cursor)
         return game
+
+    def get_all_games(self):
+        try:
+            self.cursor.execute("SELECT name, logo, price, content, id FROM game")
+        except:
+            return False
+        games = dictfetchall(self.cursor)
+        return games

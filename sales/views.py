@@ -1,6 +1,8 @@
+import json
+
 from django.http import HttpResponse
 from django.shortcuts import render
-import json
+
 from games.models import GameEventClass
 
 
@@ -20,11 +22,12 @@ def addtocart(request):
     game_id = request.POST.get('game_id', ' ')
     game_name = request.POST.get('game_name', ' ')
     game_price = request.POST.get('game_price', ' ')
+    logo = request.POST.get('logo', ' ')
 
     if 'cart' not in request.session or request.session['cart'] is None:
         quantity = 1
         request.session['cart'] = [{'game_name': game_name, 'game_price': game_price,
-                                    'game_id': game_id, 'quantity': quantity}]
+                                    'game_id': game_id, 'quantity': quantity, 'logo': logo}]
     else:
         found = False
         for item in request.session['cart']:
@@ -36,7 +39,8 @@ def addtocart(request):
                 break
         if not found:
             game_list = []
-            game_list.append({'game_name': game_name, 'game_price': game_price, 'game_id': game_id, 'quantity': 1})
+            game_list.append(
+                {'game_name': game_name, 'game_price': game_price, 'game_id': game_id, 'quantity': 1, 'logo': logo})
             game_list.extend(request.session['cart'])
             del request.session['cart']
             request.session['cart'] = game_list

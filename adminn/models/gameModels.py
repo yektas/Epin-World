@@ -10,9 +10,9 @@ class GameEventClass():
     def __del__(self):
         self.cursor.close()
 
-    def create_game(self, companyName, name, platformName, genreName, price, logo):
+    def create_game(self, companyName, name, platformName, genreName, price, logo, content):
         try:
-            """Game ınsert ederken company_id genre_id ve platform_id oldugu icin once idlerini bulduk"""
+            """Game insert ederken company_id genre_id ve platform_id oldugu icin once idlerini bulduk"""
             self.cursor.execute("select id from company WHERE company_name = '{}'".format(str(companyName)))
             companyId = self.cursor.fetchone()[0]
             self.cursor.execute("select id from platform WHERE platform_name = '{}'".format(str(platformName)))
@@ -20,9 +20,10 @@ class GameEventClass():
             self.cursor.execute("select id from genre WHERE genre_name = '{}'".format(str(genreName)))
             genreID = self.cursor.fetchone()[0]
 
-            self.cursor.execute("INSERT INTO game (name, company_id, platform_id, price, genre_id ,logo )"
-                                " VALUES ('{}',{},{},{},{},'{}')".format(str(name), companyId, platformID, price,
-                                                                         genreID, logo))
+            self.cursor.execute("INSERT INTO game (name, company_id, platform_id, price, genre_id ,logo, content )"
+                                " VALUES ('{}','{}','{}','{}','{}','{}','{}')".format(str(name), companyId, platformID,
+                                                                                      price,
+                                                                                      genreID, logo, content))
 
 
             self.cursor.execute("COMMIT;")
@@ -96,15 +97,20 @@ class GameEventClass():
 
     def pc_games(self, id):
         if (id == 1):
-            self.cursor.execute("select name from game where genre_id = {}".format(id))
+            self.cursor.execute("select name from game where platform_id = {}".format(id))
             return dictfetchall(self.cursor)
 
     def mobil_games(self, id):
         if (id == 2):
-            self.cursor.execute("select name from game where genre_id = {}".format(id))
+            self.cursor.execute("select name from game where platform_id = {}".format(id))
+            return dictfetchall(self.cursor)
+
+    def playstation_games(self, id):
+        if (id == 3):
+            self.cursor.execute("select name from game where platform_id = {}".format(id))
             return dictfetchall(self.cursor)
 
     def xbox_games(self, id):
-        if (id == 3):
-            self.cursor.execute("select name from game where genre_id = {}".format(id))
+        if (id == 4):
+            self.cursor.execute("select name from game where platform_id = {}".format(id))
             return dictfetchall(self.cursor)

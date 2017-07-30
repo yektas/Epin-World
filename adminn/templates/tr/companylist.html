@@ -1,119 +1,93 @@
-<head>
-    {% extends './admin.html' %}
-    {% load staticfiles %}
-    {% block title%}<title>Şirket Listesi</title>{% endblock %}
-    <script>
-        $(document).ready(function(){
-$("#mytable #checkall").click(function () {
-        if ($("#mytable #checkall").is(':checked')) {
-            $("#mytable input[type=checkbox]").each(function () {
-                $(this).prop("checked", true);
-            });
+{% extends './admin.html' %}
+{% load staticfiles %}
+{% block title%}<title>OYUN EKLE</title>{% endblock %}
+{% block content %}
+<script>
+    $(document).ready(function () {
+        $("#mytable #checkall").click(function () {
+            if ($("#mytable #checkall").is(':checked')) {
+                $("#mytable input[type=checkbox]").each(function () {
+                    $(this).prop("checked", true);
+                });
 
-        } else {
-            $("#mytable input[type=checkbox]").each(function () {
-                $(this).prop("checked", false);
-            });
-        }
+            } else {
+                $("#mytable input[type=checkbox]").each(function () {
+                    $(this).prop("checked", false);
+                });
+            }
+        });
+
+        $("[data-toggle=tooltip]").tooltip();
     });
 
-    $("[data-toggle=tooltip]").tooltip();
-});
-
-
-    </script>
-</head>
-
-    <link href="{% static 'css/form.css'%}" rel="stylesheet" type="text/css"/>
-<div class="container">
-		<div class="giris">
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-<script src="http://getbootstrap.com/dist/js/bootstrap.min.js"></script>
-
-<div class="container">
-    {% block content %}
-    <div class="row">
-
-        <h5>Şirketler</h5>
-        <div class="col-md-12" style="width:69%">
-
+</script>
+<link href="{% static 'css/form.css'%}" rel="stylesheet" type="text/css"/>
+<div class="company-table">
+    <div class="col-md-9">
+        <h3>Şirketler</h3>
         <div class="table-responsive">
+            <form action="{% url 'adminn:company_delete' %}" method="post">{% csrf_token %}
+                <table id="company-table" class="table table-bordered table-striped">
+                    <thead>
+                    <th>Adı</th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th>Sil</th>
+                    </thead>
+                    <tbody>
 
+                    {% for name in companys%}
+                    <tr>
+                        <td>{{name.company_name}}</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td><input type="checkbox" name="name" value="{{name.company_name}}"></td>
+                    </tr>
 
-              <table id="mytable" class="table table-bordred table-striped">
-                  <form action="{% url 'adminn:company_delete' %}" method="post">{% csrf_token %}
+                    {% endfor %}
 
-                      <thead>
+                    </tbody>
+                </table>
+                <div>
+                    <button type="submit" style="margin-left: 720px;">SİL</button>
+                </div>
 
-                      <th>Adı</th>
-                      <th></th>
-                      <th></th>
-                      <th></th>
-                      <th></th>
-                      <th></th>
-                      <th></th>
-                      <th></th>
-                      <th></th>
-                      <th></th>
-                      <th>Sil</th>
-                      </thead>
-                      <tbody>
-                      {% for name in companys%}
-                      <tr>
-                          <td>{{name.company_name}}</td>
-                          <td>
-                          </td>
-                          <td>
-                          </td>
-                          <td>
-                          </td>
-                          <td>
-                          </td>
-                          <td>
-                          </td>
-                          <td>
-                          </td>
-                          <td>
-                          </td>
-                          <td>
-                          </td>
-                          <td>
-                          </td>
-                          <td><input type="checkbox" name="name" value="{{name.company_name}}"></td>
-                      </tr>
+                {% if companys.has_other_pages %}
+                <ul class="pagination">
+                    {% if companys.has_previous %}
+                    <li><a href="?page={{ companys.previous_page_number }}">&laquo;</a></li>
 
-                      {% endfor %}
+                    {% endif %}
+                    {% for i in companys.paginator.page_range %}
+                    {% if companys.number == i %}
+                    <li class="active"><span>{{ i }} <span class="sr-only">(current)</span></span></li>
+                    {% else %}
+                    <li><a href="?page={{ i }}">{{ i }}</a></li>
+                    {% endif %}
+                    {% endfor %}
+                    {% if companys.has_next %}
+                    <li><a href="?page={{ companys.next_page_number }}">&raquo;</a></li>
 
-                      </tbody>
-                      <div>
-                          <button type="submit" style="margin-left: 720px;">SİL</button>
-                      </div>
-                  </form>
-
-</table>
-
-            {% if companys.has_other_pages %}
-            <ul class="pagination">
-                {% if companys.has_previous %}
-                <li><a href="?page={{ companys.previous_page_number }}">&laquo;</a></li>
-
+                    {% endif %}
+                </ul>
                 {% endif %}
-                {% for i in companys.paginator.page_range %}
-                {% if companys.number == i %}
-                <li class="active"><span>{{ i }} <span class="sr-only">(current)</span></span></li>
-                {% else %}
-                <li><a href="?page={{ i }}">{{ i }}</a></li>
-                {% endif %}
-                {% endfor %}
-                {% if companys.has_next %}
-                <li><a href="?page={{ companys.next_page_number }}">&raquo;</a></li>
 
-                {% endif %}
-            </ul>
-            {% endif %}
-
-
-				</div>
-		   </div>
+            </form>
+        </div>
+    </div>
 </div>
 {% endblock %}

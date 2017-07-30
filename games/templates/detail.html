@@ -1,37 +1,49 @@
-{% extends 'base.html' %}
+{% extends 'base-with-category.html' %}
 {% load staticfiles %}
-
-
+<head>
+    <script src="{% static 'js/bootstrap.js' %}"></script>
+</head>
 {% block content%}
-
-<div class="container" id="gdata">
-    <h2>Oyun adı<p id="gamename">{{game_data.game_name}}</p></h2>
-    <h2>Oyun id<p id="gameid">{{game_data.game_id}}</p></h2>
-    <h2>Oyun fiyatı<p id="gameprice">{{game_data.game_money_price}}</p></h2>
-    <button id="game" onclick="addtocart()">Sepete Ekle</button>
-
+<div class="col-md-9">
+    <div class="thumbnail product-page">
+        <img name="gamename{{game_data.game_id}}" class="img-responsive product-image"
+             src='{% static "" %}{{game_data.logo}}' alt="">
+        <div class="caption-full">
+            <h4 id="gamename">{{ game_data.game_name}}</h4>
+            <p class="game-desc">{{ game_data.description}}</p>
+        </div>
+        <h4 id="gameprice" class="pull-right">{{ game_data.game_money_price}}</h4>
+        <label class="pull-right"> Fiyat: </label>
+        <button type="button" onclick="addItem()" id="{{game_data.game_id}}" class="btn btn-primary addtocart">
+            <span class="glyphicon glyphicon-shopping-cart"></span>Sepete Ekle
+        </button>
+    </div>
 </div>
-
+<script src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
 <script>
     var gname = document.getElementById("gamename").innerHTML;
-    var gid = document.getElementById("gameid").innerHTML;
     var gprice = document.getElementById("gameprice").innerHTML;
+    var gid = $(".addtocart").attr('id');
+    var currentlogo = $("[name=gamename" + gid + "]").attr('src');
+    var logo = currentlogo.substr(8);
 
-    function addtocart() {
+    function addItem() {
         $.ajax({
             type: "POST",
             url: "{% url 'sales:addtocart' %}",
             data: {
-                csrfmiddlewaretoken: '{{ csrf_token}}',
+                csrfmiddlewaretoken: '{{ csrf_token }}',
                 game_name: gname,
                 game_id: gid,
                 game_price: gprice,
+                logo: logo
             },
-
             success: function () {
                 $("#mycart").load(location.href+" #mycart>*","");
+
             }
         });
     }
 </script>
+<script src="{% static 'js/jquery-ui.js' %}"></script>
 {% endblock%}

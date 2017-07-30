@@ -100,18 +100,33 @@ img.dropdown-image{
 .custom-header .dropdown ul li.active a{
   color:#e9ac09 !important;
 }
-.userlinks{
+
+/*.userlinks{
     width: auto;
     margin-right: 150px;
     
+}*/
+.button1 {
+    margin-top: 10px;
+    background: #eb3a3a;
+    border: 0;
 }
-.userlinks a,
+
+.button2 {
+    margin-top: 10px;
+    margin-right: 65px;
+    background: #eb3a3a;
+    border: 0;
+}
+
+/*.userlinks a,
+
 .userlinks button{
     margin-top: 10px;
     margin-right: -10px;
     background: #eb3a3a;
     border: 0;
-}
+}*/
 
 a.dropdown-toggle{
   width:120px;

@@ -24,8 +24,9 @@ def add_game(request):
         category = request.POST.get('category')
         company = request.POST.get('company')
         platform = request.POST.get('platform')
+        content = request.POST.get('content')
 
-        if game_instance.create_game(company, name, platform, category, price, logo):
+        if game_instance.create_game(company, name, platform, category, price, logo, content):
             logging.info('games added / {}'.format(datetime.datetime.now()))
             return redirect("adminn:index")
         else:

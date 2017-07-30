@@ -1,42 +1,38 @@
 input.input-sm{
-  margin-top:20px;
-  margin-bottom:20px;
-  font-family:'Roboto', sans-serif;
-}
-
-button.btn.btn-primary{
-  margin-left:10px;
-  font-family:'Roboto', sans-serif;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-family: 'Roboto', sans-serif;
 }
 
 div.container.middleBar{
-  background-color:#34393d;
+    background-color: #34393d;
 }
 
 body{
-  background-color:#343f48;
+    background-color: #343f48;
+    font-family: 'Roboto', sans-serif;
 }
 
 div.list-group{
-  width:30%;
+    width: 30%;
 }
 
 hr{
-  margin:inherit;
-  border-color:#eb3a3a;
+    margin: inherit;
+    border-color: #eb3a3a;
 }
 
 div.row.middleHeader{
-  padding:1px 15px;
-  margin-top:10px;
-  margin-bottom:10px;
+    padding: 1px 15px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 button.btn.btn-default.btn-lg.search{
-  background:#eb3a3a;
-  color:white;
-  height:46px;
-  border:none;
+    background: #eb3a3a;
+    color: white;
+    height: 46px;
+    border: none;
 }
 
 #custom-search-input{
@@ -52,7 +48,6 @@ button.btn.btn-default.btn-lg.search{
 }
 
 #custom-search-input button{
-    margin: 2px 0 0 0;
     background: none;
     box-shadow: none;
     border: 0;
@@ -88,7 +83,7 @@ button.btn.btn-default.btn-lg.search{
     font-size: 16px;
 }
 .dropdown .carticon{
-    font-size: 25px; 
+    font-size: 25px;
     margin-right: 10px;
     color: rgba(117, 236, 165, 0.9);
 }
@@ -105,4 +100,34 @@ button.btn.btn-default.btn-lg.search{
     vertical-align: middle;
     white-space: nowrap;
 }
+
+.img-rounded {
+    width: 50px;
+    height: auto;
+}
 /*Cart Dropdown CSS end*/
+.ui-widget {
+    position: absolute;
+}
+
+.ui-menu {
+    background: #292c2f;
+    width: 1em;
+}
+
+.ui-menu-item {
+    font-size: 16px;
+    font-family: 'Roboto', sans-serif;
+    background: white;
+    color: white;
+    width: 1em;
+}
+
+.ui-menu-item:hover {
+    color: cornflowerblue;
+}
+
+.ui-menu-item-wrapper {
+    background: #292c2f !important;
+
+}

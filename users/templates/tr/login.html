@@ -1,10 +1,10 @@
-    {% extends 'base.html' %}
-    {% load staticfiles %}
-    {% block title%}<title>Giriş</title>{% endblock %}
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block title%}<title>Giriş</title>{% endblock %}
 
 
 {% block content %}
-<div class="col-md-6">
+<div class="col-md-6 col-md-offset-4">
     <form class="user-form" action="{% url 'users:auth_login' %}" method="POST">{% csrf_token %}
         <h3>Giriş</h3>
         <div class="col-md-12">
@@ -22,4 +22,10 @@
             <a href="{% static 'users:register' %}" class="btn gray text-center width100"><span>ÜYE OL</span></a> </div>
     </form>
 </div>
+<script src="{% static 'js/bootstrap.js' %}"></script>
+<script src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
+<script src="{% static 'js/jquery-ui.js' %}"></script>
+
 {% endblock %}
+
+

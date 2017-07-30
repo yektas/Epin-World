@@ -16,10 +16,9 @@
     <link rel="stylesheet" href="{% static 'css/Pretty-Header.css' %}">
     <link rel="stylesheet" href="{% static 'css/Pretty-Footer.css' %}">
     <link rel="stylesheet" href="{% static 'css/shop-homepage.css' %}">
-    <script src="{% static 'js/validationForm_ajax.js' %}"></script>
-    <script src="{% static 'js/deletecartitem.js' %}"></script>
-</head>
+    <link rel="shortcut icon" href="{%  static 'images/favicon.ico' %}">
 
+</head>
 <style>
     .m0
     {
@@ -51,22 +50,24 @@
             </div>
             <div class="collapse navbar-collapse" id="navbar-collapse">
                 <ul class="nav navbar-nav links">
-                    <li role="presentation"><a href="#"> Oyunlar </a></li>
+                    <li role="presentation"><a href="{% url 'games:all_game' %}"> Oyunlar </a></li>
                     <li role="presentation"><a href="#"> Hakkında</a></li>
                     <li role="presentation"><a href="#"> Yardım</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right userlinks">
                     {% if request.session.is_logged %}
                     {% if request.session.admin_id == 1 %}
-                    <a href="{% url 'adminn:index' %}" class="btn btn-primary" role="button">Admin</a>
-                    <a href="{% url 'users:logout' %}" class="btn btn-primary" role="button">Çıkış</a>
+                    <span style="color: white; margin-right: 10px;">Admin bey hoşgeldiniz efenim</span>
+                    <a href="{% url 'adminn:index' %}" class="btn btn-primary button1" role="button">Admin</a>
+                    <a href="{% url 'users:logout' %}" class="btn btn-primary button2" role="button">Çıkış</a>
                     {% else %}
-                    <a href="{% url 'users:profile' %}" class="btn btn-primary" role="button">Profil</a>
-                    <a href="{% url 'users:logout' %}" class="btn btn-primary" role="button">Çıkış</a>
+                    <span style="color: white; margin-right: 10px;">Hoşgeldin {{request.session.username}} </span>
+                    <a href="{% url 'users:profile' %}" class="btn btn-primary button1" role="button">Profil</a>
+                    <a href="{% url 'users:logout' %}" class="btn btn-primary button2" role="button">Çıkış</a>
                     {% endif %}
                     {% else %}
-                    <a href="{% url 'users:register' %}" class="btn btn-primary" role="button">Üye Ol</a>
-                    <a href="{% url 'users:login' %}" class="btn btn-primary" role="button">Giriş</a>
+                    <a href="{% url 'users:register' %}" class="btn btn-primary button1" role="button">Üye Ol</a>
+                    <a href="{% url 'users:login' %}" class="btn btn-primary button2" role="button">Giriş</a>
                     {% endif %}
                 </ul>
             </div>
@@ -80,13 +81,19 @@
             <div class="col-md-6">
                 <form action="{% url 'games:search_game' %}" method="post">{% csrf_token %}
                     <div id="custom-search-input">
-                        <div class="input-group col-md-6">
-                            <input type="text"  id="oyunArama" class="form-control input-lg" style="color: white;" placeholder="Oyun Ara..." />
+                        <div class="col-md-6 input-group">
+                            <input type="text" name="search_game" id="oyunArama" class="form-control input-lg"
+                                   style="color: white;" placeholder="Oyun Ara..."/>
                             <span class="input-group-btn">
-                                    <button type="submit" class="btn btn-info btn-lg" type="button">
+                                    <button type="submit" class="btn btn-info btn-lg" value="ARA" type="button">
                                         <i class="fa fa-search" aria-hidden="true" style="font-size: 23px; color: #eb3a3a;"></i>
                                     </button>
                             </span>
+                            <div id="results" class="list-group">
+                                <div class="ui-widget">
+
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </form>
@@ -101,7 +108,7 @@
                             <i class="fa fa-shopping-cart cart-icon" style="font-size: 25px; margin-left: 10px; color: rgba(117, 236, 165, 0.9);"></i><span class="badge">{{ request.session.cart|length }}</span>
                             <div class="shopping-cart-total">
                                 <span>Toplam:</span>
-                                <span class="cart-total">$155.23</span>
+                                <span class="cart-total">0</span>
                             </div>
                         </div>
                         {% if request.session.cart|length == 0 %}
@@ -111,7 +118,7 @@
                         <li>
                                     <span class="item">
                                         <span class="item-left">
-                                            <img src="http://lorempixel.com/50/50/" class="img-circle" alt="" />
+                                            <img src="{% static '' %}{{item.logo}}" class="img-rounded" alt=""/>
                                             <span class="item-info">
                                                 <span class="item-name">{{ item.game_name }}</span><br>
                                                 <span class="item-quantity">{{ item.quantity }}</span>
@@ -120,7 +127,9 @@
                                             </span>
                                         </span>
                                         <span class="item-right">
-                                            <button value="{{ item.game_id }}" onclick="removeItem()" class="btn btn-xs btn-danger pull-right"><i class="fa fa-times" aria-hidden="true"></i></button>
+                                            <button value="{{ item.game_id }}" onclick="removeCartItem()"
+                                                    class="btn btn-xs btn-danger pull-right"><i class="fa fa-times"
+                                                                                                aria-hidden="true"></i></button>
                                         </span>
                                     </span>
                         </li>
@@ -144,37 +153,12 @@
                 <i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
                 <div class="menu-list">
                     <ul id="menu-content" class="menu-content collapse out">
-                        <li  data-toggle="collapse" data-target="#products" class="collapsed">
-                            <a href="#"><i class="fa fa-desktop fa-lg"></i> UI Elements <span class="arrow"></span></a>
-                        </li>
-                        <ul class="sub-menu collapse" id="products">
-                            <li><a href="#">CSS3 Animation</a></li>
-                            <li><a href="#">General</a></li>
-                            <li><a href="#">Buttons</a></li>
-                            <li><a href="#">Tabs & Accordions</a></li>
-                            <li><a href="#">Typography</a></li>
-                        </ul>
-                        <li data-toggle="collapse" data-target="#service" class="collapsed">
-                            <a href="#"><i class="fa fa-gamepad fa-lg"></i> Services <span class="arrow"></span></a>
-                        </li>
-                        <ul class="sub-menu collapse" id="service">
-                            <li>New Service 1</li>
-                            <li>New Service 2</li>
-                            <li>New Service 3</li>
-                        </ul>
-                        <li data-toggle="collapse" data-target="#new" class="collapsed">
-                            <a href="#"><i class="fa fa-mobile fa-lg"></i> New <span class="arrow"></span></a>
-                        </li>
-                        <ul class="sub-menu collapse" id="new">
-                            <li>New New 1</li>
-                            <li>New New 2</li>
-                            <li>New New 3</li>
-                        </ul>
+
                     </ul>
                 </div>
             </div>
         </div>
-        {% block content %}
+        {% block content%}
         {% endblock %}
     </div>
 
@@ -213,7 +197,74 @@
     </footer>
 </div>
 <script>
-    function removeItem() {
+    var platform_list = [];
+    var category_html = "";
+    $.ajax({
+        type: "GET",
+        url: "{% url 'games:platform_json' %}",
+        tryCount: 0,
+        retryLimit: 2,
+        success: function (data) {
+            var json = data;
+            $.each(json, function (i, item) {
+                platform_list.push(json[i].platform_name);
+
+                switch (platform_list[i]) {
+                    case "PC":
+                        category_html += '<li  data-toggle="collapse" data-target="#pc" class="collapsed">';
+                        category_html += '<a href="#"><i class="fa fa-desktop fa-lg"></i>' + platform_list[i] + '<span class="arrow"></span></a> </li>';
+                        category_html += '<ul class="sub-menu collapse" id="pc">';
+                        category_html += '{% for game in pc_games %}';
+                        category_html += '<li><a href="/games/game_detail/' + "{{game.name}}" + '"> {{ game.name }}</a></li>{% endfor %}</ul>';
+                        break;
+                    case "Mobil":
+                        category_html += '<li  data-toggle="collapse" data-target="#mobil" class="collapsed">';
+                        category_html += '<a href="#"><i class="fa fa-mobile fa-lg"></i>' + platform_list[i] + '<span class="arrow"></span></a> </li>';
+                        category_html += '<ul class="sub-menu collapse" id="mobil">';
+                        category_html += '{% for game in mobil_games %}';
+                        category_html += '<li><a href="/games/game_detail/' + "{{game.name}}" + '"> {{ game.name }}</a></li>{% endfor %}</ul>';
+
+                        break;
+                    case "Playstation":
+                        category_html += '<li  data-toggle="collapse" data-target="#playstation" class="collapsed">';
+                        category_html += '<a href="#"><i class="fa fa-gamepad fa-lg"></i>' + platform_list[i] + '<span class="arrow"></span></a> </li>';
+                        category_html += '<ul class="sub-menu collapse" id="playstation">';
+                        category_html += '{% for game in playstation_games %}';
+                        category_html += '<li><a href="/games/game_detail/' + "{{game.name}}" + '"> {{ game.name }}</a></li>{% endfor %}</ul>';
+                        break;
+                    case "Xbox":
+                        category_html += '<li  data-toggle="collapse" data-target="#xbox" class="collapsed">';
+                        category_html += '<a href="#"><i class="fa fa-gamepad fa-lg"></i>' + platform_list[i] + '<span class="arrow"></span></a> </li>';
+                        category_html += '<ul class="sub-menu collapse" id="xbox">';
+                        category_html += '{% for game in xbox_games %}';
+                        category_html += '<li><a href="/games/game_detail/' + "{{game.name}}" + '"> {{ game.name }}</a></li>{% endfor %}</ul>';
+                        break;
+                }
+
+            });
+
+            $('#menu-content').append(category_html);
+
+        },
+        error: function (xhr, textStatus, errorThrown) {
+            if (textStatus == 'timeout') {
+                this.tryCount++;
+                if (this.tryCount <= this.retryLimit) {
+                    console.log(this.tryCount);
+                    $.ajax(this);
+                    return;
+                }
+                return;
+            }
+            if (xhr.status == 500) {
+                alert("Platform çekilemedi sayfayı yenileyiniz");
+                console.log(this.tryCount)
+            } else {
+                alert("ajax başarılı!");
+            }
+        }
+    });
+    function removeCartItem() {
         $(".item").on("click", "button", function () {
             var game_id = $(this).val();
 
@@ -229,10 +280,38 @@
                 }
             });
         });
-    };
+    }
 
 </script>
+<script>
+    var search_list = [];
+    $.ajax({
+        type: 'GET',
+        url: '{% url "games:games_json"%}',
+        data: {get_param: 'value'},
+        dataType: 'json',
+        success: function (data) {
+            var json = data;
+            $.each(json, function (i, item) {
+                search_list.push(json[i].game_name)
+            });
+            $('#oyunArama').autocomplete({
+                minLength: 1,
+                source: search_list,
+                select: function (event, ui) {
+                    $('#oyunArat').append(search_list[ui.item]);
+                }
+            });
+        }
+    });
+</script>
+<script>
+
+</script>
+
+<script src="{% static 'js/bootstrap.js' %}"></script>
 <script src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
-<script src="{% static 'js/bootstrap.min.js' %}"></script>
+<script src="{% static 'js/jquery-ui.js' %}"></script>
+
 </body>
 </html>
