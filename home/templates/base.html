@@ -15,14 +15,18 @@
     <link rel="stylesheet" href="{% static 'css/form.css' %}">
     <link rel="stylesheet" href="{% static 'css/Pretty-Header.css' %}">
     <link rel="stylesheet" href="{% static 'css/Pretty-Footer.css' %}">
-
+    <link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
     <script src="{% static 'js/validationForm_ajax.js' %}"></script>
 
 </head>
-
+<style>
+    .m0 {
+        margin: 0;
+    }
+</style>
 <body>
-<div class="container-fluid">
-    <div class="row" style="background: rgba(235, 58, 58, 0.79);">
+<div class="container">
+    <div class="row m0" style="background: rgba(235, 58, 58, 0.79);">
         <div class="col-md-10">
             <div class="col-md-2 col-md-offset-9">
                 <label for="sel1" style="color: white; margin-top: 10px;">Dil:</label>
@@ -45,22 +49,24 @@
             </div>
             <div class="collapse navbar-collapse" id="navbar-collapse">
                 <ul class="nav navbar-nav links">
-                    <li role="presentation"><a href="#"> Oyunlar </a></li>
+                    <li role="presentation"><a href="{% url 'games:all_game' %}"> Oyunlar </a></li>
                     <li role="presentation"><a href="#"> Hakkında</a></li>
                     <li role="presentation"><a href="#"> Yardım</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right userlinks">
                     {% if request.session.is_logged %}
                     {% if request.session.admin_id == 1 %}
-                    <a href="{% url 'adminn:index' %}" class="btn btn-primary" role="button">Admin</a>
-                    <a href="{% url 'users:logout' %}" class="btn btn-primary" role="button">Çıkış</a>
+                    <span style="color: white; margin-right: 10px;">Admin bey hoşgeldiniz efenim</span>
+                    <a href="{% url 'adminn:index' %}" class="btn btn-primary button1" role="button">Admin</a>
+                    <a href="{% url 'users:logout' %}" class="btn btn-primary button2" role="button">Çıkış</a>
                     {% else %}
-                    <a href="{% url 'users:profile' %}" class="btn btn-primary" role="button">Profil</a>
-                    <a href="{% url 'users:logout' %}" class="btn btn-primary" role="button">Çıkış</a>
+                    <span style="color: white; margin-right: 10px;">Hoşgeldin {{ request.session.username }}</span>
+                    <a href="{% url 'users:profile' %}" class="btn btn-primary button1" role="button">Profil</a>
+                    <a href="{% url 'users:logout' %}" class="btn btn-primary button2" role="button">Çıkış</a>
                     {% endif %}
                     {% else %}
-                    <a href="{% url 'users:register' %}" class="btn btn-primary" role="button">Üye Ol</a>
-                    <a href="{% url 'users:login' %}" class="btn btn-primary" role="button">Giriş</a>
+                    <a href="{% url 'users:register' %}" class="btn btn-primary button1" role="button">Üye Ol</a>
+                    <a href="{% url 'users:login' %}" class="btn btn-primary button2" role="button">Giriş</a>
                     {% endif %}
                 </ul>
             </div>
@@ -74,13 +80,19 @@
             <div class="col-md-6">
                 <form action="{% url 'games:search_game' %}" method="post">{% csrf_token %}
                     <div id="custom-search-input">
-                        <div class="input-group col-md-6">
-                            <input type="text"  id="oyunArama" class="form-control input-lg" style="color: white;" placeholder="Oyun Ara..." />
+                        <div class="col-md-6 input-group">
+                            <input type="text" name="search_game" id="oyunArama" class="form-control input-lg"
+                                   style="color: white;" placeholder="Oyun Ara..."/>
                             <span class="input-group-btn">
-                                    <button type="submit" class="btn btn-info btn-lg" type="button">
+                                    <button type="submit" class="btn btn-info btn-lg" value="ARA" type="button">
                                         <i class="fa fa-search" aria-hidden="true" style="font-size: 23px; color: #eb3a3a;"></i>
                                     </button>
                             </span>
+                            <div id="results" class="list-group">
+                                <div class="ui-widget">
+
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </form>
@@ -95,7 +107,7 @@
                             <i class="fa fa-shopping-cart cart-icon" style="font-size: 25px; margin-left: 10px; color: rgba(117, 236, 165, 0.9);"></i><span class="badge">{{ request.session.cart|length }}</span>
                             <div class="shopping-cart-total">
                                 <span>Toplam:</span>
-                                <span class="cart-total">$155.23</span>
+                                <span class="cart-total">0</span>
                             </div>
                         </div>
                         {% if request.session.cart|length == 0 %}
@@ -105,7 +117,7 @@
                         <li>
                                     <span class="item">
                                         <span class="item-left">
-                                            <img src="http://lorempixel.com/50/50/" class="img-circle" alt="" />
+                                            <img src="{% static '' %}{{item.logo}}" class="img-rounded" alt=""/>
                                             <span class="item-info">
                                                 <span class="item-name">{{ item.game_name }}</span><br>
                                                 <span class="item-quantity">{{ item.quantity }}</span>
@@ -114,7 +126,9 @@
                                             </span>
                                         </span>
                                         <span class="item-right">
-                                            <button class="btn btn-xs btn-danger pull-right"><i class="fa fa-times" aria-hidden="true"></i></button>
+                                            <button value="{{ item.game_id }}" onclick="removeCartItem()"
+                                                    class="btn btn-xs btn-danger pull-right"><i class="fa fa-times"
+                                                                                                aria-hidden="true"></i></button>
                                         </span>
                                     </span>
                         </li>
@@ -131,10 +145,8 @@
     </div>
 </header>
 <div class="container">
-    <div class="col-md-12 col-md-offset-4">
-        {% block content %}
-        {% endblock %}
-    </div>
+    {% block content %}
+    {% endblock %}
 </div>
 <div class="container">
     <footer>
@@ -168,7 +180,50 @@
         </div>
     </footer>
 </div>
+<script>
+    function removeCartItem() {
+        $(".item").on("click", "button", function () {
+            var game_id = $(this).val();
+
+            $.ajax({
+                type: "POST",
+                url: "{% url 'sales:deletecartitem' %}",
+                data: {
+                    csrfmiddlewaretoken: '{{ csrf_token }}',
+                    game_id: game_id
+                },
+                success: function () {
+                    $("#mycart").load(location.href + " #mycart>*", "");
+                }
+            });
+        });
+    }
+</script>
+<script>
+    var search_list = [];
+    $.ajax({
+        type: 'GET',
+        url: '{% url "games:games_json"%}',
+        data: {get_param: 'value'},
+        dataType: 'json',
+        success: function (data) {
+            var json = data;
+            $.each(json, function (i, item) {
+                search_list.push(json[i].game_name)
+            });
+            $('#oyunArama').autocomplete({
+                minLength: 1,
+                source: search_list,
+                select: function (event, ui) {
+                    $('#oyunArat').append(search_list[ui.item]);
+                }
+            });
+        }
+    });
+</script>
+
+<script src="{% static 'js/bootstrap.js' %}"></script>
 <script src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
-<script src="{% static 'js/bootstrap.min.js' %}"></script>
+<script src="{% static 'js/jquery-ui.js' %}"></script>
 </body>
 </html>

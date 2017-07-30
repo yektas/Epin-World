@@ -9,6 +9,8 @@
   width: 250px;
   height: 100%;
   color: #e1ffff;
+    box-shadow: 6px 8px 24px -12px rgba(0, 0, 0, 0.75);
+
 }
 .nav-side-menu .brand {
   background-color: #292c2f;
@@ -95,7 +97,7 @@
 .nav-side-menu li a i {
   padding-left: 10px;
   width: 20px;
-  padding-right: 20px;
+    padding-right: 25px;
 }
 .nav-side-menu li:hover {
   border-left: 3px solid #d19b3d;

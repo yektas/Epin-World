@@ -18,13 +18,22 @@
                 </ol>
                 <div class="carousel-inner">
                     <div class="item active">
-                        <img class="slide-image" src="http://placehold.it/800x300" alt="">
+                        <a href="">
+                            <img id="carousel1" class="slide-image img-responsive" src="http://placehold.it/800x300"
+                                 alt="">
+                        </a>
                     </div>
                     <div class="item">
-                        <img class="slide-image" src="http://placehold.it/800x300" alt="">
+                        <a href="">
+                            <img id="carousel2" class="slide-image img-responsive" src="http://placehold.it/800x300"
+                                 alt="">
+                        </a>
                     </div>
                     <div class="item">
-                        <img class="slide-image" src="http://placehold.it/800x300" alt="">
+                        <a href="">
+                            <img id="carousel3" class="slide-image img-responsive" src="http://placehold.it/800x300"
+                                 alt="">
+                        </a>
                     </div>
                 </div>
                 <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
@@ -46,6 +55,7 @@
 <script src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
 <script type="text/javascript">
     var game_product_footer = "";
+    var randNums = [];
     $.ajax({
         type: "GET",
         url: "{% url 'games:games_json'%}",
@@ -53,29 +63,52 @@
         dataType: "json",
         success: function (data) {
             var json = data;
+
             $.each(json,function(i){
-                var name = json[i].game_name;
-                game_product_footer += "<div class='col-sm-4 col-lg-4 col-md-4'><div class='thumbnail'>";
-                game_product_footer += "<img class='thumbnail' id='game-image' src='static/"+json[i].logo+"'/>";
+                game_product_footer += "<div class='col-sm-4 col-lg-4 col-md-4'><div class='thumbnail homepage'>";
+                game_product_footer += '<img class="thumbnail" name="' + json[i].game_id + '" src="static/' + json[i].logo + '"/>';
                 game_product_footer += "<div id='product' class='caption'>";
                 game_product_footer += "<h4 id='gameprice' class='pull-right'>"+json[i].game_money_price + "₺" +"</h4>";
                 game_product_footer += "<h4 id='gamename'> <a href='/games/game_detail/"+json[i].game_name+"'>"+json[i].game_name+"</a></h4>";
-                game_product_footer += "<p>This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p></div>";
-                game_product_footer += '<button type="button" id="'+json[i].game_id+'" class="btn btn-primary addtocart"   value="'+json[i].game_name+ "/" + json[i].game_money_price +'"><span class="glyphicon glyphicon-shopping-cart"></span> Add To Cart</button></div></div>';
+                game_product_footer += "<p class='game-desc'>" + json[i].description + "</p></div>";
+                game_product_footer += '<button type="button" id="' + json[i].game_id + '" class="btn btn-primary addtocart"   value="' + json[i].game_name + "/" + json[i].game_money_price + '"><span class="glyphicon glyphicon-shopping-cart"></span id="addtocart-text">Sepete Ekle</button></div></div>';
 
             });
+            for (var i = 0; i < json.length; i++) {
+                randNums.push(i);
+            }
+            function shuffle(a) {
+                var j, x, i;
+                for (i = a.length; i; i--) {
+                    j = Math.floor(Math.random() * i);
+                    x = a[i - 1];
+                    a[i - 1] = a[j];
+                    a[j] = x;
+                }
+            }
 
+            shuffle(randNums);
+            for (var j = 0; j < 3; j++) {
+                console.log('#carousel' + (j + 1));
+                console.log(json[randNums[j]].logo);
+                console.log(json[randNums[j]].game_name);
+                $('#carousel' + (j + 1)).attr('src', '{% static "" %}' + json[randNums[j]].logo + '');
+                $('#carousel' + (j + 1)).parent("a").attr('href', '/games/game_detail/' + json[randNums[j]].game_name + '')
+            }
             $('#game-info').append(game_product_footer)
         }
     });
 
     $("#game-info").on("click", "button", function () {
-        /*$("img").clone().addClass("zoom").appendTo("body");
-        setTimeout(function () {
-           $(".zoom").remove();
-        },1000);*/
 
-        var id = $(this).attr('id');
+        $("img").clone().addClass("zoom").appendTo("body");
+        setTimeout(function () {
+            $(".zoom").remove();
+        }, 1000);
+
+        var gid = $(this).attr('id');
+        var currentlogo = $("[name=" + gid + "]").attr('src');
+        var logo = currentlogo.substr(7);
         var name = $(this).val().split("/")[0];
         var price = $(this).val().split("/")[1];
         $.ajax({
@@ -84,8 +117,9 @@
             data: {
                 csrfmiddlewaretoken: '{{ csrf_token }}',
                 game_name: name,
-                game_id: id,
-                game_price: price
+                game_id: gid,
+                game_price: price,
+                logo: logo
             },
             success: function () {
 

@@ -1,36 +1,15 @@
-<head>
-
-    {% extends './admin.html' %}
-    {% load staticfiles %}
-    {% block title%}<title>Oyun Listesi</title>{% endblock %}
-      <script type="text/javascript" src="{% static 'js/tool_tip.js' %}"></script>
-
-
-</head>
-
-
-
-    <link href="{% static 'css/form.css'%}" rel="stylesheet" type="text/css"/>
-<div class="container">
-    <div class="giris">
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-<script src="http://getbootstrap.com/dist/js/bootstrap.min.js"></script>
-
-<div class="container">
-    {% block content %}
-    <div class="row">
-
-        <h5>Oyunlar</h5>
-        <div class="col-md-5" style="width:0%">
-
+{% extends './admin.html' %}
+{% load staticfiles %}
+{% block title%}<title>OYUN EKLE</title>{% endblock %}
+{% block content %}
+<link href="{% static 'css/form.css'%}" rel="stylesheet" type="text/css"/>
+<div class="games-form">
+    <div class="col-md-9">
+        <h3>Oyunlar</h3>
         <div class="table-responsive">
-
-
-              <table id="mytable" class="table table-bordred table-striped">
+            <table id="games-table" class="table table-bordred table-striped">
                   <form action="{% url 'adminn:delete_game' %}" method="post">{% csrf_token %}
-
                       <thead>
-
                       <th>Logo</th>
                       <th>Oyun Adı</th>
                       <th>Ücreti</th>
@@ -40,7 +19,6 @@
                       <th>Şirket</th>
                       <th>Platform</th>
                       <th>Sil</th>
-
                       </thead>
                       <tbody>
                       {% for a in game%}
@@ -85,10 +63,6 @@
         </div>
        </div>
 </div>
-
-
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
-      <script type="text/javascript" src="{% static 'js/table_filler.js' %}"></script>
+<script src="{% static 'js/table_filler.js' %}"></script>
 
 {% endblock %}

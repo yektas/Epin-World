@@ -2,8 +2,28 @@
     width: 100%;
 }
 
+#game-info {
+    margin-top: 10px;
+}
 .carousel-holder {
     margin-bottom: 30px;
+}
+
+.carousel img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    height: auto;
+    max-width: 100%;
+}
+
+.carousel .item {
+    height: 400px;
+}
+
+.carousel-inner {
+    box-shadow: 0px 8px 29px -9px rgba(0, 0, 0, 0.75);
 }
 
 .carousel-control,
@@ -20,17 +40,82 @@
     white-space: nowrap;
 }
 
-.thumbnail img {
+#gameprice {
+    color: #75ECA5;
+}
+
+#gamename a {
+    color: #eb3a3a;
+}
+
+.product-page #gamename {
+    font-size: 25px;
+    text-align: center;
+    color: #eb3a3a;
+}
+
+.thumbnail {
+    background: #292c2f;
+    border-color: #292c2f;
+    box-shadow: 4px 22px 68px -14px rgba(0, 0, 0, 0.38);
+}
+
+.homepage img, .all-games img {
     width: 100%;
     height: 150px;
+    border: none;
 }
 
-.ratings {
-    padding-right: 10px;
-    padding-left: 10px;
-    color: #d17581;
+.homepage .caption-full, .all-games .caption-full {
+    width: 100px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
+.product-page img {
+    width: 100%;
+    height: 400px;
+    border: none;
+}
+
+.product-page label {
+    color: white;
+    font-size: 20px;
+    margin-right: 10px;
+    font-weight: normal;
+}
+
+.product-page button {
+    margin-left: 500px;
+}
+
+.product-page #gameprice {
+    margin-right: 10px;
+    margin-top: 5px;
+}
+
+.product-page {
+    margin-top: 20px;
+    width: 90%;
+}
+
+.addtocart {
+    margin-left: 5em;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    background: #eb3a3a;
+    border: none;
+    margin-bottom: 10px;
+}
+
+.addtocart span {
+    margin-right: 2px;
+}
+
+.game-desc {
+    color: white;
+}
 .thumbnail {
     padding: 0;
 }
@@ -39,7 +124,7 @@
     padding: 9px;
     color: #333;
 }
-/*
+
 .zoom{
     position: absolute;
     top: 80px;
@@ -54,4 +139,3 @@
     50%{opacity: 1}
     100%{opacity: 0; right:50px;}
 }
-*/

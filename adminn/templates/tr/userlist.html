@@ -1,88 +1,74 @@
-<head>
-    {% extends './admin.html' %}
-    {% load staticfiles %}
-    {% block title%}<title>Kullanıcı Listesi</title>{% endblock %}
-    <script>
-        $(document).ready(function () {
-            $("#mytable #checkall").click(function () {
-                if ($("#mytable #checkall").is(':checked')) {
-                    $("#mytable input[type=checkbox]").each(function () {
-                        $(this).prop("checked", true);
-                    });
+{% extends './admin.html' %}
+{% load staticfiles %}
+{% block title%}<title>OYUN EKLE</title>{% endblock %}
+{% block content %}
+<script>
+    $(document).ready(function () {
+        $("#mytable #checkall").click(function () {
+            if ($("#mytable #checkall").is(':checked')) {
+                $("#mytable input[type=checkbox]").each(function () {
+                    $(this).prop("checked", true);
+                });
 
-                } else {
-                    $("#mytable input[type=checkbox]").each(function () {
-                        $(this).prop("checked", false);
-                    });
-                }
-            });
-
-            $("[data-toggle=tooltip]").tooltip();
+            } else {
+                $("#mytable input[type=checkbox]").each(function () {
+                    $(this).prop("checked", false);
+                });
+            }
         });
 
+        $("[data-toggle=tooltip]").tooltip();
+    });
 
-    </script>
-</head>
+</script>
 
 <link href="{% static 'css/form.css'%}" rel="stylesheet" type="text/css"/>
-<div class="container">
-    <div class="giris">
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-        <script src="http://getbootstrap.com/dist/js/bootstrap.min.js"></script>
+<div class="user-table">
+    <div class="col-md-9">
+        <h3>Oyunlar</h3>
+        <div class="table-responsive">
+            <table id="user-table" class="table table-bordred table-striped">
+                <form action="{% url 'adminn:delete_game' %}" method="post">{% csrf_token %}
+                    <thead>
+                    <th>Adı/Soyadı</th>
+                    <th>Kullanıcı Adı</th>
+                    <th>Email</th>
+                    <th>Durum</th>
+                    <th>Yetki</th>
+                    <th>Sil</th>
+                    </thead>
+                    <tbody>
 
-        <div class="container">
-            {% block content %}
-            <div class="row">
+                    {% for user in users%}
+                    <tr>
+                        <td>{{ user.full_name }}</td>
+                        <td>{{ user.username }}</td>
+                        <td>{{ user.email }}</td>
+                        {% if user.status_id == 1%}
+                        <td> Aktif</td>
+                        {% else %}
+                        <td> Pasif</td>
+                        {% endif %}
 
-                <h5>Kullanıcılar</h5>
-                <div class="col-md-12" style="width:69%">
-
-                    <div class="table-responsive">
-
-
-                        <table id="mytable" class="table table-bordred table-striped">
-                            <form action="{% url 'adminn:ban_user' %}" method="post">{% csrf_token %}
-                            <thead>
-
-                            <th>Adı/Soyadı</th>
-                            <th>Kullanıcı Adı</th>
-                            <th>Email</th>
-                            <th>Durum</th>
-                            <th>Yetki</th>
-                            <th>Sil</th>
-                            </thead>
-                            <tbody>
-
-                            {% for user in users%}
-                            <tr>
-                                <td>{{ user.full_name }}</td>
-                                <td>{{ user.username }}</td>
-                                <td>{{ user.email }}</td>
-                                {% if user.status_id == 1%}
-                                <td> Aktif</td>
-                                {% else %}
-                                <td> Pasif</td>
-                                {% endif %}
-
-                                {% if user.admin_id == 1 %}
-                                <td>Admin</td>
-                                {% else %}
-                                <td>Normal</td>
-                                {% endif %}
-                                <td><input type="radio" name="name" value="{{user.username}}"></td>
-
-                            </tr>
-                            {% endfor %}
-                            </tbody>
-                                <div>
-                                    <button type="submit" style="margin-left: 740px;">SİL</button>
-                                </div>
-                            </form>
-                        </table>
-
-
-
+                        {% if user.admin_id == 1 %}
+                        <td>Admin</td>
+                        {% else %}
+                        <td>Normal</td>
+                        {% endif %}
+                        <td><input type="radio" name="name" value="{{user.username}}"></td>
+                    </tr>
+                    {% endfor %}
+                    </tbody>
+                    <div>
+                        <button type="submit" style="margin-left: 740px;">SİL</button>
                     </div>
-                </div>
-            </div>
-            {% endblock %}
+                </form>
+            </table>
+        </div>
+    </div>
+</div>
+<script src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+<script src="{% static 'js/table_filler.js' %}"></script>
+
+{% endblock %}

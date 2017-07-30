@@ -1,15 +1,19 @@
-.user-form h3{
-    color: #FFFFFF;
-    font-size: 18x;
-
+.user-form h3, .games-form h3, .user-table h3, .order-table h3, .company-table h3 {
+    color: #6ed999;
+    font-size: 19px;
+    font-weight: bold;
 }
 
+.form-layout {
+    margin-left: -15px;
+}
 .form-layout label{
-    color: #39fcde;
+    color: #ffffff;
     font-size: 15px;
     margin-top: 5px;
 }
-.form-layout input[type="text"], input[type="password"], input[type="email"]{
+
+.form-layout input[type="text"], input[type="password"], input[type="email"], input[type="number"] {
     background: rgba(117, 236, 165, 0);
     width: 300px;
     border: 0;
@@ -18,20 +22,31 @@
     border-radius: 0px;
     margin-top: 5px;
     margin-bottom: 20px;
+    color: white;
+}
+
+.form-layout input[type="file"] {
+    background: rgba(117, 236, 165, 0);
+    width: 300px;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    color: white !important;
+
 }
 .register-button{
-    font-size: 19px;
+
+    font-size: 16px;
     padding: 8px 15px;
     margin-top: auto;
 }
 .signup-button{
     margin-left: -20px;
     padding: 4px;
-    width: 300px;
-    background-color: #78B310;
+    margin-top: 10px;
+    background-color: #eb3a3a;
     border-radius: 3px;
     color: #ffffff;
-    font-size: 19px
+    font-size: 16px
 }
 .register-text{
     margin-top: 20px;
@@ -59,3 +74,13 @@
     margin-left: 140px;
     background: rgba(0, 253, 255, 0.71);
 }
+
+.games-form th, .user-table th, .order-table th, .company-table th {
+    color: #6ed999;
+}
+
+#games-table tr, #user-table tr, #order-table tr, #company-table tr {
+    color: white;
+    background-color: #343f48;
+}
+

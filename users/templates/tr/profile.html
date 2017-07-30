@@ -1,132 +1,128 @@
 {% extends 'base.html' %}
-<head>
-    {% load staticfiles %}
-    <meta charset="UTF-8">
-    <title>Profil</title>
-</head>
-
+{% load staticfiles %}
 {% block content %}
-            <link href="{% static 'css/dashboard.css'%}" rel="stylesheet" type="text/css"/>
-            <div class="col-md-3">
-                <ul class="nav nav-pills nav-stacked admin-menu" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);" >
-                    <li class="active"><a href="" data-target-id="profile"><i class="glyphicon glyphicon-user"></i> Profil</a></li>
-                    <li><a href="" data-target-id="change-password"><i class="glyphicon glyphicon-lock"></i> Şifre Değiştir</a></li>
-                    <li><a href="" data-target-id="settings"><i class="glyphicon glyphicon-cog"></i> Ayarlar</a></li>
-                    <li><a href="" data-target-id="logout"><i class="glyphicon glyphicon-log-out"></i> Çıkış</a></li>
-                </ul>
+
+<link href="{% static 'css/dashboard.css' %}" rel="stylesheet" type="text/css"/>
+<div class="col-md-4 profile-main">
+    <ul class="nav nav-pills nav-stacked admin-menu">
+        <li class="active"><a class="profile-link" href="" data-target-id="profile"><i
+                class="glyphicon glyphicon-user"></i> Profil</a></li>
+        <li><a href="" class="profile-link" data-target-id="change-password"><i class="glyphicon glyphicon-lock"></i> Şifre
+            Değiştir</a></li>
+        <li><a href="" class="profile-link" data-target-id="settings"><i
+                class="glyphicon glyphicon-cog"></i> Ayarlar</a></li>
+        <li><a href="" class="profile-link" data-target-id="logout"><i
+                class="glyphicon glyphicon-log-out"></i> Çıkış</a></li>
+    </ul>
+</div>
+
+<div class="col-md-5  admin-content" id="profile">
+    <div class="panel panel-info" style="margin: 1em;">
+        <div class="panel-heading">
+            <h3 class="panel-title">Kullanıcı Adı</h3>
+        </div>
+        <div class="panel-body">
+            {% for item in user %}
+            {{ item.full_name }}
+
+        </div>
+    </div>
+    <div class="panel panel-info" style="margin: 1em;">
+        <div class="panel-heading">
+            <h3 class="panel-title">Email</h3>
+        </div>
+        <div class="panel-body">
+            {{ item.email }}
+            {% endfor %}
+        </div>
+    </div>
+</div>
+<div class="col-md-5  admin-content" id="settings">
+    <div class="panel panel-info" style="margin: 1em;">
+        <div class="panel-heading">
+            <h3 class="panel-title">Bildirimler</h3>
+        </div>
+        <div class="panel-body">
+            <div class="label label-success">İzin ver</div>
+        </div>
+    </div>
+    <div class="panel panel-info" style="margin: 1em;">
+        <div class="panel-heading">
+            <h3 class="panel-title">Haberler</h3>
+        </div>
+        <div class="panel-body">
+            <div class="badge">Aylık</div>
+        </div>
+    </div>
+</div>
+
+<div class="col-md-5  admin-content" id="change-password">
+    <form action="/password" method="post">
+
+
+        <div class="panel panel-info" style="margin: 1em;">
+            <div class="panel-heading">
+                <h3 class="panel-title">Yeni Parola</h3>
             </div>
-
-            <div class="col-md-5  admin-content" id="profile">
-                <div class="panel panel-info" style="margin: 1em;">
-                    <div class="panel-heading">
-                        <h3 class="panel-title">Kullanıcı Adı</h3>
-                    </div>
-                    <div class="panel-body">
-                        {% for item in user %}
-                        {{ item.full_name }}
-
+            <div class="panel-body">
+                <div class="form-group">
+                    <div class="col-sm-10">
+                        <input type="password" class="profile-buttons" name="password" id="new_password">
                     </div>
                 </div>
-                <div class="panel panel-info" style="margin: 1em;">
-                    <div class="panel-heading">
-                        <h3 class="panel-title">Email</h3>
-                    </div>
-                    <div class="panel-body">
-                        {{ item.email }}
-                        {% endfor %}
+
+            </div>
+        </div>
+
+
+        <div class="panel panel-info" style="margin: 1em;">
+            <div class="panel-heading">
+                <h3 class="panel-title">Parolayı doğrula</h3>
+            </div>
+            <div class="panel-body">
+                <div class="form-group">
+                    <div class="col-sm-10">
+                        <input type="password" class="profile-buttons" name="password_confirmation"
+                               id="confirm_password">
                     </div>
                 </div>
             </div>
-   <div class="col-md-5  admin-content" id="settings">
-                <div class="panel panel-info" style="margin: 1em;">
-                    <div class="panel-heading">
-                        <h3 class="panel-title">Bildirimler</h3>
-                    </div>
-                    <div class="panel-body">
-                        <div class="label label-success">İzin ver</div>
-                    </div>
-                </div>
-                <div class="panel panel-info" style="margin: 1em;">
-                    <div class="panel-heading">
-                        <h3 class="panel-title">Haberler</h3>
-                    </div>
-                    <div class="panel-body">
-                        <div class="badge">Aylık</div>
+        </div>
+
+
+        <div class="panel panel-info border" style="margin: 1em;">
+            <div class="panel-body">
+                <div class="form-group">
+                    <div class="pull-left">
+                        <input type="submit" class="profile-buttons btn btn-primary" name="submit" id="submit"
+                               value="Gönder">
                     </div>
                 </div>
             </div>
+        </div>
 
-            <div class="col-md-5  admin-content" id="change-password">
-                <form action="/password" method="post">
+    </form>
+</div>
 
-
-                    <div class="panel panel-info" style="margin: 1em;">
-                        <div class="panel-heading">
-                            <h3 class="panel-title"><label for="new_password" class="control-label panel-title">Yeni Parola</label></h3>
-                        </div>
-                        <div class="panel-body">
-                            <div class="form-group">
-                                <div class="col-sm-10">
-                                    <input type="password" class="form-control" name="password" id="new_password" >
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-
-
-                    <div class="panel panel-info" style="margin: 1em;">
-                        <div class="panel-heading">
-                            <h3 class="panel-title"><label for="confirm_password" class="control-label panel-title">Parolayı doğrula</label></h3>
-                        </div>
-                        <div class="panel-body">
-                            <div class="form-group">
-                                <div class="col-sm-10">
-                                    <input type="password" class="form-control" name="password_confirmation" id="confirm_password" >
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-
-                    <div class="panel panel-info border" style="margin: 1em;">
-                        <div class="panel-body">
-                            <div class="form-group">
-                                <div class="pull-left">
-                                    <input type="submit" class="form-control btn btn-primary" name="submit" id="submit" value="Gönder">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </form>
-            </div>
-
-            <div class="col-md-5  admin-content" id="settings"></div>
-
-            <div class="col-md-5  admin-content" id="logout">
-                <div class="panel panel-info" style="margin: 1em;">
-                    <div class="panel-heading">
-                        <h3 class="panel-title">Çıkış Yap</h3>
-                    </div>
-                    <div class="panel-body">
-                        Çıkış yapmak istediğinize emin misiniz?  
-                        <a  href="#" class="label label-danger"
-                            onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                            <span >   Evet   </span>
-                        </a>    
-                        <a href="/account" class="label label-success"> <span >  Hayır   </span></a>
-                    </div>
-                    <form id="logout-form" action="{% url 'users:logout' %}" method="POST">
-                        {% csrf_token %}
-                    </form>
-                </div>
-<script type="text/javascript">
-
-
-         $(document).ready(function()
-      {
+<div class="col-md-5  admin-content" id="logout">
+    <div class="panel panel-info" style="margin: 1em;">
+        <div class="panel-heading">
+            <h3 class="panel-title">Çıkış Yap</h3>
+        </div>
+        <div class="panel-body">
+            Çıkış yapmak istediğinize emin misiniz?  
+            <a href="{% url 'users:logout' %}" class="label label-danger">
+                <span> Evet </span>
+            </a>    
+            <a href="{% url 'users:profile' %}" class="label label-success"> <span> Hayır </span></a>
+        </div>
+    </div>
+</div>
+<script src="{% static 'js/bootstrap.js' %}"></script>
+<script src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
+<script src="{% static 'js/jquery-ui.js' %}"></script>
+<script>
+    $(document).ready(function () {
         var navItems = $('.admin-menu li > a');
         var navListItems = $('.admin-menu li');
         var allWells = $('.admin-content');
@@ -141,6 +137,8 @@
             var target = $(this).attr('data-target-id');
             $('#' + target).show();
         });
-        });
-	</script>
+    });
+
+</script>
+
 {% endblock %}
