@@ -1,11 +1,13 @@
-from django.shortcuts import render
 import logging
-from utility.decorators import language_assigned
 
-logging.basicConfig(filename= 'debug.log' , level= logging.DEBUG)
+from django.shortcuts import render
 
-@language_assigned
-# @is_admin
+from utility.decorators import is_admin
+
+logging.basicConfig(filename='debug.log', level=logging.DEBUG)
+
+
+@is_admin
 def admin_index(request):
     logging.info("ADMIN PANEL viewed.!")
-    return render(request, "{}/admin.html".format(request.COOKIES['language']))
+    return render(request, "admin.html")

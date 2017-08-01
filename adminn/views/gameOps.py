@@ -7,12 +7,12 @@ from django.shortcuts import redirect, render
 
 from adminn.models.companyModels import CompanyEventClass
 from adminn.models.gameModels import GameEventClass
-from utility.decorators import is_admin, language_assigned
+from utility.decorators import is_admin
 
 game_instance = GameEventClass()
 logging.basicConfig(filename='debug.log', level=logging.DEBUG)
 
-@language_assigned
+
 @is_admin
 def add_game(request):
     company_instance = CompanyEventClass(request)
@@ -36,14 +36,13 @@ def add_game(request):
     company = company_instance.list_company()
     platform = game_instance.list_platform()
     category = game_instance.list_category()
-    return render(request, "{}/add_game.html".format(request.COOKIES['language']),
+    return render(request, "add_game.html",
                   {"company": company,
                    "category": category,
                    "platform": platform}
                   )
 
 
-@language_assigned
 @is_admin
 def list_game(request):
     games = game_instance.list_game()
@@ -58,10 +57,9 @@ def list_game(request):
     except EmptyPage:
         game = paginator.page(paginator.num_pages)
 
-    return render(request, "{}/list_game.html".format(request.COOKIES['language']), {"game": game})
+    return render(request, "list_game.html", {"game": game})
 
 
-@language_assigned
 @is_admin
 def delete_game(request):
     if request.method == "POST":
@@ -73,6 +71,5 @@ def delete_game(request):
 
 
 def handle_uploaded_file(file, filename):
-
     img = Image.open(file)
     img.save("./home/static/images/" + filename)

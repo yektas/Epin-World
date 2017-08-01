@@ -8,31 +8,37 @@
 
 <div id="game-info" class="row">
     {% for item in games%}
-    <div class='col-sm-3 col-lg-3 col-md-3'><div class='thumbnail all-games'>
-        <img class='thumbnail' id='game-image' name='{{item.id}}' src='{% static "" %}{{item.logo}}'/>
-        <div id='product' class='caption'>
-            <h4 id="gameprice" name="game-price{{item.id}}" class='pull-right'>{{item.price}}₺</h4>
-            <h4 id='gamename' name="game-name{{item.id}}"> <a href='/games/game_detail/{{ item.name }}'>{{item.name}}</a></h4>
-            <p class='game-desc'>{{ item.content }}</p></div>
-        <button type="button" id="{{ item.id }}" class="btn btn-primary addtocart"><span class="glyphicon glyphicon-shopping-cart"></span >Sepete Ekle</button></div></div>
+    <div class='col-sm-3 col-lg-3 col-md-3'>
+        <div class='thumbnail all-games'>
+            <img class='thumbnail' id='game-image' name='{{item.id}}' src='{% static "" %}{{item.logo}}'/>
+            <div id='product' class='caption'>
+                <h4 id="gameprice" name="game-price{{item.id}}" class='pull-right'>{{item.price}}₺</h4>
+                <h4 id='gamename' name="game-name{{item.id}}"><a
+                        href='/games/game_detail/{{ item.name }}'>{{item.name}}</a></h4>
+                <p class='game-desc'>{{ item.content }}</p></div>
+            <button type="button" id="{{ item.id }}" class="btn btn-primary addtocart"><span
+                    class="glyphicon glyphicon-shopping-cart"></span>Sepete Ekle
+            </button>
+        </div>
+    </div>
     {% endfor %}
 </div>
 
 <script src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
 <script>
 
-        $("#game-info").on("click", "button", function () {
-         /*$("img").clone().addClass("zoom").appendTo("body");
-        setTimeout(function () {
-           $(".zoom").remove();
-        },1000);*/
+    $("#game-info").on("click", "button", function () {
+        /*$("img").clone().addClass("zoom").appendTo("body");
+         setTimeout(function () {
+         $(".zoom").remove();
+         },1000);*/
 
-         var gid = $(this).attr('id');
-         var currentlogo = $("[name=" + gid + "]").attr('src');
-         var logo = currentlogo.substr(8);
-         var name = $("[name=game-name" + gid +"]").text();
-         var currentprice = $("[name=game-price" + gid +"]").text();
-         var price = currentprice.substr(0,5);
+        var gid = $(this).attr('id');
+        var currentlogo = $("[name=" + gid + "]").attr('src');
+        var logo = currentlogo.substr(8);
+        var name = $("[name=game-name" + gid + "]").text();
+        var currentprice = $("[name=game-price" + gid + "]").text();
+        var price = currentprice.substr(0, 5);
         $.ajax({
             type: "POST",
             url: "{% url 'sales:addtocart' %}",
@@ -45,17 +51,15 @@
             },
             success: function () {
                 $(" #mycart").load(
-                    location.href+" #mycart>*","");
+                    location.href + " #mycart>*", "");
 
             }
         });
-     });
+    });
 </script>
 
 
 <script src="{% static 'js/jquery-ui.js' %}"></script>
-
-
 
 
 {% endblock%}

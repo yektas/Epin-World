@@ -7,7 +7,8 @@
 .form-layout {
     margin-left: -15px;
 }
-.form-layout label{
+
+.form-layout label {
     color: #ffffff;
     font-size: 15px;
     margin-top: 5px;
@@ -33,13 +34,15 @@
     color: white !important;
 
 }
-.register-button{
+
+.register-button {
 
     font-size: 16px;
     padding: 8px 15px;
     margin-top: auto;
 }
-.signup-button{
+
+.signup-button {
     margin-left: -20px;
     padding: 4px;
     margin-top: 10px;
@@ -48,13 +51,15 @@
     color: #ffffff;
     font-size: 16px
 }
-.register-text{
+
+.register-text {
     margin-top: 20px;
     background: rgba(67, 85, 119, 0.44);
     padding: 15px;
     box-shadow: 5px 5px 1px rgba(20, 2, 2, 0.33);
 }
-.register-text h3{
+
+.register-text h3 {
     color: #06ffff;
     font-size: 18px;
     border-bottom: 1px solid;
@@ -62,11 +67,13 @@
     padding: 12px 5px;
     margin-top: 0px;
 }
-.register-text p{
+
+.register-text p {
     color: azure;
     font-size: 16px;
 }
-.register-text a{
+
+.register-text a {
     text-align: center;
     color: black;
     font-weight: bold;

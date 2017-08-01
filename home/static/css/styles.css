@@ -1,53 +1,53 @@
-input.input-sm{
+input.input-sm {
     margin-top: 20px;
     margin-bottom: 20px;
     font-family: 'Roboto', sans-serif;
 }
 
-div.container.middleBar{
+div.container.middleBar {
     background-color: #34393d;
 }
 
-body{
+body {
     background-color: #343f48;
     font-family: 'Roboto', sans-serif;
 }
 
-div.list-group{
+div.list-group {
     width: 30%;
 }
 
-hr{
+hr {
     margin: inherit;
     border-color: #eb3a3a;
 }
 
-div.row.middleHeader{
+div.row.middleHeader {
     padding: 1px 15px;
     margin-top: 10px;
     margin-bottom: 10px;
 }
 
-button.btn.btn-default.btn-lg.search{
+button.btn.btn-default.btn-lg.search {
     background: #eb3a3a;
     color: white;
     height: 46px;
     border: none;
 }
 
-#custom-search-input{
+#custom-search-input {
     padding: 3px;
     border: 1px #E4E4E4;
     #border-radius: 6px;
     background-color: rgba(255, 255, 255, 0);
 }
 
-#custom-search-input input{
+#custom-search-input input {
     border: 0;
     background-color: rgba(255, 255, 255, 0);
 }
 
-#custom-search-input button{
+#custom-search-input button {
     background: none;
     box-shadow: none;
     border: 0;
@@ -56,37 +56,39 @@ button.btn.btn-default.btn-lg.search{
     border-left: solid 1px #ccc;
 }
 
-#custom-search-input button:hover{
+#custom-search-input button:hover {
     border: 0;
     box-shadow: none;
     border-left: solid 1px #eb3a3a;
     color: #343f48
 }
 
-#custom-search-input .glyphicon-search{
+#custom-search-input .glyphicon-search {
     font-size: 23px;
 }
 
-
 /*Cart Dropdown CSS start*/
-.dropdown{
+.dropdown {
     margin-top: 5px;
     float: right;
     background-color: #343f48;
 }
 
-.dropdown .cart{
+.dropdown .cart {
     background-color: rgba(0, 0, 0, 0.34);
     color: rgba(117, 236, 165, 0.9);
 }
-.dropdown button{
+
+.dropdown button {
     font-size: 16px;
 }
-.dropdown .carticon{
+
+.dropdown .carticon {
     font-size: 25px;
     margin-right: 10px;
     color: rgba(117, 236, 165, 0.9);
 }
+
 .badge {
     margin-top: -20px;
     background-color: #6394F8;
@@ -105,6 +107,7 @@ button.btn.btn-default.btn-lg.search{
     width: 50px;
     height: auto;
 }
+
 /*Cart Dropdown CSS end*/
 .ui-widget {
     position: absolute;

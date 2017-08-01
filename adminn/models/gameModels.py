@@ -25,7 +25,6 @@ class GameEventClass():
                                                                                       price,
                                                                                       genreID, logo, content))
 
-
             self.cursor.execute("COMMIT;")
             return True
         except:
@@ -40,7 +39,6 @@ class GameEventClass():
                 {'game_name': '{}'.format(i[1]), 'game_money_price': '{}'.format(i[2]), 'game_content': format(i[9])})
 
         return meta_data_json
-
 
     def list_platform(self):
         try:

@@ -1,9 +1,0 @@
-<head>
-    {% extends 'base.html' %}
-    {% load staticfiles %}
-    {% block title%}<title>Exit</title>{% endblock %}
-</head>
-{% block content %}
-    {% csrf_token %}
-<h3>You are logged out!</h3>
-{% endblock %}

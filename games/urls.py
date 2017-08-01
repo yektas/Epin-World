@@ -1,6 +1,6 @@
 from django.conf.urls import url
 
-from games.views import views
+from games import views
 
 app_name = 'games'
 

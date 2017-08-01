@@ -7,7 +7,6 @@ from utility.cursorutil import dictfetchall
 
 
 class UserEventClass():
-
     def __init__(self, request_object):
         self.request_object = request_object
         self.cursor = connection.cursor()
@@ -24,7 +23,8 @@ class UserEventClass():
         t2 = self.request_object['password']
         if ("'" in t1 or "'" in t2):
             return False
-        self.cursor.execute("SELECT username, admin_id FROM users WHERE username='{}' AND password='{}'".format(t1, str(t2)))
+        self.cursor.execute(
+            "SELECT username, admin_id FROM users WHERE username='{}' AND password='{}'".format(t1, str(t2)))
         user = dictfetchall(self.cursor)
         return user
 
@@ -41,7 +41,7 @@ class UserEventClass():
 
         if self.instance.check_user() is False:
             self.cursor.execute("INSERT INTO users (username, email, password, full_name, status_id, admin_id)"
-                           "VALUES ('{}', '{}', '{}', '{}', '{}', '{}')".format(t1, t2, str(t3),full_name, 1, 2))
+                                "VALUES ('{}', '{}', '{}', '{}', '{}', '{}')".format(t1, t2, str(t3), full_name, 1, 2))
             self.cursor.execute("COMMIT;")
         else:
             return False

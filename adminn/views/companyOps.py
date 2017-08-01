@@ -5,12 +5,12 @@ from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 from django.shortcuts import redirect, render
 
 from adminn.models.companyModels import CompanyEventClass
-from utility.decorators import language_assigned
+from utility.decorators import is_admin
 
-logging.basicConfig(filename= 'debug.log' , level= logging.DEBUG)
+logging.basicConfig(filename='debug.log', level=logging.DEBUG)
 
-@language_assigned
-# @is_admin
+
+@is_admin
 def create_company(request):
     """Utkucan """
     """Create company function"""
@@ -24,11 +24,10 @@ def create_company(request):
             logging.info('company created / {} '.format(datetime.datetime.now()))
             return redirect("adminn:index")
 
-    return render(request, "{}/company.html".format(request.COOKIES['language']))
+    return render(request, "company.html")
 
 
-@language_assigned
-# @is_admin
+@is_admin
 def list_company(request):
     instance = CompanyEventClass(request)
     company = instance.list_company()
@@ -43,19 +42,16 @@ def list_company(request):
         companys = paginator.page(1)
     except EmptyPage:
         companys = paginator.page(paginator.num_pages)
-    return render(request, "{}/companylist.html".format(request.COOKIES['language']), {"companys": companys})
+    return render(request, "companylist.html", {"companys": companys})
 
 
-@language_assigned
-# @is_admin
+@is_admin
 def delete_company(request):
-
     instance = CompanyEventClass(request)
     if request.method == "POST":
         name = request.POST.getlist('name', '')
         for i in range(len(name)):
             instance.delete_company(name[i])
-
 
         logging.info('company deleted / {}'.format(datetime.datetime.now()))
         return redirect("adminn:list_company")

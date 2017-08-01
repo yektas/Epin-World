@@ -5,6 +5,7 @@
 #game-info {
     margin-top: 10px;
 }
+
 .carousel-holder {
     margin-bottom: 30px;
 }
@@ -116,6 +117,7 @@
 .game-desc {
     color: white;
 }
+
 .thumbnail {
     padding: 0;
 }
@@ -125,17 +127,24 @@
     color: #333;
 }
 
-.zoom{
+.zoom {
     position: absolute;
     top: 80px;
-    right:15em;
+    right: 15em;
     width: 40px;
     opacity: 0;
     animation: zoom 1s ease forwards;
 }
 
 @keyframes zoom {
-    0%{opacity: 0}
-    50%{opacity: 1}
-    100%{opacity: 0; right:50px;}
+    0% {
+        opacity: 0
+    }
+    50% {
+        opacity: 1
+    }
+    100% {
+        opacity: 0;
+        right: 50px;
+    }
 }
