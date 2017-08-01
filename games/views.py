@@ -8,10 +8,10 @@ from django.http import HttpResponseRedirect
 from django.shortcuts import render, HttpResponse, redirect
 
 from games.models import GameEventClass
-from utility.decorators import language_assigned
 
 cursor = connections['default'].cursor()
-logging.basicConfig(filename= 'debug.log' , level= logging.DEBUG)
+logging.basicConfig(filename='debug.log', level=logging.DEBUG)
+
 
 def games_json(request):
     logging.info('oyun çekme işlemi bitirildi ')
@@ -25,9 +25,10 @@ def games_json(request):
              'logo': '{}'.format(i[5]), 'description': '{}'.format(i[8])})
     return HttpResponse(json.dumps(test_json), content_type='application/json')
 
-#Taha Demir
-#Date: 21.07.2017
-#Takes the name of the platform types
+
+# Taha Demir
+# Date: 21.07.2017
+# Takes the name of the platform types
 def platform_json(request):
     logging.info('oyun çekme işlemi bitirildi ')
     cursor.execute("SELECT * FROM platform")
@@ -43,7 +44,6 @@ def platform_json(request):
 # #Bu method detail.html'i url'den gelen parametreye göre
 # generate etmektedir.
 # 14/07/17 Cuma.
-@language_assigned
 def generate_detail_html(request, game_name):
     r = requests.get('http://localhost:8000/games/games_json/')
     games_data = json.loads(r.text)

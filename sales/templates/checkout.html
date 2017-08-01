@@ -26,42 +26,51 @@
                 <tr>
                     <td class="col-md-6">
                         <div class="media">
-                            <a class="thumbnail pull-left" href="#"> <img class="media-object" src='{% static "" %}{{product.logo}}' style="width: 72px; height: 72px;"> </a>
+                            <a class="thumbnail pull-left" href="#"> <img class="media-object"
+                                                                          src='{% static "" %}{{product.logo}}'
+                                                                          style="width: 72px; height: 72px;"> </a>
                             <div class="media-body">
                                 <h4 class="media-heading">{{product.game_name}}</h4>
                                 <!--<h5 class="media-heading">by Brand name</h5>-->
                             </div>
-                        </div></td>
-                    <td class="col-sm-1 col-md-1" style="text-align: center">
-                        <input type="number" class="form-control product-quantity" name="{{product.quantity}}" value="{{product.quantity}}">
+                        </div>
                     </td>
-                    <td class="col-sm-1 col-md-1 text-center" ><label class="price" name="{{product.game_id}}">{{product.game_price}}₺</label></td>
-                    <td class="col-sm-1 col-md-1 text-center" ><label class="total-price" name="total-price">$14.61</label></td>
+                    <td class="col-sm-1 col-md-1" style="text-align: center">
+                        <input type="number" class="form-control product-quantity" name="{{product.quantity}}"
+                               value="{{product.quantity}}">
+                    </td>
+                    <td class="col-sm-1 col-md-1 text-center"><label class="price" name="{{product.game_id}}">{{product.game_price}}₺</label>
+                    </td>
+                    <td class="col-sm-1 col-md-1 text-center"><label class="total-price"
+                                                                     name="total-price">$14.61</label></td>
                     <td class="col-sm-1 col-md-1">
                         <button type="button" class="btn btn-danger">
                             <span class="glyphicon glyphicon-remove"></span> Sil
-                        </button></td>
+                        </button>
+                    </td>
                 </tr>
                 {% endfor %}
                 <tr>
-                    <td>   </td>
-                    <td>   </td>
-                    <td>   </td>
+                    <td>  </td>
+                    <td>  </td>
+                    <td>  </td>
                     <td><h3>Toplam</h3></td>
                     <td class="text-right"><h3><strong>$31.53</strong></h3></td>
                 </tr>
                 <tr>
-                    <td>   </td>
-                    <td>   </td>
-                    <td>   </td>
+                    <td>  </td>
+                    <td>  </td>
+                    <td>  </td>
                     <td>
                         <button type="button" class="btn btn-default">
                             <span class="glyphicon glyphicon-shopping-cart"></span> Alışverişe Devam Et
-                        </button></td>
+                        </button>
+                    </td>
                     <td>
                         <button type="button" class="btn btn-success">
                             Satın Al <span class="glyphicon glyphicon-play"></span>
-                        </button></td>
+                        </button>
+                    </td>
                 </tr>
                 </tbody>
             </table>
@@ -71,7 +80,7 @@
 <script src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
 <script>
     $(document).ready(function () {
-        $(".price").each(function(index){
+        $(".price").each(function (index) {
             console.log($(".product-quantity").attr('name'));
             console.log(index + ": " + $(this).text());
         });

@@ -26,26 +26,13 @@
 </style>
 <body>
 <div class="container">
-    <div class="row m0" style="background: rgba(235, 58, 58, 0.79);">
-        <div class="col-md-10">
-            <div class="col-md-2 col-md-offset-9">
-                <label for="sel1" style="color: white; margin-top: 10px;">Dil:</label>
-                <form action="/language_detector/" method="GET">
-                    <select name="language" class="form-control" onchange="this.form.submit()" style="margin-bottom: 10px;" id="sel1">
-                        <option>Seçiniz</option>
-                        <option value="tr">Türkçe</option>
-                        <option value="en">English</option>
-                    </select>
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="container">
     <nav class="navbar navbar-default custom-header">
         <div class="container">
-            <div class="navbar-header"><a class="navbar-brand navbar-link" href="{% url 'home:index' %}">Epin<span>World </span> </a>
-                <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+            <div class="navbar-header"><a class="navbar-brand navbar-link"
+                                          href="{% url 'home:index' %}">Epin<span>World </span> </a>
+                <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse"><span
+                        class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span
+                        class="icon-bar"></span><span class="icon-bar"></span></button>
             </div>
             <div class="collapse navbar-collapse" id="navbar-collapse">
                 <ul class="nav navbar-nav links">
@@ -85,7 +72,8 @@
                                    style="color: white;" placeholder="Oyun Ara..."/>
                             <span class="input-group-btn">
                                     <button type="submit" class="btn btn-info btn-lg" value="ARA" type="button">
-                                        <i class="fa fa-search" aria-hidden="true" style="font-size: 23px; color: #eb3a3a;"></i>
+                                        <i class="fa fa-search" aria-hidden="true"
+                                           style="font-size: 23px; color: #eb3a3a;"></i>
                                     </button>
                             </span>
                             <div id="results" class="list-group">
@@ -104,7 +92,9 @@
                         <span class="caret" style="color: white; margin-left: 5px"></span></button>
                     <ul class="dropdown-menu dropdown-cart" style="right:0; left: auto;" role="menu">
                         <div class="cart-header">
-                            <i class="fa fa-shopping-cart cart-icon" style="font-size: 25px; margin-left: 10px; color: rgba(117, 236, 165, 0.9);"></i><span class="badge">{{ request.session.cart|length }}</span>
+                            <i class="fa fa-shopping-cart cart-icon"
+                               style="font-size: 25px; margin-left: 10px; color: rgba(117, 236, 165, 0.9);"></i><span
+                                class="badge">{{ request.session.cart|length }}</span>
                             <div class="shopping-cart-total">
                                 <span>Toplam:</span>
                                 <span class="cart-total">0</span>
@@ -134,7 +124,8 @@
                         </li>
                         {% endfor %}
                         <li class="divider"></li>
-                        <li><a class="text-center" style="color: white;" href="{% url 'sales:checkout' %}">Sepete Git</a></li>
+                        <li><a class="text-center" style="color: white;" href="{% url 'sales:checkout' %}">Sepete
+                            Git</a></li>
 
                         {% endif %}
                     </ul>
@@ -153,7 +144,9 @@
         <div class="row">
             <div class="col-md-4 col-sm-6 footer-navigation">
                 <h3><a href="#">Epin<span>World </span></a></h3>
-                <p class="links"><a href="#">Home</a><strong> · </strong><a href="#">Blog</a><strong> · </strong><a href="#">Pricing</a><strong> · </strong><a href="#">About</a><strong> · </strong><a href="#">Faq</a><strong> · </strong><a href="#">Contact</a></p>
+                <p class="links"><a href="#">Home</a><strong> · </strong><a href="#">Blog</a><strong> · </strong><a
+                        href="#">Pricing</a><strong> · </strong><a href="#">About</a><strong> · </strong><a
+                        href="#">Faq</a><strong> · </strong><a href="#">Contact</a></p>
                 <p
                         class="company-name">Company Name © 2015 </p>
             </div>
@@ -165,7 +158,7 @@
                     <p class="footer-center-info email text-left"> +1 555 123456</p>
                 </div>
                 <div><i class="fa fa-envelope footer-contacts-icon"></i>
-                    <p> <a href="#" target="_blank">support@company.com</a></p>
+                    <p><a href="#" target="_blank">support@company.com</a></p>
                 </div>
             </div>
             <div class="clearfix visible-sm-block"></div>
@@ -175,7 +168,9 @@
                     UYBHM. Binası No:2
                     Sarıyer/İstanbul
                 </p>
-                <div class="social-links social-icons"><a href="#"><i class="fa fa-facebook"></i></a><a href="#"><i class="fa fa-twitter"></i></a><a href="#"><i class="fa fa-linkedin"></i></a><a href="#"><i class="fa fa-github"></i></a></div>
+                <div class="social-links social-icons"><a href="#"><i class="fa fa-facebook"></i></a><a href="#"><i
+                        class="fa fa-twitter"></i></a><a href="#"><i class="fa fa-linkedin"></i></a><a href="#"><i
+                        class="fa fa-github"></i></a></div>
             </div>
         </div>
     </footer>

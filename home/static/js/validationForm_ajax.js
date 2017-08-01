@@ -21,4 +21,4 @@ function validateForm() {
         alert("Successfull registration...");
         return true;
     }
-		}
+}

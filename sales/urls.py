@@ -1,4 +1,5 @@
 from django.conf.urls import url
+
 from sales import views
 
 app_name = 'sales'

@@ -128,8 +128,7 @@
         var allWells = $('.admin-content');
         var allWellsExceptFirst = $('.admin-content:not(:first)');
         allWellsExceptFirst.hide();
-        navItems.click(function(e)
-        {
+        navItems.click(function (e) {
             e.preventDefault();
             navListItems.removeClass('active');
             $(this).closest('li').addClass('active');

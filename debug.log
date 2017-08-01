@@ -6867,3 +6867,61 @@ INFO:root:oyun çekme iþlemi bitirildi
 INFO:root:oyun çekme iþlemi bitirildi 
 INFO:root:oyun çekme iþlemi bitirildi 
 INFO:root:oyun çekme iþlemi bitirildi 
+INFO:root:oyun çekme iþlemi bitirildi 
+INFO:root:oyun çekme iþlemi bitirildi 
+INFO:root:oyun çekme iþlemi bitirildi 
+ERROR:root:login failed
+INFO:root:oyun çekme iþlemi bitirildi 
+WARNING:django.request:Not Found: /favicon.ico
+INFO:root:oyun çekme iþlemi bitirildi 
+INFO:root:oyun çekme iþlemi bitirildi 
+INFO:root:oyun çekme iþlemi bitirildi 
+INFO:root:ADMIN PANEL viewed.!
+INFO:root:oyun çekme iþlemi bitirildi 
+INFO:root:oyun çekme iþlemi bitirildi 
+INFO:root:oyun çekme iþlemi bitirildi 
+INFO:root:oyun çekme iþlemi bitirildi 
+INFO:root:oyun çekme iþlemi bitirildi 
+INFO:root:oyun çekme iþlemi bitirildi 
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost
+INFO:root:oyun çekme iþlemi bitirildi 
+DEBUG:urllib3.connectionpool:http://localhost:8000 "GET /games/games_json/ HTTP/1.1" 200 6521
+INFO:root:oyun çekme iþlemi bitirildi 
+INFO:root:oyun çekme iþlemi bitirildi 
+ERROR:root:login failed
+INFO:root:oyun çekme iþlemi bitirildi 
+WARNING:django.request:Not Found: /favicon.ico
+INFO:root:oyun çekme iþlemi bitirildi 
+INFO:root:oyun çekme iþlemi bitirildi 
+INFO:root:oyun çekme iþlemi bitirildi 
+INFO:root:oyun çekme iþlemi bitirildi 
+INFO:root:oyun çekme iþlemi bitirildi 
+INFO:root:oyun çekme iþlemi bitirildi 
+INFO:root:oyun çekme iþlemi bitirildi 
+INFO:root:oyun çekme iþlemi bitirildi 
+INFO:root:logout had done. '2017-08-01 18:35:55.891657'
+INFO:root:oyun çekme iþlemi bitirildi 
+INFO:root:oyun çekme iþlemi bitirildi 
+ERROR:root:login failed
+INFO:root:oyun çekme iþlemi bitirildi 
+ERROR:root:login failed
+INFO:root:oyun çekme iþlemi bitirildi 
+INFO:root:oyun çekme iþlemi bitirildi 
+INFO:root:oyun çekme iþlemi bitirildi 
+INFO:root:oyun çekme iþlemi bitirildi 
+INFO:root:ADMIN PANEL viewed.!
+INFO:root:users listed / 2017-08-01 18:36:27.314782
+INFO:root:oyun çekme iþlemi bitirildi 
+INFO:root:oyun çekme iþlemi bitirildi 
+INFO:root:oyun çekme iþlemi bitirildi 
+INFO:root:oyun çekme iþlemi bitirildi 
+INFO:root:oyun çekme iþlemi bitirildi 
+INFO:root:oyun çekme iþlemi bitirildi 
+INFO:root:logout had done. '2017-08-01 18:36:40.190793'
+INFO:root:oyun çekme iþlemi bitirildi 
+INFO:root:oyun çekme iþlemi bitirildi 
+INFO:root:oyun çekme iþlemi bitirildi 
+INFO:root:oyun çekme iþlemi bitirildi 
+INFO:root:oyun çekme iþlemi bitirildi 
+INFO:root:oyun çekme iþlemi bitirildi 
+INFO:root:oyun çekme iþlemi bitirildi 

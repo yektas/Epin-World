@@ -18,7 +18,6 @@ def checkout(request):
 
 
 def addtocart(request):
-
     game_id = request.POST.get('game_id', ' ')
     game_name = request.POST.get('game_name', ' ')
     game_price = request.POST.get('game_price', ' ')
@@ -47,8 +46,8 @@ def addtocart(request):
 
     return HttpResponse(json.dumps(request.session['cart']))
 
-def deletecartitem(request):
 
+def deletecartitem(request):
     game_id = request.POST.get('game_id', ' ')
 
     for item in request.session['cart']:
@@ -72,7 +71,8 @@ def cart_json(request):
         for item in request.session['cart']:
             game = instance.get_game_byid(int(item['game_id']))
             cart.append({'game_name': '{}'.format(game[0]['name']), 'quantity': '{}'.format(item['quantity']),
-                         'logo': '{}'.format(game[0]['logo']), 'price': '{}'.format(game[0]['price']), 'game_id': '{}'.format(game[0]['id'])})
+                         'logo': '{}'.format(game[0]['logo']), 'price': '{}'.format(game[0]['price']),
+                         'game_id': '{}'.format(game[0]['id'])})
         return HttpResponse(json.dumps(cart), content_type='application/json')
     else:
         return False

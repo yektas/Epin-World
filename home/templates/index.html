@@ -59,17 +59,17 @@
     $.ajax({
         type: "GET",
         url: "{% url 'games:games_json'%}",
-        data: { get_param: 'value' },
+        data: {get_param: 'value'},
         dataType: "json",
         success: function (data) {
             var json = data;
 
-            $.each(json,function(i){
+            $.each(json, function (i) {
                 game_product_footer += "<div class='col-sm-4 col-lg-4 col-md-4'><div class='thumbnail homepage'>";
                 game_product_footer += '<img class="thumbnail" name="' + json[i].game_id + '" src="static/' + json[i].logo + '"/>';
                 game_product_footer += "<div id='product' class='caption'>";
-                game_product_footer += "<h4 id='gameprice' class='pull-right'>"+json[i].game_money_price + "₺" +"</h4>";
-                game_product_footer += "<h4 id='gamename'> <a href='/games/game_detail/"+json[i].game_name+"'>"+json[i].game_name+"</a></h4>";
+                game_product_footer += "<h4 id='gameprice' class='pull-right'>" + json[i].game_money_price + "₺" + "</h4>";
+                game_product_footer += "<h4 id='gamename'> <a href='/games/game_detail/" + json[i].game_name + "'>" + json[i].game_name + "</a></h4>";
                 game_product_footer += "<p class='game-desc'>" + json[i].description + "</p></div>";
                 game_product_footer += '<button type="button" id="' + json[i].game_id + '" class="btn btn-primary addtocart"   value="' + json[i].game_name + "/" + json[i].game_money_price + '"><span class="glyphicon glyphicon-shopping-cart"></span id="addtocart-text">Sepete Ekle</button></div></div>';
 
@@ -123,7 +123,7 @@
             },
             success: function () {
 
-                $("#mycart").load(location.href+" #mycart>*","");
+                $("#mycart").load(location.href + " #mycart>*", "");
             }
         });
     });

@@ -6,12 +6,11 @@ from django.shortcuts import render, redirect
 
 from adminn.models.userModels import UserOperationClass
 from users.models import UserEventClass
-from utility.decorators import language_assigned, login_required
+from utility.decorators import login_required
 
 logging.basicConfig(filename='debug.log', level=logging.DEBUG)
 
 
-@language_assigned
 def login(request):
     """ Login view: if the user is logged redirects to the index,
     if the user is not logged shows login page """
@@ -20,10 +19,10 @@ def login(request):
     if 'is_logged' not in request.session:
         try:
             logging.info('login succesful. / {}'.format(datetime.datetime.now()))
-            return render(request, "{}/login.html".format(request.COOKIES['language']))
+            return render(request, "login.html")
         except:
             logging.error('login failed')
-            return render(request, "tr/login.html")
+            return render(request, "login.html")
     else:
         username = request.session['username']
         if request.session['is_logged'] is False:
@@ -32,7 +31,7 @@ def login(request):
         return redirect("users:profile")
 
 
-@language_assigned
+@login_required
 def logout(request):
     """ Logs outs the user by deleting session information except the cart data
         and renders logout.html """
@@ -45,10 +44,9 @@ def logout(request):
         logging.info("logout had done. '{}'".format(datetime.now()))
     except KeyError:
         logging.ERROR('logout had not done')
-    return render(request, "{}/logout.html".format(request.COOKIES['language']))
+    return render(request, "logout.html")
 
 
-@language_assigned
 def register(request):
     """ Registration of the user: gets the user's credentials
       from the html form with POST method and checks the database,
@@ -63,10 +61,9 @@ def register(request):
             return HttpResponse("<h1>Registration Failed</h1>")
         else:
             return HttpResponse("<h1>Registration Successfull</h1>")
-    return render(request, "{}/register.html".format(request.COOKIES['language']))
+    return render(request, "register.html")
 
 
-@language_assigned
 @login_required
 def profile(request):
     """ User profile page: gets the username from the session and
@@ -76,4 +73,4 @@ def profile(request):
     user_info = instance.find_user(request.session['username'])
     if user_info is not False:
         user = user_info
-    return render(request, "{}/profile.html".format(request.COOKIES['language']), {'user': user})
+    return render(request, "profile.html", {'user': user})

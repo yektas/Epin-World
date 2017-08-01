@@ -1,10 +1,8 @@
 from django.shortcuts import redirect
 
 from users.models import UserEventClass
-from utility.decorators import language_assigned
 
 
-@language_assigned
 def auth_login(request):
     """ Login Authentication: gets the user's username and password
       from the html form with POST method and checks the database,
