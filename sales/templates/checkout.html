@@ -5,11 +5,12 @@
     <script src="{% static 'js/bootstrap.js' %}"></script>
 
 </head>
-<link rel="stylesheet" href="{% static 'css/form.css' %}">
+
 
 {% block content %}
-<script> var product = "{{product_list}}"</script>
-<div class="checkout-table">
+
+<link rel="stylesheet" href="{% static 'css/form.css' %}">
+<div class="checkout-table" id="testing">
     <div class="col-sm-12 col-md-10 col-md-offset-1">
         <div class="form-layout">
             <table id="checkout-table" class="table table-striped">
@@ -24,12 +25,12 @@
                 </thead>
                 <tbody>
                 {% for product in product_list%}
-                <tr>
+                <tr id="game-{{product.game_id}}">
                     <td class="col-md-6">
                         <div class="media">
                             <a class="thumbnail pull-left" href="#"> <img class="media-object"
                                                                           src='{% static "" %}{{product.logo}}'
-                                                                          style="width: 72px; height: 72px;"> </a>
+                                                                          style="width: 80px; height: 72px;"> </a>
                             <div class="media-body">
                                 <h4 class="media-heading">{{product.game_name}}</h4>
                                 <!--<h5 class="media-heading">by Brand name</h5>-->
@@ -37,15 +38,15 @@
                         </div>
                     </td>
                     <td class="col-sm-1 col-md-1" style="text-align: center">
-                        <input type="number" class="form-control product-quantity" name="{{product.quantity}}"
+                        <input type="number" onchange="newTotal('{{product.game_id}}')"
+                               class="form-control product-quantity"
                                value="{{product.quantity}}">
                     </td>
-                    <td class="col-sm-1 col-md-1 text-center"><label class="price" name="{{product.game_id}}">{{product.game_price}}₺</label>
+                    <td class="col-sm-1 col-md-1 text-center"><label class="price">{{product.game_price}}₺</label>
                     </td>
-                    <td class="col-sm-1 col-md-1 text-center"><label class="total-price"
-                                                                     name="total-price">$14.61</label></td>
+                    <td class="col-sm-1 col-md-1 text-center"><label class="subtotal">{{product.subtotal}}₺</label></td>
                     <td class="col-sm-1 col-md-1">
-                        <button type="button" class="btn btn-danger">
+                        <button type="button" onclick="deleteItem('{{product.game_id}}')" class="btn btn-danger">
                             <span class="glyphicon glyphicon-remove"></span> Sil
                         </button>
                     </td>
@@ -56,7 +57,7 @@
                     <td>  </td>
                     <td>  </td>
                     <td><h3>Toplam</h3></td>
-                    <td class="text-right"><h3><strong>$31.53</strong></h3></td>
+                    <td class="text-right"><h3 class="total">{{request.session.cartTotal}}₺</h3></td>
                 </tr>
                 <tr>
                     <td>  </td>
@@ -80,13 +81,42 @@
 </div>
 <script src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
 <script>
-    $(document).ready(function () {
-        $(".price").each(function (index) {
-            console.log($(".product-quantity").attr('name'));
-            console.log(index + ": " + $(this).text());
-        });
+    function newTotal(id) {
+        var quantity = parseInt($("#game-" + id).find(".product-quantity").val());
+        var price = parseInt($("#game-" + id).find(".price").text().replace("₺", ""));
+        var subtotal = parseInt($("#game-" + id).find(".subtotal").text().replace("₺", ""));
+        var total = parseInt($(".total").text().replace("₺", ""));
 
-    });
+        var newSubtotal = parseFloat(quantity * price);
+
+        $("#game-" + id).find(".subtotal").text(newSubtotal + '₺');
+        $.post("{% url 'sales:update_cart' %}", {
+                game_id: id,
+                quantity: quantity,
+                newSubtotal: newSubtotal,
+                csrfmiddlewaretoken: '{{ csrf_token }}'
+            },
+            function (data) {
+                $("#testing").load(location.href + " #testing>*", "");
+                $("#mycart").load(location.href + " #mycart>*", "");
+            });
+
+    };
+    function deleteItem(id) {
+        $.ajax({
+            type: "POST",
+            url: "{% url 'sales:deletecartitem' %}",
+            data: {
+                csrfmiddlewaretoken: '{{ csrf_token }}',
+                game_id: id
+            },
+            success: function () {
+                $("#testing").load(location.href + " #testing>*", "");
+                $("#mycart").load(location.href + " #mycart>*", "");
+            }
+        });
+    }
 </script>
+<script src="{% static 'js/jquery-ui.js' %}"></script>
 {% endblock %}
 

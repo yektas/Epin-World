@@ -12,6 +12,7 @@
     color: #ffffff;
     font-size: 15px;
     margin-top: 5px;
+    font-weight: normal;
 }
 
 .form-layout input[type="text"], input[type="password"], input[type="email"], input[type="number"] {
@@ -82,12 +83,21 @@
     background: rgba(0, 253, 255, 0.71);
 }
 
-.games-form th, .user-table th, .order-table th, .company-table th {
+.games-form th, .user-table th, .order-table th, .company-table th, .checkout-table th {
     color: #6ed999;
 }
 
-#games-table tr, #user-table tr, #order-table tr, #company-table tr {
+#games-table tr, #user-table tr, #order-table tr, #company-table tr, #checkout-table tr {
     color: white;
     background-color: #343f48;
+}
+
+.media-heading {
+    margin-left: 10px;
+}
+
+.media-image {
+    width: 90px;
+    height: 80px;
 }
 

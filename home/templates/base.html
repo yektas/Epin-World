@@ -38,8 +38,8 @@
             <div class="collapse navbar-collapse" id="navbar-collapse">
                 <ul class="nav navbar-nav links">
                     <li role="presentation"><a href="{% url 'games:all_game' %}"> Oyunlar </a></li>
-                    <li role="presentation"><a href="#"> Hakkında</a></li>
-                    <li role="presentation"><a href="#"> Yardım</a></li>
+                    <li role="presentation"><a href="{% url 'home:index' %}"> Hakkında </a></li>
+                    <li role="presentation"><a href="{% url 'home:index' %}"> Yardım </a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right userlinks">
                     {% if request.session.is_logged %}
@@ -98,7 +98,7 @@
                                 class="badge">{{ request.session.cart|length }}</span>
                             <div class="shopping-cart-total">
                                 <span>Toplam:</span>
-                                <span class="cart-total">0</span>
+                                <span class="cart-total">{{request.session.cartTotal}}₺</span>
                             </div>
                         </div>
                         {% if request.session.cart|length == 0 %}
@@ -145,21 +145,20 @@
         <div class="row">
             <div class="col-md-4 col-sm-6 footer-navigation">
                 <h3><a href="#">Epin<span>World </span></a></h3>
-                <p class="links"><a href="#">Home</a><strong> · </strong><a href="#">Blog</a><strong> · </strong><a
-                        href="#">Pricing</a><strong> · </strong><a href="#">About</a><strong> · </strong><a
-                        href="#">Faq</a><strong> · </strong><a href="#">Contact</a></p>
-                <p
-                        class="company-name">Company Name © 2015 </p>
+                <p class="links"><a href="{% url 'home:index' %}">Anasayfa</a><strong> · </strong>
+                    <a href="{% url 'games:all_game' %}">Oyunlar</a><strong> · </strong>
+                    <a href="{% url 'users:profile' %}">Profil</a></p>
+                <p class="company-name">EpinWorld © 2017 </p>
             </div>
             <div class="col-md-4 col-sm-6 footer-contacts">
                 <div><span class="fa fa-map-marker footer-contacts-icon"> </span>
-                    <p><span class="new-line-span">21 Revolution Street</span> Paris, France</p>
+                    <p><span class="new-line-span">İTÜ Ayazağa</span> İstanbul, Türkiye</p>
                 </div>
                 <div><i class="fa fa-phone footer-contacts-icon"></i>
-                    <p class="footer-center-info email text-left"> +1 555 123456</p>
+                    <p class="footer-center-info email text-left"> +90 212 2255 723</p>
                 </div>
                 <div><i class="fa fa-envelope footer-contacts-icon"></i>
-                    <p><a href="#" target="_blank">support@company.com</a></p>
+                    <p>info@sc3.io</p>
                 </div>
             </div>
             <div class="clearfix visible-sm-block"></div>
