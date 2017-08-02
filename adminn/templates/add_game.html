@@ -5,7 +5,8 @@
 <link href="{% static 'css/form.css'%}" rel="stylesheet" type="text/css"/>
 
 <div class="col-md-6">
-    <form class="user-form" action="{% url 'adminn:add_game' %}" method="POST">{% csrf_token %}
+    <form class="user-form" enctype="multipart/form-data" action="{% url 'adminn:add_game' %}" method="POST">{%
+        csrf_token %}
         <h3>Oyun Ekle</h3>
         <div class="col-md-12">
             <div class="form-layout">
@@ -16,7 +17,7 @@
                 <label> Fiyatı: </label>
                 <input type="number" name="price" class="form-control">
                 <label> Oyun Açıklaması: </label>
-                <textarea class="form-control" rows="5" id="content"></textarea>
+                <textarea class="form-control" rows="5" name="content"></textarea>
 
                 <label> Kategori: </label>
                 <select name="category" style="margin: 5px 5px 10px 0px">
