@@ -4,7 +4,7 @@
     {% load staticfiles %}
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Untitled</title>
+    <title>{% block title %}Admin Panel{% endblock %}</title>
     <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cookie">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="{% static 'css/Pretty-Header.css' %}">
     <link rel="stylesheet" href="{% static 'css/Pretty-Footer.css' %}">
     <link rel="stylesheet" href="{% static 'css/shop-homepage.css' %}">
+    <link rel="shortcut icon" href="{%  static 'images/favicon.ico' %}">
 
 </head>
 <style>

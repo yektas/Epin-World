@@ -1,6 +1,7 @@
 {% extends 'base-with-category.html' %}
 {% load staticfiles %}
 <head>
+    {% block title %}{{ game_data.game_name}}{% endblock %}
     <script src="{% static 'js/bootstrap.js' %}"></script>
 </head>
 {% block content%}

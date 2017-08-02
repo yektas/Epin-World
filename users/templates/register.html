@@ -1,11 +1,11 @@
 {% extends 'base.html' %}
 {% load staticfiles %}
-{% block title%}<title>Kayıt Ol</title>{% endblock %}
+{% block title %}Kayıt Ol{% endblock %}
 
 {% block content %}
 <div class="col-md-6 col-md-offset-4">
-    <form class="user-form" action="{% url 'users:register' %}" method="post" onsubmit="return validateForm()">{%
-        csrf_token %}
+    <form class="user-form" action="{% url 'users:register' %}" method="post" onsubmit="return validateForm()">
+        {%csrf_token %}
         <h3>Kayıt Formu</h3>
         <div class="col-md-12">
             <div class="form-layout">
